@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <AssemblyName>SmartStore.Core</AssemblyName>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Composition" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.1" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Autofac" Version="7.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="log4net" Version="2.0.15" />
+  </ItemGroup>
+  
+  <!-- Include only essential domain and configuration files -->
+  <ItemGroup>
+    <Compile Include="BaseEntity.cs" />
+    <Compile Include="Domain\**\*.cs" Exclude="Domain\Messages\MessageTemplate.cs" />
+    <Compile Include="Configuration\**\*.cs" />
+    <Compile Include="Caching\ICacheManager.cs" />
+    <Compile Include="Caching\NullCache.cs" />
+    <Compile Include="Data\IRepository.cs" />
+    <Compile Include="Data\IDbContext.cs" />
+    <Compile Include="Infrastructure\EngineContext.cs" />
+    <Compile Include="Infrastructure\IEngine.cs" />
+    <Compile Include="Localization\*.cs" />
+    <Compile Include="Events\*.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Extensions\ConversionExtensions.cs" />
+    <Compile Include="Extensions\EnumerableExtensions.cs" />
+    <Compile Include="Collections\*.cs" />
+    <Compile Include="ComponentModel\*.cs" />
+    <Compile Include="Money.cs" />
+    <Compile Include="GenericEqualityComparer.cs" />
+  </ItemGroup>
+</Project>
