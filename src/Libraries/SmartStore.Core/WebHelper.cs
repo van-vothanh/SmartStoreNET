@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
@@ -10,8 +9,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web;
-using System.Web.Configuration;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using SmartStore.Collections;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Stores;
@@ -30,7 +29,7 @@ namespace SmartStore.Core
         private static readonly Regex s_cssPathPattern = new Regex(@"url\('(?<url>.+)'\)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline);
         private static readonly ConcurrentDictionary<int, string> s_safeLocalHostNames = new ConcurrentDictionary<int, string>();
 
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private bool? _isCurrentConnectionSecured;
         private string _storeHost;
         private string _storeHostSsl;
@@ -40,7 +39,7 @@ namespace SmartStore.Core
 
         private Store _currentStore;
 
-        public WebHelper(HttpContextBase httpContext)
+        public WebHelper(HttpContext httpContext)
         {
             _httpContext = httpContext;
         }
