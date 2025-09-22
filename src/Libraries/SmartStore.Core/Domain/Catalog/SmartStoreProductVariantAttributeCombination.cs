@@ -19,13 +19,9 @@ namespace SmartStore.Core.Domain.Catalog
         [DataMember]
         public string Sku { get; set; }
 
-        [DataMember]
-        [Index]
-        public string Gtin { get; set; }
+        [DataMember]        public string Gtin { get; set; }
 
-        [DataMember]
-        [Index]
-        public string ManufacturerPartNumber { get; set; }
+        [DataMember]        public string ManufacturerPartNumber { get; set; }
 
         [DataMember]
         public decimal? Price { get; set; }
@@ -60,9 +56,7 @@ namespace SmartStore.Core.Domain.Catalog
         [DataMember]
         public virtual QuantityUnit QuantityUnit { get; set; }
 
-        [DataMember]
-        [Index]
-        public bool IsActive { get; set; }
+        [DataMember]        public bool IsActive { get; set; }
         //public bool IsDefaultCombination { get; set; }
 
         public int[] GetAssignedMediaIds()

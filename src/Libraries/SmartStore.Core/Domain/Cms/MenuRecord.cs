@@ -34,9 +34,7 @@ namespace SmartStore.Core.Domain.Cms
 
         /// <summary>
         /// Gets or sets the value indicating whether this menu is deleteable by a user.
-        /// </summary>
-        [Index("IX_Menu_SystemName_IsSystemMenu", Order = 1)]
-        public bool IsSystemMenu { get; set; }
+        /// </summary>        public bool IsSystemMenu { get; set; }
 
         /// <summary>
         /// Gets or sets the menu template name.
@@ -58,9 +56,7 @@ namespace SmartStore.Core.Domain.Cms
 
         /// <summary>
         /// Gets or sets a value indicating whether the menu is published.
-        /// </summary>
-        [Index("IX_Menu_Published")]
-        public bool Published { get; set; } = true;
+        /// </summary>        public bool Published { get; set; } = true;
 
         /// <summary>
         /// Gets or sets the order for widget registration.
@@ -69,15 +65,11 @@ namespace SmartStore.Core.Domain.Cms
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is limited/restricted to certain stores.
-        /// </summary>
-        [Index("IX_Menu_LimitedToStores")]
-        public bool LimitedToStores { get; set; }
+        /// </summary>        public bool LimitedToStores { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is subject to ACL.
-        /// </summary>
-        [Index("IX_Menu_SubjectToAcl")]
-        public bool SubjectToAcl { get; set; }
+        /// </summary>        public bool SubjectToAcl { get; set; }
 
         /// <summary>
         /// Helper function to get the comma-separated <c>WidgetZone</c> property as an enumerable of strings.

@@ -36,15 +36,11 @@ namespace SmartStore.Core.Domain.Tasks
 
         /// <summary>
         /// Gets or sets the type of appropriate ITask class
-        /// </summary>
-		[Index("IX_Type")]
-        public string Type { get; set; }
+        /// </summary>        public string Type { get; set; }
 
         /// <summary>
         /// Gets or sets the value indicating whether a task is enabled
-        /// </summary>
-        [Index("IX_NextRun_Enabled", 1)]
-        public bool Enabled { get; set; }
+        /// </summary>        public bool Enabled { get; set; }
 
         /// <summary>
         /// Gets or sets the task priority. Tasks with higher priority run first when multiple tasks are pending.
@@ -54,10 +50,7 @@ namespace SmartStore.Core.Domain.Tasks
         /// <summary>
         /// Gets or sets the value indicating whether a task should be stopped on some error
         /// </summary>
-        public bool StopOnError { get; set; }
-
-        [Index("IX_NextRun_Enabled", 0)]
-        public DateTime? NextRunUtc { get; set; }
+        public bool StopOnError { get; set; }        public DateTime? NextRunUtc { get; set; }
 
         /// <summary>
         /// Indicates whether the task is hidden.

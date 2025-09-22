@@ -16,9 +16,7 @@ namespace SmartStore.Rules.Domain
         public virtual RuleSetEntity RuleSet { get; set; }
 
         [DataMember]
-        [Required, StringLength(100)]
-        [Index("IX_PageBuilder_RuleType")]
-        public string RuleType { get; set; }
+        [Required, StringLength(100)]        public string RuleType { get; set; }
 
         //[DataMember]
         //[StringLength(400)]
@@ -32,9 +30,7 @@ namespace SmartStore.Rules.Domain
         [MaxLength]
         public string Value { get; set; }
 
-        [DataMember]
-        [Index("IX_PageBuilder_DisplayOrder")]
-        public int DisplayOrder { get; set; }
+        [DataMember]        public int DisplayOrder { get; set; }
 
         [NotMapped]
         public bool IsGroup => RuleType.IsCaseInsensitiveEqual("Group");

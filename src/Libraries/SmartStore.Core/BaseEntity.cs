@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Core.Objects;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -30,18 +29,15 @@ namespace SmartStore.Core
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public Type GetUnproxiedType()
         {
-            #region Old
-            //var t = GetType();
-            //if (t.AssemblyQualifiedName.StartsWith("System.Data.Entity."))
-            //{
-            //	// it's a proxied type
-            //	t = t.BaseType;
-            //}
-
-            //return t;
-            #endregion
-
-            return ObjectContext.GetObjectType(GetType());
+            var type = GetType();
+            
+            // Handle EF Core proxy types
+            if (type.Name.Contains("Proxy"))
+            {
+                type = type.BaseType ?? type;
+            }
+            
+            return type;
         }
 
         /// <summary>

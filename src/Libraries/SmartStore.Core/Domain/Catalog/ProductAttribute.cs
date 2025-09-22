@@ -36,16 +36,12 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets whether the attribute can be filtered
         /// </summary>
-        [DataMember]
-        [Index]
-        public bool AllowFiltering { get; set; }
+        [DataMember]        public bool AllowFiltering { get; set; }
 
         /// <summary>
         /// Gets or sets the display order
         /// </summary>
-        [DataMember]
-        [Index]
-        public int DisplayOrder { get; set; }
+        [DataMember]        public int DisplayOrder { get; set; }
 
         /// <summary>
         /// Gets or sets the facet template hint. Only effective in accordance with MegaSearchPlus plugin.

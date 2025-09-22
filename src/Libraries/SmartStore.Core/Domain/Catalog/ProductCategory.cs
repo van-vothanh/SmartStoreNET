@@ -24,9 +24,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets a value indicating whether the product is featured
         /// </summary>
-        [DataMember]
-        [Index]
-        public bool IsFeaturedProduct { get; set; }
+        [DataMember]        public bool IsFeaturedProduct { get; set; }
 
         /// <summary>
         /// Gets or sets the display order
@@ -37,9 +35,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Indicates whether the mapping is created by the user or by the system.
         /// </summary>
-        [DataMember]
-        [Index]
-        public bool IsSystemMapping { get; set; }
+        [DataMember]        public bool IsSystemMapping { get; set; }
 
         /// <summary>
         /// Gets the category

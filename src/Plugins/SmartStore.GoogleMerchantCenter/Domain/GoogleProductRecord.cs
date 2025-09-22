@@ -12,10 +12,7 @@ namespace SmartStore.GoogleMerchantCenter.Domain
         public GoogleProductRecord()
         {
             Export = true;
-        }
-
-        [Index]
-        public int ProductId { get; set; }
+        }        public int ProductId { get; set; }
 
         public string Taxonomy { get; set; }
         public string Gender { get; set; }
@@ -24,15 +21,9 @@ namespace SmartStore.GoogleMerchantCenter.Domain
         public string Size { get; set; }
         public string Material { get; set; }
         public string Pattern { get; set; }
-        public string ItemGroupId { get; set; }
-
-        [Index]
-        public bool IsTouched { get; set; }
+        public string ItemGroupId { get; set; }        public bool IsTouched { get; set; }
         public DateTime CreatedOnUtc { get; set; }
-        public DateTime UpdatedOnUtc { get; set; }
-
-        [Index]
-        public bool Export { get; set; }
+        public DateTime UpdatedOnUtc { get; set; }        public bool Export { get; set; }
 
         public int Multipack { get; set; }
         public bool? IsBundle { get; set; }

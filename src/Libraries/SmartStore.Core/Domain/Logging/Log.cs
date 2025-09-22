@@ -14,9 +14,7 @@ namespace SmartStore.Core.Domain.Logging
     {
         /// <summary>
         /// Gets or sets the log level identifier
-        /// </summary>
-        [Index("IX_Log_Level", IsUnique = false)]
-        public int LogLevelId { get; set; }
+        /// </summary>        public int LogLevelId { get; set; }
 
         /// <summary>
         /// Gets or sets the short message
@@ -55,9 +53,7 @@ namespace SmartStore.Core.Domain.Logging
 
         /// <summary>
         /// Gets or sets the logger name
-        /// </summary>
-        [Index("IX_Log_Logger", IsUnique = false)]
-        public string Logger { get; set; }
+        /// </summary>        public string Logger { get; set; }
 
         /// <summary>
         /// Gets or sets the HTTP method

@@ -166,9 +166,7 @@ namespace SmartStore.Core.Domain.Blogs
         /// <summary>
         /// Gets or sets a language identifier for which the blog post should be displayed.
         /// </summary>
-        [DataMember]
-        [Index]
-        public int? LanguageId { get; set; }
+        [DataMember]        public int? LanguageId { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time of entity creation

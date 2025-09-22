@@ -172,9 +172,7 @@ namespace SmartStore.Core.Domain.Catalog
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity has been deleted
-        /// </summary>
-		[Index]
-        public bool Deleted { get; set; }
+        /// </summary>        public bool Deleted { get; set; }
 
         /// <summary>
         /// Gets or sets the display order

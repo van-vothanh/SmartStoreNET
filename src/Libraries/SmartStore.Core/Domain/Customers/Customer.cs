@@ -104,25 +104,17 @@ namespace SmartStore.Core.Domain.Customers
 
         /// <summary>
         /// Gets or sets a value indicating whether the customer has been deleted
-        /// </summary>
-		[Index]
-        [Index("IX_Customer_Deleted_IsSystemAccount", 1)]
-        public bool Deleted { get; set; }
+        /// </summary>        public bool Deleted { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the customer account is system
         /// </summary>
-		[DataMember]
-        [Index]
-        [Index("IX_Customer_Deleted_IsSystemAccount", 2)]
-        public bool IsSystemAccount { get; set; }
+		[DataMember]        public bool IsSystemAccount { get; set; }
 
         /// <summary>
         /// Gets or sets the customer system name
         /// </summary>
-		[DataMember]
-        [Index]
-        public string SystemName { get; set; }
+		[DataMember]        public string SystemName { get; set; }
 
         /// <summary>
         /// Gets or sets the last IP address

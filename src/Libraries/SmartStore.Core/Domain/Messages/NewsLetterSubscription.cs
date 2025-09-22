@@ -19,16 +19,12 @@ namespace SmartStore.Core.Domain.Messages
         /// <summary>
         /// Gets or sets the subcriber email
         /// </summary>
-        [DataMember]
-        [Index("IX_NewsletterSubscription_Email_StoreId", 1)]
-        public string Email { get; set; }
+        [DataMember]        public string Email { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether subscription is active
         /// </summary>
-        [DataMember]
-        [Index]
-        public bool Active { get; set; }
+        [DataMember]        public bool Active { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time when subscription was created
@@ -39,9 +35,7 @@ namespace SmartStore.Core.Domain.Messages
         /// <summary>
         /// Gets or sets the store identifier
         /// </summary>
-        [DataMember]
-        [Index("IX_NewsletterSubscription_Email_StoreId", 2)]
-        public int StoreId { get; set; }
+        [DataMember]        public int StoreId { get; set; }
 
         /// <summary>
 		/// Gets or sets the language identifier

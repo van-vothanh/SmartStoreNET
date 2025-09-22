@@ -439,9 +439,7 @@ namespace SmartStore.Core.Domain.Orders
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity has been deleted
-        /// </summary>
-		[Index]
-        public bool Deleted { get; set; }
+        /// </summary>        public bool Deleted { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time of order creation

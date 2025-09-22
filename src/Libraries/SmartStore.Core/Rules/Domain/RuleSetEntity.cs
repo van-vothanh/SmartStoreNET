@@ -27,21 +27,14 @@ namespace SmartStore.Rules.Domain
 
         [DataMember]
         [StringLength(400)]
-        public string Description { get; set; }
+        public string Description { get; set; }        public bool IsActive { get; set; } = true;
 
-        [Index("IX_RuleSetEntity_Scope", Order = 0)]
-        public bool IsActive { get; set; } = true;
-
-        [Required]
-        [Index("IX_RuleSetEntity_Scope", Order = 1)]
-        public RuleScope Scope { get; set; }
+        [Required]        public RuleScope Scope { get; set; }
 
 
         /// <summary>
         /// True when this set is an internal composite container for rules within another ruleset.
-        /// </summary>
-        [Index]
-        public bool IsSubGroup { get; set; }
+        /// </summary>        public bool IsSubGroup { get; set; }
 
         public LogicalRuleOperator LogicalOperator { get; set; }
 

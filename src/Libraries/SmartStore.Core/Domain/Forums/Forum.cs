@@ -12,9 +12,7 @@ namespace SmartStore.Core.Domain.Forums
     {
         /// <summary>
         /// Gets or sets the forum group identifier
-        /// </summary>
-        [Index("IX_ForumGroupId_DisplayOrder", Order = 0)]
-        public int ForumGroupId { get; set; }
+        /// </summary>        public int ForumGroupId { get; set; }
 
         /// <summary>
         /// Gets or sets the name
@@ -58,9 +56,7 @@ namespace SmartStore.Core.Domain.Forums
 
         /// <summary>
         /// Gets or sets the display order
-        /// </summary>
-        [Index("IX_ForumGroupId_DisplayOrder", Order = 1)]
-        public int DisplayOrder { get; set; }
+        /// </summary>        public int DisplayOrder { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time of instance creation

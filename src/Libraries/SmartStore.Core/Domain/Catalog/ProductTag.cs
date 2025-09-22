@@ -22,9 +22,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets a value indicating whether the entity is published.
         /// </summary>
-        [DataMember]
-        [Index("IX_ProductTag_Published")]
-        public bool Published { get; set; } = true;
+        [DataMember]        public bool Published { get; set; } = true;
 
         /// <summary>
         /// Gets or sets the products.

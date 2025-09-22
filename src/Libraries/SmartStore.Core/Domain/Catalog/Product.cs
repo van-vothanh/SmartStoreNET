@@ -89,9 +89,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the visibility level of the product.
         /// </summary>
-        [DataMember]
-        [Index]
-        public ProductVisibility Visibility { get; set; }
+        [DataMember]        public ProductVisibility Visibility { get; set; }
 
         /// <summary>
         /// Gets or sets the condition of the product.
@@ -215,9 +213,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the manufacturer part number
         /// </summary>
-        [DataMember]
-        [Index]
-        public string ManufacturerPartNumber
+        [DataMember]        public string ManufacturerPartNumber
         {
             [DebuggerStepThrough]
             get => this.GetMergedDataValue<string>(nameof(ManufacturerPartNumber), _manufacturerPartNumber);
@@ -227,9 +223,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the Global Trade Item Number (GTIN). These identifiers include UPC (in North America), EAN (in Europe), JAN (in Japan), and ISBN (for books).
         /// </summary>
-        [DataMember]
-        [Index]
-        public string Gtin
+        [DataMember]        public string Gtin
         {
             [DebuggerStepThrough]
             get => this.GetMergedDataValue<string>(nameof(Gtin), _gtin);
@@ -668,32 +662,21 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets a value indicating whether the entity is published
         /// </summary>
-		[DataMember]
-        [Index("IX_Product_Published_Deleted_IsSystemProduct", 1)]
-        public bool Published { get; set; }
+		[DataMember]        public bool Published { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity has been deleted
-        /// </summary>
-		[Index]
-        [Index("IX_Product_Published_Deleted_IsSystemProduct", 2)]
-        public bool Deleted { get; set; }
+        /// </summary>        public bool Deleted { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is a system product.
         /// </summary>
-        [DataMember]
-        [Index]
-        [Index("IX_Product_SystemName_IsSystemProduct", 2)]
-        [Index("IX_Product_Published_Deleted_IsSystemProduct", 3)]
-        public bool IsSystemProduct { get; set; }
+        [DataMember]        public bool IsSystemProduct { get; set; }
 
         /// <summary>
         /// Gets or sets the product system name.
         /// </summary>
-        [DataMember]
-        [Index("IX_Product_SystemName_IsSystemProduct", 1)]
-        public string SystemName { get; set; }
+        [DataMember]        public string SystemName { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time of product creation
@@ -760,7 +743,7 @@ namespace SmartStore.Core.Domain.Catalog
         public bool BasePriceEnabled { get; set; }
 
         /// <summary>
-        /// Measure unit for the base price (e.g. "kg", "g", "qm²" etc.)
+        /// Measure unit for the base price (e.g. "kg", "g", "qmÂ²" etc.)
         /// </summary>
         [DataMember]
         public string BasePriceMeasureUnit { get; set; }

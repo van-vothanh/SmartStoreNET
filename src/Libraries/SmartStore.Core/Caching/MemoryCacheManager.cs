@@ -2,7 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -23,7 +23,7 @@ namespace SmartStore.Core.Caching
         public const string FakeNull = "__[NULL]__";
 
         private readonly Work<ICacheScopeAccessor> _scopeAccessor;
-        private MemoryCache _cache;
+        private IMemoryCache _cache;
 
         public MemoryCacheManager(Work<ICacheScopeAccessor> scopeAccessor)
         {
@@ -31,9 +31,9 @@ namespace SmartStore.Core.Caching
             _cache = CreateCache();
         }
 
-        private MemoryCache CreateCache()
+        private IMemoryCache CreateCache()
         {
-            return new MemoryCache("SmartStore");
+            return new MemoryCache(new MemoryCacheOptions());
         }
 
         public bool IsDistributedCache => false;
@@ -136,7 +136,14 @@ namespace SmartStore.Core.Caching
 
         public void Put(string key, object value, TimeSpan? duration = null, IEnumerable<string> dependencies = null)
         {
-            _cache.Set(key, value ?? FakeNull, GetCacheItemPolicy(duration, dependencies));
+            var options = new MemoryCacheEntryOptions();
+            
+            if (duration.HasValue)
+            {
+                options.AbsoluteExpirationRelativeToNow = duration.Value;
+            }
+            
+            _cache.Set(key, value ?? FakeNull, options);
         }
 
         public bool Contains(string key)
@@ -206,44 +213,6 @@ namespace SmartStore.Core.Caching
 
             return result;
         }
-
-        private CacheItemPolicy GetCacheItemPolicy(TimeSpan? duration, IEnumerable<string> dependencies)
-        {
-            var absoluteExpiration = ObjectCache.InfiniteAbsoluteExpiration;
-
-            if (duration.HasValue)
-            {
-                absoluteExpiration = DateTime.UtcNow + duration.Value;
-            }
-
-            var cacheItemPolicy = new CacheItemPolicy
-            {
-                AbsoluteExpiration = absoluteExpiration,
-                SlidingExpiration = ObjectCache.NoSlidingExpiration
-            };
-
-            if (dependencies != null && dependencies.Any())
-            {
-                // INFO: we can only depend on existing items, otherwise this entry will be removed immediately.
-                dependencies = dependencies.Where(x => x != null && _cache.Contains(x));
-                if (dependencies.Any())
-                {
-                    cacheItemPolicy.ChangeMonitors.Add(_cache.CreateCacheEntryChangeMonitor(dependencies));
-                }
-            }
-
-            //cacheItemPolicy.RemovedCallback = OnRemoveEntry;
-
-            return cacheItemPolicy;
-        }
-
-        //private void OnRemoveEntry(CacheEntryRemovedArguments args)
-        //{
-        //	if (args.RemovedReason == CacheEntryRemovedReason.ChangeMonitorChanged)
-        //	{
-        //		Debug.WriteLine("MEMCACHE: remove depending entry '{0}'.".FormatInvariant(args.CacheItem.Key));
-        //	}
-        //}
 
         protected override void OnDispose(bool disposing)
         {

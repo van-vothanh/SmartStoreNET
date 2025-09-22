@@ -36,15 +36,7 @@ namespace SmartStore.Core.Domain.Media
         /// <summary>
         /// Gets or sets the associated folder identifier.
         /// </summary>
-        [DataMember]
-        [Index("IX_Media_MediaType", 0)]
-        [Index("IX_Media_Extension", 0)]
-        [Index("IX_Media_PixelSize", 0)]
-        [Index("IX_Media_Name", 0)]
-        [Index("IX_Media_Size", 0)]
-        [Index("IX_Media_UpdatedOnUtc", 0)]
-        [Index("IX_Media_FolderId", 0)]
-        public int? FolderId { get; set; }
+        [DataMember]        public int? FolderId { get; set; }
 
         /// <summary>
         /// Gets or sets the associated folder.
@@ -55,9 +47,7 @@ namespace SmartStore.Core.Domain.Media
         /// <summary>
         /// Gets or sets the SEO friendly name of the media file including file extension
         /// </summary>
-        [DataMember]
-        [Index("IX_Media_Name", 1)]
-        public string Name { get; set; }
+        [DataMember]        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the localizable image ALT text
@@ -74,10 +64,7 @@ namespace SmartStore.Core.Domain.Media
         /// <summary>
         /// Gets or sets the (dotless) file extension
         /// </summary>
-        [DataMember]
-        [Index("IX_Media_MediaType", 2)]
-        [Index("IX_Media_Extension", 1)]
-        public string Extension { get; set; }
+        [DataMember]        public string Extension { get; set; }
 
         /// <summary>
         /// Gets or sets the file MIME type
@@ -88,25 +75,17 @@ namespace SmartStore.Core.Domain.Media
         /// <summary>
         /// Gets or sets the file media type (image, video, audio, document etc.)
         /// </summary>
-        [DataMember]
-        [Index("IX_Media_MediaType", 1)]
-        public string MediaType { get; set; }
+        [DataMember]        public string MediaType { get; set; }
 
         /// <summary>
         /// Gets or sets the file size in bytes
         /// </summary>
-        [DataMember]
-        [Index("IX_Media_Size", 1)]
-        public int Size { get; set; }
+        [DataMember]        public int Size { get; set; }
 
         /// <summary>
         /// Gets or sets the total pixel size of an image (width * height)
         /// </summary>
-        [DataMember]
-        [Index("IX_Media_MediaType", 3)]
-        [Index("IX_Media_Extension", 2)]
-        [Index("IX_Media_PixelSize", 1)]
-        public int? PixelSize { get; set; }
+        [DataMember]        public int? PixelSize { get; set; }
 
         /// <summary>
         /// Gets or sets the file metadata as raw JSON dictionary (width, height, video length, EXIF etc.)
@@ -146,15 +125,7 @@ namespace SmartStore.Core.Domain.Media
 
         /// <summary>
         /// Gets or sets a value indicating whether the file has been soft deleted
-        /// </summary>
-        [Index("IX_Media_MediaType", 4)]
-        [Index("IX_Media_Extension", 3)]
-        [Index("IX_Media_PixelSize", 2)]
-        [Index("IX_Media_Name", 2)]
-        [Index("IX_Media_Size", 2)]
-        [Index("IX_Media_UpdatedOnUtc", 2)]
-        [Index("IX_Media_FolderId", 1)]
-        public bool Deleted { get; set; }
+        /// </summary>        public bool Deleted { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the file is hidden

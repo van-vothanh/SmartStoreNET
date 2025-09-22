@@ -14,9 +14,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the product variant attribute mapping identifier
         /// </summary>
-		[DataMember]
-        [Index("IX_ProductVariantAttributeValue_ProductVariantAttributeId_DisplayOrder", 1)]
-        public int ProductVariantAttributeId { get; set; }
+		[DataMember]        public int ProductVariantAttributeId { get; set; }
 
         /// <summary>
         /// Gets or sets the product variant attribute alias 
@@ -27,9 +25,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the product variant attribute name
         /// </summary>
-		[DataMember]
-        [Index]
-        public string Name { get; set; }
+		[DataMember]        public string Name { get; set; }
 
         /// <summary>
         /// Gets or sets the media file id
@@ -64,16 +60,12 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets the display order
         /// </summary>
-		[DataMember]
-        [Index("IX_ProductVariantAttributeValue_ProductVariantAttributeId_DisplayOrder", 2)]
-        public int DisplayOrder { get; set; }
+		[DataMember]        public int DisplayOrder { get; set; }
 
         /// <summary>
         /// Gets or sets the type Id
         /// </summary>
-        [DataMember]
-        [Index]
-        public int ValueTypeId { get; set; }
+        [DataMember]        public int ValueTypeId { get; set; }
 
         /// <summary>
         /// Gets or sets the linked product Id

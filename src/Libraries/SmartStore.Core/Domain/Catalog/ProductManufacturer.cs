@@ -24,9 +24,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// <summary>
         /// Gets or sets a value indicating whether the product is featured
         /// </summary>
-		[DataMember]
-        [Index]
-        public bool IsFeaturedProduct { get; set; }
+		[DataMember]        public bool IsFeaturedProduct { get; set; }
 
         /// <summary>
         /// Gets or sets the display order

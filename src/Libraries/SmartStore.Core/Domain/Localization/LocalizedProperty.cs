@@ -12,31 +12,22 @@ namespace SmartStore.Core.Domain.Localization
         /// <summary>
         /// Gets or sets the entity identifier
         /// </summary>
-		[DataMember]
-        [Index("IX_LocalizedProperty_Compound", Order = 1)]
-        public int EntityId { get; set; }
+		[DataMember]        public int EntityId { get; set; }
 
         /// <summary>
         /// Gets or sets the language identifier
         /// </summary>
-		[DataMember]
-        [Index("IX_LocalizedProperty_Compound", Order = 4)]
-        public int LanguageId { get; set; }
+		[DataMember]        public int LanguageId { get; set; }
 
         /// <summary>
         /// Gets or sets the locale key group
         /// </summary>
-		[DataMember]
-        [Index("IX_LocalizedProperty_Compound", Order = 3)]
-        [Index("IX_LocalizedProperty_LocaleKeyGroup")]
-        public string LocaleKeyGroup { get; set; }
+		[DataMember]        public string LocaleKeyGroup { get; set; }
 
         /// <summary>
         /// Gets or sets the locale key
         /// </summary>
-		[DataMember]
-        [Index("IX_LocalizedProperty_Compound", Order = 2)]
-        public string LocaleKey { get; set; }
+		[DataMember]        public string LocaleKey { get; set; }
 
         /// <summary>
         /// Gets or sets the locale value

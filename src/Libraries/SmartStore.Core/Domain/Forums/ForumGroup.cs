@@ -27,9 +27,7 @@ namespace SmartStore.Core.Domain.Forums
 
         /// <summary>
         /// Gets or sets the display order
-        /// </summary>
-        [Index]
-        public int DisplayOrder { get; set; }
+        /// </summary>        public int DisplayOrder { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time of instance creation
@@ -43,15 +41,11 @@ namespace SmartStore.Core.Domain.Forums
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is limited/restricted to certain stores
-        /// </summary>
-        [Index]
-        public bool LimitedToStores { get; set; }
+        /// </summary>        public bool LimitedToStores { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is subject to ACL
-        /// </summary>
-        [Index]
-        public bool SubjectToAcl { get; set; }
+        /// </summary>        public bool SubjectToAcl { get; set; }
 
         /// <summary>
         /// Gets or sets the collection of Forums
