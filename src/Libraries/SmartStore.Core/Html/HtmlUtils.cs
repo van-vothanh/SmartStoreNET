@@ -5,10 +5,10 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Web;
 using AngleSharp;
+using AngleSharp;
 using AngleSharp.Dom;
-using AngleSharp.Extensions;
-using AngleSharp.Parser.Html;
-using Ganss.XSS;
+using AngleSharp.Html.Parser;
+using Ganss.Xss;
 using SmartStore.Utilities.ObjectPools;
 
 namespace SmartStore.Core.Html

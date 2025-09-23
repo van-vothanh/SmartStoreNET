@@ -21,7 +21,8 @@ using SmartStore.Utilities;
 // SEE THIS POST for full details of what this does
 //http://shazwazza.com/post/Developing-a-plugin-framework-in-ASPNET-with-medium-trust.aspx
 
-[assembly: PreApplicationStartMethod(typeof(PluginManager), "Initialize")]
+// Note: PreApplicationStartMethod is not available in .NET Core
+// Initialization should be handled through ASP.NET Core startup pipeline
 namespace SmartStore.Core.Plugins
 {
     /// <summary>
