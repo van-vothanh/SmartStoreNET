@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
+using SmartStore.Core.Compatibility;
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Core.Domain.Seo;

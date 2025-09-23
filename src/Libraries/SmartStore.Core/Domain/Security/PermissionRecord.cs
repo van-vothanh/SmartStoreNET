@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using SmartStore.Core.Compatibility;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SmartStore.Core.Domain.Security

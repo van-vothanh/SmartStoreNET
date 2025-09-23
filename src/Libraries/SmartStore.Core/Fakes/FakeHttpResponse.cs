@@ -1,34 +1,73 @@
-﻿using System.Text;
-using System.Web;
+using System;
+using System.IO;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpResponse : HttpResponseBase
+    public class FakeHttpResponse : HttpResponse
     {
-        private readonly HttpCookieCollection _cookies;
-        private readonly StringBuilder _outputString = new StringBuilder();
+        private readonly HttpContext _context;
+        private readonly IHeaderDictionary _headers;
+        private readonly IResponseCookies _cookies;
 
-        public FakeHttpResponse()
+        public FakeHttpResponse(HttpContext context)
         {
-            this._cookies = new HttpCookieCollection();
+            _context = context;
+            _headers = new HeaderDictionary();
+            _cookies = new FakeResponseCookies();
+            Body = new MemoryStream();
         }
 
-        public string ResponseOutput => _outputString.ToString();
+        public override HttpContext HttpContext => _context;
 
-        public override int StatusCode { get; set; }
+        public override int StatusCode { get; set; } = 200;
 
-        public override string RedirectLocation { get; set; }
+        public override IHeaderDictionary Headers => _headers;
 
-        public override void Write(string s)
+        public override Stream Body { get; set; }
+
+        public override long? ContentLength { get; set; }
+
+        public override string ContentType { get; set; }
+
+        public override IResponseCookies Cookies => _cookies;
+
+        public override bool HasStarted => false;
+
+        public override void OnCompleted(Func<object, Task> callback, object state)
         {
-            _outputString.Append(s);
+            throw new NotImplementedException();
         }
 
-        public override string ApplyAppPathModifier(string virtualPath)
+        public override void OnStarting(Func<object, Task> callback, object state)
         {
-            return virtualPath;
+            throw new NotImplementedException();
         }
 
-        public override HttpCookieCollection Cookies => _cookies;
+        public override void Redirect(string location, bool permanent)
+        {
+            StatusCode = permanent ? 301 : 302;
+            Headers["Location"] = location;
+        }
+    }
+
+    public class FakeResponseCookies : IResponseCookies
+    {
+        public void Append(string key, string value)
+        {
+        }
+
+        public void Append(string key, string value, CookieOptions options)
+        {
+        }
+
+        public void Delete(string key)
+        {
+        }
+
+        public void Delete(string key, CookieOptions options)
+        {
+        }
     }
 }

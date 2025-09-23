@@ -1,15 +1,15 @@
-﻿using System;
-using System.Web;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpHandler : IHttpHandler
+    public class FakeHttpHandler
     {
-        public bool IsReusable => true;
+        public bool IsReusable => false;
 
-        public void ProcessRequest(HttpContext context)
+        public virtual Task ProcessRequestAsync(HttpContext context)
         {
-            throw new NotImplementedException();
+            return Task.CompletedTask;
         }
     }
 }

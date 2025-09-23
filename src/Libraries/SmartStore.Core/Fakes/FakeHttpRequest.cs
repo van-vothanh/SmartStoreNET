@@ -1,104 +1,79 @@
-﻿using System;
-using System.Collections.Specialized;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Primitives;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpRequest : HttpRequestBase
+    public class FakeHttpRequest : HttpRequest
     {
-        private readonly HttpCookieCollection _cookies;
-        private readonly NameValueCollection _formParams;
-        private readonly NameValueCollection _queryStringParams;
-        private readonly NameValueCollection _serverVariables;
-        private readonly string _relativeUrl;
-        private readonly Uri _url;
-        private readonly Uri _urlReferrer;
-        private readonly string _httpMethod;
-        private RequestContext _requestContext;
+        private readonly HttpContext _context;
+        private readonly IQueryCollection _query;
+        private readonly IFormCollection _form;
+        private readonly IHeaderDictionary _headers;
+        private readonly IRequestCookieCollection _cookies;
 
-        public FakeHttpRequest(string relativeUrl, Uri url, Uri urlReferrer)
-            : this(relativeUrl, HttpVerbs.Get.ToString("g"), url, urlReferrer, null, null, null, null)
+        public FakeHttpRequest(HttpContext context)
         {
+            _context = context;
+            _query = new QueryCollection();
+            _form = new FormCollection(new Dictionary<string, StringValues>());
+            _headers = new HeaderDictionary();
+            _cookies = new RequestCookieCollection();
         }
 
-        public FakeHttpRequest(string relativeUrl,
-            string method,
-            NameValueCollection formParams,
-            NameValueCollection queryStringParams,
-            HttpCookieCollection cookies,
-            NameValueCollection serverVariables)
+        public override HttpContext HttpContext => _context;
+
+        public override string Method { get; set; } = "GET";
+
+        public override string Scheme { get; set; } = "http";
+
+        public override bool IsHttps { get; set; } = false;
+
+        public override HostString Host { get; set; } = new HostString("localhost");
+
+        public override PathString PathBase { get; set; } = new PathString();
+
+        public override PathString Path { get; set; } = new PathString("/");
+
+        public override QueryString QueryString { get; set; } = new QueryString();
+
+        public override IQueryCollection Query
         {
-            _httpMethod = method;
-            _relativeUrl = relativeUrl;
-            _formParams = formParams ?? new NameValueCollection();
-            _queryStringParams = queryStringParams ?? new SmartStore.Collections.QueryString().FillFromString(relativeUrl);
-            _cookies = cookies ?? new HttpCookieCollection();
-            _serverVariables = serverVariables ?? new NameValueCollection();
+            get => _query;
+            set => throw new NotImplementedException();
         }
 
+        public override string Protocol { get; set; } = "HTTP/1.1";
 
-        public FakeHttpRequest(string relativeUrl,
-            string method,
-            Uri url,
-            Uri urlReferrer,
-            NameValueCollection formParams,
-            NameValueCollection queryStringParams,
-            HttpCookieCollection cookies,
-            NameValueCollection serverVariables)
-            : this(relativeUrl, method, formParams, queryStringParams, cookies, serverVariables)
+        public override IHeaderDictionary Headers => _headers;
+
+        public override IRequestCookieCollection Cookies
         {
-            _url = url;
-            _urlReferrer = urlReferrer;
+            get => _cookies;
+            set => throw new NotSupportedException("Setting cookies collection is not supported");
         }
 
-        public override NameValueCollection ServerVariables => _serverVariables;
+        public override long? ContentLength { get; set; }
 
-        public override NameValueCollection Form => _formParams;
+        public override string ContentType { get; set; }
 
-        public override NameValueCollection QueryString => _queryStringParams;
+        public override Stream Body { get; set; } = new MemoryStream();
 
-        public override HttpCookieCollection Cookies => _cookies;
+        public override bool HasFormContentType => false;
 
-        public override string AppRelativeCurrentExecutionFilePath => _relativeUrl;
-
-        public override Uri Url => _url ?? new Uri("http://tempuri.org");
-
-        public override Uri UrlReferrer => _urlReferrer ?? new Uri("http://tempuri.org");
-
-        public override string PathInfo => "";
-
-        public override string Path => _url?.AbsolutePath ?? ApplicationPath ?? "/";
-
-        public override string ApplicationPath
+        public override IFormCollection Form
         {
-            get
-            {
-                // We know that relative paths always start with ~/
-                // ApplicationPath should start with /
-                if (_relativeUrl != null && _relativeUrl.StartsWith("~/"))
-                    return _relativeUrl.Remove(0, 1);
-                return null;
-            }
+            get => _form;
+            set => throw new NotImplementedException();
         }
 
-        public override string HttpMethod => _httpMethod;
-
-        public override string UserHostAddress => null;
-
-        public override string RawUrl => this.ApplicationPath;
-        public override bool IsSecureConnection => _url?.Scheme?.EmptyNull().StartsWith("https", StringComparison.OrdinalIgnoreCase) == true;
-        public override bool IsAuthenticated => false;
-        public override string[] UserLanguages => new string[] { };
-        public override string UserAgent => "Smartstore";
-        public override bool IsLocal => false;
-
-        public override RequestContext RequestContext
+        public override Task<IFormCollection> ReadFormAsync(CancellationToken cancellationToken = default)
         {
-            get => _requestContext ?? new RequestContext();
-
-            set => _requestContext = value;
+            return Task.FromResult(_form);
         }
     }
 }

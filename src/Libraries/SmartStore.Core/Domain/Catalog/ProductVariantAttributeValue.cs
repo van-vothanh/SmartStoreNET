@@ -1,4 +1,6 @@
+using SmartStore.Core.Compatibility;
 using System.ComponentModel.DataAnnotations.Schema;
+using SmartStore.Core.Compatibility;
 using System.Runtime.Serialization;
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Search;

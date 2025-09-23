@@ -1,4 +1,6 @@
+using SmartStore.Core.Compatibility;
 using System.ComponentModel.DataAnnotations.Schema;
+using SmartStore.Core.Compatibility;
 using System.Runtime.Serialization;
 
 namespace SmartStore.Core.Domain.Catalog

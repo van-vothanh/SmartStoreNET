@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using SmartStore.Core.Compatibility;
 using System.ComponentModel.DataAnnotations.Schema;
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Domain.Security;

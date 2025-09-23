@@ -1,4 +1,6 @@
+using SmartStore.Core.Compatibility;
 using System;
+using SmartStore.Core.Compatibility;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Runtime.Serialization;

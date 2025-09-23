@@ -1,4 +1,5 @@
 ﻿using System;
+using SmartStore.Core.Compatibility;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using SmartStore.Core.Domain.Customers;

@@ -1,106 +1,88 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Security.Principal;
-using System.Web;
-using System.Web.SessionState;
+using System.Security.Claims;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpContext : HttpContextBase
+    public class FakeHttpContext : HttpContext
     {
-        private readonly HttpCookieCollection _cookies;
-        private readonly NameValueCollection _formParams;
-        private IPrincipal _principal;
-        private readonly NameValueCollection _queryStringParams;
-        private readonly string _relativeUrl;
-        private readonly string _method;
-        private readonly SessionStateItemCollection _sessionItems;
-        private readonly NameValueCollection _serverVariables;
-        private HttpResponseBase _response;
-        private HttpRequestBase _request;
-        private readonly Dictionary<object, object> _items;
+        private readonly Dictionary<object, object> _items = new Dictionary<object, object>();
+        private readonly IServiceProvider _serviceProvider;
+        private readonly HttpRequest _request;
+        private readonly HttpResponse _response;
+        private readonly ISession _session;
+        private readonly ClaimsPrincipal _user;
 
-        public static FakeHttpContext Root()
+        public FakeHttpContext(IServiceProvider serviceProvider = null)
         {
-            return new FakeHttpContext("~/");
+            _serviceProvider = serviceProvider ?? new ServiceCollection().BuildServiceProvider();
+            _request = new FakeHttpRequest(this);
+            _response = new FakeHttpResponse(this);
+            _session = new FakeHttpSession();
+            _user = new ClaimsPrincipal(new ClaimsIdentity());
         }
 
-        public FakeHttpContext(string relativeUrl)
-            : this(relativeUrl, null, null, null, null, null, null)
+        public override IFeatureCollection Features { get; } = new FeatureCollection();
+
+        public override HttpRequest Request => _request;
+
+        public override HttpResponse Response => _response;
+
+        public override ConnectionInfo Connection { get; } = new FakeConnectionInfo();
+
+        public override WebSocketManager WebSockets => throw new NotImplementedException();
+
+        public override ClaimsPrincipal User
         {
+            get => _user;
+            set => throw new NotImplementedException();
         }
 
-        public FakeHttpContext(string relativeUrl, string method)
-            : this(relativeUrl, method, null, null, null, null, null, null)
+        public override IDictionary<object, object> Items
         {
+            get => _items;
+            set => throw new NotImplementedException();
         }
 
-        public FakeHttpContext(string relativeUrl,
-            IPrincipal principal,
-            NameValueCollection formParams,
-            NameValueCollection queryStringParams,
-            HttpCookieCollection cookies,
-            SessionStateItemCollection sessionItems,
-            NameValueCollection serverVariables)
-            : this(relativeUrl, null, principal, formParams, queryStringParams, cookies, sessionItems, serverVariables)
+        public override IServiceProvider RequestServices
         {
+            get => _serviceProvider;
+            set => throw new NotImplementedException();
         }
 
-        public FakeHttpContext(string relativeUrl,
-            string method,
-            IPrincipal principal,
-            NameValueCollection formParams,
-            NameValueCollection queryStringParams,
-            HttpCookieCollection cookies,
-            SessionStateItemCollection sessionItems,
-            NameValueCollection serverVariables)
+        public override CancellationToken RequestAborted { get; set; }
+
+        public override string TraceIdentifier { get; set; } = Guid.NewGuid().ToString();
+
+        public override ISession Session
         {
-            _relativeUrl = relativeUrl;
-            _method = method;
-            _principal = principal;
-            _formParams = formParams;
-            _queryStringParams = queryStringParams;
-            _cookies = cookies;
-            _sessionItems = sessionItems;
-            _serverVariables = serverVariables;
-
-            _items = new Dictionary<object, object>();
-
-            Handler = new FakeHttpHandler();
+            get => _session;
+            set => throw new NotImplementedException();
         }
 
-        public override IHttpHandler Handler { get; set; }
-
-        public override HttpRequestBase Request => _request ?? new FakeHttpRequest(_relativeUrl, _method, _formParams, _queryStringParams, _cookies, _serverVariables);
-
-        public void SetRequest(HttpRequestBase request)
+        public override void Abort()
         {
-            _request = request;
+            throw new NotImplementedException();
         }
+    }
 
-        public override HttpResponseBase Response => _response ?? new FakeHttpResponse();
+    public class FakeConnectionInfo : ConnectionInfo
+    {
+        public override string Id { get; set; } = Guid.NewGuid().ToString();
+        public override System.Net.IPAddress RemoteIpAddress { get; set; }
+        public override int RemotePort { get; set; }
+        public override System.Net.IPAddress LocalIpAddress { get; set; }
+        public override int LocalPort { get; set; }
+        public override System.Security.Cryptography.X509Certificates.X509Certificate2 ClientCertificate { get; set; }
 
-        public void SetResponse(HttpResponseBase response)
+        public override Task<System.Security.Cryptography.X509Certificates.X509Certificate2> GetClientCertificateAsync(CancellationToken cancellationToken = default)
         {
-            _response = response;
-        }
-
-        public override IPrincipal User
-        {
-            get => _principal;
-            set => _principal = value;
-        }
-
-        public override HttpSessionStateBase Session => new FakeHttpSessionState(_sessionItems ?? new SessionStateItemCollection());
-
-        public override System.Collections.IDictionary Items => _items;
-
-        public override bool SkipAuthorization { get; set; }
-
-        public override object GetService(Type serviceType)
-        {
-            return null;
+            return Task.FromResult(ClientCertificate);
         }
     }
 }

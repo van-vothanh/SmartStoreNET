@@ -370,7 +370,7 @@ namespace SmartStore.Core
             return s_staticExts.IsMatch(request.Path);
         }
 
-        public static bool IsStaticResourceRequested(HttpRequestBase request)
+        public static bool IsStaticResourceRequested(Microsoft.AspNetCore.Http.HttpRequest request)
         {
             // unit testable
             Guard.NotNull(request, nameof(request));
@@ -587,7 +587,7 @@ namespace SmartStore.Core
         /// <remarks>
         /// All html attributed named <c>src</c> and <c>href</c> are affected, also occurences of <c>url('path')</c> within embedded stylesheets.
         /// </remarks>
-        public static string MakeAllUrlsAbsolute(string html, HttpRequestBase request)
+        public static string MakeAllUrlsAbsolute(string html, Microsoft.AspNetCore.Http.HttpRequest request)
         {
             Guard.NotNull(request, nameof(request));
 
@@ -634,7 +634,7 @@ namespace SmartStore.Core
         /// </summary>
         /// <param name="protocol">Changes the protocol if passed.</param>
         [SuppressMessage("ReSharper", "AccessToModifiedClosure")]
-        public static string GetAbsoluteUrl(string url, HttpRequestBase request, bool enforceScheme = false, string protocol = null)
+        public static string GetAbsoluteUrl(string url, Microsoft.AspNetCore.Http.HttpRequest request, bool enforceScheme = false, string protocol = null)
         {
             Guard.NotEmpty(url, nameof(url));
             Guard.NotNull(request, nameof(request));

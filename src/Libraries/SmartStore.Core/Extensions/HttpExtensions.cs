@@ -1,370 +1,132 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
-using System.Web;
-using System.Web.Caching;
-using System.Web.Mvc;
-using System.Web.Security;
-using SmartStore.Core;
-using SmartStore.Core.Fakes;
-using SmartStore.Core.Infrastructure;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 
-namespace SmartStore
+namespace SmartStore.Core
 {
     public static class HttpExtensions
     {
-        const string CacheRegionName = "SmartStoreNET:";
-        const string RememberPathKey = "AppRelativeCurrentExecutionFilePath.Original";
-
-        private static readonly List<Tuple<string, string>> _sslHeaders = new List<Tuple<string, string>>
-        {
-            new Tuple<string, string>("HTTP_CLUSTER_HTTPS", "on"),
-            new Tuple<string, string>("HTTP_X_FORWARDED_PROTO", "https"),
-            new Tuple<string, string>("X-Forwarded-Proto", "https"),
-            new Tuple<string, string>("x-arr-ssl", null),
-            new Tuple<string, string>("X-Forwarded-Protocol", "https"),
-            new Tuple<string, string>("X-Forwarded-Ssl", "on"),
-            new Tuple<string, string>("X-Url-Scheme", "https")
-        };
-
         /// <summary>
-        /// Tries to get the <see cref="HttpRequestBase"/> instance without throwing exceptions
-        /// </summary>
-        /// <returns>The <see cref="HttpRequestBase"/> instance or <c>null</c>.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HttpRequestBase SafeGetHttpRequest(this HttpContext httpContext)
-        {
-            if (httpContext == null)
-            {
-                return null;
-            }
-
-            return SafeGetHttpRequest(new HttpContextWrapper(httpContext));
-        }
-
-        /// <summary>
-        /// Tries to get the <see cref="HttpRequestBase"/> instance without throwing exceptions
-        /// </summary>
-        /// <returns>The <see cref="HttpRequestBase"/> instance or <c>null</c>.</returns>
-        public static HttpRequestBase SafeGetHttpRequest(this HttpContextBase httpContext)
-        {
-            if (httpContext == null)
-            {
-                return null;
-            }
-
-            if (httpContext.Handler != null || httpContext is FakeHttpContext)
-            {
-                // Having a handler means we're most likely in the MVC routing pipeline.
-                return httpContext.Request;
-            }
-
-            try
-            {
-                return httpContext.Request;
-            }
-            catch
-            {
-                return null;
-            }
-        }
-
-        /// <summary>
-        /// Returns wether the specified url is local to the host or not
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="url"></param>
-        /// <returns></returns>
-        public static bool IsAppLocalUrl(this HttpRequestBase request, string url)
-        {
-            if (string.IsNullOrWhiteSpace(url))
-            {
-                return false;
-            }
-
-            url = url.Trim();
-
-            if (url.StartsWith("~/"))
-            {
-                return true;
-            }
-
-            if (url.StartsWith("//") || url.StartsWith("/\\"))
-            {
-                return false;
-            }
-
-            // At this point when the url starts with "/" it is local
-            if (url.StartsWith("/"))
-            {
-                return true;
-            }
-
-            // At this point, check for a fully qualified url
-            try
-            {
-                var uri = new Uri(url);
-
-                if (!uri.Scheme.Equals(Uri.UriSchemeHttp, StringComparison.OrdinalIgnoreCase) && !uri.Scheme.Equals(Uri.UriSchemeHttps, StringComparison.OrdinalIgnoreCase))
-                {
-                    return false;
-                }
-
-                if (uri.Authority.Equals(request.Headers["Host"], StringComparison.OrdinalIgnoreCase))
-                {
-                    return true;
-                }
-
-                // Finally, check the base url from the settings
-                var storeContext = EngineContext.Current.Resolve<IStoreContext>();
-                if (storeContext != null)
-                {
-                    var baseUrl = storeContext.CurrentStore.Url;
-                    if (baseUrl.HasValue())
-                    {
-                        if (uri.Authority.Equals(new Uri(baseUrl).Authority, StringComparison.OrdinalIgnoreCase))
-                        {
-                            return true;
-                        }
-                    }
-                }
-
-                return false;
-            }
-            catch
-            {
-                // mall-formed url e.g, "abcdef"
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Gets a value which indicates whether the HTTP connection uses secure sockets (HTTPS protocol). 
+        /// Gets a value which indicates whether the HTTP connection uses secure sockets (HTTPS protocol).
         /// Works with Cloud's load balancers.
         /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static bool IsHttps(this HttpRequest request)
         {
-            return IsHttps(new HttpRequestWrapper(request));
-        }
-
-        /// <summary>
-        /// Gets a value which indicates whether the HTTP connection uses secure sockets (HTTPS protocol). 
-        /// Works with Cloud's load balancers.
-        /// </summary>
-        public static bool IsHttps(this HttpRequestBase request)
-        {
-            if (request.IsSecureConnection)
-            {
+            if (request.IsHttps)
                 return true;
-            }
 
-            foreach (var tuple in _sslHeaders)
-            {
-                var serverVar = request.ServerVariables[tuple.Item1];
-                if (serverVar != null)
-                {
-                    return tuple.Item2 == null || tuple.Item2.Equals(serverVar, StringComparison.OrdinalIgnoreCase);
-                }
-            }
+            // Handle load balancer scenarios
+            var forwardedProto = request.Headers["X-Forwarded-Proto"].FirstOrDefault();
+            if (string.Equals(forwardedProto, "https", StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            var forwardedSsl = request.Headers["X-Forwarded-Ssl"].FirstOrDefault();
+            if (string.Equals(forwardedSsl, "on", StringComparison.OrdinalIgnoreCase))
+                return true;
 
             return false;
         }
 
         /// <summary>
-        /// Gets a value which indicates whether the current request requests a static resource, like .txt, .pdf, .js, .css etc.
+        /// Determines whether the specified URL is local to the application.
         /// </summary>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static bool IsStaticResourceRequested(this HttpContext context)
+        /// <param name="request">The HTTP request.</param>
+        /// <param name="url">The URL to check.</param>
+        /// <returns>True if the URL is local; otherwise, false.</returns>
+        public static bool IsAppLocalUrl(this HttpRequest request, string url)
         {
-            return IsStaticResourceRequested(new HttpContextWrapper(context));
-        }
-
-        /// <summary>
-        /// Gets a value which indicates whether the current request requests a static resource, like .txt, .pdf, .js, .css etc.
-        /// </summary>
-        public static bool IsStaticResourceRequested(this HttpContextBase context)
-        {
-            if (context?.Request == null)
+            if (string.IsNullOrWhiteSpace(url))
                 return false;
 
-            return context.GetItem<bool>(
-                "IsStaticResourceRequested",
-                () => WebHelper.IsStaticResourceRequested(context.Request),
-                true);
+            if (url.StartsWith("~/"))
+                return true;
+
+            if (url.StartsWith("//") || url.StartsWith("http://") || url.StartsWith("https://"))
+                return false;
+
+            return Uri.IsWellFormedUriString(url, UriKind.Relative);
         }
 
-        [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetFormsAuthenticationCookie(this HttpWebRequest webRequest, HttpRequestBase httpRequest)
+        /// <summary>
+        /// Gets the raw URL of the request including query string.
+        /// </summary>
+        public static string GetRawUrl(this HttpRequest request)
         {
-            CopyCookie(webRequest, httpRequest, FormsAuthentication.FormsCookieName);
+            return request.GetEncodedUrl();
         }
 
-        [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetAnonymousIdentCookie(this HttpWebRequest webRequest, HttpRequestBase httpRequest)
+        /// <summary>
+        /// Gets the display URL of the request.
+        /// </summary>
+        public static string GetDisplayUrl(this HttpRequest request)
         {
-            CopyCookie(webRequest, httpRequest, "SMARTSTORE.ANONYMOUS");
+            return request.GetDisplayUrl();
         }
 
-        [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetVisitorCookie(this HttpWebRequest webRequest, HttpRequestBase httpRequest)
+        /// <summary>
+        /// Determines if the current request is an AJAX request.
+        /// </summary>
+        public static bool IsAjaxRequest(this HttpRequest request)
         {
-            CopyCookie(webRequest, httpRequest, "SMARTSTORE.VISITOR");
+            if (request == null)
+                return false;
+
+            return request.Headers["X-Requested-With"] == "XMLHttpRequest";
         }
 
-        private static void CopyCookie(HttpWebRequest webRequest, HttpRequestBase sourceHttpRequest, string cookieName)
+        /// <summary>
+        /// Gets the user's IP address from the request, handling proxy scenarios.
+        /// </summary>
+        public static string GetUserIpAddress(this HttpRequest request)
         {
-            Guard.NotNull(webRequest, nameof(webRequest));
-            Guard.NotNull(sourceHttpRequest, nameof(sourceHttpRequest));
-            Guard.NotEmpty(cookieName, nameof(cookieName));
-
-            var sourceCookie = sourceHttpRequest.Cookies[cookieName];
-            if (sourceCookie == null)
-                return;
-
-            var sendCookie = new Cookie(sourceCookie.Name, sourceCookie.Value, sourceCookie.Path, sourceHttpRequest.Url.Host);
-
-            if (webRequest.CookieContainer == null)
+            // Check for forwarded IP first (proxy scenarios)
+            var forwardedFor = request.Headers["X-Forwarded-For"].FirstOrDefault();
+            if (!string.IsNullOrEmpty(forwardedFor))
             {
-                webRequest.CookieContainer = new CookieContainer();
-            }
-
-            webRequest.CookieContainer.Add(sendCookie);
-        }
-
-        public static string BuildScopedKey(this Cache cache, string key)
-        {
-            return key.HasValue() ? CacheRegionName + key : null;
-        }
-
-        public static T GetOrAdd<T>(this Cache cache, string key, Func<T> acquirer, TimeSpan? duration = null)
-        {
-            Guard.NotEmpty(key, nameof(key));
-            Guard.NotNull(acquirer, nameof(acquirer));
-
-            object obj = cache.Get(key);
-
-            if (obj != null)
-            {
-                return (T)obj;
-            }
-
-            var value = acquirer();
-
-            var absoluteExpiration = Cache.NoAbsoluteExpiration;
-            if (duration.HasValue)
-            {
-                absoluteExpiration = DateTime.UtcNow + duration.Value;
-            }
-
-            cache.Insert(key, value, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration);
-
-            return value;
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void RememberAppRelativePath(this HttpContextBase httpContext)
-        {
-            httpContext.Items[RememberPathKey] = httpContext.Request.AppRelativeCurrentExecutionFilePath;
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static string GetOriginalAppRelativePath(this HttpContextBase httpContext)
-        {
-            return GetItem<string>(httpContext, RememberPathKey, forceCreation: false) ?? httpContext.Request.AppRelativeCurrentExecutionFilePath;
-        }
-
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static T GetItem<T>(this HttpContext httpContext, string key, Func<T> factory = null, bool forceCreation = true)
-        {
-            return GetItem<T>(new HttpContextWrapper(httpContext), key, factory, forceCreation);
-        }
-
-        public static T GetItem<T>(this HttpContextBase httpContext, string key, Func<T> factory = null, bool forceCreation = true)
-        {
-            Guard.NotEmpty(key, nameof(key));
-
-            var items = httpContext?.Items;
-            if (items == null)
-            {
-                return default(T);
-            }
-
-            if (items.Contains(key))
-            {
-                return (T)items[key];
-            }
-            else
-            {
-                if (forceCreation)
+                var ips = forwardedFor.Split(',');
+                if (ips.Length > 0)
                 {
-                    var item = items[key] = (factory ?? (() => Activator.CreateInstance<T>())).Invoke();
-                    return (T)item;
-                }
-                else
-                {
-                    return default(T);
-                }
-            }
-        }
-
-        public static void RemoveByPattern(this Cache cache, string pattern)
-        {
-            var keys = cache.AllKeys(pattern);
-
-            foreach (var key in keys.ToArray())
-            {
-                cache.Remove(key);
-            }
-        }
-
-        public static string[] AllKeys(this Cache cache, string pattern)
-        {
-            pattern = pattern == "*" ? CacheRegionName : pattern;
-
-            var keys = from entry in HttpRuntime.Cache.AsParallel().Cast<DictionaryEntry>()
-                       let key = entry.Key.ToString()
-                       where key.StartsWith(pattern, StringComparison.OrdinalIgnoreCase)
-                       select key;
-
-            return keys.ToArray();
-        }
-
-        public static ControllerContext GetRootControllerContext(this ControllerContext controllerContext)
-        {
-            Guard.NotNull(controllerContext, nameof(controllerContext));
-
-            var ctx = controllerContext;
-
-            while (ctx.ParentActionViewContext != null)
-            {
-                ctx = ctx.ParentActionViewContext;
-            }
-
-            return ctx;
-        }
-
-        public static bool IsBareBonePage(this ControllerContext controllerContext)
-        {
-            var ctx = controllerContext.GetRootControllerContext();
-
-            if (ctx is ViewContext viewContext)
-            {
-                // IsPopUp or Framed
-                if (viewContext.ViewBag.IsPopup == true || viewContext.ViewBag.Framed == true)
-                {
-                    return true;
+                    return ips[0].Trim();
                 }
             }
 
-            return false;
+            var realIp = request.Headers["X-Real-IP"].FirstOrDefault();
+            if (!string.IsNullOrEmpty(realIp))
+            {
+                return realIp;
+            }
+
+            // Fall back to connection remote IP
+            return request.HttpContext.Connection.RemoteIpAddress?.ToString() ?? "127.0.0.1";
+        }
+
+        /// <summary>
+        /// Gets the user agent string from the request.
+        /// </summary>
+        public static string GetUserAgent(this HttpRequest request)
+        {
+            return request.Headers["User-Agent"].FirstOrDefault() ?? string.Empty;
+        }
+
+        /// <summary>
+        /// Determines if the request is from a mobile device.
+        /// </summary>
+        public static bool IsMobileDevice(this HttpRequest request)
+        {
+            var userAgent = request.GetUserAgent().ToLowerInvariant();
+            
+            var mobileKeywords = new[]
+            {
+                "mobile", "android", "iphone", "ipad", "ipod", "blackberry", 
+                "windows phone", "palm", "symbian", "opera mini", "opera mobi"
+            };
+
+            return mobileKeywords.Any(keyword => userAgent.Contains(keyword));
         }
     }
 }

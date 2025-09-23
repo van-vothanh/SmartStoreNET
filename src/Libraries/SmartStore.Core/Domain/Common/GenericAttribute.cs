@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
+using SmartStore.Core.Compatibility;
 namespace SmartStore.Core.Domain.Common
 {
     /// <summary>

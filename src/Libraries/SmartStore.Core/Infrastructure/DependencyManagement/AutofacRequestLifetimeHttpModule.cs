@@ -1,76 +1,108 @@
-﻿using System;
-using System.Web;
-using Autofac.Integration.Mvc;
+using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
     /// <summary>
-    /// An <see cref="IHttpModule"/> and <see cref="ILifetimeScopeProvider"/> implementation 
-    /// that creates a nested lifetime scope for each HTTP request.
+    /// Middleware that creates a nested lifetime scope for each HTTP request.
+    /// This replaces the old IHttpModule implementation for ASP.NET Core.
     /// </summary>
-    public class AutofacRequestLifetimeHttpModule : IHttpModule
+    public class AutofacRequestLifetimeMiddleware
     {
-        public void Init(HttpApplication context)
-        {
-            Guard.NotNull(context, nameof(context));
+        private readonly RequestDelegate _next;
 
-            context.EndRequest += OnEndRequest;
+        public AutofacRequestLifetimeMiddleware(RequestDelegate next)
+        {
+            _next = next;
         }
 
-        public static void OnEndRequest(object sender, EventArgs e)
+        public async Task InvokeAsync(HttpContext context)
         {
-            if (LifetimeScopeProvider != null)
+            try
             {
-                LifetimeScopeProvider.EndLifetimeScope();
+                await _next(context);
             }
-
-            // Dispose all other disposable object in HttpContext.Items
-            PurgeContextItems(sender as HttpApplication);
+            finally
+            {
+                // Clean up disposable items from HttpContext.Items
+                PurgeContextItems(context);
+            }
         }
 
-        private static void PurgeContextItems(HttpApplication app)
+        private static void PurgeContextItems(HttpContext context)
         {
-            var items = app?.Context?.Items;
+            var items = context?.Items;
 
-            if (items != null)
+            if (items != null && items.Count > 0)
             {
-                int size = items.Count;
-                if (size > 0)
-                {
-                    var keys = new object[size];
-                    items.Keys.CopyTo(keys, 0);
+                var keys = new object[items.Count];
+                items.Keys.CopyTo(keys, 0);
 
-                    for (int i = 0; i < size; i++)
+                foreach (var key in keys)
+                {
+                    if (items[key] is IDisposable disposable)
                     {
-                        var obj = items[keys[i]] as IDisposable;
-                        if (obj != null)
+                        try
                         {
-                            try
-                            {
-                                obj.Dispose();
-                            }
-                            catch { }
+                            disposable.Dispose();
+                        }
+                        catch
+                        {
+                            // Ignore disposal errors
                         }
                     }
                 }
             }
         }
+    }
 
-        public static void SetLifetimeScopeProvider(ILifetimeScopeProvider lifetimeScopeProvider)
+    /// <summary>
+    /// Legacy interface for backward compatibility.
+    /// In ASP.NET Core, lifetime scopes are managed by the built-in DI container.
+    /// </summary>
+    public interface ILifetimeScopeProvider
+    {
+        ILifetimeScope ApplicationContainer { get; }
+        ILifetimeScope RequestLifetime { get; }
+        void EndLifetimeScope();
+    }
+
+    /// <summary>
+    /// Default implementation of ILifetimeScopeProvider for ASP.NET Core.
+    /// </summary>
+    public class DefaultLifetimeScopeProvider : ILifetimeScopeProvider
+    {
+        private readonly ILifetimeScope _applicationContainer;
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public DefaultLifetimeScopeProvider(ILifetimeScope applicationContainer, IHttpContextAccessor httpContextAccessor)
         {
-            LifetimeScopeProvider = lifetimeScopeProvider ?? throw new ArgumentNullException("lifetimeScopeProvider");
+            _applicationContainer = applicationContainer;
+            _httpContextAccessor = httpContextAccessor;
         }
 
+        public ILifetimeScope ApplicationContainer => _applicationContainer;
 
-        internal static ILifetimeScopeProvider LifetimeScopeProvider
+        public ILifetimeScope RequestLifetime
         {
-            get;
-            private set;
+            get
+            {
+                var context = _httpContextAccessor.HttpContext;
+                if (context != null)
+                {
+                    return context.RequestServices.GetAutofacRoot();
+                }
+                return _applicationContainer;
+            }
         }
 
-        public void Dispose()
+        public void EndLifetimeScope()
         {
+            // In ASP.NET Core, request scopes are automatically disposed
+            // This method is kept for backward compatibility
         }
-
     }
 }
