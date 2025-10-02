@@ -1,8 +1,8 @@
 using System;
 
-namespace SmartStore.Core.Infrastructure
+namespace SmartStore.Core.IO
 {
-    public class ContextState<T>
+    public interface IVirtualPathProvider
     {
         // Stub implementation for migration
     }

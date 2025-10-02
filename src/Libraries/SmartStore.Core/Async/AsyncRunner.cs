@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -344,7 +344,7 @@ namespace SmartStore.Core.Async
         }
     }
 
-    internal class BackgroundWorkHost : IRegisteredObject
+    internal class BackgroundWorkHost : IHostedService
     {
         private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
         private int _numRunningWorkItems;
@@ -355,6 +355,17 @@ namespace SmartStore.Core.Async
         }
 
         public CancellationTokenSource ShutdownCancellationTokenSource => _shutdownCancellationTokenSource;
+
+        public Task StartAsync(CancellationToken cancellationToken)
+        {
+            return Task.CompletedTask;
+        }
+
+        public Task StopAsync(CancellationToken cancellationToken)
+        {
+            Stop(false);
+            return Task.CompletedTask;
+        }
 
         public void Stop(bool immediate)
         {

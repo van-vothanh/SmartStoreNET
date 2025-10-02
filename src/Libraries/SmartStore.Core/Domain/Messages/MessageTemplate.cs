@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Domain.Stores;
 
@@ -43,7 +42,6 @@ namespace SmartStore.Core.Domain.Messages
         /// <summary>
         /// Gets or sets the body
         /// </summary>
-		[AllowHtml]
         public string Body { get; set; }
 
         /// <summary>

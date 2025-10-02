@@ -83,7 +83,7 @@ namespace SmartStore.Core
         /// .axd
         /// .ashx
         /// </remarks>
-        bool IsStaticResource(HttpRequest request);
+        bool IsStaticResource(Microsoft.AspNetCore.Http.HttpRequest request);
 
         /// <summary>
         /// Maps a virtual path to a physical disk path.
