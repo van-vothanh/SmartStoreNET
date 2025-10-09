@@ -12,7 +12,6 @@ namespace SmartStore.Core.Domain.Customers
         /// <summary>
         /// Gets or sets the store identifier. Should not be zero.
         /// </summary>
-        [Index("IX_StoreId_CreatedOn", 0)]
         public int StoreId { get; set; }
 
         /// <summary>
@@ -43,7 +42,6 @@ namespace SmartStore.Core.Domain.Customers
         /// <summary>
         /// Gets or sets the date ehen the entry was created (in UTC).
         /// </summary>
-        [Index("IX_StoreId_CreatedOn", 1)]
         public DateTime CreatedOnUtc { get; set; }
 
         /// <summary>

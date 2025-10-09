@@ -43,7 +43,6 @@ namespace SmartStore.Core.Domain.Messages
         /// <summary>
         /// Gets or sets the body
         /// </summary>
-		[AllowHtml]
         public string Body { get; set; }
 
         /// <summary>
