@@ -545,35 +545,35 @@ namespace SmartStore
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string UrlEncode(this string value)
         {
-            return HttpUtility.UrlEncode(value);
+            return WebUtility.UrlEncode(value);
         }
 
         [DebuggerStepThrough]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string UrlDecode(this string value)
         {
-            return HttpUtility.UrlDecode(value);
+            return WebUtility.UrlDecode(value);
         }
 
         [DebuggerStepThrough]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string AttributeEncode(this string value)
         {
-            return HttpUtility.HtmlAttributeEncode(value);
+            return WebUtility.HtmlAttributeEncode(value);
         }
 
         [DebuggerStepThrough]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string HtmlEncode(this string value)
         {
-            return HttpUtility.HtmlEncode(value);
+            return WebUtility.HtmlEncode(value);
         }
 
         [DebuggerStepThrough]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string HtmlDecode(this string value)
         {
-            return HttpUtility.HtmlDecode(value);
+            return WebUtility.HtmlDecode(value);
         }
 
         [Obsolete("The 'removeTags' parameter is not supported anymore. Use the parameterless method instead.")]
@@ -820,7 +820,7 @@ namespace SmartStore
             if (name.StartsWith("data"))
                 name = name.Insert(4, "-");
 
-            return string.Format(" {0}=\"{1}\"", name, htmlEncode ? HttpUtility.HtmlEncode(value) : value);
+            return string.Format(" {0}=\"{1}\"", name, htmlEncode ? WebUtility.HtmlEncode(value) : value);
         }
 
         /// <summary>

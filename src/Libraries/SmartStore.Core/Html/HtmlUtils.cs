@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
+using System.Net;
 using AngleSharp;
 using AngleSharp.Dom;
-using AngleSharp.Extensions;
-using AngleSharp.Parser.Html;
-using Ganss.XSS;
+using AngleSharp.Html.Parser;
+using Ganss.Xss;
 using SmartStore.Utilities.ObjectPools;
 
 namespace SmartStore.Core.Html
@@ -60,7 +59,7 @@ namespace SmartStore.Core.Html
                 }
                 else
                 {
-                    text = HttpUtility.HtmlEncode(text);
+                    text = WebUtility.HtmlEncode(text);
                 }
 
                 if (convertPlainTextToHtml)
@@ -245,7 +244,7 @@ namespace SmartStore.Core.Html
                 return string.Empty;
 
             if (decode)
-                text = HttpUtility.HtmlDecode(text);
+                text = WebUtility.HtmlDecode(text);
 
             text = text.Replace("<br>", "\n");
             text = text.Replace("<br >", "\n");

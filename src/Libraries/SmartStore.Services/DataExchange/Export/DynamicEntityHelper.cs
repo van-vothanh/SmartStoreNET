@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -125,10 +125,10 @@ namespace SmartStore.Services.DataExchange.Export
                 if (description.HasValue() && ctx.Projection.DescriptionToPlainText)
                 {
                     //Regex reg = new Regex("<[^>]+>", RegexOptions.IgnoreCase);
-                    //description = HttpUtility.HtmlDecode(reg.Replace(description, ""));
+                    //description = WebUtility.HtmlDecode(reg.Replace(description, ""));
 
                     description = HtmlUtils.ConvertHtmlToPlainText(description);
-                    description = HtmlUtils.StripTags(HttpUtility.HtmlDecode(description));
+                    description = HtmlUtils.StripTags(WebUtility.HtmlDecode(description));
                 }
 
                 dynObject.FullDescription = description.TrimSafe();

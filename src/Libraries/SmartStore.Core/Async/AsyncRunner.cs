@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 

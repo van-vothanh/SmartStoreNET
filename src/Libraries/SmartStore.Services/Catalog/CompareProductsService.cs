@@ -15,13 +15,13 @@ namespace SmartStore.Services.Catalog
     {
         private const string COMPARE_PRODUCTS_COOKIE_NAME = "sm.CompareProducts";
 
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly IProductService _productService;
         private readonly ICatalogSearchService _catalogSearchService;
         private readonly PrivacySettings _privacySettings;
 
         public CompareProductsService(
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             IProductService productService,
             ICatalogSearchService catalogSearchService,
             PrivacySettings privacySettings)

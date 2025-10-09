@@ -67,7 +67,7 @@ namespace SmartStore.Core.Html.CodeFormatter
                     var csf = new CSharpFormat();
                     csf.LineNumbers = options.DisplayLineNumbers;
                     csf.Alternate = options.AlternateLineNumbers;
-                    return HttpUtility.HtmlDecode(csf.FormatCode(text));
+                    return WebUtility.HtmlDecode(csf.FormatCode(text));
 
                 case "vb":
                     var vbf = new VisualBasicFormat();
@@ -79,14 +79,14 @@ namespace SmartStore.Core.Html.CodeFormatter
                     var jsf = new JavaScriptFormat();
                     jsf.LineNumbers = options.DisplayLineNumbers;
                     jsf.Alternate = options.AlternateLineNumbers;
-                    return HttpUtility.HtmlDecode(jsf.FormatCode(text));
+                    return WebUtility.HtmlDecode(jsf.FormatCode(text));
 
                 case "html":
                     var htmlf = new HtmlFormat();
                     htmlf.LineNumbers = options.DisplayLineNumbers;
                     htmlf.Alternate = options.AlternateLineNumbers;
                     text = StripHtml(text).Trim();
-                    string code = htmlf.FormatCode(HttpUtility.HtmlDecode(text)).Trim();
+                    string code = htmlf.FormatCode(WebUtility.HtmlDecode(text)).Trim();
                     return code.Replace("\r\n", "<br />").Replace("\n", "<br />");
 
                 case "xml":
@@ -95,20 +95,20 @@ namespace SmartStore.Core.Html.CodeFormatter
                     xmlf.Alternate = options.AlternateLineNumbers;
                     text = text.Replace("<br />", "\r\n");
                     text = StripHtml(text).Trim();
-                    string xml = xmlf.FormatCode(HttpUtility.HtmlDecode(text)).Trim();
+                    string xml = xmlf.FormatCode(WebUtility.HtmlDecode(text)).Trim();
                     return xml.Replace("\r\n", "<br />").Replace("\n", "<br />");
 
                 case "tsql":
                     var tsqlf = new TsqlFormat();
                     tsqlf.LineNumbers = options.DisplayLineNumbers;
                     tsqlf.Alternate = options.AlternateLineNumbers;
-                    return HttpUtility.HtmlDecode(tsqlf.FormatCode(text));
+                    return WebUtility.HtmlDecode(tsqlf.FormatCode(text));
 
                 case "msh":
                     var mshf = new MshFormat();
                     mshf.LineNumbers = options.DisplayLineNumbers;
                     mshf.Alternate = options.AlternateLineNumbers;
-                    return HttpUtility.HtmlDecode(mshf.FormatCode(text));
+                    return WebUtility.HtmlDecode(mshf.FormatCode(text));
 
             }
 

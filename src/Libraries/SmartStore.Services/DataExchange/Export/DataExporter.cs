@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
@@ -54,7 +54,7 @@ namespace SmartStore.Services.DataExchange.Export
 
         private readonly ICommonServices _services;
         private readonly IDbContext _dbContext;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly Lazy<IPriceFormatter> _priceFormatter;
         private readonly Lazy<IExportProfileService> _exportProfileService;
         private readonly Lazy<ILocalizedEntityService> _localizedEntityService;
@@ -103,7 +103,7 @@ namespace SmartStore.Services.DataExchange.Export
         public DataExporter(
             ICommonServices services,
             IDbContext dbContext,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             Lazy<IPriceFormatter> priceFormatter,
             Lazy<IExportProfileService> exportProfileService,
             Lazy<ILocalizedEntityService> localizedEntityService,
@@ -766,7 +766,7 @@ namespace SmartStore.Services.DataExchange.Export
             if (ctx.IsFileBasedExport && File.Exists(zipPath))
             {
                 var fileName = Path.GetFileName(zipPath);
-                body.AppendFormat("<p><a href='{0}{1}' download>{2}</a></p>", downloadUrl, HttpUtility.UrlEncode(fileName), fileName);
+                body.AppendFormat("<p><a href='{0}{1}' download>{2}</a></p>", downloadUrl, WebUtility.UrlEncode(fileName), fileName);
             }
 
             if (ctx.IsFileBasedExport && ctx.Result.Files.Any())
@@ -774,7 +774,7 @@ namespace SmartStore.Services.DataExchange.Export
                 body.Append("<p>");
                 foreach (var file in ctx.Result.Files)
                 {
-                    body.AppendFormat("<div><a href='{0}{1}' download>{2}</a></div>", downloadUrl, HttpUtility.UrlEncode(file.FileName), file.FileName);
+                    body.AppendFormat("<div><a href='{0}{1}' download>{2}</a></div>", downloadUrl, WebUtility.UrlEncode(file.FileName), file.FileName);
                 }
                 body.Append("</p>");
             }

@@ -3,7 +3,7 @@ using System.Web;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpResponse : HttpResponseBase
+    public class FakeHttpResponse : HttpResponse
     {
         private readonly HttpCookieCollection _cookies;
         private readonly StringBuilder _outputString = new StringBuilder();

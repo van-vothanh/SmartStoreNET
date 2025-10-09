@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Utilities;
 
 namespace SmartStore.Core.IO
@@ -120,7 +120,7 @@ namespace SmartStore.Core.IO
         /// <returns>The relative path combined with the public path in an URL friendly format ('/' character for directory separator).</returns>
         protected virtual string MapPublic(string path)
         {
-            return string.IsNullOrEmpty(path) ? _publicPath : HttpUtility.UrlDecode(Path.Combine(_publicPath, path).Replace(Path.DirectorySeparatorChar, '/'));
+            return string.IsNullOrEmpty(path) ? _publicPath : WebUtility.UrlDecode(Path.Combine(_publicPath, path).Replace(Path.DirectorySeparatorChar, '/'));
         }
 
         static string Fix(string path)
@@ -153,7 +153,7 @@ namespace SmartStore.Core.IO
 
                 if (url.StartsWith(_publicPath))
                 {
-                    return HttpUtility.UrlDecode(url.Substring(_publicPath.Length).Replace('/', Path.DirectorySeparatorChar));
+                    return WebUtility.UrlDecode(url.Substring(_publicPath.Length).Replace('/', Path.DirectorySeparatorChar));
                 }
             }
 

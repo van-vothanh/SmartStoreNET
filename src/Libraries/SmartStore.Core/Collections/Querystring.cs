@@ -69,7 +69,7 @@ namespace SmartStore.Collections
                 }
 
                 string[] split = keyValuePair.Split('=');
-                base.Add(split[0], split.Length == 2 ? (urlDecode ? HttpUtility.UrlDecode(split[1]) : split[1]) : "");
+                base.Add(split[0], split.Length == 2 ? (urlDecode ? WebUtility.UrlDecode(split[1]) : split[1]) : "");
             }
 
             return this;
@@ -120,15 +120,15 @@ namespace SmartStore.Collections
             string existingValue = base[name];
             if (string.IsNullOrEmpty(existingValue))
             {
-                base.Add(name, HttpUtility.UrlEncode(value));
+                base.Add(name, WebUtility.UrlEncode(value));
             }
             else if (isUnique)
             {
-                base[name] = HttpUtility.UrlEncode(value);
+                base[name] = WebUtility.UrlEncode(value);
             }
             else
             {
-                base[name] += "," + HttpUtility.UrlEncode(value);
+                base[name] += "," + WebUtility.UrlEncode(value);
             }
 
             return this;
@@ -164,14 +164,14 @@ namespace SmartStore.Collections
         /// </summary>
         /// <param name="name"></param>
         /// <returns>the associated decoded value for the specified name</returns>
-        public new string this[string name] => HttpUtility.UrlDecode(base[name]);
+        public new string this[string name] => WebUtility.UrlDecode(base[name]);
 
         /// <summary>
         /// overrides the default indexer
         /// </summary>
         /// <param name="index"></param>
         /// <returns>the associated decoded value for the specified index</returns>
-        public new string this[int index] => HttpUtility.UrlDecode(base[index]);
+        public new string this[int index] => WebUtility.UrlDecode(base[index]);
 
         /// <summary>
         /// checks if a name already exists within the query string collection
@@ -216,12 +216,12 @@ namespace SmartStore.Collections
                     {
                         foreach (string val in value.EmptyNull().Split(','))
                         {
-                            builder.Append(HttpUtility.UrlEncode(key)).Append("=").Append(val);
+                            builder.Append(WebUtility.UrlEncode(key)).Append("=").Append(val);
                         }
                     }
                     else
                     {
-                        builder.Append(HttpUtility.UrlEncode(key)).Append("=").Append(value);
+                        builder.Append(WebUtility.UrlEncode(key)).Append("=").Append(value);
                     }
                 }
             }

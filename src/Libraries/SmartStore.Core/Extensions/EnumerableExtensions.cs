@@ -382,18 +382,18 @@ namespace SmartStore
                     if (!encode)
                         sb.Append(str);
                     else if (encoding == null)
-                        sb.Append(HttpUtility.UrlEncode(str));
+                        sb.Append(WebUtility.UrlEncode(str));
                     else
-                        sb.Append(HttpUtility.UrlEncode(str, encoding));
+                        sb.Append(WebUtility.UrlEncode(str, encoding));
 
                     sb.Append('=');
 
                     if (!encode)
                         sb.Append(nvc[str]);
                     else if (encoding == null)
-                        sb.Append(HttpUtility.UrlEncode(nvc[str]));
+                        sb.Append(WebUtility.UrlEncode(nvc[str]));
                     else
-                        sb.Append(HttpUtility.UrlEncode(nvc[str], encoding));
+                        sb.Append(WebUtility.UrlEncode(nvc[str], encoding));
                 }
             }
 

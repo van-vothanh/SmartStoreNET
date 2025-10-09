@@ -99,7 +99,7 @@ namespace SmartStore.Services.Orders
                             string attributeName = ca.GetLocalized(a => a.Name, _workContext.WorkingLanguage);
                             //encode (if required)
                             if (htmlEncode)
-                                attributeName = HttpUtility.HtmlEncode(attributeName);
+                                attributeName = WebUtility.HtmlEncode(attributeName);
 
                             caAttribute = string.Format("{0}: {1}", attributeName,
                                 HtmlUtils.ConvertPlainTextToHtml(valueStr.EmptyNull().Replace(":", "").HtmlEncode()));
@@ -119,7 +119,7 @@ namespace SmartStore.Services.Orders
                                 var fileName = download.MediaFile.Name;
                                 //encode (if required)
                                 if (htmlEncode)
-                                    fileName = HttpUtility.HtmlEncode(fileName);
+                                    fileName = WebUtility.HtmlEncode(fileName);
                                 if (allowHyperlinks)
                                 {
                                     //hyperlinks are allowed
@@ -134,7 +134,7 @@ namespace SmartStore.Services.Orders
                                 string attributeName = ca.GetLocalized(a => a.Name, _workContext.WorkingLanguage);
                                 //encode (if required)
                                 if (htmlEncode)
-                                    attributeName = HttpUtility.HtmlEncode(attributeName);
+                                    attributeName = WebUtility.HtmlEncode(attributeName);
                                 caAttribute = string.Format("{0}: {1}", attributeName, attributeText);
                             }
                         }
@@ -144,7 +144,7 @@ namespace SmartStore.Services.Orders
                             caAttribute = string.Format("{0}: {1}", ca.GetLocalized(a => a.Name, _workContext.WorkingLanguage), valueStr);
                             //encode (if required)
                             if (htmlEncode)
-                                caAttribute = HttpUtility.HtmlEncode(caAttribute);
+                                caAttribute = WebUtility.HtmlEncode(caAttribute);
                         }
                     }
                     else
@@ -169,7 +169,7 @@ namespace SmartStore.Services.Orders
                             }
                             //encode (if required)
                             if (htmlEncode)
-                                caAttribute = HttpUtility.HtmlEncode(caAttribute);
+                                caAttribute = WebUtility.HtmlEncode(caAttribute);
                         }
                     }
 

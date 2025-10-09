@@ -121,7 +121,7 @@ namespace SmartStore.Services.Catalog
 
                                 if (htmlEncode)
                                 {
-                                    attributeName = HttpUtility.HtmlEncode(attributeName);
+                                    attributeName = WebUtility.HtmlEncode(attributeName);
                                 }
 
                                 pvaAttribute = string.Format("{0}: {1}", attributeName, HtmlUtils.ConvertPlainTextToHtml(valueStr.HtmlEncode()));
@@ -140,7 +140,7 @@ namespace SmartStore.Services.Catalog
 
                                     if (htmlEncode)
                                     {
-                                        fileName = HttpUtility.HtmlEncode(fileName);
+                                        fileName = WebUtility.HtmlEncode(fileName);
                                     }
 
                                     if (allowHyperlinks)
@@ -157,7 +157,7 @@ namespace SmartStore.Services.Catalog
 
                                     if (htmlEncode)
                                     {
-                                        attributeName = HttpUtility.HtmlEncode(attributeName);
+                                        attributeName = WebUtility.HtmlEncode(attributeName);
                                     }
 
                                     pvaAttribute = string.Format("{0}: {1}", attributeName, attributeText);
@@ -170,7 +170,7 @@ namespace SmartStore.Services.Catalog
 
                                 if (htmlEncode)
                                 {
-                                    pvaAttribute = HttpUtility.HtmlEncode(pvaAttribute);
+                                    pvaAttribute = WebUtility.HtmlEncode(pvaAttribute);
                                 }
                             }
                         }
@@ -215,7 +215,7 @@ namespace SmartStore.Services.Catalog
 
                                 if (htmlEncode)
                                 {
-                                    pvaAttribute = HttpUtility.HtmlEncode(pvaAttribute);
+                                    pvaAttribute = WebUtility.HtmlEncode(pvaAttribute);
                                 }
                             }
                         }
@@ -252,8 +252,8 @@ namespace SmartStore.Services.Catalog
 
                     if (htmlEncode)
                     {
-                        giftCardFrom = HttpUtility.HtmlEncode(giftCardFrom);
-                        giftCardFor = HttpUtility.HtmlEncode(giftCardFor);
+                        giftCardFrom = WebUtility.HtmlEncode(giftCardFrom);
+                        giftCardFor = WebUtility.HtmlEncode(giftCardFor);
                     }
 
                     if (!string.IsNullOrEmpty(result.ToString()))

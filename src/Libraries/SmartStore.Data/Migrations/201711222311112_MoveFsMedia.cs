@@ -2,7 +2,7 @@ namespace SmartStore.Data.Migrations
 {
     using System.Data.Entity.Migrations;
     using System.IO;
-    using System.Web.Hosting;
+    using Microsoft.AspNetCore.Hosting;
     using Core.Data;
     using SmartStore.Data.Setup;
     using SmartStore.Data.Utilities;

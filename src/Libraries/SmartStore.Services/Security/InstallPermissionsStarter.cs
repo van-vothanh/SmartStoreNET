@@ -39,7 +39,7 @@ namespace SmartStore.Services.Security
         public bool ThrowOnError => true;
         public int MaxAttempts => 1;
 
-        public void Start(HttpContextBase httpContext)
+        public void Start(HttpContext httpContext)
         {
             var removeUnusedPermissions = true;
             var providers = new List<IPermissionProvider>();

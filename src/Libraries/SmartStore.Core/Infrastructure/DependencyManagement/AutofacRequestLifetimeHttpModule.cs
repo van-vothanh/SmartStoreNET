@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web;
-using Autofac.Integration.Mvc;
+using Autofac.Extensions.DependencyInjection;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web.Security;
+using Microsoft.AspNetCore.Authentication;
 using SmartStore.Core.Domain.Security;
 
 namespace SmartStore.Services.Security
