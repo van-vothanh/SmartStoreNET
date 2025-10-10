@@ -2,7 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -23,7 +23,7 @@ namespace SmartStore.Core.Caching
         public const string FakeNull = "__[NULL]__";
 
         private readonly Work<ICacheScopeAccessor> _scopeAccessor;
-        private MemoryCache _cache;
+        private IMemoryCache _cache;
 
         public MemoryCacheManager(Work<ICacheScopeAccessor> scopeAccessor)
         {
@@ -31,9 +31,9 @@ namespace SmartStore.Core.Caching
             _cache = CreateCache();
         }
 
-        private MemoryCache CreateCache()
+        private IMemoryCache CreateCache()
         {
-            return new MemoryCache("SmartStore");
+            return new MemoryCache(new MemoryCacheOptions());
         }
 
         public bool IsDistributedCache => false;
