@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using SmartStore.Core.Data;
 using SmartStore.Utilities;
 

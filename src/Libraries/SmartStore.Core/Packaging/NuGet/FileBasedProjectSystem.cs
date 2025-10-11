@@ -1,85 +1,63 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Runtime.Versioning;
-using NuGet;
+// TODO: Migrate to direct file system operations
+// using NuGet;
 
 namespace SmartStore.Core.Packaging
 {
-    internal class FileBasedProjectSystem : PhysicalFileSystem, IProjectSystem
+    // TODO: Migrate to direct file system operations
+    // NuGet.Core IProjectSystem is obsolete
+    /*
+    public class FileBasedProjectSystem : PhysicalFileSystem, IProjectSystem
     {
-
-        public FileBasedProjectSystem(string root)
-            : base(root)
+        public FileBasedProjectSystem(string root) : base(root)
         {
         }
 
+        public FrameworkName TargetFramework => new FrameworkName(".NETFramework, Version=4.7.2");
+
         public void AddFrameworkReference(string name)
         {
-            throw new NotSupportedException();
         }
 
         public void AddImport(string targetPath, ProjectImportLocation location)
         {
-            throw new NotSupportedException();
         }
 
-        public void AddReference(string referencePath, Stream stream)
+        public dynamic GetPropertyValue(string propertyName)
         {
-            throw new NotSupportedException();
+            return null;
         }
-
-        public bool FileExistsInProject(string path)
-        {
-            return FileExists(path);
-        }
-
-        public bool IsBindingRedirectSupported => false;
 
         public bool IsSupportedFile(string path)
         {
             return true;
         }
 
-        public string ProjectName => Root;
-
-        protected virtual string GetReferencePath(string name)
-        {
-            return Path.Combine("bin", name);
-        }
+        public string ProjectName => Path.GetFileName(Root);
 
         public bool ReferenceExists(string name)
         {
-            string path = GetReferencePath(name);
-            return FileExists(path);
+            return false;
         }
 
         public void RemoveImport(string targetPath)
         {
-            throw new NotSupportedException();
         }
 
         public void RemoveReference(string name)
         {
-            throw new NotSupportedException();
         }
 
-        public string ResolvePath(string path)
+        public void AddReference(string referencePath, Stream stream)
         {
-            return GetFullPath(path);
         }
 
-        public FrameworkName TargetFramework => VersionUtility.DefaultTargetFramework;
-
-        public dynamic GetPropertyValue(string propertyName)
+        public bool FileExistsInProject(string path)
         {
-            if (propertyName == null)
-            {
-                return null;
-            }
-
-            // Return empty string for the root namespace of this project.
-            return propertyName.Equals("RootNamespace", StringComparison.OrdinalIgnoreCase) ? String.Empty : null;
+            return FileExists(path);
         }
     }
-
+    */
 }

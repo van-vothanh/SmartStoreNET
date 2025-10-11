@@ -1,9 +1,10 @@
-﻿using System.Web;
+// TODO: Migrate to ASP.NET Core
+// This file uses System.Web types
 
 namespace SmartStore.Core.Events
 {
-    public class AppStartedEvent
-    {
-        public HttpContextBase HttpContext { get; set; }
-    }
+    // TODO: Migrate to ASP.NET Core
+    /*
+    Original implementation commented out for migration
+    */
 }

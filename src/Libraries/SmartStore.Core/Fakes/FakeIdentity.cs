@@ -1,22 +1,12 @@
-﻿using System;
-using System.Security.Principal;
+// TODO: Migrate to ASP.NET Core test infrastructure
+// This file contains test fakes for System.Web which don't exist in ASP.NET Core
+// Use Microsoft.AspNetCore.TestHost or similar for testing
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeIdentity : IIdentity
-    {
-        private readonly string _name;
-
-        public FakeIdentity(string userName)
-        {
-            _name = userName;
-        }
-
-        public string AuthenticationType => throw new NotImplementedException();
-
-        public bool IsAuthenticated => !String.IsNullOrEmpty(_name);
-
-        public string Name => _name;
-
-    }
+    // TODO: Migrate to ASP.NET Core testing patterns
+    /*
+    Original Fake implementation commented out for migration
+    Use Microsoft.AspNetCore.TestHost, Microsoft.AspNetCore.Mvc.Testing, or similar
+    */
 }

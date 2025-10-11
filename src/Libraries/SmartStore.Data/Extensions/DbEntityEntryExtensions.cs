@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using SmartStore.Core.Data;
-using EfState = System.Data.Entity.EntityState;
+using EfState = Microsoft.EntityFrameworkCore.EntityState;
 
 namespace SmartStore.Data
 {
-    public static class DbEntityEntryExtensions
+    public static class EntityEntryExtensions
     {
-        public static void ReloadEntity(this DbEntityEntry entry)
+        public static void ReloadEntity(this EntityEntry entry)
         {
             try
             {
@@ -35,7 +35,7 @@ namespace SmartStore.Data
         /// was attached to the context the first time)
         /// Returns an empty dictionary if no modification could be detected.
         /// </returns>
-        public static IDictionary<string, object> GetModifiedProperties(this DbEntityEntry entry, IDbContext ctx)
+        public static IDictionary<string, object> GetModifiedProperties(this EntityEntry entry, IDbContext ctx)
         {
             var props = GetModifiedPropertyEntries(entry, ctx).ToDictionary(k => k.Name, v => v.OriginalValue);
 
@@ -46,19 +46,19 @@ namespace SmartStore.Data
 
         /// <summary>
         /// Checks whether an entity entry has any modified property. 
-        /// Only entities in <see cref="System.Data.Entity.EntityState.Modified"/> state are scanned for changes.
+        /// Only entities in <see cref="Microsoft.EntityFrameworkCore.EntityState.Modified"/> state are scanned for changes.
         /// Merged values provided by the <see cref="IMergedData"/> are ignored.
         /// </summary>
         /// <param name="entry">The entry instance</param>
         /// <param name="ctx">The data context</param>
         /// <returns><c>true</c> if any property has changed, <c>false</c> otherwise</returns>
-        public static bool HasChanges(this DbEntityEntry entry, IDbContext ctx)
+        public static bool HasChanges(this EntityEntry entry, IDbContext ctx)
         {
             var hasChanges = GetModifiedPropertyEntries(entry, ctx).Any();
             return hasChanges;
         }
 
-        internal static IEnumerable<DbPropertyEntry> GetModifiedPropertyEntries(this DbEntityEntry entry, IDbContext ctx)
+        internal static IEnumerable<DbPropertyEntry> GetModifiedPropertyEntries(this EntityEntry entry, IDbContext ctx)
         {
             // Be aware of the entity state. you cannot get modified properties for detached entities.
             EnsureChangesDetected(entry, ctx);
@@ -79,13 +79,13 @@ namespace SmartStore.Data
             }
         }
 
-        public static bool IsPropertyModified(this DbEntityEntry entry, IDbContext ctx, string propertyName)
+        public static bool IsPropertyModified(this EntityEntry entry, IDbContext ctx, string propertyName)
         {
             object originalValue;
             return TryGetModifiedProperty(entry, ctx, propertyName, out originalValue);
         }
 
-        public static bool TryGetModifiedProperty(this DbEntityEntry entry, IDbContext ctx, string propertyName, out object originalValue)
+        public static bool TryGetModifiedProperty(this EntityEntry entry, IDbContext ctx, string propertyName, out object originalValue)
         {
             Guard.NotEmpty(propertyName, nameof(propertyName));
 
@@ -109,7 +109,7 @@ namespace SmartStore.Data
             return false;
         }
 
-        private static void EnsureChangesDetected(DbEntityEntry entry, IDbContext ctx)
+        private static void EnsureChangesDetected(EntityEntry entry, IDbContext ctx)
         {
             var state = entry.State;
 
@@ -127,13 +127,13 @@ namespace SmartStore.Data
             }
         }
 
-        public static void DetectChangesInProperties(this DbEntityEntry entry, IDbContext ctx)
+        public static void DetectChangesInProperties(this EntityEntry entry, IDbContext ctx)
         {
             ctx.DetectChanges();
 
             #region Experimental
 
-            //// ChangeDetection for single entity: calls DbEntityEntry.InternalEntry > ObjectStateEntry._stateEntry.DetectChangesInProperties(bool)
+            //// ChangeDetection for single entity: calls EntityEntry.InternalEntry > ObjectStateEntry._stateEntry.DetectChangesInProperties(bool)
             //var invoked = false;
 
             //try

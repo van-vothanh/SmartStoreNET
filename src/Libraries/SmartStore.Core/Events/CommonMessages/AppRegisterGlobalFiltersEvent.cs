@@ -1,12 +1,10 @@
-﻿using System.Web.Mvc;
+// TODO: Migrate to ASP.NET Core
+// This file uses System.Web types
 
 namespace SmartStore.Core.Events
 {
-    /// <summary>
-    /// to register global filters in Application_Start
-    /// </summary>
-    public class AppRegisterGlobalFiltersEvent
-    {
-        public GlobalFilterCollection Filters { get; set; }
-    }
+    // TODO: Migrate to ASP.NET Core
+    /*
+    Original implementation commented out for migration
+    */
 }

@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Core.Objects;
+// using System.Data.Entity.Core.Objects; // Obsolete in EF Core
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;

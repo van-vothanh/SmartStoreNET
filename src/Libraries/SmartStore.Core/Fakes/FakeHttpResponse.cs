@@ -1,34 +1,12 @@
-﻿using System.Text;
-using System.Web;
+// TODO: Migrate to ASP.NET Core test infrastructure
+// This file contains test fakes for System.Web which don't exist in ASP.NET Core
+// Use Microsoft.AspNetCore.TestHost or similar for testing
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpResponse : HttpResponseBase
-    {
-        private readonly HttpCookieCollection _cookies;
-        private readonly StringBuilder _outputString = new StringBuilder();
-
-        public FakeHttpResponse()
-        {
-            this._cookies = new HttpCookieCollection();
-        }
-
-        public string ResponseOutput => _outputString.ToString();
-
-        public override int StatusCode { get; set; }
-
-        public override string RedirectLocation { get; set; }
-
-        public override void Write(string s)
-        {
-            _outputString.Append(s);
-        }
-
-        public override string ApplyAppPathModifier(string virtualPath)
-        {
-            return virtualPath;
-        }
-
-        public override HttpCookieCollection Cookies => _cookies;
-    }
+    // TODO: Migrate to ASP.NET Core testing patterns
+    /*
+    Original Fake implementation commented out for migration
+    Use Microsoft.AspNetCore.TestHost, Microsoft.AspNetCore.Mvc.Testing, or similar
+    */
 }

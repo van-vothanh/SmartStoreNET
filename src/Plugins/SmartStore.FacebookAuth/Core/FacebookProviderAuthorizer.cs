@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using DotNetOpenAuth.AspNet;
 using Newtonsoft.Json.Linq;
 using SmartStore.Core.Domain.Customers;

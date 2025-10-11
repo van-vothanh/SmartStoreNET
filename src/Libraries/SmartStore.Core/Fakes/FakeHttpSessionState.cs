@@ -1,53 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Specialized;
-using System.Web;
-using System.Web.SessionState;
+// TODO: Migrate to ASP.NET Core test infrastructure
+// This file contains test fakes for System.Web which don't exist in ASP.NET Core
+// Use Microsoft.AspNetCore.TestHost or similar for testing
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpSessionState : HttpSessionStateBase
-    {
-        private readonly SessionStateItemCollection _sessionItems;
-
-        public FakeHttpSessionState(SessionStateItemCollection sessionItems)
-        {
-            _sessionItems = sessionItems;
-        }
-
-        public override int Count => _sessionItems.Count;
-
-        public override NameObjectCollectionBase.KeysCollection Keys => _sessionItems.Keys;
-
-        public override object this[string name]
-        {
-            get => _sessionItems[name];
-            set => _sessionItems[name] = value;
-        }
-
-        public bool Exists(string key)
-        {
-            return _sessionItems[key] != null;
-        }
-
-        public override object this[int index]
-        {
-            get => _sessionItems[index];
-            set => _sessionItems[index] = value;
-        }
-
-        public override void Add(string name, object value)
-        {
-            _sessionItems[name] = value;
-        }
-
-        public override IEnumerator GetEnumerator()
-        {
-            return _sessionItems.GetEnumerator();
-        }
-
-        public override void Remove(string name)
-        {
-            _sessionItems.Remove(name);
-        }
-    }
+    // TODO: Migrate to ASP.NET Core testing patterns
+    /*
+    Original Fake implementation commented out for migration
+    Use Microsoft.AspNetCore.TestHost, Microsoft.AspNetCore.Mvc.Testing, or similar
+    */
 }

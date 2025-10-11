@@ -1,21 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.UI;
+// TODO: Migrate to TagBuilder
+// This file uses System.Web.UI.HtmlTextWriter
 
-namespace SmartStore
+namespace SmartStore.Core.Extensions
 {
-    public static class HtmlTextWriterExtensions
-    {
-        public static void AddAttributes(this HtmlTextWriter writer, IDictionary<string, object> attributes)
-        {
-            if (attributes.Any())
-            {
-                foreach (var pair in attributes)
-                {
-                    if (pair.Value != null)
-                        writer.AddAttribute(pair.Key, pair.Value.ToString(), true);
-                }
-            }
-        }
-    }
+    // TODO: Migrate to ASP.NET Core
+    // Use TagBuilder from Microsoft.AspNetCore.Mvc.Rendering
+    /*
+    Original implementation commented out for migration
+    */
 }

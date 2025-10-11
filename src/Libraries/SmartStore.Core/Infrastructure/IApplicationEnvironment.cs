@@ -1,16 +1,11 @@
-﻿using SmartStore.Core.IO;
+// TODO: Migrate to IFileProvider
+// This file uses IVirtualFolder
 
-namespace SmartStore.Core
+namespace SmartStore.Core.Infrastructure
 {
+    // TODO: Migrate to ASP.NET Core
     public interface IApplicationEnvironment
     {
-        string MachineName { get; }
-        string EnvironmentIdentifier { get; }
-
-        IVirtualFolder WebRootFolder { get; }
-        IVirtualFolder AppDataFolder { get; }
-        IVirtualFolder ThemesFolder { get; }
-        IVirtualFolder PluginsFolder { get; }
-        IVirtualFolder TenantFolder { get; }
+        // Stub interface
     }
 }

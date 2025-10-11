@@ -1,15 +1,19 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
-using NuGet;
+// TODO: Migrate to NuGet.Protocol v3 API
+// NuGet.Core v2 API is obsolete
+// using NuGet;
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
 
 namespace SmartStore.Core.Packaging
 {
-
+    // TODO: Migrate to NuGet.Protocol v3 API
+    // This class used NuGet.Core v2 API which is obsolete
+    // See: https://docs.microsoft.com/en-us/nuget/reference/nuget-client-sdk
+    /*
     internal abstract class ExtensionReferenceRepository : PackageRepositoryBase
     {
-
         public ExtensionReferenceRepository(IProjectSystem project, IPackageRepository sourceRepository)
         {
             Guard.NotNull(project, nameof(project));
@@ -19,31 +23,14 @@ namespace SmartStore.Core.Packaging
             SourceRepository = sourceRepository;
         }
 
-        public IProjectSystem Project
-        {
-            get;
-            set;
-        }
-
-        public IPackageRepository SourceRepository
-        {
-            get;
-            set;
-        }
-
+        public IProjectSystem Project { get; set; }
+        public IPackageRepository SourceRepository { get; set; }
         public override void AddPackage(IPackage package) { }
-
         public override void RemovePackage(IPackage package) { }
-
-
         public override string Source => Project.Root;
-
         public override bool SupportsPrereleasePackages => true;
     }
 
-    /// <summary>
-    /// This repository implementation informs about what plugin packages are already installed.
-    /// </summary>
     internal class PluginReferenceRepository : ExtensionReferenceRepository
     {
         private readonly IList<PluginDescriptor> _descriptors;
@@ -66,12 +53,8 @@ namespace SmartStore.Core.Packaging
 
             return packages.AsQueryable();
         }
-
     }
 
-    /// <summary>
-    /// This repository implementation informs about what theme packages are already installed.
-    /// </summary>
     internal class ThemeReferenceRepository : ExtensionReferenceRepository
     {
         private readonly ICollection<ThemeManifest> _themeManifests;
@@ -94,7 +77,6 @@ namespace SmartStore.Core.Packaging
 
             return packages.AsQueryable();
         }
-
     }
-
+    */
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace SmartStore.Core.Data
@@ -151,7 +151,7 @@ namespace SmartStore.Core.Data
         /// <typeparam name="TEntity">Type of entity</typeparam>
         /// <param name="entity">The entity instance</param>
         /// <param name="requestedState">The requested new state</param>
-        void ChangeState<TEntity>(TEntity entity, System.Data.Entity.EntityState requestedState) where TEntity : BaseEntity;
+        void ChangeState<TEntity>(TEntity entity, Microsoft.EntityFrameworkCore.EntityState requestedState) where TEntity : BaseEntity;
 
         /// <summary>
         /// Reloads the entity from the database overwriting any property values with values from the database. 

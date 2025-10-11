@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Autofac;
 using NuGet;
 using SmartStore.Admin.Models.Catalog;

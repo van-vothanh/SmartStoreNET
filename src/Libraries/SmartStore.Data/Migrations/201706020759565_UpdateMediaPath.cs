@@ -1,7 +1,7 @@
 ﻿namespace SmartStore.Data.Migrations
 {
     using System.Data.Entity.Migrations;
-    using System.Web.Hosting;
+    using Microsoft.Extensions.Hosting;
     using Core.Data;
     using Setup;
 

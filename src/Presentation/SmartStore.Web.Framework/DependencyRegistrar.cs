@@ -9,7 +9,7 @@ using Autofac;
 using Autofac.Builder;
 using Autofac.Core;
 using Autofac.Core.Registration;
-using Autofac.Integration.Mvc;
+using Autofac.Extensions.DependencyInjection;
 using Autofac.Integration.WebApi;
 using SmartStore.ComponentModel;
 using SmartStore.Core;

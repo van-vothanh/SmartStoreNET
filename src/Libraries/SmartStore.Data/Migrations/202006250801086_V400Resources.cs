@@ -3,7 +3,7 @@ namespace SmartStore.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using System.Web.Hosting;
+    using Microsoft.Extensions.Hosting;
     using SmartStore.Core.Data;
     using SmartStore.Core.Domain.Configuration;
     using SmartStore.Core.Domain.Media;

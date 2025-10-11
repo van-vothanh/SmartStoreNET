@@ -1,15 +1,18 @@
-﻿using System;
-using NuGet;
+using System;
+// TODO: Migrate to Microsoft.Extensions.Logging
+// using NuGet;
 using SmartStore.Core.Logging;
-using Log = SmartStore.Core.Logging;
 
 namespace SmartStore.Core.Packaging
 {
-    internal class NugetLogger : NuGet.ILogger
+    // TODO: Migrate to Microsoft.Extensions.Logging
+    // NuGet.Core ILogger is obsolete
+    /*
+    public class NugetLogger : NuGet.ILogger
     {
-        private readonly Log.ILogger _logger;
+        private readonly ILogger _logger;
 
-        public NugetLogger(Log.ILogger logger)
+        public NugetLogger(ILogger logger)
         {
             _logger = logger;
         }
@@ -19,23 +22,24 @@ namespace SmartStore.Core.Packaging
             switch (level)
             {
                 case MessageLevel.Debug:
-                    _logger.Debug(String.Format(message, args));
-                    break;
-                case MessageLevel.Error:
-                    _logger.Error(String.Format(message, args));
+                    _logger.Debug(message, args);
                     break;
                 case MessageLevel.Info:
-                    _logger.Info(String.Format(message, args));
+                    _logger.Info(message, args);
                     break;
                 case MessageLevel.Warning:
-                    _logger.Warn(String.Format(message, args));
+                    _logger.Warn(message, args);
+                    break;
+                case MessageLevel.Error:
+                    _logger.Error(message, args);
                     break;
             }
         }
 
         public FileConflictResolution ResolveFileConflict(string message)
         {
-            return FileConflictResolution.OverwriteAll;
+            return FileConflictResolution.IgnoreAll;
         }
     }
+    */
 }

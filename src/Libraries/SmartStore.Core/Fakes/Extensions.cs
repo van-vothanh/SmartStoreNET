@@ -1,22 +1,12 @@
-﻿using System;
-using System.Web;
+// TODO: Migrate to ASP.NET Core test infrastructure
+// This file contains test fakes for System.Web which don't exist in ASP.NET Core
+// Use Microsoft.AspNetCore.TestHost or similar for testing
 
 namespace SmartStore.Core.Fakes
 {
-    public static class Extentions
-    {
-        /// <summary>
-        /// Indicates whether this context is fake
-        /// </summary>
-        /// <param name="httpContext">HTTP context</param>
-        /// <returns>Result</returns>
-        public static bool IsFakeContext(this HttpContextBase httpContext)
-        {
-            if (httpContext == null)
-                throw new ArgumentNullException("httpContext");
-
-            return httpContext is FakeHttpContext;
-        }
-
-    }
+    // TODO: Migrate to ASP.NET Core testing patterns
+    /*
+    Original Fake implementation commented out for migration
+    Use Microsoft.AspNetCore.TestHost, Microsoft.AspNetCore.Mvc.Testing, or similar
+    */
 }

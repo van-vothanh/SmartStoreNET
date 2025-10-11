@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Data.Entity.Validation;
 using System.Linq;
 using System.Linq.Expressions;
@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using SmartStore.Core;
 using SmartStore.Core.Data;
-using EfState = System.Data.Entity.EntityState;
+using EfState = Microsoft.EntityFrameworkCore.EntityState;
 
 namespace SmartStore.Data
 {

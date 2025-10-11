@@ -1,5 +1,5 @@
 ﻿using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using AmazonPay;
 using SmartStore.AmazonPay.Models;
 using SmartStore.Core.Domain.Orders;

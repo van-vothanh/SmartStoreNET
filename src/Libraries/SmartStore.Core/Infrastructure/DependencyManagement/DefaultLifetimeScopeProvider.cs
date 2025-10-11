@@ -1,32 +1,36 @@
-﻿using System;
+using System;
 using Autofac;
-using Autofac.Integration.Mvc;
+// TODO: Migrate to IServiceScopeFactory
+// using Autofac.Integration.Mvc;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
+    // TODO: Migrate to IServiceScopeFactory
+    // ILifetimeScopeProvider is from Autofac.Integration.Mvc which is obsolete
+    /*
     public class DefaultLifetimeScopeProvider : ILifetimeScopeProvider
     {
-        private readonly ILifetimeScopeAccessor _accessor;
+        private readonly ILifetimeScope _container;
 
-        public DefaultLifetimeScopeProvider(ILifetimeScopeAccessor accessor)
+        public DefaultLifetimeScopeProvider(ILifetimeScope container)
         {
-            Guard.NotNull(accessor, nameof(accessor));
-
-            this._accessor = accessor;
-            AutofacRequestLifetimeHttpModule.SetLifetimeScopeProvider(this);
+            _container = container;
         }
 
-        public ILifetimeScope ApplicationContainer => _accessor.ApplicationContainer;
-
-        public void EndLifetimeScope()
-        {
-            _accessor.EndLifetimeScope();
-        }
+        public ILifetimeScope ApplicationContainer => _container;
 
         public ILifetimeScope GetLifetimeScope(Action<ContainerBuilder> configurationAction)
         {
-            return _accessor.GetLifetimeScope(configurationAction);
+            return (configurationAction == null)
+                ? RequestLifetime
+                : RequestLifetime.BeginLifetimeScope(configurationAction);
         }
 
+        public ILifetimeScope RequestLifetime => AutofacDependencyResolver.Current.RequestLifetimeScope;
+
+        public void EndLifetimeScope()
+        {
+        }
     }
+    */
 }

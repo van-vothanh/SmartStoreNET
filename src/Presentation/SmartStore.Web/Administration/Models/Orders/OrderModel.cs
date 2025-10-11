@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Common;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Orders;

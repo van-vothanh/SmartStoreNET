@@ -1,25 +1,12 @@
-﻿using System.Linq;
-using System.Security.Principal;
+// TODO: Migrate to ASP.NET Core test infrastructure
+// This file contains test fakes for System.Web which don't exist in ASP.NET Core
+// Use Microsoft.AspNetCore.TestHost or similar for testing
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakePrincipal : IPrincipal
-    {
-        private readonly IIdentity _identity;
-        private readonly string[] _roles;
-
-        public FakePrincipal(IIdentity identity, string[] roles)
-        {
-            _identity = identity;
-            _roles = roles;
-        }
-
-
-        public IIdentity Identity => _identity;
-
-        public bool IsInRole(string role)
-        {
-            return _roles != null && _roles.Contains(role);
-        }
-    }
+    // TODO: Migrate to ASP.NET Core testing patterns
+    /*
+    Original Fake implementation commented out for migration
+    Use Microsoft.AspNetCore.TestHost, Microsoft.AspNetCore.Mvc.Testing, or similar
+    */
 }

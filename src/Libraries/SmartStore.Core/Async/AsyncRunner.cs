@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -344,7 +344,7 @@ namespace SmartStore.Core.Async
         }
     }
 
-    internal class BackgroundWorkHost : IRegisteredObject
+    internal class BackgroundWorkHost // : IRegisteredObject // Obsolete in .NET 8
     {
         private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
         private int _numRunningWorkItems;

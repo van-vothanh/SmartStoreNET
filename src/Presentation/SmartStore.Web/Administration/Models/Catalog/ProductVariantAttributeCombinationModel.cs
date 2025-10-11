@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Services.Catalog.Modelling;
