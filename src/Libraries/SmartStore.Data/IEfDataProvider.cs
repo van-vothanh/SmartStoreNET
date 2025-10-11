@@ -1,4 +1,4 @@
-﻿using System.Data.Entity.Infrastructure;
+﻿using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SmartStore.Core.Data;
 
 namespace SmartStore.Data

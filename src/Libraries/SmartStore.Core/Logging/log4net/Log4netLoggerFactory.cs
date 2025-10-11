@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using log4net;
 using log4net.Appender;
 using log4net.Config;

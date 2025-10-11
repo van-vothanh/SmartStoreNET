@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using DotLiquid;
 using SmartStore.ComponentModel;
 

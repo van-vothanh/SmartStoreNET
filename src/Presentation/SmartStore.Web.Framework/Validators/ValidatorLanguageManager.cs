@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using FluentValidation.Resources;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;

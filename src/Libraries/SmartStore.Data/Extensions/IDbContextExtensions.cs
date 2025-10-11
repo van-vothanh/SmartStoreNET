@@ -1,6 +1,6 @@
 using System;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;

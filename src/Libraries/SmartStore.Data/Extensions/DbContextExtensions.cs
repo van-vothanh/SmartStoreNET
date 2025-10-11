@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Diagnostics;
 using System.Linq;
 using SmartStore.Core;

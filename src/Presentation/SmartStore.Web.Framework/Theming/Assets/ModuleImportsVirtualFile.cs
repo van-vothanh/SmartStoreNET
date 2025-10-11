@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using SmartStore.Core.Data;
 using SmartStore.Core.Plugins;
 using SmartStore.Utilities;

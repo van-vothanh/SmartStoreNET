@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;
 

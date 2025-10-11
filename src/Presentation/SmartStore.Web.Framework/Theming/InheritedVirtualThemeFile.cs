@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Web.Hosting;
+using Microsoft.Extensions.Hosting;
 using SmartStore.Core.Themes;
 
 namespace SmartStore.Web.Framework.Theming

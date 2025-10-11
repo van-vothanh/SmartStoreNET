@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Security;
 using SmartStore.Core.Themes;
 using SmartStore.Services;

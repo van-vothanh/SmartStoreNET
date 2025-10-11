@@ -1,6 +1,6 @@
 ﻿using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Localization;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.Entity.Core;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Data.SqlClient;
 
 namespace SmartStore
