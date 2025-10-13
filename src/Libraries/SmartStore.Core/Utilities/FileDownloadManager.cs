@@ -19,9 +19,9 @@ namespace SmartStore.Utilities
     {
         private const int _bufferSize = 16384;
 
-        private readonly HttpRequestBase _httpRequest;
+        private readonly object _httpRequest;
 
-        public FileDownloadManager(HttpRequestBase httpRequest)
+        public FileDownloadManager(object httpRequest)
         {
             _httpRequest = httpRequest;
         }

@@ -1,8 +1,2 @@
-﻿using System.Web.Mvc;
-
-namespace SmartStore.Core.Fakes
-{
-    public class FakeController : Controller
-    {
-    }
-}
+// TODO: Migrate to ASP.NET Core
+namespace SmartStore.Core { }
