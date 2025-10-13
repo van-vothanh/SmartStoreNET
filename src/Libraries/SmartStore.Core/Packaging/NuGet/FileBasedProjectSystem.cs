@@ -1,85 +1,16 @@
-﻿using System;
-using System.IO;
-using System.Runtime.Versioning;
-using NuGet;
+using System;
+// TODO: Migrate to NuGet.Protocol v3 API
+// This class used NuGet.Core v2 API which is obsolete
 
 namespace SmartStore.Core.Packaging
 {
-    internal class FileBasedProjectSystem : PhysicalFileSystem, IProjectSystem
+    // TODO: Migrate to NuGet.Protocol v3 API - use direct file system operations
+    // Original implementation commented out
+    internal class FileBasedProjectSystem
     {
-
         public FileBasedProjectSystem(string root)
-            : base(root)
         {
-        }
-
-        public void AddFrameworkReference(string name)
-        {
-            throw new NotSupportedException();
-        }
-
-        public void AddImport(string targetPath, ProjectImportLocation location)
-        {
-            throw new NotSupportedException();
-        }
-
-        public void AddReference(string referencePath, Stream stream)
-        {
-            throw new NotSupportedException();
-        }
-
-        public bool FileExistsInProject(string path)
-        {
-            return FileExists(path);
-        }
-
-        public bool IsBindingRedirectSupported => false;
-
-        public bool IsSupportedFile(string path)
-        {
-            return true;
-        }
-
-        public string ProjectName => Root;
-
-        protected virtual string GetReferencePath(string name)
-        {
-            return Path.Combine("bin", name);
-        }
-
-        public bool ReferenceExists(string name)
-        {
-            string path = GetReferencePath(name);
-            return FileExists(path);
-        }
-
-        public void RemoveImport(string targetPath)
-        {
-            throw new NotSupportedException();
-        }
-
-        public void RemoveReference(string name)
-        {
-            throw new NotSupportedException();
-        }
-
-        public string ResolvePath(string path)
-        {
-            return GetFullPath(path);
-        }
-
-        public FrameworkName TargetFramework => VersionUtility.DefaultTargetFramework;
-
-        public dynamic GetPropertyValue(string propertyName)
-        {
-            if (propertyName == null)
-            {
-                return null;
-            }
-
-            // Return empty string for the root namespace of this project.
-            return propertyName.Equals("RootNamespace", StringComparison.OrdinalIgnoreCase) ? String.Empty : null;
+            throw new NotImplementedException("TODO: Migrate to direct file system operations");
         }
     }
-
 }

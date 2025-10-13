@@ -1,59 +1,24 @@
-﻿using System;
-using System.Web;
-using Autofac.Integration.Mvc;
+using System;
+// TODO: Migrate to ASP.NET Core middleware
+// IHttpModule is not supported in ASP.NET Core
+// Request scoping is handled automatically by ASP.NET Core DI
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
     /// <summary>
-    /// An <see cref="IHttpModule"/> and <see cref="ILifetimeScopeProvider"/> implementation 
-    /// that creates a nested lifetime scope for each HTTP request.
+    /// TODO: Convert to ASP.NET Core middleware
+    /// Original implementation used IHttpModule which is not supported in ASP.NET Core
     /// </summary>
-    public class AutofacRequestLifetimeHttpModule : IHttpModule
+    public class AutofacRequestLifetimeHttpModule
     {
-        public void Init(HttpApplication context)
+        public AutofacRequestLifetimeHttpModule()
         {
-            Guard.NotNull(context, nameof(context));
-
-            context.EndRequest += OnEndRequest;
+            // Stub - request scoping handled by ASP.NET Core DI
         }
 
         public static void OnEndRequest(object sender, EventArgs e)
         {
-            if (LifetimeScopeProvider != null)
-            {
-                LifetimeScopeProvider.EndLifetimeScope();
-            }
-
-            // Dispose all other disposable object in HttpContext.Items
-            PurgeContextItems(sender as HttpApplication);
-        }
-
-        private static void PurgeContextItems(HttpApplication app)
-        {
-            var items = app?.Context?.Items;
-
-            if (items != null)
-            {
-                int size = items.Count;
-                if (size > 0)
-                {
-                    var keys = new object[size];
-                    items.Keys.CopyTo(keys, 0);
-
-                    for (int i = 0; i < size; i++)
-                    {
-                        var obj = items[keys[i]] as IDisposable;
-                        if (obj != null)
-                        {
-                            try
-                            {
-                                obj.Dispose();
-                            }
-                            catch { }
-                        }
-                    }
-                }
-            }
+            // TODO: Migrate to middleware if needed
         }
 
         public static void SetLifetimeScopeProvider(ILifetimeScopeProvider lifetimeScopeProvider)
@@ -61,16 +26,6 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
             LifetimeScopeProvider = lifetimeScopeProvider ?? throw new ArgumentNullException("lifetimeScopeProvider");
         }
 
-
-        internal static ILifetimeScopeProvider LifetimeScopeProvider
-        {
-            get;
-            private set;
-        }
-
-        public void Dispose()
-        {
-        }
-
+        internal static ILifetimeScopeProvider LifetimeScopeProvider { get; private set; }
     }
 }

@@ -1,44 +1,42 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using NuGet;
+// TODO: Migrate to NuGet.Protocol v3 API
+// This class used NuGet.Core v2 API which is obsolete
+// See: https://docs.microsoft.com/en-us/nuget/reference/nuget-client-sdk
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
 
 namespace SmartStore.Core.Packaging
 {
-
+    // TODO: Migrate to NuGet.Protocol v3 API
+    // Original implementation commented out - uses obsolete NuGet.Core
+    /*
     internal abstract class ExtensionReferenceRepository : PackageRepositoryBase
     {
-
         public ExtensionReferenceRepository(IProjectSystem project, IPackageRepository sourceRepository)
         {
             Guard.NotNull(project, nameof(project));
             Guard.NotNull(sourceRepository, nameof(sourceRepository));
-
             Project = project;
             SourceRepository = sourceRepository;
         }
-
-        public IProjectSystem Project
-        {
-            get;
-            set;
-        }
-
-        public IPackageRepository SourceRepository
-        {
-            get;
-            set;
-        }
-
+        public IProjectSystem Project { get; set; }
+        public IPackageRepository SourceRepository { get; set; }
         public override void AddPackage(IPackage package) { }
-
         public override void RemovePackage(IPackage package) { }
-
-
         public override string Source => Project.Root;
-
         public override bool SupportsPrereleasePackages => true;
+    }
+    */
+
+    // Temporary stub to allow compilation
+    internal abstract class ExtensionReferenceRepository
+    {
+        protected ExtensionReferenceRepository()
+        {
+            throw new NotImplementedException("TODO: Migrate to NuGet.Protocol v3 API");
+        }
     }
 
     /// <summary>
@@ -46,27 +44,10 @@ namespace SmartStore.Core.Packaging
     /// </summary>
     internal class PluginReferenceRepository : ExtensionReferenceRepository
     {
-        private readonly IList<PluginDescriptor> _descriptors;
-
-        public PluginReferenceRepository(IProjectSystem project, IPackageRepository sourceRepository, IPluginFinder pluginFinder)
-            : base(project, sourceRepository)
+        public PluginReferenceRepository(IPluginFinder pluginFinder)
         {
-            _descriptors = pluginFinder.GetPluginDescriptors().ToList();
+            throw new NotImplementedException("TODO: Migrate to NuGet.Protocol v3 API");
         }
-
-        public override IQueryable<IPackage> GetPackages()
-        {
-            IEnumerable<IPackage> repositoryPackages = SourceRepository.GetPackages().ToList();
-            IEnumerable<IPackage> packages = from plugin in _descriptors
-                                             let id = PackagingUtils.BuildPackageId(plugin.SystemName, "Plugin")
-                                             let version = plugin.Version != null ? new SemanticVersion(plugin.Version) : null
-                                             let package = repositoryPackages.FirstOrDefault(p => p.Id == id && (version == null || p.Version == version))
-                                             where package != null
-                                             select package;
-
-            return packages.AsQueryable();
-        }
-
     }
 
     /// <summary>
@@ -74,27 +55,9 @@ namespace SmartStore.Core.Packaging
     /// </summary>
     internal class ThemeReferenceRepository : ExtensionReferenceRepository
     {
-        private readonly ICollection<ThemeManifest> _themeManifests;
-
-        public ThemeReferenceRepository(IProjectSystem project, IPackageRepository sourceRepository, IThemeRegistry themeRegistry)
-            : base(project, sourceRepository)
+        public ThemeReferenceRepository(IThemeRegistry themeRegistry)
         {
-            _themeManifests = themeRegistry.GetThemeManifests(true);
+            throw new NotImplementedException("TODO: Migrate to NuGet.Protocol v3 API");
         }
-
-        public override IQueryable<IPackage> GetPackages()
-        {
-            IEnumerable<IPackage> repositoryPackages = SourceRepository.GetPackages().ToList();
-            IEnumerable<IPackage> packages = from theme in _themeManifests
-                                             let id = PackagingUtils.BuildPackageId(theme.ThemeName, "Theme")
-                                             let version = theme.Version != null ? new SemanticVersion(theme.Version) : null
-                                             let package = repositoryPackages.FirstOrDefault(p => p.Id == id && (version == null || p.Version == version))
-                                             where package != null
-                                             select package;
-
-            return packages.AsQueryable();
-        }
-
     }
-
 }

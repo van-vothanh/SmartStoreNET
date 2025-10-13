@@ -2,7 +2,8 @@
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace SmartStore.Core.Security
 {
@@ -10,7 +11,7 @@ namespace SmartStore.Core.Security
     /// Checks request permission for the current customer.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
-    public partial class PermissionAttribute : FilterAttribute, IAuthorizationFilter
+    public partial class PermissionAttribute : Attribute, IAuthorizationFilter
     {
         /// <summary>
         /// e.g. [Permission(PermissionSystemNames.Customer.Read)]
@@ -40,9 +41,9 @@ namespace SmartStore.Core.Security
         public IWorkContext WorkContext { get; set; }
         public IPermissionService PermissionService { get; set; }
 
-        public virtual void OnAuthorization(AuthorizationContext filterContext)
+        public virtual void OnAuthorization(AuthorizationFilterContext context)
         {
-            Guard.NotNull(filterContext, nameof(filterContext));
+            Guard.NotNull(context, nameof(context));
 
             if (PermissionService.Authorize(SystemName, WorkContext.CurrentCustomer))
             {
@@ -51,17 +52,17 @@ namespace SmartStore.Core.Security
 
             try
             {
-                HandleUnauthorizedRequest(filterContext);
+                HandleUnauthorizedRequest(context);
             }
             catch
             {
-                filterContext.Result = new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
+                context.Result = new HttpStatusCodeResult(HttpStatusCode.Unauthorized);
             }
         }
 
-        protected virtual void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+        protected virtual void HandleUnauthorizedRequest(AuthorizationFilterContext context)
         {
-            var httpContext = filterContext.HttpContext;
+            var httpContext = context.HttpContext;
             var request = httpContext?.Request;
 
             if (request == null)
@@ -83,19 +84,19 @@ namespace SmartStore.Core.Security
 
                 if (request.AcceptTypes?.Any(x => x.IsCaseInsensitiveEqual("text/html")) ?? false)
                 {
-                    filterContext.Result = AccessDeniedResult(message);
+                    context.Result = AccessDeniedResult(message);
                 }
                 else
                 {
-                    filterContext.Result = new JsonResult
+                    context.Result = new JsonResult
                     {
                         JsonRequestBehavior = JsonRequestBehavior.AllowGet,
                         Data = new
                         {
                             error = true,
                             success = false,
-                            controller = filterContext.ActionDescriptor.ControllerDescriptor.ControllerName,
-                            action = filterContext.ActionDescriptor.ActionName,
+                            controller = context.ActionDescriptor.ControllerDescriptor.ControllerName,
+                            action = context.ActionDescriptor.ActionName,
                             //message
                         }
                     };
@@ -103,17 +104,17 @@ namespace SmartStore.Core.Security
             }
             else
             {
-                if (filterContext.IsChildAction)
+                if (context.IsChildAction)
                 {
-                    filterContext.Result = AccessDeniedResult(message);
+                    context.Result = AccessDeniedResult(message);
                 }
                 else
                 {
                     var urlHelper = new UrlHelper(request.RequestContext);
                     var url = urlHelper.Action("AccessDenied", "Security", new { pageUrl = request.RawUrl, area = "Admin" });
 
-                    filterContext.Controller.TempData["UnauthorizedMessage"] = message;
-                    filterContext.Result = new RedirectResult(url);
+                    context.Controller.TempData["UnauthorizedMessage"] = message;
+                    context.Result = new RedirectResult(url);
                 }
             }
         }

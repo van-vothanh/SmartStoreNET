@@ -1,9 +1,25 @@
-﻿using System;
+using System;
 using Autofac;
-using Autofac.Integration.Mvc;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
+    // TODO: ILifetimeScopeProvider removed in Autofac 8.x
+    // Use IServiceScopeFactory instead
+    public interface ILifetimeScopeProvider
+    {
+        ILifetimeScope ApplicationContainer { get; }
+        void EndLifetimeScope();
+        ILifetimeScope GetLifetimeScope(Action<ContainerBuilder> configurationAction);
+    }
+
+    public interface ILifetimeScopeAccessor
+    {
+        ILifetimeScope ApplicationContainer { get; }
+        void EndLifetimeScope();
+        ILifetimeScope GetLifetimeScope(Action<ContainerBuilder> configurationAction);
+    }
+
     public class DefaultLifetimeScopeProvider : ILifetimeScopeProvider
     {
         private readonly ILifetimeScopeAccessor _accessor;
@@ -27,6 +43,5 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
         {
             return _accessor.GetLifetimeScope(configurationAction);
         }
-
     }
 }

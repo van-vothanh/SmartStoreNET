@@ -1,41 +1,15 @@
-﻿using System;
-using NuGet;
-using SmartStore.Core.Logging;
-using Log = SmartStore.Core.Logging;
+using System;
+// TODO: Migrate to NuGet.Protocol v3 API
+// This class used NuGet.Core v2 API which is obsolete
 
 namespace SmartStore.Core.Packaging
 {
-    internal class NugetLogger : NuGet.ILogger
+    // TODO: Migrate to NuGet.Protocol v3 API - use NuGet.Common.ILogger
+    internal class NugetLogger
     {
-        private readonly Log.ILogger _logger;
-
-        public NugetLogger(Log.ILogger logger)
+        public NugetLogger()
         {
-            _logger = logger;
-        }
-
-        public void Log(MessageLevel level, string message, params object[] args)
-        {
-            switch (level)
-            {
-                case MessageLevel.Debug:
-                    _logger.Debug(String.Format(message, args));
-                    break;
-                case MessageLevel.Error:
-                    _logger.Error(String.Format(message, args));
-                    break;
-                case MessageLevel.Info:
-                    _logger.Info(String.Format(message, args));
-                    break;
-                case MessageLevel.Warning:
-                    _logger.Warn(String.Format(message, args));
-                    break;
-            }
-        }
-
-        public FileConflictResolution ResolveFileConflict(string message)
-        {
-            return FileConflictResolution.OverwriteAll;
+            throw new NotImplementedException("TODO: Migrate to NuGet.Common.ILogger");
         }
     }
 }

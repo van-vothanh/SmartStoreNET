@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Principal;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.SessionState;
 
 namespace SmartStore.Core.Fakes

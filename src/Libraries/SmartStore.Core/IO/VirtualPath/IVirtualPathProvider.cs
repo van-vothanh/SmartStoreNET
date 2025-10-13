@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Web.Caching;
+using Microsoft.Extensions.Primitives;
 
 namespace SmartStore.Core.IO
 {
@@ -15,7 +15,8 @@ namespace SmartStore.Core.IO
         bool DirectoryExists(string virtualPath);
         bool FileExists(string virtualPath);
 
-        CacheDependency GetCacheDependency(string virtualPath, IEnumerable<string> dependencies, DateTime utcStart);
+        // TODO: CacheDependency → IChangeToken migration
+        IChangeToken GetChangeToken(string virtualPath, IEnumerable<string> dependencies);
         string GetCacheKey(string virtualPath);
         string GetFileHash(string virtualPath, IEnumerable<string> dependencies);
 
@@ -32,9 +33,9 @@ namespace SmartStore.Core.IO
             return vpp.GetFileHash(virtualPath, new[] { virtualPath });
         }
 
-        public static CacheDependency GetCacheDependency(this IVirtualPathProvider vpp, string virtualPath, DateTime utcStart)
+        public static IChangeToken GetChangeToken(this IVirtualPathProvider vpp, string virtualPath)
         {
-            return vpp.GetCacheDependency(virtualPath, new[] { virtualPath }, utcStart);
+            return vpp.GetChangeToken(virtualPath, new[] { virtualPath });
         }
     }
 }

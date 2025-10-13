@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.IO;
 using System.Text.RegularExpressions;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Core.Caching;
 using SmartStore.Utilities;
 
