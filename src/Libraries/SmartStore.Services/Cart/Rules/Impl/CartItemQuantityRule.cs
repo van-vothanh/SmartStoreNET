@@ -30,7 +30,7 @@ namespace SmartStore.Services.Cart.Rules.Impl
                 var rawValue = expression.Value as string;
                 if (rawValue.HasValue())
                 {
-                    dynamic json = JObject.Parse(rawValue);
+                    dynamic json = JObject.ParseDocument(rawValue);
                     productId = ((string)json.ProductId).ToInt();
 
                     var str = (string)json.MinQuantity;

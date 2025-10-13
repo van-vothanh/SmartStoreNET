@@ -1,3 +1,6 @@
+// TODO: Migrate to ASP.NET Core test helpers
+// This fake class has been temporarily disabled for .NET 8 migration
+/*
 ﻿using System.Linq;
 using System.Security.Principal;
 
@@ -22,4 +25,4 @@ namespace SmartStore.Core.Fakes
             return _roles != null && _roles.Contains(role);
         }
     }
-}
+}*/

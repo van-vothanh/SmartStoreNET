@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Themes;
 using SmartStore.Collections;
 using SmartStore.Core.Domain.Themes;
@@ -59,7 +59,7 @@ namespace SmartStore.Admin.Controllers
                 new SelectListItem { Value = "2", Text = T("Common.Yes") }
             };
             model.AvailableBundleOptimizationValues.AddRange(bundlingOptions);
-            model.AvailableBundleOptimizationValues.FirstOrDefault(x => int.Parse(x.Value) == model.BundleOptimizationEnabled).Selected = true;
+            model.AvailableBundleOptimizationValues.FirstOrDefault(x => int.ParseDocument(x.Value) == model.BundleOptimizationEnabled).Selected = true;
 
             var assetCachingOptions = new List<SelectListItem>
             {
@@ -68,7 +68,7 @@ namespace SmartStore.Admin.Controllers
                 new SelectListItem { Value = "2", Text = "{0} ({1})".FormatCurrent(T("Common.Yes"), T("Common.Recommended")) }
             };
             model.AvailableAssetCachingValues.AddRange(assetCachingOptions);
-            model.AvailableAssetCachingValues.FirstOrDefault(x => int.Parse(x.Value) == model.AssetCachingEnabled).Selected = true;
+            model.AvailableAssetCachingValues.FirstOrDefault(x => int.ParseDocument(x.Value) == model.AssetCachingEnabled).Selected = true;
 
             // Add theme configs.
             model.Themes.AddRange(GetThemes(themeSettings));

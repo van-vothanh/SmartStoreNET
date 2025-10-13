@@ -66,7 +66,7 @@ namespace SmartStore.Core.Search
 
             try
             {
-                var doc = XDocument.Parse(xml);
+                var doc = XDocument.ParseDocument(xml);
 
                 var lastIndexed = doc.Descendants("last-indexed-utc").FirstOrDefault()?.Value;
                 if (lastIndexed.HasValue())

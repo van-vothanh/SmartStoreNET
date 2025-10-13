@@ -36,7 +36,7 @@ namespace SmartStore.PayPal
 
         private CreditCardTypeType GetCreditCardType(string creditCardType)
         {
-            var creditCardTypeType = (CreditCardTypeType)Enum.Parse(typeof(CreditCardTypeType), creditCardType);
+            var creditCardTypeType = (CreditCardTypeType)Enum.ParseDocument(typeof(CreditCardTypeType), creditCardType);
             return creditCardTypeType;
         }
 
@@ -45,7 +45,7 @@ namespace SmartStore.PayPal
             CountryCodeType payerCountry = CountryCodeType.US;
             try
             {
-                payerCountry = (CountryCodeType)Enum.Parse(typeof(CountryCodeType), country.TwoLetterIsoCode);
+                payerCountry = (CountryCodeType)Enum.ParseDocument(typeof(CountryCodeType), country.TwoLetterIsoCode);
             }
             catch { }
 
@@ -145,7 +145,7 @@ namespace SmartStore.PayPal
                     shippingAddress.CityName = customer.ShippingAddress.City;
                     shippingAddress.StateOrProvince = customer.ShippingAddress.StateProvince.Abbreviation;
                     shippingAddress.PostalCode = customer.ShippingAddress.ZipPostalCode;
-                    shippingAddress.Country = (CountryCodeType)Enum.Parse(typeof(CountryCodeType), customer.ShippingAddress.Country.TwoLetterIsoCode, true);
+                    shippingAddress.Country = (CountryCodeType)Enum.ParseDocument(typeof(CountryCodeType), customer.ShippingAddress.Country.TwoLetterIsoCode, true);
                     shippingAddress.CountrySpecified = true;
                     details.PaymentDetails.ShipToAddress = shippingAddress;
                 }

@@ -272,7 +272,7 @@ namespace SmartStore.Utilities
         /// <returns>string. The ordinalized number.</returns>
         public static string Ordinalize(string number)
         {
-            int n = int.Parse(number);
+            int n = int.ParseDocument(number);
             int nMod100 = n % 100;
 
             if (nMod100 >= 11 && nMod100 <= 13)

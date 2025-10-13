@@ -166,7 +166,7 @@ namespace SmartStore.Data.Utilities
                         result.CreatedOnUtc = value.ToDateTime(new DateTime()).Value;
                         break;
                     case "DisplayType":
-                        result.PreviewDisplayType = (PreviewDisplayType)int.Parse(value);
+                        result.PreviewDisplayType = (PreviewDisplayType)int.ParseDocument(value);
                         break;
                     case "Image":
                         var seName = GetSeName(Path.GetFileNameWithoutExtension(value));

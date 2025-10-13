@@ -7,7 +7,7 @@ using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.SessionState;
 using Autofac;
 using SmartStore.Core;

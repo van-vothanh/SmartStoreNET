@@ -31,7 +31,7 @@ namespace SmartStore.ComponentModel
         {
             if (value is string json)
             {
-                return JObject.Parse(json);
+                return JObject.ParseDocument(json);
             }
 
             if (value != null)

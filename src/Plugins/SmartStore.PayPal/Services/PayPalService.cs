@@ -325,7 +325,7 @@ namespace SmartStore.PayPal.Services
                 if (json.amount != null)
                 {
                     result.AmountCurrencyCode = (string)json.amount.currency;
-                    result.Amount = decimal.Parse((string)json.amount.value, CultureInfo.InvariantCulture);
+                    result.Amount = decimal.ParseDocument((string)json.amount.value, CultureInfo.InvariantCulture);
                 }
 
                 var rbi = json.recipient_banking_instruction;
@@ -581,9 +581,9 @@ namespace SmartStore.PayPal.Services
                             try
                             {
                                 if (rawResponse.StartsWith("["))
-                                    result.Json = JArray.Parse(rawResponse);
+                                    result.Json = JArray.ParseDocument(rawResponse);
                                 else
-                                    result.Json = JObject.Parse(rawResponse);
+                                    result.Json = JObject.ParseDocument(rawResponse);
 
                                 if (result.Json != null)
                                 {
@@ -650,9 +650,9 @@ namespace SmartStore.PayPal.Services
                             {
                                 sb.AppendLine();
                                 if (data.StartsWith("["))
-                                    sb.AppendLine(JArray.Parse(data).ToString(Formatting.Indented));
+                                    sb.AppendLine(JArray.ParseDocument(data).ToString(Formatting.Indented));
                                 else
-                                    sb.AppendLine(JObject.Parse(data).ToString(Formatting.Indented));
+                                    sb.AppendLine(JObject.ParseDocument(data).ToString(Formatting.Indented));
                             }
                             sb.AppendLine();
                             webResponse.Headers.AllKeys.Each(x => sb.AppendLine($"{x}: {webResponse.Headers[x]}"));
@@ -1123,7 +1123,7 @@ namespace SmartStore.PayPal.Services
             if (rawJson.IsEmpty())
                 return HttpStatusCode.OK;
 
-            dynamic json = JObject.Parse(rawJson);
+            dynamic json = JObject.ParseDocument(rawJson);
             var eventType = (string)json.event_type;
 
             //foreach (var key in headers.AllKeys)"{0}: {1}".FormatInvariant(key, headers[key]).Dump();

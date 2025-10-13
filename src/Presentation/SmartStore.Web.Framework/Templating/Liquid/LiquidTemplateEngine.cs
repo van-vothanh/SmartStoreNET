@@ -69,7 +69,7 @@ namespace SmartStore.Templating.Liquid
         {
             Guard.NotNull(source, nameof(source));
 
-            return new LiquidTemplate(Template.Parse(source), source);
+            return new LiquidTemplate(Template.ParseDocument(source), source);
         }
 
         public string Render(string source, object model, IFormatProvider formatProvider)
@@ -108,7 +108,7 @@ namespace SmartStore.Templating.Liquid
             {
                 // Read from file, compile and put to cache with file dependeny
                 var source = ReadTemplateFileInternal(virtualPath);
-                cachedTemplate = Template.Parse(source);
+                cachedTemplate = Template.ParseDocument(source);
                 var cacheDependency = _vpp.GetCacheDependency(virtualPath, DateTime.UtcNow);
                 HttpRuntime.Cache.Insert(cacheKey, cachedTemplate, cacheDependency);
             }

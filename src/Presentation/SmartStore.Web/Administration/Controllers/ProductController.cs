@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Autofac;
 using NuGet;
 using SmartStore.Admin.Models.Catalog;
@@ -1507,7 +1507,7 @@ namespace SmartStore.Admin.Controllers
             var productCategory = new ProductCategory
             {
                 ProductId = model.ProductId,
-                CategoryId = int.Parse(model.Category), // Use Category property (not CategoryId) because appropriate property is stored in it.
+                CategoryId = int.ParseDocument(model.Category), // Use Category property (not CategoryId) because appropriate property is stored in it.
                 IsFeaturedProduct = model.IsFeaturedProduct,
                 DisplayOrder = model.DisplayOrder
             };
@@ -1529,10 +1529,10 @@ namespace SmartStore.Admin.Controllers
         public ActionResult ProductCategoryUpdate(GridCommand command, ProductModel.ProductCategoryModel model)
         {
             var productCategory = _categoryService.GetProductCategoryById(model.Id);
-            var categoryChanged = int.Parse(model.Category) != productCategory.CategoryId;
+            var categoryChanged = int.ParseDocument(model.Category) != productCategory.CategoryId;
 
             // Use Category property (not CategoryId) because appropriate property is stored in it.
-            productCategory.CategoryId = int.Parse(model.Category);
+            productCategory.CategoryId = int.ParseDocument(model.Category);
             productCategory.IsFeaturedProduct = model.IsFeaturedProduct;
             productCategory.DisplayOrder = model.DisplayOrder;
 
@@ -1605,7 +1605,7 @@ namespace SmartStore.Admin.Controllers
             var productManufacturer = new ProductManufacturer
             {
                 ProductId = model.ProductId,
-                ManufacturerId = int.Parse(model.Manufacturer), // Use Manufacturer property (not ManufacturerId) because appropriate property is stored in it.
+                ManufacturerId = int.ParseDocument(model.Manufacturer), // Use Manufacturer property (not ManufacturerId) because appropriate property is stored in it.
                 IsFeaturedProduct = model.IsFeaturedProduct,
                 DisplayOrder = model.DisplayOrder
             };
@@ -1627,10 +1627,10 @@ namespace SmartStore.Admin.Controllers
         public ActionResult ProductManufacturerUpdate(GridCommand command, ProductModel.ProductManufacturerModel model)
         {
             var productManufacturer = _manufacturerService.GetProductManufacturerById(model.Id);
-            var manufacturerChanged = int.Parse(model.Manufacturer) != productManufacturer.ManufacturerId;
+            var manufacturerChanged = int.ParseDocument(model.Manufacturer) != productManufacturer.ManufacturerId;
 
             // Use Manufacturer property (not ManufacturerId) because appropriate property is stored in it.
-            productManufacturer.ManufacturerId = int.Parse(model.Manufacturer);
+            productManufacturer.ManufacturerId = int.ParseDocument(model.Manufacturer);
             productManufacturer.IsFeaturedProduct = model.IsFeaturedProduct;
             productManufacturer.DisplayOrder = model.DisplayOrder;
 
@@ -2859,10 +2859,10 @@ namespace SmartStore.Admin.Controllers
                 // Use Store property (not Store propertyId) because appropriate property is stored in it.
                 StoreId = model.Store.ToInt(),
                 // Use CustomerRole property (not CustomerRoleId) because appropriate property is stored in it.
-                CustomerRoleId = model.CustomerRole.IsNumeric() && int.Parse(model.CustomerRole) != 0 ? int.Parse(model.CustomerRole) : (int?)null,
+                CustomerRoleId = model.CustomerRole.IsNumeric() && int.ParseDocument(model.CustomerRole) != 0 ? int.ParseDocument(model.CustomerRole) : (int?)null,
                 Quantity = model.Quantity,
                 Price = model.Price1,
-                CalculationMethod = model.CalculationMethod == null ? TierPriceCalculationMethod.Fixed : (TierPriceCalculationMethod)(int.Parse(model.CalculationMethod))
+                CalculationMethod = model.CalculationMethod == null ? TierPriceCalculationMethod.Fixed : (TierPriceCalculationMethod)(int.ParseDocument(model.CalculationMethod))
             };
 
             _productService.InsertTierPrice(tierPrice);
@@ -2882,10 +2882,10 @@ namespace SmartStore.Admin.Controllers
             // Use Store property (not Store propertyId) because appropriate property is stored in it.
             tierPrice.StoreId = model.Store.ToInt();
             // Use CustomerRole property (not CustomerRoleId) because appropriate property is stored in it.
-            tierPrice.CustomerRoleId = model.CustomerRole.IsNumeric() && int.Parse(model.CustomerRole) != 0 ? int.Parse(model.CustomerRole) : (int?)null;
+            tierPrice.CustomerRoleId = model.CustomerRole.IsNumeric() && int.ParseDocument(model.CustomerRole) != 0 ? int.ParseDocument(model.CustomerRole) : (int?)null;
             tierPrice.Quantity = model.Quantity;
             tierPrice.Price = model.Price1;
-            tierPrice.CalculationMethod = model.CalculationMethod == null ? TierPriceCalculationMethod.Fixed : (TierPriceCalculationMethod)(int.Parse(model.CalculationMethod));
+            tierPrice.CalculationMethod = model.CalculationMethod == null ? TierPriceCalculationMethod.Fixed : (TierPriceCalculationMethod)(int.ParseDocument(model.CalculationMethod));
 
             _productService.UpdateTierPrice(tierPrice);
 
@@ -3001,12 +3001,12 @@ namespace SmartStore.Admin.Controllers
             var pva = _productAttributeService.GetProductVariantAttributeById(model.Id);
 
             // Use ProductAttribute property (not ProductAttributeId) because appropriate property is stored in it.
-            pva.ProductAttributeId = int.Parse(model.ProductAttribute);
+            pva.ProductAttributeId = int.ParseDocument(model.ProductAttribute);
             pva.TextPrompt = model.TextPrompt;
             pva.CustomData = model.CustomData;
             pva.IsRequired = model.IsRequired;
             // Use AttributeControlType property (not AttributeControlTypeId) because appropriate property is stored in it.
-            pva.AttributeControlTypeId = int.Parse(model.AttributeControlType);
+            pva.AttributeControlTypeId = int.ParseDocument(model.AttributeControlType);
             pva.DisplayOrder = model.DisplayOrder1;
 
             try

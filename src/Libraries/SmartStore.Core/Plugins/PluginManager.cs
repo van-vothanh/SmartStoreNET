@@ -21,7 +21,7 @@ using SmartStore.Utilities;
 // SEE THIS POST for full details of what this does
 //http://shazwazza.com/post/Developing-a-plugin-framework-in-ASPNET-with-medium-trust.aspx
 
-[assembly: PreApplicationStartMethod(typeof(PluginManager), "Initialize")]
+// TODO: PreApplicationStartMethod removed in .NET 8 - Initialize must be called from Program.cs
 namespace SmartStore.Core.Plugins
 {
     /// <summary>

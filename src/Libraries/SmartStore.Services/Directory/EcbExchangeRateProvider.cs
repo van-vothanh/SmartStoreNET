@@ -56,7 +56,7 @@ namespace SmartStore.Services.Directory
                     var rate = new ExchangeRate
                     {
                         CurrencyCode = childNode.Attributes["currency"].Value.EmptyNull().ToUpper(),
-                        Rate = decimal.Parse(childNode.Attributes["rate"].Value, provider),
+                        Rate = decimal.ParseDocument(childNode.Attributes["rate"].Value, provider),
                         UpdatedOn = updateDate
                     };
 

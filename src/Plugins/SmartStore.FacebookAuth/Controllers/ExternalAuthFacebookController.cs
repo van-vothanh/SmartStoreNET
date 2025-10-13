@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Core.Security;

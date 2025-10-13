@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Rules;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Localization;
@@ -25,11 +25,9 @@ namespace SmartStore.Admin.Models.Payments
         public string FriendlyName { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Payment.Methods.ShortDescription")]
-        [AllowHtml]
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Payment.Methods.FullDescription")]
-        [AllowHtml]
         public string FullDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Payment.Methods.RoundOrderTotalEnabled")]
@@ -60,11 +58,9 @@ namespace SmartStore.Admin.Models.Payments
         public string FriendlyName { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Payment.Methods.ShortDescription")]
-        [AllowHtml]
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Payment.Methods.FullDescription")]
-        [AllowHtml]
         public string FullDescription { get; set; }
     }
 }

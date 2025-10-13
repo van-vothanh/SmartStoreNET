@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.ExternalAuthentication;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Core.Security;

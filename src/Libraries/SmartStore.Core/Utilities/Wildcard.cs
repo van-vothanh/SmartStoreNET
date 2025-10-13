@@ -82,8 +82,8 @@ namespace SmartStore.Utilities
                 {
                     string[] split = match.Value.Split(new char[] { '-' });
                     int leadingZeroesCount = split[0].TakeWhile(x => x == '0').Count();
-                    int min = Int32.Parse(split[0]);
-                    int max = Int32.Parse(split[1]);
+                    int min = Int32.ParseDocument(split[0]);
+                    int max = Int32.ParseDocument(split[1]);
 
                     pattern = pattern.Replace(match.Value, ConvertNumberRange(min, max, leadingZeroesCount));
                 }
@@ -235,7 +235,7 @@ namespace SmartStore.Utilities
         /// <returns>The figure at the specified digit.</returns>
         private static int ExtractDigit(int value, int digit)
         {
-            return Int32.Parse(value.ToString()[digit].ToString());
+            return Int32.ParseDocument(value.ToString()[digit].ToString());
         }
 
         #region Escaping

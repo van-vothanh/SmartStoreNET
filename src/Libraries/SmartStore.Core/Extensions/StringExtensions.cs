@@ -97,7 +97,7 @@ namespace SmartStore
             }
             try
             {
-                return (T)Enum.Parse(typeof(T), value, true);
+                return (T)Enum.ParseDocument(typeof(T), value, true);
             }
             catch (ArgumentException)
             {
@@ -1083,7 +1083,7 @@ namespace SmartStore
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static int[] ToIntArray(this string s)
         {
-            return Array.ConvertAll(s.SplitSafe(","), v => int.Parse(v.Trim()));
+            return Array.ConvertAll(s.SplitSafe(","), v => int.ParseDocument(v.Trim()));
         }
 
         [DebuggerStepThrough]

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Telerik.Web.Mvc;
 using Telerik.Web.Mvc.Extensions;
 using Telerik.Web.Mvc.UI.Fluent;
@@ -55,7 +55,7 @@ namespace SmartStore.Web.Framework
                 return builder;
 
             var state = info.State;
-            var command = GridCommand.Parse(state.Page, state.Size, state.OrderBy, state.GroupBy, state.Filter);
+            var command = GridCommand.ParseDocument(state.Page, state.Size, state.OrderBy, state.GroupBy, state.Filter);
 
             if (grid.Paging.Enabled)
             {

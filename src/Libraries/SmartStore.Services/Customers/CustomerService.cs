@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -34,7 +34,7 @@ namespace SmartStore.Services.Customers
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly Lazy<RewardPointsSettings> _rewardPointsSettings;
         private readonly ICommonServices _services;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly IUserAgent _userAgent;
         private readonly CustomerSettings _customerSettings;
         private readonly Lazy<IGdprTool> _gdprTool;
@@ -49,7 +49,7 @@ namespace SmartStore.Services.Customers
             IGenericAttributeService genericAttributeService,
             Lazy<RewardPointsSettings> rewardPointsSettings,
             ICommonServices services,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             IUserAgent userAgent,
             CustomerSettings customerSettings,
             Lazy<IGdprTool> gdprTool)

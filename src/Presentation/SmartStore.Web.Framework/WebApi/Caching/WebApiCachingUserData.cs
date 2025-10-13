@@ -17,7 +17,7 @@ namespace SmartStore.Web.Framework.WebApi.Caching
         private static readonly object _lock = new object();
 
         /// <remarks>
-        /// Lazy storing... fired on app shut down. Note that items with CacheItemPriority.NotRemovable are not removed when the cache is emptied.
+        /// Lazy storing... fired on app shut down. Note that items with CacheItemPriority.NeverRemove are not removed when the cache is emptied.
         /// We're beyond infrastructure and cannot use IOC objects here. It would lead to ComponentNotRegisteredException from autofac.
         /// </remarks>
         private static void OnDataRemoved(string key, object value, CacheItemRemovedReason reason)
@@ -111,7 +111,7 @@ namespace SmartStore.Web.Framework.WebApi.Caching
                                     {
                                         GenericAttributeId = attribute.Id,
                                         CustomerId = attribute.EntityId,
-                                        Enabled = bool.Parse(arr[0]),
+                                        Enabled = bool.ParseDocument(arr[0]),
                                         PublicKey = arr[1],
                                         SecretKey = arr[2]
                                     };
@@ -125,7 +125,7 @@ namespace SmartStore.Web.Framework.WebApi.Caching
                             }
                         }
 
-                        HttpRuntime.Cache.Add(Key, data, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.NotRemovable,
+                        HttpRuntime.Cache.Add(Key, data, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.NeverRemove,
                             new CacheItemRemovedCallback(OnDataRemoved));
                     }
                 }

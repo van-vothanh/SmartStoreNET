@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Dynamic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Collections;
 using SmartStore.ComponentModel;
 using SmartStore.Core;

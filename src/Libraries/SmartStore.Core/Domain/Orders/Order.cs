@@ -45,8 +45,8 @@ namespace SmartStore.Core.Domain.Orders
                 {
                     try
                     {
-                        decimal taxRate = decimal.Parse(taxes[0].Trim(), CultureInfo.InvariantCulture);
-                        decimal taxValue = decimal.Parse(taxes[1].Trim(), CultureInfo.InvariantCulture);
+                        decimal taxRate = decimal.ParseDocument(taxes[0].Trim(), CultureInfo.InvariantCulture);
+                        decimal taxValue = decimal.ParseDocument(taxes[1].Trim(), CultureInfo.InvariantCulture);
                         taxRatesDictionary.Add(taxRate, taxValue);
                     }
                     catch (Exception exc)
@@ -440,7 +440,6 @@ namespace SmartStore.Core.Domain.Orders
         /// <summary>
         /// Gets or sets a value indicating whether the entity has been deleted
         /// </summary>
-		[Index]
         public bool Deleted { get; set; }
 
         /// <summary>

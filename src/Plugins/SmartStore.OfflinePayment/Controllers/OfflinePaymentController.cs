@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Autofac;
 using FluentValidation;
 using FluentValidation.Results;
@@ -208,8 +208,8 @@ namespace SmartStore.OfflinePayment.Controllers
                     paymentInfo.CreditCardType = form["CreditCardType"];
                     paymentInfo.CreditCardName = form["CardholderName"];
                     paymentInfo.CreditCardNumber = form["CardNumber"];
-                    paymentInfo.CreditCardExpireMonth = int.Parse(form["ExpireMonth"].SplitSafe(",")[0]);
-                    paymentInfo.CreditCardExpireYear = int.Parse(form["ExpireYear"].SplitSafe(",")[0]);
+                    paymentInfo.CreditCardExpireMonth = int.ParseDocument(form["ExpireMonth"].SplitSafe(",")[0]);
+                    paymentInfo.CreditCardExpireYear = int.ParseDocument(form["ExpireYear"].SplitSafe(",")[0]);
                     paymentInfo.CreditCardCvv2 = form["CardCode"];
                 }
                 else if (type == "DirectDebit")

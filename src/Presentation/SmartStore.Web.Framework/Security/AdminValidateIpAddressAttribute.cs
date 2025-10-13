@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Security;
 
@@ -16,7 +16,7 @@ namespace SmartStore.Web.Framework.Security
             if (filterContext == null || filterContext.HttpContext == null)
                 return;
 
-            HttpRequestBase request = filterContext.HttpContext.Request;
+            HttpRequest request = filterContext.HttpContext.Request;
             if (request == null)
                 return;
 

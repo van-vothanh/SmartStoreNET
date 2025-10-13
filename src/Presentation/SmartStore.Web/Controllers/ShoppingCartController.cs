@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Common;
@@ -2415,7 +2415,7 @@ namespace SmartStore.Web.Controllers
             var allWarnings = new List<string>();
             var numberOfAddedItems = 0;
             var allIdsToAdd = form["addtocart"] != null
-                ? form["addtocart"].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(x => int.Parse(x)).ToList()
+                ? form["addtocart"].Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries).Select(x => int.ParseDocument(x)).ToList()
                 : new List<int>();
 
             foreach (var sci in pageCart)

@@ -208,7 +208,7 @@ namespace SmartStore.Services.DataExchange.Excel
             if (Int32.TryParse(value.ToString(), out result))
                 return (result != 0);
             else
-                return Boolean.Parse(value.ToString());
+                return Boolean.ParseDocument(value.ToString());
         }
 
         public byte GetByte(int i)

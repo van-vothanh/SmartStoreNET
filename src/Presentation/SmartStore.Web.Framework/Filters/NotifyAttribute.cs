@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Logging;
 
 namespace SmartStore.Web.Framework.Filters
@@ -49,7 +49,7 @@ namespace SmartStore.Web.Framework.Filters
             bag[NotificationsKey] = TrimSet(existing);
         }
 
-        private void HandleAjaxRequest(NotifyEntry entry, HttpResponseBase response)
+        private void HandleAjaxRequest(NotifyEntry entry, HttpResponse response)
         {
             if (entry == null)
                 return;

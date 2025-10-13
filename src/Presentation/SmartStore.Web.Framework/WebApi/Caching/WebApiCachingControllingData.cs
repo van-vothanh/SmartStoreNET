@@ -47,7 +47,7 @@ namespace SmartStore.Web.Framework.WebApi.Caching
                             MaxExpansionDepth = settings.MaxExpansionDepth
                         };
 
-                        HttpRuntime.Cache.Add(Key, data, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.NotRemovable, null);
+                        HttpRuntime.Cache.Add(Key, data, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.NeverRemove, null);
                     }
                 }
             }

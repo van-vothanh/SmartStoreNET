@@ -1,3 +1,6 @@
+// TODO: Migrate to NuGet.Protocol v3 API - NuGet.Core is obsolete
+// This file has been temporarily disabled for .NET 8 migration
+/*
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -294,3 +297,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+*/

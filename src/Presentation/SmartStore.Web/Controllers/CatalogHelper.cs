@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Common;
@@ -74,7 +74,7 @@ namespace SmartStore.Web.Controllers
         private readonly Lazy<IDataExporter> _dataExporter;
         private readonly ICatalogSearchService _catalogSearchService;
         private readonly ICatalogSearchQueryFactory _catalogSearchQueryFactory;
-        private readonly HttpRequestBase _httpRequest;
+        private readonly HttpRequest _httpRequest;
         private readonly UrlHelper _urlHelper;
         private readonly ProductUrlHelper _productUrlHelper;
         private readonly ILocalizedEntityService _localizedEntityService;
@@ -112,7 +112,7 @@ namespace SmartStore.Web.Controllers
             Lazy<IDataExporter> dataExporter,
             ICatalogSearchService catalogSearchService,
             ICatalogSearchQueryFactory catalogSearchQueryFactory,
-            HttpRequestBase httpRequest,
+            HttpRequest httpRequest,
             UrlHelper urlHelper,
             ProductUrlHelper productUrlHelper,
             ILocalizedEntityService localizedEntityService,

@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -344,6 +343,8 @@ namespace SmartStore.Core.Async
         }
     }
 
+    // TODO: IRegisteredObject removed in .NET 8 - migrate to IHostedService
+    /*
     internal class BackgroundWorkHost : IRegisteredObject
     {
         private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
@@ -421,4 +422,4 @@ namespace SmartStore.Core.Async
         }
 
     }
-}
+}*/

@@ -5,7 +5,7 @@ namespace SmartStore.Services.Localization
 {
     public class LocalizedUrlHelper
     {
-        public LocalizedUrlHelper(HttpRequestBase httpRequest, bool rawUrl = false)
+        public LocalizedUrlHelper(HttpRequest httpRequest, bool rawUrl = false)
             : this(httpRequest.ApplicationPath, rawUrl ? httpRequest.RawUrl : httpRequest.AppRelativeCurrentExecutionFilePath, rawUrl)
         {
             Guard.NotNull(httpRequest, nameof(httpRequest));

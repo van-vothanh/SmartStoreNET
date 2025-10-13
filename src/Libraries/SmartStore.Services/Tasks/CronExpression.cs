@@ -13,7 +13,7 @@ namespace SmartStore.Services.Tasks
         {
             try
             {
-                CrontabSchedule.Parse(expression);
+                CrontabSchedule.ParseDocument(expression);
                 return true;
             }
             catch { }
@@ -40,7 +40,7 @@ namespace SmartStore.Services.Tasks
         {
             Guard.NotEmpty(expression, nameof(expression));
 
-            var schedule = CrontabSchedule.Parse(expression);
+            var schedule = CrontabSchedule.ParseDocument(expression);
             return schedule.GetNextOccurrences(baseTime, endTime).Take(max);
         }
 

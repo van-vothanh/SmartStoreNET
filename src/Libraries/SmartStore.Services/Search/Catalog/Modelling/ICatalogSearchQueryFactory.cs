@@ -3,7 +3,7 @@
     public interface ICatalogSearchQueryFactory
     {
         /// <summary>
-        /// Creates a <see cref="CatalogSearchQuery"/> instance from the current <see cref="HttpContextBase"/> 
+        /// Creates a <see cref="CatalogSearchQuery"/> instance from the current <see cref="HttpContext"/> 
         /// by looking up corresponding keys in posted form and/or query string
         /// </summary>
         /// <returns>The query object</returns>

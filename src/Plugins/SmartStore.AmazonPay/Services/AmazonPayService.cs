@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using AmazonPay;
 using AmazonPay.Responses;
 using AmazonPay.StandardPaymentRequests;
@@ -1417,7 +1417,7 @@ namespace SmartStore.AmazonPay.Services
             return result;
         }
 
-        public void ProcessIpn(HttpRequestBase request)
+        public void ProcessIpn(HttpRequest request)
         {
             string json = null;
             try
@@ -1627,7 +1627,7 @@ namespace SmartStore.AmazonPay.Services
                 throw new SmartException(T("Plugins.Payments.AmazonPay.MissingPayloadParameter"));
             }
 
-            dynamic json = JObject.Parse(payload);
+            dynamic json = JObject.ParseDocument(payload);
             var settings = _services.Settings.LoadSetting<AmazonPaySettings>(storeId);
 
             var encryptedPayload = (string)json.encryptedPayload;
@@ -1670,7 +1670,7 @@ namespace SmartStore.AmazonPay.Services
                 var jsonString = client.GetUserInfo(accessToken);
                 if (jsonString.HasValue())
                 {
-                    var json = JObject.Parse(jsonString);
+                    var json = JObject.ParseDocument(jsonString);
 
                     email = json.GetValue("email").ToString();
                     name = json.GetValue("name").ToString();

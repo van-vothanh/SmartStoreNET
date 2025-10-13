@@ -75,7 +75,7 @@ namespace SmartStore.Data.Utilities
             Guard.NotEmpty(xml, nameof(xml));
             Guard.NotEmpty(templateName, nameof(templateName));
 
-            var template = DeserializeDocument(XDocument.Parse(xml));
+            var template = DeserializeDocument(XDocument.ParseDocument(xml));
             template.Name = templateName;
             return template;
         }

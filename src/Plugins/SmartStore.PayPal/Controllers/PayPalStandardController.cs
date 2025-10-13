@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Payments;
 using SmartStore.Core.Logging;
 using SmartStore.PayPal.Models;
@@ -128,7 +128,7 @@ namespace SmartStore.PayPal.Controllers
                 {
                     try
                     {
-                        total = decimal.Parse(values["mc_gross"], new CultureInfo("en-US"));
+                        total = decimal.ParseDocument(values["mc_gross"], new CultureInfo("en-US"));
                     }
                     catch (Exception ex)
                     {

@@ -1,6 +1,28 @@
 ﻿using System;
+// TODO: Migrate to ASP.NET Core middleware
+// IHttpModule is not supported in ASP.NET Core
+// Request scoping is handled automatically by ASP.NET Core DI
+
+namespace SmartStore.Core.Infrastructure.DependencyManagement
+{
+    /// <summary>
+    /// TODO: This class used IHttpModule which is not supported in ASP.NET Core.
+    /// Convert to middleware or remove if request scoping is handled by framework.
+    /// </summary>
+    public class AutofacRequestLifetimeHttpModule
+    {
+        public AutofacRequestLifetimeHttpModule()
+        {
+            throw new NotImplementedException("TODO: This class used IHttpModule which is not supported in ASP.NET Core. Convert to middleware.");
+        }
+    }
+}
+
+/*
+// OLD IMPLEMENTATION - COMMENTED OUT FOR MIGRATION
+using System;
 using System.Web;
-using Autofac.Integration.Mvc;
+using Autofac.Extensions.DependencyInjection;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
@@ -74,3 +96,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+*/

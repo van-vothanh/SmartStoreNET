@@ -1,5 +1,5 @@
 ﻿using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Xml;
 using SmartStore.Utilities;
 

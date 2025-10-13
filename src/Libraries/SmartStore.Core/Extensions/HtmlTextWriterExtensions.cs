@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.UI;
+// using System.Web.UI; // TODO: Replace with ASP.NET Core equivalent
 
 namespace SmartStore
 {

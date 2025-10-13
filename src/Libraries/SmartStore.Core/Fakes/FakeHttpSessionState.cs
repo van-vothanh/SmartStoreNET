@@ -1,7 +1,10 @@
+// TODO: Migrate to ASP.NET Core test helpers
+// This fake class has been temporarily disabled for .NET 8 migration
+/*
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.SessionState;
+// using System.Web.SessionState; // TODO: Replace with ASP.NET Core session
 
 namespace SmartStore.Core.Fakes
 {
@@ -50,4 +53,4 @@ namespace SmartStore.Core.Fakes
             _sessionItems.Remove(name);
         }
     }
-}
+}*/

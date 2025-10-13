@@ -84,7 +84,7 @@ namespace SmartStore.Admin.Infrastructure
 
             if (node.Attributes.ContainsKey("isGroupHeader"))
             {
-                item.IsGroupHeader = Boolean.Parse(node.Attributes["isGroupHeader"] as string);
+                item.IsGroupHeader = Boolean.ParseDocument(node.Attributes["isGroupHeader"] as string);
             }
 
             // Iterate children recursively.

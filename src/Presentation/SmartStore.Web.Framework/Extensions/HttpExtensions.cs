@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Services.Orders;
@@ -23,7 +23,7 @@ namespace SmartStore
             return false;
         }
 
-        public static bool IsAdminArea(this HttpRequestBase request)
+        public static bool IsAdminArea(this HttpRequest request)
         {
             try
             {
@@ -55,7 +55,7 @@ namespace SmartStore
             return false;
         }
 
-        public static bool IsPublicArea(this HttpRequestBase request)
+        public static bool IsPublicArea(this HttpRequest request)
         {
             try
             {
@@ -69,7 +69,7 @@ namespace SmartStore
             }
         }
 
-        public static PostedFileResult ToPostedFileResult(this HttpRequestBase httpRequest)
+        public static PostedFileResult ToPostedFileResult(this HttpRequest httpRequest)
         {
             if (httpRequest != null && httpRequest.Files.Count > 0)
             {

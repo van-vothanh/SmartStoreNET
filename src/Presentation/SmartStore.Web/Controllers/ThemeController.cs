@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 using SmartStore.Core.Themes;
 using SmartStore.Services.Themes;

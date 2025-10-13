@@ -105,7 +105,7 @@ namespace SmartStore.Services.Common
 
         #endregion
 
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
 
         private string _rawValue;
         private UserAgentInfo _userAgent;
@@ -125,7 +125,7 @@ namespace SmartStore.Services.Common
                 : uap.Parser.GetDefault();
         }
 
-        public UAParserUserAgent(HttpContextBase httpContext)
+        public UAParserUserAgent(HttpContext httpContext)
         {
             this._httpContext = httpContext;
         }

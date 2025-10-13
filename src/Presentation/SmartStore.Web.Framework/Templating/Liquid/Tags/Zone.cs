@@ -69,7 +69,7 @@ namespace SmartStore.Templating.Liquid
                     {
                         if (snippet.Parse)
                         {
-                            Template.Parse(snippet.Content)
+                            Template.ParseDocument(snippet.Content)
                                 .Render(result, new RenderParameters(context.FormatProvider) { LocalVariables = model });
                         }
                         else

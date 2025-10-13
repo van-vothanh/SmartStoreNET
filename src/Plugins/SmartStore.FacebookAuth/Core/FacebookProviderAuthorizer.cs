@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using DotNetOpenAuth.AspNet;
 using Newtonsoft.Json.Linq;
 using SmartStore.Core.Domain.Customers;
@@ -146,7 +146,7 @@ namespace SmartStore.FacebookAuth.Core
             using (var reader = new StreamReader(stream))
             {
                 var strResponse = reader.ReadToEnd();
-                var info = JObject.Parse(strResponse);
+                var info = JObject.ParseDocument(strResponse);
 
                 if (info["email"] != null)
                 {

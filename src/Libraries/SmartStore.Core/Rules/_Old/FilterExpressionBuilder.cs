@@ -92,7 +92,7 @@
 //                {
 //                    if (nonNullableType.IsEnum)
 //                    {
-//                        value = Enum.Parse(nonNullableType, value.ToString(), true);
+//                        value = Enum.ParseDocument(nonNullableType, value.ToString(), true);
 //                    }
 //                    else if (value is IConvertible)
 //                    {

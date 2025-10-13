@@ -1,3 +1,6 @@
+// TODO: Migrate to ASP.NET Core test helpers
+// This fake class has been temporarily disabled for .NET 8 migration
+/*
 ﻿using System;
 using System.Web;
 
@@ -10,7 +13,7 @@ namespace SmartStore.Core.Fakes
         /// </summary>
         /// <param name="httpContext">HTTP context</param>
         /// <returns>Result</returns>
-        public static bool IsFakeContext(this HttpContextBase httpContext)
+        public static bool IsFakeContext(this HttpContext httpContext)
         {
             if (httpContext == null)
                 throw new ArgumentNullException("httpContext");
@@ -20,3 +23,4 @@ namespace SmartStore.Core.Fakes
 
     }
 }
+*/

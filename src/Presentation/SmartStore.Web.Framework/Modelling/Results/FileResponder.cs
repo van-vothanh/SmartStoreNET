@@ -368,13 +368,13 @@ namespace SmartStore.Web.Framework.Modelling
             }
         }
 
-        private void SendBadRequest(HttpResponseBase response)
+        private void SendBadRequest(HttpResponse response)
         {
             response.StatusCode = (int)HttpStatusCode.BadRequest;
             response.Write("<html><body>Bad Request</body></html>");
         }
 
-        private void SendRangeNotSatisfiable(HttpResponseBase response, long fileLength)
+        private void SendRangeNotSatisfiable(HttpResponse response, long fileLength)
         {
             response.StatusCode = (int)HttpStatusCode.RequestedRangeNotSatisfiable;
             response.ContentType = null;

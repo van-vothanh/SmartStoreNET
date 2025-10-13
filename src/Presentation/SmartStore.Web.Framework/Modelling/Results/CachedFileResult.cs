@@ -3,7 +3,7 @@ using System.Globalization;
 using System.IO;
 using System.Web;
 using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.IO;
 using SmartStore.Utilities;
 
@@ -193,7 +193,7 @@ namespace SmartStore.Web.Framework.Modelling
             OnExecuted?.Invoke();
         }
 
-        private FileResponder ResolveResponder(HttpRequestBase request)
+        private FileResponder ResolveResponder(HttpRequest request)
         {
             // Is this a HEAD request
             if (request.HttpMethod == "HEAD")

@@ -456,7 +456,7 @@ namespace SmartStore.Services.Customers
         {
             try
             {
-                var ip = IPAddress.Parse(ipAddress);
+                var ip = IPAddress.ParseDocument(ipAddress);
 
                 switch (ip.AddressFamily)
                 {

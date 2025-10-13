@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Configuration;
 using SmartStore.Core.Domain.Directory;
 using SmartStore.Core.Domain.Orders;
@@ -81,7 +81,7 @@ namespace SmartStore.PayPal
             var currencyCodeType = CurrencyCodeType.USD;
             try
             {
-                currencyCodeType = (CurrencyCodeType)Enum.Parse(typeof(CurrencyCodeType), currency.CurrencyCode, true);
+                currencyCodeType = (CurrencyCodeType)Enum.ParseDocument(typeof(CurrencyCodeType), currency.CurrencyCode, true);
             }
             catch { }
 
@@ -170,7 +170,7 @@ namespace SmartStore.PayPal
             req.DoCaptureRequest.AuthorizationID = authorizationId;
             req.DoCaptureRequest.Amount = new BasicAmountType();
             req.DoCaptureRequest.Amount.Value = Math.Round(capturePaymentRequest.Order.OrderTotal, 2).ToString("N", new CultureInfo("en-us"));
-            req.DoCaptureRequest.Amount.currencyID = (CurrencyCodeType)Enum.Parse(typeof(CurrencyCodeType), currencyCode, true);
+            req.DoCaptureRequest.Amount.currencyID = (CurrencyCodeType)Enum.ParseDocument(typeof(CurrencyCodeType), currencyCode, true);
             req.DoCaptureRequest.CompleteType = CompleteCodeType.Complete;
 
             using (var service = GetApiAaService(settings))
@@ -219,7 +219,7 @@ namespace SmartStore.PayPal
 
                 req.RefundTransactionRequest.Amount = new BasicAmountType();
                 req.RefundTransactionRequest.Amount.Value = Math.Round(request.AmountToRefund, 2).ToString("N", new CultureInfo("en-us"));
-                req.RefundTransactionRequest.Amount.currencyID = (CurrencyCodeType)Enum.Parse(typeof(CurrencyCodeType), currencyCode, true);
+                req.RefundTransactionRequest.Amount.currencyID = (CurrencyCodeType)Enum.ParseDocument(typeof(CurrencyCodeType), currencyCode, true);
 
                 // see https://developer.paypal.com/docs/classic/express-checkout/digital-goods/ECDGIssuingRefunds/
                 // https://developer.paypal.com/docs/classic/api/merchant/RefundTransaction_API_Operation_NVP/

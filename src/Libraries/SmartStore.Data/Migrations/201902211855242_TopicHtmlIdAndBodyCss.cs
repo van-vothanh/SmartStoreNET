@@ -1,6 +1,6 @@
 namespace SmartStore.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
 
     public partial class TopicHtmlIdAndBodyCss : DbMigration
     {

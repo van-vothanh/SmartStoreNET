@@ -192,7 +192,7 @@ namespace SmartStore.Services.Catalog
 
             try
             {
-                var doc = XDocument.Parse(attributesXml);
+                var doc = XDocument.ParseDocument(attributesXml);
 
                 // Attributes/ProductVariantAttribute
                 foreach (var node1 in doc.Descendants("ProductVariantAttribute"))

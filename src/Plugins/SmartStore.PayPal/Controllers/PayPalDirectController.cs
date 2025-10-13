@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Payments;
 using SmartStore.PayPal.Models;
 using SmartStore.PayPal.Settings;
@@ -179,8 +179,8 @@ namespace SmartStore.PayPal.Controllers
             paymentInfo.CreditCardType = form["CreditCardType"];
             paymentInfo.CreditCardName = form["CardholderName"];
             paymentInfo.CreditCardNumber = form["CardNumber"];
-            paymentInfo.CreditCardExpireMonth = int.Parse(form["ExpireMonth"]);
-            paymentInfo.CreditCardExpireYear = int.Parse(form["ExpireYear"]);
+            paymentInfo.CreditCardExpireMonth = int.ParseDocument(form["ExpireMonth"]);
+            paymentInfo.CreditCardExpireYear = int.ParseDocument(form["ExpireYear"]);
             paymentInfo.CreditCardCvv2 = form["CardCode"];
 
             return paymentInfo;
