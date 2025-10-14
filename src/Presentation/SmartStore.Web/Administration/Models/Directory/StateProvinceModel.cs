@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -19,11 +19,9 @@ namespace SmartStore.Admin.Models.Directory
         public int CountryId { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.States.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.States.Fields.Abbreviation")]
-        [AllowHtml]
         public string Abbreviation { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.States.Fields.Published")]
@@ -40,7 +38,6 @@ namespace SmartStore.Admin.Models.Directory
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.States.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
     }
 

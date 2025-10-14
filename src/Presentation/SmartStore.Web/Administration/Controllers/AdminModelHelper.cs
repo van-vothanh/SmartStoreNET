@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Tasks;
 using SmartStore.Core.Domain.Tasks;
 using SmartStore.Core.Localization;

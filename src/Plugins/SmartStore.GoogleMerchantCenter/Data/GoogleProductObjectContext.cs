@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using SmartStore.Data;
 using SmartStore.Data.Setup;
 using SmartStore.GoogleMerchantCenter.Data.Migrations;

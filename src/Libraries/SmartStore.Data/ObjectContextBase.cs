@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -417,7 +417,7 @@ namespace SmartStore.Data
                 return numDetached;
             }
 
-            bool Match(DbEntityEntry<BaseEntity> entry)
+            bool Match(EntityEntry<BaseEntity> entry)
             {
                 if (entry.State > EfState.Detached && predicate(entry.Entity))
                 {
@@ -439,7 +439,7 @@ namespace SmartStore.Data
             return DetachInternal(this.Entry(obj), objSet, deep);
         }
 
-        internal int DetachInternal(DbEntityEntry<BaseEntity> entry, ISet<BaseEntity> objSet, bool deep)
+        internal int DetachInternal(EntityEntry<BaseEntity> entry, ISet<BaseEntity> objSet, bool deep)
         {
             var obj = entry.Entity;
             int numDetached = 0;

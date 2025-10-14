@@ -27,7 +27,7 @@ namespace SmartStore.Data
             PostSave
         }
 
-        private IEnumerable<DbEntityEntry> GetChangedEntries()
+        private IEnumerable<EntityEntry> GetChangedEntries()
         {
             return ChangeTracker.Entries().Where(x => x.State > EfState.Unchanged);
         }
@@ -161,7 +161,7 @@ namespace SmartStore.Data
         class SaveChangesOperation : IDisposable
         {
             private SaveStage _stage;
-            private IEnumerable<DbEntityEntry> _changedEntries;
+            private IEnumerable<EntityEntry> _changedEntries;
             private ObjectContextBase _ctx;
             private IDbHookHandler _hookHandler;
 
@@ -171,7 +171,7 @@ namespace SmartStore.Data
                 _hookHandler = hookHandler;
             }
 
-            public IEnumerable<DbEntityEntry> ChangedEntries => _changedEntries;
+            public IEnumerable<EntityEntry> ChangedEntries => _changedEntries;
 
             public SaveStage Stage => _stage;
 

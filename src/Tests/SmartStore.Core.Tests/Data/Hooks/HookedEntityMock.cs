@@ -19,7 +19,7 @@ namespace SmartStore.Core.Tests.Data.Hooks
 
         public Type ContextType => typeof(IDbContext);
 
-        public DbEntityEntry Entry => null;
+        public EntityEntry Entry => null;
 
         public BaseEntity Entity => _entity;
 

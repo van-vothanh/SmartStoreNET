@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Logging;
 using SmartStore.Collections;
 using SmartStore.Core.Caching;

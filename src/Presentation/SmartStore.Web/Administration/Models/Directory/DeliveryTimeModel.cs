@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Localization;
@@ -19,16 +19,13 @@ namespace SmartStore.Admin.Models.Directory
         }
 
         [SmartResourceDisplayName("Admin.Configuration.DeliveryTimes.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
         public string DeliveryInfo { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.DeliveryTimes.Fields.DisplayLocale")]
-        [AllowHtml]
         public string DisplayLocale { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.DeliveryTimes.Fields.Color")]
-        [AllowHtml]
         public string ColorHexValue { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]
@@ -51,7 +48,6 @@ namespace SmartStore.Admin.Models.Directory
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.DeliveryTimes.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
     }
 

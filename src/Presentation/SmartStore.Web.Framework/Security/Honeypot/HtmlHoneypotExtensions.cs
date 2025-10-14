@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Web.Mvc.Html;
 
 namespace SmartStore.Web.Framework.Security

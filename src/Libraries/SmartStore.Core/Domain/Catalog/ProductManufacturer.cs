@@ -25,7 +25,6 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets a value indicating whether the product is featured
         /// </summary>
 		[DataMember]
-        [Index]
         public bool IsFeaturedProduct { get; set; }
 
         /// <summary>

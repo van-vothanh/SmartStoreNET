@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Web.Caching;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace SmartStore.Core.IO
 {

@@ -14,7 +14,6 @@ namespace SmartStore.GoogleMerchantCenter.Domain
             Export = true;
         }
 
-        [Index]
         public int ProductId { get; set; }
 
         public string Taxonomy { get; set; }
@@ -26,12 +25,10 @@ namespace SmartStore.GoogleMerchantCenter.Domain
         public string Pattern { get; set; }
         public string ItemGroupId { get; set; }
 
-        [Index]
         public bool IsTouched { get; set; }
         public DateTime CreatedOnUtc { get; set; }
         public DateTime UpdatedOnUtc { get; set; }
 
-        [Index]
         public bool Export { get; set; }
 
         public int Multipack { get; set; }

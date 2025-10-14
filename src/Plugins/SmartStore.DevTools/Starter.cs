@@ -1,5 +1,4 @@
 ﻿using System;
-using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Web.Framework;
 using StackExchange.Profiling;

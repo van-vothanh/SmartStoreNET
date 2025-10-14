@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Messages;
 using SmartStore.Core.Domain.Messages;
 using SmartStore.Core.Security;

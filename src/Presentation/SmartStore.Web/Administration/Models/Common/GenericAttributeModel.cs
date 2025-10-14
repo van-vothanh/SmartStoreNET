@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -12,7 +12,6 @@ namespace SmartStore.Admin.Models.Common
         [SmartResourceDisplayName("Admin.Common.GenericAttributes.Fields.Name")]
         public string Key { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.Common.GenericAttributes.Fields.Value")]
         public string Value { get; set; }
 
