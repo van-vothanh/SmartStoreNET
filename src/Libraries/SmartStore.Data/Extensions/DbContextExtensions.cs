@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 using System.Linq;

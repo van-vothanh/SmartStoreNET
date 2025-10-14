@@ -1,3 +1,6 @@
+// TODO: Migrate to ASP.NET Core - Fake classes need complete rewrite
+// Use DefaultHttpContext and related ASP.NET Core test utilities instead
+/*
 ﻿using System.Linq;
 using System.Security.Principal;
 
@@ -22,4 +25,4 @@ namespace SmartStore.Core.Fakes
             return _roles != null && _roles.Contains(role);
         }
     }
-}
+}*/

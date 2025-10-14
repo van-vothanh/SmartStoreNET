@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Services.Catalog.Modelling;
@@ -68,14 +68,12 @@ namespace SmartStore.Admin.Models.Catalog
         public IList<ProductVariantAttributeModel> ProductVariantAttributes { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.AttributeCombinations.Fields.Attributes")]
-        [AllowHtml]
         public string AttributesXml { get; set; }
 
         [SmartResourceDisplayName("Common.Product")]
         public string ProductUrl { get; set; }
         public string ProductUrlTitle { get; set; }
 
-        [AllowHtml]
         public IList<string> Warnings { get; set; }
 
         public int ProductId { get; set; }

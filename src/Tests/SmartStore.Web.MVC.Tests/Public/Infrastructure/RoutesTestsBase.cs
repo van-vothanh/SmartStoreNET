@@ -1,4 +1,4 @@
-﻿using System.Web.Routing;
+﻿using Microsoft.AspNetCore.Routing;
 using NUnit.Framework;
 using SmartStore.Core.Data;
 

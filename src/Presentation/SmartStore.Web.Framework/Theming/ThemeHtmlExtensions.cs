@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Mvc.Html;
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;

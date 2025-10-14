@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using System.Web;
 
 namespace SmartStore.Core

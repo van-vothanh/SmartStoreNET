@@ -1,3 +1,7 @@
+// TODO: Migrate to ASP.NET Core middleware
+// IHttpModule is not supported in ASP.NET Core
+// Request scoping is handled automatically by ASP.NET Core DI
+/*
 ﻿using System;
 using System.Web;
 using Autofac.Integration.Mvc;
@@ -74,3 +78,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+*/

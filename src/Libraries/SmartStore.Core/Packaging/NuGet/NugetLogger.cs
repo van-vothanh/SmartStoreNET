@@ -1,3 +1,6 @@
+// TODO: Migrate to NuGet.Protocol v3 API
+// NuGet.Core v2 API is obsolete
+/*
 ﻿using System;
 using NuGet;
 using SmartStore.Core.Logging;
@@ -39,3 +42,4 @@ namespace SmartStore.Core.Packaging
         }
     }
 }
+*/

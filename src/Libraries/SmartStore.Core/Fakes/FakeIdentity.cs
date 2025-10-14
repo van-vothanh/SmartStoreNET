@@ -1,3 +1,6 @@
+// TODO: Migrate to ASP.NET Core - Fake classes need complete rewrite
+// Use DefaultHttpContext and related ASP.NET Core test utilities instead
+/*
 ﻿using System;
 using System.Security.Principal;
 
@@ -19,4 +22,4 @@ namespace SmartStore.Core.Fakes
         public string Name => _name;
 
     }
-}
+}*/

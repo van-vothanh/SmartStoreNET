@@ -1,3 +1,6 @@
+// TODO: Migrate to IServiceScopeFactory
+// Autofac.Integration.Mvc is replaced by Autofac.Extensions.DependencyInjection
+/*
 ﻿using System;
 using Autofac;
 using Autofac.Integration.Mvc;
@@ -30,3 +33,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+*/

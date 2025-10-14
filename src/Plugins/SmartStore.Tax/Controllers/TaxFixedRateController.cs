@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Services.Configuration;
 using SmartStore.Services.Tax;
 using SmartStore.Tax.Models;

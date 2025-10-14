@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Services.Localization;
 using SmartStore.Web.Framework.Modelling;
