@@ -1,3 +1,4 @@
+#if false // TODO: Migrate to NuGet.Protocol v3 API
 ﻿using System.IO;
 
 namespace SmartStore.Core.Packaging
@@ -11,3 +12,4 @@ namespace SmartStore.Core.Packaging
         PackagingResult BuildThemePackage(string themeName);
     }
 }
+#endif

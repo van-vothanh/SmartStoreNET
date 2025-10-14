@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Admin.Models.Tasks;
@@ -122,7 +122,6 @@ namespace SmartStore.Admin.Models.DataExchange
             public string Version { get; set; }
 
             [SmartResourceDisplayName("Common.Description")]
-            [AllowHtml]
             public string Description { get; set; }
 
             [SmartResourceDisplayName("Admin.DataExchange.Export.EntityType")]

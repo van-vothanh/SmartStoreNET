@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SmartStore.Core.Data;
 using SmartStore.Core.Data.Hooks;
 
@@ -19,7 +19,7 @@ namespace SmartStore.Core.Tests.Data.Hooks
 
         public Type ContextType => typeof(IDbContext);
 
-        public DbEntityEntry Entry => null;
+        public EntityEntry Entry => null;
 
         public BaseEntity Entity => _entity;
 

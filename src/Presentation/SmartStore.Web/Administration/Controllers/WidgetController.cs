@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Cms;
 using SmartStore.Core.Domain.Cms;
 using SmartStore.Core.Security;

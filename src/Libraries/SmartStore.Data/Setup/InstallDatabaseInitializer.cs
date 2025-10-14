@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
 using System.Data.Entity.Migrations;
 using SmartStore.Data.Migrations;
 

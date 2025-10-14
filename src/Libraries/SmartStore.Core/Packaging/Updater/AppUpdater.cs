@@ -1,3 +1,4 @@
+#if false // TODO: Migrate to NuGet.Protocol v3 API
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -463,3 +464,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

@@ -1,3 +1,4 @@
+#if false // TODO: Migrate to NuGet.Protocol v3 API
 ﻿using System.IO;
 
 namespace SmartStore.Core.Packaging
@@ -9,3 +10,4 @@ namespace SmartStore.Core.Packaging
         void Uninstall(string packageId, string applicationFolder);
     }
 }
+#endif

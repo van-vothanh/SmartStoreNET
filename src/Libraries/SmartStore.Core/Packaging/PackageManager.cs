@@ -1,3 +1,4 @@
+#if false // TODO: Migrate to NuGet.Protocol v3 API
 ﻿using System;
 using System.IO;
 using SmartStore.Core.Plugins;
@@ -93,3 +94,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

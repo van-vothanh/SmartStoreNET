@@ -10,8 +10,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web;
-using System.Web.Configuration;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using SmartStore.Collections;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Stores;
@@ -30,7 +30,7 @@ namespace SmartStore.Core
         private static readonly Regex s_cssPathPattern = new Regex(@"url\('(?<url>.+)'\)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline);
         private static readonly ConcurrentDictionary<int, string> s_safeLocalHostNames = new ConcurrentDictionary<int, string>();
 
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private bool? _isCurrentConnectionSecured;
         private string _storeHost;
         private string _storeHostSsl;
@@ -40,7 +40,7 @@ namespace SmartStore.Core
 
         private Store _currentStore;
 
-        public WebHelper(HttpContextBase httpContext)
+        public WebHelper(HttpContext httpContext)
         {
             _httpContext = httpContext;
         }
@@ -370,7 +370,7 @@ namespace SmartStore.Core
             return s_staticExts.IsMatch(request.Path);
         }
 
-        public static bool IsStaticResourceRequested(HttpRequestBase request)
+        public static bool IsStaticResourceRequested(HttpRequest request)
         {
             // unit testable
             Guard.NotNull(request, nameof(request));
@@ -587,7 +587,7 @@ namespace SmartStore.Core
         /// <remarks>
         /// All html attributed named <c>src</c> and <c>href</c> are affected, also occurences of <c>url('path')</c> within embedded stylesheets.
         /// </remarks>
-        public static string MakeAllUrlsAbsolute(string html, HttpRequestBase request)
+        public static string MakeAllUrlsAbsolute(string html, HttpRequest request)
         {
             Guard.NotNull(request, nameof(request));
 
@@ -634,7 +634,7 @@ namespace SmartStore.Core
         /// </summary>
         /// <param name="protocol">Changes the protocol if passed.</param>
         [SuppressMessage("ReSharper", "AccessToModifiedClosure")]
-        public static string GetAbsoluteUrl(string url, HttpRequestBase request, bool enforceScheme = false, string protocol = null)
+        public static string GetAbsoluteUrl(string url, HttpRequest request, bool enforceScheme = false, string protocol = null)
         {
             Guard.NotEmpty(url, nameof(url));
             Guard.NotNull(request, nameof(request));

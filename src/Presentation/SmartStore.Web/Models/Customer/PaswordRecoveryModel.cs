@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -10,7 +10,6 @@ namespace SmartStore.Web.Models.Customer
     [Validator(typeof(PasswordRecoveryValidator))]
     public partial class PasswordRecoveryModel : ModelBase
     {
-        [AllowHtml]
         [SmartResourceDisplayName("Account.PasswordRecovery.Email")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }

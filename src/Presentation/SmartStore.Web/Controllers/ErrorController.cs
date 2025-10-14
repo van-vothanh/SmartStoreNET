@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework.Controllers;
 using SmartStore.Web.Infrastructure;
 

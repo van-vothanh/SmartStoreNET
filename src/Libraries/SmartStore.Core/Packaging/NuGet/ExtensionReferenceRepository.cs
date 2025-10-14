@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
-using NuGet;
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
 
 namespace SmartStore.Core.Packaging
 {
+    // TODO: Migrate to NuGet.Protocol v3 API
+    // These classes used NuGet.Core v2 API which is obsolete
+    // See: https://docs.microsoft.com/en-us/nuget/reference/nuget-client-sdk
 
+    /*
     internal abstract class ExtensionReferenceRepository : PackageRepositoryBase
     {
 
@@ -41,9 +44,6 @@ namespace SmartStore.Core.Packaging
         public override bool SupportsPrereleasePackages => true;
     }
 
-    /// <summary>
-    /// This repository implementation informs about what plugin packages are already installed.
-    /// </summary>
     internal class PluginReferenceRepository : ExtensionReferenceRepository
     {
         private readonly IList<PluginDescriptor> _descriptors;
@@ -69,9 +69,6 @@ namespace SmartStore.Core.Packaging
 
     }
 
-    /// <summary>
-    /// This repository implementation informs about what theme packages are already installed.
-    /// </summary>
     internal class ThemeReferenceRepository : ExtensionReferenceRepository
     {
         private readonly ICollection<ThemeManifest> _themeManifests;
@@ -96,5 +93,6 @@ namespace SmartStore.Core.Packaging
         }
 
     }
+    */
 
 }

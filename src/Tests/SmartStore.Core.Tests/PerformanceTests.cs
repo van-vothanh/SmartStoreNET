@@ -1,6 +1,6 @@
 ﻿//using System;
 //using System.Collections.Generic;
-//using System.Runtime.Caching;
+//using Microsoft.Extensions.Caching.Memory;
 //using System.Threading;
 //using NUnit.Framework;
 //using System.Linq;
@@ -168,7 +168,7 @@
 //				absoluteExpiration = DateTime.UtcNow + duration.Value;
 //			}
 
-//			var cacheItemPolicy = new CacheItemPolicy
+//			var cacheItemPolicy = new MemoryCacheEntryOptions
 //			{
 //				AbsoluteExpiration = absoluteExpiration,
 //				SlidingExpiration = ObjectCache.NoSlidingExpiration

@@ -1,6 +1,7 @@
+#if false // TODO: Migrate to IServiceScopeFactory
 ﻿using System;
 using Autofac;
-using Autofac.Integration.Mvc;
+using Autofac.Extensions.DependencyInjection;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
@@ -30,3 +31,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+#endif

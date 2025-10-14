@@ -4,7 +4,7 @@ using System.Data.Common;
 using System.Data.Entity.Core.Common;
 using System.Data.Entity.Core.Common.CommandTrees;
 using System.Data.Entity.Core.Metadata.Edm;
-using System.Data.Entity.Spatial;
+using NetTopologySuite.Geometries;
 using SmartStore.Data.Setup;
 using SmartStore.Utilities;
 

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Orders;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
@@ -46,12 +46,10 @@ namespace SmartStore.Admin.Models.Orders
         [SmartResourceDisplayName("Admin.ReturnRequests.Fields.Quantity")]
         public int Quantity { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.ReturnRequests.Fields.ReasonForReturn")]
         public string ReasonForReturn { get; set; }
         public IList<SelectListItem> AvailableReasonForReturn { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.ReturnRequests.Fields.RequestedAction")]
         public string RequestedAction { get; set; }
         public IList<SelectListItem> AvailableRequestedAction { get; set; }
@@ -59,11 +57,9 @@ namespace SmartStore.Admin.Models.Orders
         [SmartResourceDisplayName("Admin.ReturnRequests.Fields.RequestedActionUpdatedOnUtc")]
         public DateTime? RequestedActionUpdated { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.ReturnRequests.Fields.CustomerComments")]
         public string CustomerComments { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.ReturnRequests.Fields.StaffNotes")]
         public string StaffNotes { get; set; }
 

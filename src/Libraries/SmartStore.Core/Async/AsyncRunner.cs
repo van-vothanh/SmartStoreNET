@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -108,12 +108,13 @@ namespace SmartStore.Core.Async
 
         #endregion
 
-        private static readonly BackgroundWorkHost _host = new BackgroundWorkHost();
+        // TODO: Migrate to IHostApplicationLifetime
+        // private static readonly BackgroundWorkHost _host = new BackgroundWorkHost();
 
         /// <summary>
         /// Gets the global cancellation token which signals the application shutdown
         /// </summary>
-        public static CancellationToken AppShutdownCancellationToken => _host.ShutdownCancellationTokenSource.Token;
+        public static CancellationToken AppShutdownCancellationToken => CancellationToken.None; // TODO: Use IHostApplicationLifetime.ApplicationStopping
 
         public static AsyncRunner Create()
         {
@@ -344,81 +345,158 @@ namespace SmartStore.Core.Async
         }
     }
 
-    internal class BackgroundWorkHost : IRegisteredObject
-    {
-        private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
-        private int _numRunningWorkItems;
-
-        public BackgroundWorkHost()
-        {
-            HostingEnvironment.RegisterObject(this);
-        }
-
-        public CancellationTokenSource ShutdownCancellationTokenSource => _shutdownCancellationTokenSource;
-
-        public void Stop(bool immediate)
-        {
-            int num;
-            lock (this)
-            {
-                _shutdownCancellationTokenSource.Cancel();
-                num = _numRunningWorkItems;
-            }
-            if (num == 0)
-            {
-                FinalShutdown();
-            }
-        }
-
-        public CancellationTokenSource CreateCompositeCancellationTokenSource(CancellationToken userCancellationToken)
-        {
-            if (userCancellationToken == CancellationToken.None)
-            {
-                return _shutdownCancellationTokenSource;
-            }
-            return CancellationTokenSource.CreateLinkedTokenSource(_shutdownCancellationTokenSource.Token, userCancellationToken);
-        }
-
-        public void Register(Task work, CancellationToken cancellationToken)
-        {
-            if (!cancellationToken.IsCancellationRequested)
-            {
-                lock (this)
-                {
-                    if (cancellationToken.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    _numRunningWorkItems++;
-                }
-
-                work.ContinueWith(
-                    WorkItemComplete,
-                    CancellationToken.None,
-                    TaskContinuationOptions.ExecuteSynchronously,
-                    TaskScheduler.Default);
-            }
-        }
-
-        private void WorkItemComplete(Task work)
-        {
-            int num;
-            bool isCancellationRequested;
-            lock (this)
-            {
-                num = --_numRunningWorkItems;
-                isCancellationRequested = _shutdownCancellationTokenSource.IsCancellationRequested;
-            }
-            if (num == 0 && isCancellationRequested)
-            {
-                FinalShutdown();
-            }
-        }
-
-        private void FinalShutdown()
-        {
-            HostingEnvironment.UnregisterObject(this);
-        }
-
-    }
+// TODO: Migrate to IHostedService
+//     internal class BackgroundWorkHost : IRegisteredObject
+// TODO: Migrate to IHostedService
+//     {
+// TODO: Migrate to IHostedService
+//         private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
+// TODO: Migrate to IHostedService
+//         private int _numRunningWorkItems;
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//         public BackgroundWorkHost()
+// TODO: Migrate to IHostedService
+//         {
+// TODO: Migrate to IHostedService
+//             HostingEnvironment.RegisterObject(this);
+// TODO: Migrate to IHostedService
+//         }
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//         public CancellationTokenSource ShutdownCancellationTokenSource => _shutdownCancellationTokenSource;
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//         public void Stop(bool immediate)
+// TODO: Migrate to IHostedService
+//         {
+// TODO: Migrate to IHostedService
+//             int num;
+// TODO: Migrate to IHostedService
+//             lock (this)
+// TODO: Migrate to IHostedService
+//             {
+// TODO: Migrate to IHostedService
+//                 _shutdownCancellationTokenSource.Cancel();
+// TODO: Migrate to IHostedService
+//                 num = _numRunningWorkItems;
+// TODO: Migrate to IHostedService
+//             }
+// TODO: Migrate to IHostedService
+//             if (num == 0)
+// TODO: Migrate to IHostedService
+//             {
+// TODO: Migrate to IHostedService
+//                 FinalShutdown();
+// TODO: Migrate to IHostedService
+//             }
+// TODO: Migrate to IHostedService
+//         }
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//         public CancellationTokenSource CreateCompositeCancellationTokenSource(CancellationToken userCancellationToken)
+// TODO: Migrate to IHostedService
+//         {
+// TODO: Migrate to IHostedService
+//             if (userCancellationToken == CancellationToken.None)
+// TODO: Migrate to IHostedService
+//             {
+// TODO: Migrate to IHostedService
+//                 return _shutdownCancellationTokenSource;
+// TODO: Migrate to IHostedService
+//             }
+// TODO: Migrate to IHostedService
+//             return CancellationTokenSource.CreateLinkedTokenSource(_shutdownCancellationTokenSource.Token, userCancellationToken);
+// TODO: Migrate to IHostedService
+//         }
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//         public void Register(Task work, CancellationToken cancellationToken)
+// TODO: Migrate to IHostedService
+//         {
+// TODO: Migrate to IHostedService
+//             if (!cancellationToken.IsCancellationRequested)
+// TODO: Migrate to IHostedService
+//             {
+// TODO: Migrate to IHostedService
+//                 lock (this)
+// TODO: Migrate to IHostedService
+//                 {
+// TODO: Migrate to IHostedService
+//                     if (cancellationToken.IsCancellationRequested)
+// TODO: Migrate to IHostedService
+//                     {
+// TODO: Migrate to IHostedService
+//                         return;
+// TODO: Migrate to IHostedService
+//                     }
+// TODO: Migrate to IHostedService
+//                     _numRunningWorkItems++;
+// TODO: Migrate to IHostedService
+//                 }
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//                 work.ContinueWith(
+// TODO: Migrate to IHostedService
+//                     WorkItemComplete,
+// TODO: Migrate to IHostedService
+//                     CancellationToken.None,
+// TODO: Migrate to IHostedService
+//                     TaskContinuationOptions.ExecuteSynchronously,
+// TODO: Migrate to IHostedService
+//                     TaskScheduler.Default);
+// TODO: Migrate to IHostedService
+//             }
+// TODO: Migrate to IHostedService
+//         }
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//         private void WorkItemComplete(Task work)
+// TODO: Migrate to IHostedService
+//         {
+// TODO: Migrate to IHostedService
+//             int num;
+// TODO: Migrate to IHostedService
+//             bool isCancellationRequested;
+// TODO: Migrate to IHostedService
+//             lock (this)
+// TODO: Migrate to IHostedService
+//             {
+// TODO: Migrate to IHostedService
+//                 num = --_numRunningWorkItems;
+// TODO: Migrate to IHostedService
+//                 isCancellationRequested = _shutdownCancellationTokenSource.IsCancellationRequested;
+// TODO: Migrate to IHostedService
+//             }
+// TODO: Migrate to IHostedService
+//             if (num == 0 && isCancellationRequested)
+// TODO: Migrate to IHostedService
+//             {
+// TODO: Migrate to IHostedService
+//                 FinalShutdown();
+// TODO: Migrate to IHostedService
+//             }
+// TODO: Migrate to IHostedService
+//         }
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//         private void FinalShutdown()
+// TODO: Migrate to IHostedService
+//         {
+// TODO: Migrate to IHostedService
+//             HostingEnvironment.UnregisterObject(this);
+// TODO: Migrate to IHostedService
+//         }
+// TODO: Migrate to IHostedService
+// 
+// TODO: Migrate to IHostedService
+//     }
 }

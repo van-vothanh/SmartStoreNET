@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,9 +20,9 @@ namespace SmartStore.Utilities
     {
         private const int _bufferSize = 16384;
 
-        private readonly HttpRequestBase _httpRequest;
+        private readonly HttpRequest _httpRequest;
 
-        public FileDownloadManager(HttpRequestBase httpRequest)
+        public FileDownloadManager(HttpRequest httpRequest)
         {
             _httpRequest = httpRequest;
         }

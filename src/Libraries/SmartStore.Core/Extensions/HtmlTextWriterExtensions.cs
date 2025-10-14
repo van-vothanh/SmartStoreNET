@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
-using System.Web.UI;
 
 namespace SmartStore
 {
+    // TODO: HtmlTextWriter not available in ASP.NET Core - use TagBuilder instead
+    /*
     public static class HtmlTextWriterExtensions
     {
         public static void AddAttributes(this HtmlTextWriter writer, IDictionary<string, object> attributes)
@@ -18,4 +19,5 @@ namespace SmartStore
             }
         }
     }
+    */
 }
