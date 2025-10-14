@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Common;
 using SmartStore.Services;
 using SmartStore.Services.Directory;

@@ -1,3 +1,5 @@
+// TODO: Migrate to ASP.NET Core middleware and DI - Autofac.Integration.Mvc is obsolete
+/*
 ﻿using System;
 using System.Web;
 using Autofac.Integration.Mvc;
@@ -74,3 +76,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+*/

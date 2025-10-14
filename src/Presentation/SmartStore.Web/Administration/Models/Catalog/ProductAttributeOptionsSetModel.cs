@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework.Modelling;
 
 namespace SmartStore.Admin.Models.Catalog
@@ -7,7 +7,6 @@ namespace SmartStore.Admin.Models.Catalog
     {
         public int ProductAttributeId { get; set; }
 
-        [AllowHtml]
         public string Name { get; set; }
     }
 }

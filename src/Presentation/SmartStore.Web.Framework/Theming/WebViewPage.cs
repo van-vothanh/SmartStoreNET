@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.WebPages;
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;

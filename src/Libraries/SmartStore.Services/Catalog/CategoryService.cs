@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Caching;

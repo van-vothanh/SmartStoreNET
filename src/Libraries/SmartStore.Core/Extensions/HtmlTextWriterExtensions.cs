@@ -1,6 +1,7 @@
+// TODO: Migrate - HtmlTextWriter not supported in ASP.NET Core
+/*
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.UI;
 
 namespace SmartStore
 {
@@ -19,3 +20,4 @@ namespace SmartStore
         }
     }
 }
+*/

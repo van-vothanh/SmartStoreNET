@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Plugins;
 using SmartStore.Services.Payments;
 using SmartStore.Web.Framework.Localization;
@@ -18,11 +18,9 @@ namespace SmartStore.Web.Framework.Plugins
         public string SystemName { get; set; }
 
         [SmartResourceDisplayName("Common.FriendlyName")]
-        [AllowHtml]
         public string FriendlyName { get; set; }
 
         [SmartResourceDisplayName("Common.Description")]
-        [AllowHtml]
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]
@@ -68,11 +66,9 @@ namespace SmartStore.Web.Framework.Plugins
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Common.FriendlyName")]
-        [AllowHtml]
         public string FriendlyName { get; set; }
 
         [SmartResourceDisplayName("Common.Description")]
-        [AllowHtml]
         public string Description { get; set; }
     }
 
