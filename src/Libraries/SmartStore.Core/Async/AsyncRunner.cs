@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -344,7 +344,7 @@ namespace SmartStore.Core.Async
         }
     }
 
-    internal class BackgroundWorkHost : IRegisteredObject
+    internal class BackgroundWorkHost // : IRegisteredObject // TODO: Replace with IHostedService
     {
         private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
         private int _numRunningWorkItems;

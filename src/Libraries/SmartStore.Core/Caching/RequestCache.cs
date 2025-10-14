@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,9 +15,9 @@ namespace SmartStore.Core.Caching
 
         private readonly IDictionary _emptyDictionary = new Dictionary<string, object>();
 
-        private readonly HttpContextBase _context;
+        private readonly HttpContext _context;
 
-        public RequestCache(HttpContextBase context)
+        public RequestCache(HttpContext context)
         {
             _context = context;
         }

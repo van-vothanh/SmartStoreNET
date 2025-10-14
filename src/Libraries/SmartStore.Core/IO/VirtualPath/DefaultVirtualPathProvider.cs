@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Web.Caching;
-using System.Web.Hosting;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Logging;
 using SmartStore.Utilities;
 
@@ -34,10 +34,6 @@ namespace SmartStore.Core.IO
             return HostingEnvironment.VirtualPathProvider.FileExists(virtualPath);
         }
 
-        public virtual CacheDependency GetCacheDependency(string virtualPath, IEnumerable<string> dependencies, DateTime utcStart)
-        {
-            return HostingEnvironment.VirtualPathProvider.GetCacheDependency(virtualPath, dependencies, utcStart);
-        }
 
         public virtual string GetCacheKey(string virtualPath)
         {

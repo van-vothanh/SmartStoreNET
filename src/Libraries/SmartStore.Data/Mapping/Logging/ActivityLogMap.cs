@@ -1,4 +1,4 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SmartStore.Core.Domain.Logging;
 
 namespace SmartStore.Data.Mapping.Logging

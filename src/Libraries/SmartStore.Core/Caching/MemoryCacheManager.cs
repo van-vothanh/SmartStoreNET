@@ -2,7 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -136,7 +136,7 @@ namespace SmartStore.Core.Caching
 
         public void Put(string key, object value, TimeSpan? duration = null, IEnumerable<string> dependencies = null)
         {
-            _cache.Set(key, value ?? FakeNull, GetCacheItemPolicy(duration, dependencies));
+            _cache.Set(key, value ?? FakeNull, GetMemoryCacheEntryOptions(duration, dependencies));
         }
 
         public bool Contains(string key)
@@ -207,7 +207,7 @@ namespace SmartStore.Core.Caching
             return result;
         }
 
-        private CacheItemPolicy GetCacheItemPolicy(TimeSpan? duration, IEnumerable<string> dependencies)
+        private MemoryCacheEntryOptions GetMemoryCacheEntryOptions(TimeSpan? duration, IEnumerable<string> dependencies)
         {
             var absoluteExpiration = ObjectCache.InfiniteAbsoluteExpiration;
 
@@ -216,7 +216,7 @@ namespace SmartStore.Core.Caching
                 absoluteExpiration = DateTime.UtcNow + duration.Value;
             }
 
-            var cacheItemPolicy = new CacheItemPolicy
+            var cacheItemPolicy = new MemoryCacheEntryOptions
             {
                 AbsoluteExpiration = absoluteExpiration,
                 SlidingExpiration = ObjectCache.NoSlidingExpiration

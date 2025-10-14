@@ -1,9 +1,16 @@
 ﻿using System;
 using Autofac;
-using Autofac.Integration.Mvc;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
+    // TODO: Update to use ASP.NET Core DI patterns
+    public interface ILifetimeScopeProvider
+    {
+        ILifetimeScope ApplicationContainer { get; }
+        void EndLifetimeScope();
+        ILifetimeScope GetLifetimeScope(Action<ContainerBuilder> configurationAction);
+    }
+
     public class DefaultLifetimeScopeProvider : ILifetimeScopeProvider
     {
         private readonly ILifetimeScopeAccessor _accessor;

@@ -2,7 +2,8 @@
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace SmartStore.Core.Security
 {
@@ -10,7 +11,7 @@ namespace SmartStore.Core.Security
     /// Checks request permission for the current customer.
     /// </summary>
     [AttributeUsage(AttributeTargets.Method | AttributeTargets.Class, Inherited = true, AllowMultiple = true)]
-    public partial class PermissionAttribute : FilterAttribute, IAuthorizationFilter
+    public partial class PermissionAttribute : Attribute, IAuthorizationFilter
     {
         /// <summary>
         /// e.g. [Permission(PermissionSystemNames.Customer.Read)]
@@ -40,7 +41,7 @@ namespace SmartStore.Core.Security
         public IWorkContext WorkContext { get; set; }
         public IPermissionService PermissionService { get; set; }
 
-        public virtual void OnAuthorization(AuthorizationContext filterContext)
+        public virtual void OnAuthorization(AuthorizationFilterContext filterContext)
         {
             Guard.NotNull(filterContext, nameof(filterContext));
 
@@ -59,7 +60,7 @@ namespace SmartStore.Core.Security
             }
         }
 
-        protected virtual void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+        protected virtual void HandleUnauthorizedRequest(AuthorizationFilterContext filterContext)
         {
             var httpContext = filterContext.HttpContext;
             var request = httpContext?.Request;

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Forums;
 using SmartStore.Core.Domain.Forums;
 using SmartStore.Core.Security;

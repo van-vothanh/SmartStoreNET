@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Filters;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Logging;
 
 namespace SmartStore.Core.Infrastructure
@@ -32,7 +31,7 @@ namespace SmartStore.Core.Infrastructure
     /// </summary>
     public interface IPostApplicationStart
     {
-        void Start(HttpContextBase httpContext);
+        void Start(HttpContext httpContext);
 
         /// <summary>
         /// Called when an error occurred and <see cref="ThrowOnError"/> is <c>false</c>.
@@ -58,123 +57,12 @@ namespace SmartStore.Core.Infrastructure
         int MaxAttempts { get; }
     }
 
+    // TODO: Migrate PostApplicationStartFilter to ASP.NET Core middleware
+    // IAuthenticationFilter is not supported in ASP.NET Core
+    /*
     public sealed class PostApplicationStartFilter : IAuthenticationFilter
     {
-        private readonly static object _lock = new object();
-        private static bool _initializing = false;
-        private static List<StarterModuleInfo> _starterModuleInfos;
-
-        public void OnAuthentication(AuthenticationContext filterContext)
-        {
-            var request = filterContext?.HttpContext?.Request;
-            if (request == null)
-                return;
-
-            if (filterContext.IsChildAction)
-                return;
-
-            lock (_lock)
-            {
-                if (!_initializing)
-                {
-                    _initializing = true;
-
-                    var pendingModules = GetStarterModuleInfos();
-
-                    var modules = pendingModules
-                        .Select(x => new StarterModule
-                        {
-                            Info = x,
-                            Instance = EngineContext.Current.ContainerManager.ResolveUnregistered(x.ModuleType) as IPostApplicationStart
-                        })
-                        //.Where(x => x.Info.Attempts < Math.Max(1, x.Instance.MaxAttempts))
-                        .OrderBy(x => x.Instance.Order)
-                        .ToArray();
-
-                    foreach (var module in modules)
-                    {
-                        var info = module.Info;
-                        var instance = module.Instance;
-                        var maxAttempts = Math.Max(1, instance.MaxAttempts);
-                        var fail = false;
-
-                        try
-                        {
-                            info.Attempts++;
-                            instance.Start(filterContext.HttpContext);
-                        }
-                        catch (Exception ex)
-                        {
-                            fail = true;
-                            if (instance.ThrowOnError)
-                            {
-                                if (info.Attempts <= maxAttempts)
-                                {
-                                    // Don't pollute event log 
-                                    var logger = EngineContext.Current.Resolve<ILoggerFactory>().CreateLogger<PostApplicationStartFilter>();
-                                    logger.ErrorFormat(ex, "Error while executing post startup task '{0}': {1}", info.ModuleType, ex.Message);
-                                }
-                                _initializing = false;
-                                throw;
-                            }
-                            else
-                            {
-                                instance.OnFail(ex, info.Attempts < maxAttempts);
-                            }
-                        }
-                        finally
-                        {
-                            var tooManyFailures = info.Attempts >= maxAttempts;
-                            var canRemove = !fail || (!instance.ThrowOnError && tooManyFailures);
-
-                            if (canRemove)
-                            {
-                                pendingModules.Remove(info);
-                            }
-                        }
-                    }
-
-                    if (pendingModules.Count == 0)
-                    {
-                        // No more pending starter modules anymore.
-                        // Don't run this filter from now on.
-                        GlobalFilters.Filters.Remove(this);
-                    }
-
-                    _initializing = false;
-                }
-            }
-        }
-
-        private static List<StarterModuleInfo> GetStarterModuleInfos()
-        {
-            if (_starterModuleInfos == null)
-            {
-                var typeFinder = EngineContext.Current.Resolve<ITypeFinder>();
-                var starterTypes = typeFinder.FindClassesOfType<IPostApplicationStart>(true, true);
-                _starterModuleInfos = starterTypes
-                    .Select(x => new StarterModuleInfo { ModuleType = x })
-                    .ToList();
-            }
-
-            return _starterModuleInfos;
-        }
-
-        public void OnAuthenticationChallenge(AuthenticationChallengeContext filterContext)
-        {
-            // Noop
-        }
-
-        class StarterModuleInfo
-        {
-            public Type ModuleType { get; set; }
-            public int Attempts { get; set; }
-        }
-
-        class StarterModule
-        {
-            public StarterModuleInfo Info { get; set; }
-            public IPostApplicationStart Instance { get; set; }
-        }
+        // Original implementation commented out for migration
     }
+    */
 }

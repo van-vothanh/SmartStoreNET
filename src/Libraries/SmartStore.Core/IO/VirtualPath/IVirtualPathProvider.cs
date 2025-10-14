@@ -1,28 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Web.Caching;
+using SmartStore.Core.IO;
 
-namespace SmartStore.Core.IO
+namespace SmartStore.Core.IO.VirtualPath
 {
     public interface IVirtualPathProvider
     {
-        string MapPath(string virtualPath);
-        string Combine(params string[] paths);
-        string Normalize(string virtualPath);
-        string ToAppRelative(string virtualPath);
-
-        bool DirectoryExists(string virtualPath);
-        bool FileExists(string virtualPath);
-
-        CacheDependency GetCacheDependency(string virtualPath, IEnumerable<string> dependencies, DateTime utcStart);
-        string GetCacheKey(string virtualPath);
+        string GetFileHash(string virtualPath);
         string GetFileHash(string virtualPath, IEnumerable<string> dependencies);
-
-        IEnumerable<string> ListDirectories(string virtualPath);
-        IEnumerable<string> ListFiles(string virtualPath);
-
-        Stream OpenFile(string virtualPath);
+        
+        // TODO: Replace CacheDependency with IChangeToken
+        // CacheDependency GetCacheDependency(string virtualPath, IEnumerable<string> dependencies, DateTime utcStart);
     }
 
     public static class IVirtualPathProviderExtensions
@@ -32,9 +20,12 @@ namespace SmartStore.Core.IO
             return vpp.GetFileHash(virtualPath, new[] { virtualPath });
         }
 
+        // TODO: Replace CacheDependency with IChangeToken
+        /*
         public static CacheDependency GetCacheDependency(this IVirtualPathProvider vpp, string virtualPath, DateTime utcStart)
         {
             return vpp.GetCacheDependency(virtualPath, new[] { virtualPath }, utcStart);
         }
+        */
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Tax;
 using SmartStore.Core.Domain.Tax;
 using SmartStore.Core.Security;

@@ -1,21 +1,13 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web.UI;
+using System;
 
-namespace SmartStore
+namespace SmartStore.Core
 {
+    // TODO: Migrate HtmlTextWriter extensions to ASP.NET Core equivalents
+    // HtmlTextWriter is not available in .NET 8
+    /*
     public static class HtmlTextWriterExtensions
     {
-        public static void AddAttributes(this HtmlTextWriter writer, IDictionary<string, object> attributes)
-        {
-            if (attributes.Any())
-            {
-                foreach (var pair in attributes)
-                {
-                    if (pair.Value != null)
-                        writer.AddAttribute(pair.Key, pair.Value.ToString(), true);
-                }
-            }
-        }
+        // Original implementation commented out for migration
     }
+    */
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Common;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Orders;
@@ -202,51 +202,38 @@ namespace SmartStore.Admin.Models.Orders
         //credit card info
         public bool AllowStoringCreditCardNumber { get; set; }
         [SmartResourceDisplayName("Admin.Orders.Fields.CardType")]
-        [AllowHtml]
         public string CardType { get; set; }
         [SmartResourceDisplayName("Admin.Orders.Fields.CardName")]
-        [AllowHtml]
         public string CardName { get; set; }
         [SmartResourceDisplayName("Admin.Orders.Fields.CardNumber")]
-        [AllowHtml]
         public string CardNumber { get; set; }
         [SmartResourceDisplayName("Admin.Orders.Fields.CardCVV2")]
-        [AllowHtml]
         public string CardCvv2 { get; set; }
         [SmartResourceDisplayName("Admin.Orders.Fields.CardExpirationMonth")]
-        [AllowHtml]
         public string CardExpirationMonth { get; set; }
         [SmartResourceDisplayName("Admin.Orders.Fields.CardExpirationYear")]
-        [AllowHtml]
         public string CardExpirationYear { get; set; }
 
         public bool AllowStoringDirectDebit { get; set; }
         [SmartResourceDisplayName("Admin.Orders.Fields.DirectDebitAccountHolder")]
-        [AllowHtml]
         public string DirectDebitAccountHolder { get; set; }
 
         [SmartResourceDisplayName("Admin.Orders.Fields.DirectDebitAccountNumber")]
-        [AllowHtml]
         public string DirectDebitAccountNumber { get; set; }
 
         [SmartResourceDisplayName("Admin.Orders.Fields.DirectDebitBankCode")]
-        [AllowHtml]
         public string DirectDebitBankCode { get; set; }
 
         [SmartResourceDisplayName("Admin.Orders.Fields.DirectDebitBankName")]
-        [AllowHtml]
         public string DirectDebitBankName { get; set; }
 
         [SmartResourceDisplayName("Admin.Orders.Fields.DirectDebitBIC")]
-        [AllowHtml]
         public string DirectDebitBIC { get; set; }
 
         [SmartResourceDisplayName("Admin.Orders.Fields.DirectDebitCountry")]
-        [AllowHtml]
         public string DirectDebitCountry { get; set; }
 
         [SmartResourceDisplayName("Admin.Orders.Fields.DirectDebitIban")]
-        [AllowHtml]
         public string DirectDebitIban { get; set; }
 
         //misc payment info
@@ -342,7 +329,6 @@ namespace SmartStore.Admin.Models.Orders
         [SmartResourceDisplayName("Admin.Orders.OrderNotes.Fields.AddOrderNoteDisplayToCustomer")]
         public bool AddOrderNoteDisplayToCustomer { get; set; }
         [SmartResourceDisplayName("Admin.Orders.OrderNotes.Fields.AddOrderNoteMessage")]
-        [AllowHtml]
         public string AddOrderNoteMessage { get; set; }
 
         public bool DisplayPdfInvoice { get; set; }
@@ -525,7 +511,6 @@ namespace SmartStore.Admin.Models.Orders
             }
 
             [SmartResourceDisplayName("Admin.Catalog.Products.List.SearchProductName")]
-            [AllowHtml]
             public string SearchProductName { get; set; }
             [SmartResourceDisplayName("Admin.Catalog.Products.List.SearchCategory")]
             public int SearchCategoryId { get; set; }
@@ -545,11 +530,9 @@ namespace SmartStore.Admin.Models.Orders
             public class ProductModel : EntityModelBase
             {
                 [SmartResourceDisplayName("Admin.Orders.Products.AddNew.Name")]
-                [AllowHtml]
                 public string Name { get; set; }
 
                 [SmartResourceDisplayName("Admin.Orders.Products.AddNew.SKU")]
-                [AllowHtml]
                 public string Sku { get; set; }
 
                 public string ProductTypeName { get; set; }
@@ -645,19 +628,14 @@ namespace SmartStore.Admin.Models.Orders
                 public bool IsGiftCard { get; set; }
 
                 [SmartResourceDisplayName("Products.GiftCard.RecipientName")]
-                [AllowHtml]
                 public string RecipientName { get; set; }
                 [SmartResourceDisplayName("Products.GiftCard.RecipientEmail")]
-                [AllowHtml]
                 public string RecipientEmail { get; set; }
                 [SmartResourceDisplayName("Products.GiftCard.SenderName")]
-                [AllowHtml]
                 public string SenderName { get; set; }
                 [SmartResourceDisplayName("Products.GiftCard.SenderEmail")]
-                [AllowHtml]
                 public string SenderEmail { get; set; }
                 [SmartResourceDisplayName("Products.GiftCard.Message")]
-                [AllowHtml]
                 public string Message { get; set; }
 
                 public GiftCardType GiftCardType { get; set; }

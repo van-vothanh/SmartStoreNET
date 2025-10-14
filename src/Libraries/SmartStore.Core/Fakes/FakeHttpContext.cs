@@ -1,13 +1,16 @@
+// TODO: Migrate to ASP.NET Core test helpers
+// Original implementation commented out for migration
+/*
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Principal;
 using System.Web;
-using System.Web.SessionState;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpContext : HttpContextBase
+    public class FakeHttpContext : HttpContext
     {
         private readonly HttpCookieCollection _cookies;
         private readonly NameValueCollection _formParams;
@@ -18,7 +21,7 @@ namespace SmartStore.Core.Fakes
         private readonly SessionStateItemCollection _sessionItems;
         private readonly NameValueCollection _serverVariables;
         private HttpResponseBase _response;
-        private HttpRequestBase _request;
+        private HttpRequest _request;
         private readonly Dictionary<object, object> _items;
 
         public static FakeHttpContext Root()
@@ -72,9 +75,9 @@ namespace SmartStore.Core.Fakes
 
         public override IHttpHandler Handler { get; set; }
 
-        public override HttpRequestBase Request => _request ?? new FakeHttpRequest(_relativeUrl, _method, _formParams, _queryStringParams, _cookies, _serverVariables);
+        public override HttpRequest Request => _request ?? new FakeHttpRequest(_relativeUrl, _method, _formParams, _queryStringParams, _cookies, _serverVariables);
 
-        public void SetRequest(HttpRequestBase request)
+        public void SetRequest(HttpRequest request)
         {
             _request = request;
         }
@@ -103,4 +106,4 @@ namespace SmartStore.Core.Fakes
             return null;
         }
     }
-}
+}*/

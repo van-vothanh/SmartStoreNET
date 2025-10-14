@@ -1,7 +1,10 @@
+// TODO: Migrate to ASP.NET Core test helpers
+// Original implementation commented out for migration
+/*
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.SessionState;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Fakes
 {
@@ -50,4 +53,4 @@ namespace SmartStore.Core.Fakes
             _sessionItems.Remove(name);
         }
     }
-}
+}*/
