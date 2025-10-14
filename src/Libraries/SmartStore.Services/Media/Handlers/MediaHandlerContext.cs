@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Core.IO;
@@ -28,7 +28,7 @@ namespace SmartStore.Services.Media
         public IMediaService MediaService { get; set; }
         public IPermissionService PermissionService { get; set; }
         public Customer CurrentCustomer { get; set; }
-        public HttpContextBase HttpContext { get; set; }
+        public HttpContext HttpContext { get; set; }
 
         public int MediaFileId { get; set; }
         public string RawPath { get; set; }

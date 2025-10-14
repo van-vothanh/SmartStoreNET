@@ -39,7 +39,7 @@ namespace SmartStore.PayPal
         private readonly IShippingService _shippingService;
         private readonly ICustomerService _customerService;
         private readonly ICountryService _countryService;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
 
         public PayPalExpressProvider(
             ICurrencyService currencyService,
@@ -51,7 +51,7 @@ namespace SmartStore.PayPal
             IShippingService shippingService,
             ICustomerService customerService,
             ICountryService countryService,
-            HttpContextBase httpContext)
+            HttpContext httpContext)
         {
             _currencyService = currencyService;
             _priceCalculationService = priceCalculationService;

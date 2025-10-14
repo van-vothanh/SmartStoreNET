@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 using SmartStore.Web.Framework.Filters;
 using SmartStore.Web.Framework.Security;

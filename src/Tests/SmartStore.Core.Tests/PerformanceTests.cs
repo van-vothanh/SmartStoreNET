@@ -168,7 +168,7 @@
 //				absoluteExpiration = DateTime.UtcNow + duration.Value;
 //			}
 
-//			var cacheItemPolicy = new CacheItemPolicy
+//			var cacheItemPolicy = new MemoryCacheEntryOptions
 //			{
 //				AbsoluteExpiration = absoluteExpiration,
 //				SlidingExpiration = ObjectCache.NoSlidingExpiration

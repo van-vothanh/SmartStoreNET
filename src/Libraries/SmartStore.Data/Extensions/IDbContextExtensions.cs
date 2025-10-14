@@ -1,6 +1,6 @@
 using System;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Linq.Expressions;
@@ -39,7 +39,7 @@ namespace SmartStore
             return InnerGetCopy(context, currentCopy, e => e.OriginalValues);
         }
 
-        public static DbEntityEntry<T> GetEntry<T>(this IDbContext context, T entity) where T : BaseEntity
+        public static EntityEntry<T> GetEntry<T>(this IDbContext context, T entity) where T : BaseEntity
         {
             var entry = CastOrThrow<DbContext>(context).Entry<T>(entity);
             return entry;
@@ -127,13 +127,13 @@ namespace SmartStore
             return (context as ObjectContextBase)?.IsInSaveOperation == true;
         }
 
-        private static T InnerGetCopy<T>(IDbContext context, T currentCopy, Func<DbEntityEntry<T>, DbPropertyValues> func) where T : BaseEntity
+        private static T InnerGetCopy<T>(IDbContext context, T currentCopy, Func<EntityEntry<T>, DbPropertyValues> func) where T : BaseEntity
         {
             // Get the database context
             var dbContext = CastOrThrow<DbContext>(context);
 
             // Get the entity tracking object
-            DbEntityEntry<T> entry = GetEntityOrDefault(currentCopy, dbContext);
+            EntityEntry<T> entry = GetEntityOrDefault(currentCopy, dbContext);
 
             // The output 
             T output = null;
@@ -158,7 +158,7 @@ namespace SmartStore
         /// <param name="currentCopy">The current copy.</param>
         /// <param name="dbContext">The db context.</param>
         /// <returns></returns>
-        private static DbEntityEntry<T> GetEntityOrDefault<T>(T currentCopy, DbContext dbContext) where T : BaseEntity
+        private static EntityEntry<T> GetEntityOrDefault<T>(T currentCopy, DbContext dbContext) where T : BaseEntity
         {
             return dbContext.ChangeTracker.Entries<T>().Where(e => e.Entity == currentCopy).FirstOrDefault();
         }

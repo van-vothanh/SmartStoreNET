@@ -7,7 +7,7 @@ namespace SmartStore.Web.Framework.Modelling
     public abstract class FileTransmitter
     {
         public abstract long GetFileLength();
-        public abstract void TransmitFile(long offset, long length, long fileLength, HttpContextBase context);
+        public abstract void TransmitFile(long offset, long length, long fileLength, HttpContext context);
     }
 
     public sealed class FileBufferTransmitter : FileTransmitter
@@ -26,7 +26,7 @@ namespace SmartStore.Web.Framework.Modelling
             return GetBuffer().LongLength;
         }
 
-        public override void TransmitFile(long offset, long length, long fileLength, HttpContextBase context)
+        public override void TransmitFile(long offset, long length, long fileLength, HttpContext context)
         {
             context.Response.OutputStream.Write(GetBuffer(), (int)offset, (int)length);
         }
@@ -65,7 +65,7 @@ namespace SmartStore.Web.Framework.Modelling
             return GetStream().Length;
         }
 
-        public override void TransmitFile(long offset, long length, long fileLength, HttpContextBase context)
+        public override void TransmitFile(long offset, long length, long fileLength, HttpContext context)
         {
             var response = context.Response;
             var stream = GetStream();

@@ -34,7 +34,7 @@ namespace SmartStore.PayPal.Events
         };
 
         private readonly ICommonServices _services;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly Lazy<IOrderService> _orderService;
         private readonly Lazy<IGenericAttributeService> _genericAttributeService;
         private readonly Lazy<ICurrencyService> _currencyService;
@@ -43,7 +43,7 @@ namespace SmartStore.PayPal.Events
 
         public InstalmentsMessageZoneEventConsumer(
             ICommonServices services,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             Lazy<IOrderService> orderService,
             Lazy<IGenericAttributeService> genericAttributeService,
             Lazy<ICurrencyService> currencyService,

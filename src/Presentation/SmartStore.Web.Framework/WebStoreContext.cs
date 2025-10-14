@@ -44,12 +44,12 @@ namespace SmartStore.Web.Framework
         const string CacheKey = "stores:all";
 
         private readonly Lazy<IRepository<Store>> _rs;
-        private readonly Lazy<HttpContextBase> _httpContext;
+        private readonly Lazy<HttpContext> _httpContext;
         private readonly ICacheManager _cache;
 
         private Store _currentStore;
 
-        public WebStoreContext(Lazy<IRepository<Store>> rs, Lazy<HttpContextBase> httpContext, ICacheManager cache)
+        public WebStoreContext(Lazy<IRepository<Store>> rs, Lazy<HttpContext> httpContext, ICacheManager cache)
         {
             _rs = rs;
             _httpContext = httpContext;

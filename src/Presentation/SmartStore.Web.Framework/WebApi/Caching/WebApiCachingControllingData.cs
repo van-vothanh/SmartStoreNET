@@ -1,5 +1,5 @@
 ﻿using System.Web;
-using System.Web.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Plugins;
 
@@ -47,7 +47,7 @@ namespace SmartStore.Web.Framework.WebApi.Caching
                             MaxExpansionDepth = settings.MaxExpansionDepth
                         };
 
-                        HttpRuntime.Cache.Add(Key, data, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.NotRemovable, null);
+                        HttpRuntime.Cache.Add(Key, data, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration, CacheItemPriority.NeverRemove, null);
                     }
                 }
             }

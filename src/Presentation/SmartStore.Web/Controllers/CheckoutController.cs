@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Common;
 using SmartStore.Core.Domain.Customers;
@@ -52,7 +52,7 @@ namespace SmartStore.Web.Controllers
         private readonly IPaymentService _paymentService;
         private readonly IOrderTotalCalculationService _orderTotalCalculationService;
         private readonly IOrderService _orderService;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly OrderSettings _orderSettings;
         private readonly PaymentSettings _paymentSettings;
         private readonly AddressSettings _addressSettings;
@@ -81,7 +81,7 @@ namespace SmartStore.Web.Controllers
             IPaymentService paymentService,
             IOrderTotalCalculationService orderTotalCalculationService,
             IOrderService orderService,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             OrderSettings orderSettings,
             PaymentSettings paymentSettings,
             AddressSettings addressSettings,

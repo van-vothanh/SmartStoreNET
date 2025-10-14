@@ -11,9 +11,9 @@ namespace SmartStore.Services.Hooks
     {
         private readonly ITaskScheduler _taskScheduler;
         private readonly IStoreService _storeService;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
 
-        public StoreSaveHook(ITaskScheduler taskScheduler, IStoreService storeService, HttpContextBase httpContext)
+        public StoreSaveHook(ITaskScheduler taskScheduler, IStoreService storeService, HttpContext httpContext)
         {
             _taskScheduler = taskScheduler;
             _storeService = storeService;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Plugins;
 using SmartStore.Services.Cms;
 using SmartStore.Web.Models.ShoppingCart;
@@ -12,9 +12,9 @@ namespace SmartStore.AmazonPay.Widgets
     [FriendlyName("Amazon Pay")]
     public class AmazonPayWidget : IWidget
     {
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
 
-        public AmazonPayWidget(HttpContextBase httpContext)
+        public AmazonPayWidget(HttpContext httpContext)
         {
             _httpContext = httpContext;
         }

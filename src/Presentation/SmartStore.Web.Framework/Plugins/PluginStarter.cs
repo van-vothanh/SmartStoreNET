@@ -24,7 +24,7 @@ namespace SmartStore.Web.Framework.Plugins
         public bool ThrowOnError => false;
         public int MaxAttempts => 1;
 
-        public void Start(HttpContextBase httpContext)
+        public void Start(HttpContext httpContext)
         {
             //if (!PluginManager.PluginChangeDetected)
             //    return;

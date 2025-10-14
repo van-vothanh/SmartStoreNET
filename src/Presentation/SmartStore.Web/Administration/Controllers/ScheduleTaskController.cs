@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Tasks;
 using SmartStore.Core.Async;
 using SmartStore.Core.Domain.Common;

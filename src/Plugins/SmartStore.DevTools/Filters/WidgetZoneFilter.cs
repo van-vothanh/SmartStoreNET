@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Caching;
 using SmartStore.Services;
 using SmartStore.Services.Customers;
@@ -97,7 +97,7 @@ namespace SmartStore.DevTools.Filters
         {
         }
 
-        private bool ShouldRender(HttpContextBase ctx)
+        private bool ShouldRender(HttpContext ctx)
         {
             if (!_services.WorkContext.CurrentCustomer.IsAdmin())
             {

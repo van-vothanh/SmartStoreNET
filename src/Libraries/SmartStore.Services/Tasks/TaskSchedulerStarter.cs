@@ -35,7 +35,7 @@ namespace SmartStore.Services.Tasks
         public int MaxAttempts => 10;
         public bool ThrowOnError => false;
 
-        public void Start(HttpContextBase httpContext)
+        public void Start(HttpContext httpContext)
         {
             var tasks = _taskService.GetAllTasks(true);
             _taskService.CalculateFutureSchedules(tasks, true /* isAppStart */);

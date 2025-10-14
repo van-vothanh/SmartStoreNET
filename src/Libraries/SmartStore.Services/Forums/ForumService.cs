@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using SmartStore.Core;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Customers;
@@ -13,7 +13,7 @@ using SmartStore.Services.Customers;
 using SmartStore.Services.Seo;
 using SmartStore.Core.Domain.Seo;
 using SmartStore.Core.Domain.Localization;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using SmartStore.Data.Utilities;
 

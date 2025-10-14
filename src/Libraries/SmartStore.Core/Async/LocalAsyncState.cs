@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using System.Threading;
 
 namespace SmartStore.Core.Async
@@ -60,10 +60,10 @@ namespace SmartStore.Core.Async
             {
                 // add new entry
                 var duration = neverExpires ? TimeSpan.Zero : TimeSpan.FromMinutes(15);
-                var policy = new CacheItemPolicy
+                var policy = new MemoryCacheEntryOptions
                 {
                     SlidingExpiration = duration,
-                    Priority = CacheItemPriority.NotRemovable
+                    Priority = CacheItemPriority.NeverRemove
                 };
                 var key = BuildKey<T>(name);
 
@@ -155,7 +155,7 @@ namespace SmartStore.Core.Async
                 OnRemoveCancelTokenSource(key);
             }
 
-            var policy = new CacheItemPolicy { Priority = CacheItemPriority.NotRemovable };
+            var policy = new MemoryCacheEntryOptions { Priority = CacheItemPriority.NeverRemove };
 
             _cancelTokens.Set(key, cancelTokenSource, policy);
         }

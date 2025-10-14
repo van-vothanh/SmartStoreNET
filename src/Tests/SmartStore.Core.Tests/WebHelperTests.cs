@@ -9,7 +9,7 @@ namespace SmartStore.Core.Tests
     [TestFixture]
     public class WebHelperTests
     {
-        private HttpContextBase _httpContext;
+        private HttpContext _httpContext;
         private IWebHelper _webHelper;
 
         [Test]

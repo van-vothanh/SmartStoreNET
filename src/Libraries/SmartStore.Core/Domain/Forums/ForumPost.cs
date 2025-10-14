@@ -35,7 +35,6 @@ namespace SmartStore.Core.Domain.Forums
         /// <summary>
         /// Gets or sets the date and time of instance creation
         /// </summary>
-        [Index]
         public DateTime CreatedOnUtc { get; set; }
 
         /// <summary>
@@ -46,7 +45,6 @@ namespace SmartStore.Core.Domain.Forums
         /// <summary>
         /// Gets or sets a value indicating whether the entity is published
         /// </summary>
-        [Index]
         public bool Published { get; set; }
 
         /// <summary>

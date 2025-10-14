@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 
 namespace SmartStore.Web.Framework.UI

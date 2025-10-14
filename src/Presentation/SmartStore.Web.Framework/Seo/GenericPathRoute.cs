@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Data;
@@ -120,7 +120,7 @@ namespace SmartStore.Web.Framework.Seo
         /// <returns>
         /// An object that contains the values from the route definition.
         /// </returns>
-        public override RouteData GetRouteData(HttpContextBase httpContext)
+        public override RouteData GetRouteData(HttpContext httpContext)
         {
             RouteData data = base.GetRouteData(httpContext);
 

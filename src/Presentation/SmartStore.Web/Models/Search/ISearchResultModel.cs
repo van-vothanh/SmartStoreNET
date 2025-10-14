@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Autofac.Integration.Mvc;
+using Autofac.Extensions.DependencyInjection;
 using SmartStore.Services.Search;
 
 namespace SmartStore.Web.Models.Search

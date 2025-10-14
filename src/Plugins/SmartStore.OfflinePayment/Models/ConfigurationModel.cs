@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.OfflinePayment.Settings;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
@@ -11,7 +11,6 @@ namespace SmartStore.OfflinePayment.Models
     {
         public string PrimaryStoreCurrencyCode { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Plugins.SmartStore.OfflinePayment.DescriptionText")]
         public string DescriptionText { get; set; }
 

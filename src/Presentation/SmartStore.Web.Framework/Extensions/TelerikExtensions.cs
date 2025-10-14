@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Telerik.Web.Mvc;
 using Telerik.Web.Mvc.Extensions;
 using Telerik.Web.Mvc.UI.Fluent;

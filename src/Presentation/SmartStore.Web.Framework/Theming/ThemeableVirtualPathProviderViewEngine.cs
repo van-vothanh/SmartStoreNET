@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.WebPages;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Logging;
@@ -434,7 +434,7 @@ namespace SmartStore.Web.Framework.Theming
             return (c == '~' || c == '/');
         }
 
-        protected virtual bool IsMobileDevice(HttpContextBase httpContext)
+        protected virtual bool IsMobileDevice(HttpContext httpContext)
         {
             var mobileDeviceHelper = EngineContext.Current.Resolve<IMobileDeviceHelper>();
             var result = mobileDeviceHelper.IsMobileDevice();

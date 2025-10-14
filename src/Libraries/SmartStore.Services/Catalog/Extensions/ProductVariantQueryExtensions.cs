@@ -21,7 +21,7 @@ namespace SmartStore.Services.Catalog.Extensions
             ILocalizationService localization,
             IDownloadService downloadService,
             CatalogSettings catalogSettings,
-            HttpRequestBase request,
+            HttpRequest request,
             List<string> warnings)
         {
             var result = string.Empty;

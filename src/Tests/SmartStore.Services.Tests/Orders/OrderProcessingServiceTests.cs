@@ -88,7 +88,7 @@ namespace SmartStore.Services.Tests.Orders
         IDownloadService _downloadService;
         INewsLetterSubscriptionService _newsLetterSubscriptionService;
         ICommonServices _services;
-        HttpRequestBase _httpRequestBase;
+        HttpRequest _httpRequestBase;
         IGeoCountryLookup _geoCountryLookup;
         Store _store;
         ICartRuleProvider _cartRuleProvider;
@@ -158,7 +158,7 @@ namespace SmartStore.Services.Tests.Orders
             _addressService = MockRepository.GenerateMock<IAddressService>();
             _addressService.Expect(x => x.GetAddressById(_taxSettings.DefaultTaxAddressId)).Return(new Address() { Id = _taxSettings.DefaultTaxAddressId });
             _downloadService = MockRepository.GenerateMock<IDownloadService>();
-            _httpRequestBase = MockRepository.GenerateMock<HttpRequestBase>();
+            _httpRequestBase = MockRepository.GenerateMock<HttpRequest>();
             _geoCountryLookup = MockRepository.GenerateMock<IGeoCountryLookup>();
 
             _taxService = new TaxService(_addressService, _workContext, _taxSettings, _shoppingCartSettings, pluginFinder, _geoCountryLookup, this.ProviderManager);

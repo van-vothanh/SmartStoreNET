@@ -1,6 +1,6 @@
 using System.Web;
 using Autofac;
-using Autofac.Integration.Mvc;
+using Autofac.Extensions.DependencyInjection;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Infrastructure.DependencyManagement;
@@ -20,7 +20,7 @@ namespace SmartStore.DevTools
             {
                 builder.Register<IChronometer>(c =>
                 {
-                    var ctx = c.Resolve<HttpContextBase>();
+                    var ctx = c.Resolve<HttpContext>();
 
                     if (ProfilerHttpModule.MiniProfilerStarted(ctx.ApplicationInstance))
                     {

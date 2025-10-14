@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Services;
 using SmartStore.Services.Common;
@@ -15,12 +15,12 @@ namespace SmartStore.PayPal.Filters
         private static readonly string[] s_interceptableActions = new string[] { "PaymentMethod" };
 
         private readonly IGenericAttributeService _genericAttributeService;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly ICommonServices _services;
 
         public PayPalExpressCheckoutFilter(
             IGenericAttributeService genericAttributeService,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             ICommonServices services)
         {
             _genericAttributeService = genericAttributeService;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.AmazonPay.Models;
 using SmartStore.AmazonPay.Services;
 using SmartStore.ComponentModel;
@@ -21,14 +21,14 @@ namespace SmartStore.AmazonPay.Controllers
 {
     public class AmazonPayController : PaymentControllerBase
     {
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly IAmazonPayService _apiService;
         private readonly Lazy<IScheduleTaskService> _scheduleTaskService;
         private readonly Lazy<IOpenAuthenticationService> _openAuthenticationService;
         private readonly Lazy<ExternalAuthenticationSettings> _externalAuthenticationSettings;
 
         public AmazonPayController(
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             IAmazonPayService apiService,
             Lazy<IScheduleTaskService> scheduleTaskService,
             Lazy<IOpenAuthenticationService> openAuthenticationService,

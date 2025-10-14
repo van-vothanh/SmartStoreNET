@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Configuration;
 using SmartStore.Core.Domain.Orders;
 using SmartStore.Core.Domain.Payments;
@@ -31,7 +31,7 @@ namespace SmartStore.PayPal
         }
 
         public ILogger Logger { get; set; }
-        public HttpContextBase HttpContext { get; set; }
+        public HttpContext HttpContext { get; set; }
         public ICommonServices Services { get; set; }
         public IOrderService OrderService { get; set; }
         public IOrderTotalCalculationService OrderTotalCalculationService { get; set; }

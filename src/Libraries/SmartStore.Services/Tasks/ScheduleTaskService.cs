@@ -4,7 +4,7 @@ using System.Data.Entity.Core;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using SmartStore.Core;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Common;

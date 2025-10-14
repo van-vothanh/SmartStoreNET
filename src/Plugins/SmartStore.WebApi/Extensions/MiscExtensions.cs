@@ -1,6 +1,6 @@
 ﻿using System.Net.Http;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.OData;
 using System.Web.OData.Builder;
 using SmartStore.Core.Infrastructure;

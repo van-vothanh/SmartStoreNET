@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Themes;
 using SmartStore.Collections;
 using SmartStore.Core.Domain.Themes;

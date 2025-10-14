@@ -4,8 +4,8 @@ using System.Collections.Specialized;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Collections;
 using SmartStore.Core.Fakes;
 using SmartStore.Tests;
@@ -30,7 +30,7 @@ namespace SmartStore.Web.MVC.Tests.Public.Infrastructure
     {
         #region Utilities
 
-        private static HttpContextBase FakeHttpContext(string url, HttpVerbs? httpMethod, HttpVerbs? formMethod)
+        private static HttpContext FakeHttpContext(string url, HttpVerbs? httpMethod, HttpVerbs? formMethod)
         {
             NameValueCollection form = null;
 
@@ -53,18 +53,18 @@ namespace SmartStore.Web.MVC.Tests.Public.Infrastructure
             return context;
         }
 
-        private static HttpContextBase FakeHttpContext(string url, string method)
+        private static HttpContext FakeHttpContext(string url, string method)
         {
             var httpMethod = (HttpVerbs)Enum.Parse(typeof(HttpVerbs), method);
             return FakeHttpContext(url, httpMethod, null);
         }
 
-        private static HttpContextBase FakeHttpContext(string url, HttpVerbs? httpMethod)
+        private static HttpContext FakeHttpContext(string url, HttpVerbs? httpMethod)
         {
             return FakeHttpContext(url, httpMethod, null);
         }
 
-        private static HttpContextBase FakeHttpContext(string url)
+        private static HttpContext FakeHttpContext(string url)
         {
             return FakeHttpContext(url, null, null);
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Payments;
 using SmartStore.PayPal.Models;
 using SmartStore.PayPal.Settings;
@@ -16,14 +16,14 @@ namespace SmartStore.PayPal.Controllers
 {
     public class PayPalDirectController : PayPalControllerBase<PayPalDirectPaymentSettings>
     {
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
 
         public PayPalDirectController(
             IPaymentService paymentService,
             IOrderService orderService,
             IOrderProcessingService orderProcessingService,
             PaymentSettings paymentSettings,
-            HttpContextBase httpContext) : base(
+            HttpContext httpContext) : base(
                 paymentService,
                 orderService,
                 orderProcessingService)

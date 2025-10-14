@@ -7,7 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using DotNetOpenAuth.AspNet;
 using Newtonsoft.Json.Linq;
 using SmartStore.Core.Domain.Customers;
@@ -24,7 +24,7 @@ namespace SmartStore.FacebookAuth.Core
         private readonly IExternalAuthorizer _authorizer;
         private readonly IOpenAuthenticationService _openAuthenticationService;
         private readonly ExternalAuthenticationSettings _externalAuthenticationSettings;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly ICommonServices _services;
 
         private FacebookOAuth2Client _facebookApplication;
@@ -36,7 +36,7 @@ namespace SmartStore.FacebookAuth.Core
         public FacebookProviderAuthorizer(IExternalAuthorizer authorizer,
             IOpenAuthenticationService openAuthenticationService,
             ExternalAuthenticationSettings externalAuthenticationSettings,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             ICommonServices services)
         {
             _authorizer = authorizer;
