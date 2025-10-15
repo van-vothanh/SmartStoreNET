@@ -1,5 +1,5 @@
 ﻿using System.Diagnostics;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework.Modelling;
 
 namespace SmartStore.DevTools.Filters

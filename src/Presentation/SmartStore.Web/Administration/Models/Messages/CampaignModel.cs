@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Collections;
@@ -14,15 +14,12 @@ namespace SmartStore.Admin.Models.Messages
     public class CampaignModel : EntityModelBase
     {
         [SmartResourceDisplayName("Admin.Promotions.Campaigns.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Promotions.Campaigns.Fields.Subject")]
-        [AllowHtml]
         public string Subject { get; set; }
 
         [SmartResourceDisplayName("Admin.Promotions.Campaigns.Fields.Body")]
-        [AllowHtml]
         public string Body { get; set; }
 
         [SmartResourceDisplayName("Common.CreatedOn")]
@@ -32,7 +29,6 @@ namespace SmartStore.Admin.Models.Messages
         public TreeNode<ModelTreeMember> LastModelTree { get; set; }
 
         [SmartResourceDisplayName("Admin.Promotions.Campaigns.Fields.TestEmail")]
-        [AllowHtml]
         public string TestEmail { get; set; }
 
         // ACL.

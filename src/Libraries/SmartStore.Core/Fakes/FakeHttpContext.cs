@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Security.Principal;
-using System.Web;
-using System.Web.SessionState;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Fakes
 {
+    // TODO: Rewrite for ASP.NET Core - HttpContext API has changed
+    /*
     public class FakeHttpContext : HttpContextBase
     {
         private readonly HttpCookieCollection _cookies;
@@ -103,4 +104,5 @@ namespace SmartStore.Core.Fakes
             return null;
         }
     }
+    */
 }

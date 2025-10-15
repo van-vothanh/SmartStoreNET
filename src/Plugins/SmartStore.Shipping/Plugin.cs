@@ -1,4 +1,4 @@
-﻿using System.Data.Entity.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using SmartStore.Core.Logging;
 using SmartStore.Core.Plugins;
 using SmartStore.Services.Configuration;

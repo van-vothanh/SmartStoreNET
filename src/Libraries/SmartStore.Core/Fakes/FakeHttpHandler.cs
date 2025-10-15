@@ -1,4 +1,6 @@
 ﻿using System;
+// TODO: Rewrite for ASP.NET Core - HttpContext API has changed
+/*
 using System.Web;
 
 namespace SmartStore.Core.Fakes
@@ -13,3 +15,4 @@ namespace SmartStore.Core.Fakes
         }
     }
 }
+*/

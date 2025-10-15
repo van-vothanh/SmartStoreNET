@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -20,7 +20,6 @@ namespace SmartStore.Admin.Models.Directory
         }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.Fields.AllowsBilling")]
@@ -30,11 +29,9 @@ namespace SmartStore.Admin.Models.Directory
         public bool AllowsShipping { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.Fields.TwoLetterIsoCode")]
-        [AllowHtml]
         public string TwoLetterIsoCode { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.Fields.ThreeLetterIsoCode")]
-        [AllowHtml]
         public string ThreeLetterIsoCode { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.Fields.NumericIsoCode")]
@@ -79,7 +76,6 @@ namespace SmartStore.Admin.Models.Directory
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Countries.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
     }
 

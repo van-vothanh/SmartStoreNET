@@ -1,4 +1,4 @@
-﻿using System.Web.Routing;
+﻿using Microsoft.AspNetCore.Routing;
 using SmartStore.Web.Framework.Modelling;
 
 namespace SmartStore.Web.Models.Customer

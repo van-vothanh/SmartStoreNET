@@ -1,7 +1,7 @@
 using System;
 using System.Data;
-using System.Data.Entity;
-using System.Data.Entity.ModelConfiguration;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Linq;
 using System.Reflection;
 using SmartStore.Core.Data;

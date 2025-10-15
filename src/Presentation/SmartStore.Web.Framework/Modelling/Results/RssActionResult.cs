@@ -1,5 +1,5 @@
 ﻿using System.ServiceModel.Syndication;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Xml;
 
 // ReSharper disable once CheckNamespace

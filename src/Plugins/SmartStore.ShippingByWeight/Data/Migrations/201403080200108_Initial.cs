@@ -1,6 +1,6 @@
 namespace SmartStore.ShippingByWeight.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
 
     public partial class Initial : DbMigration
     {

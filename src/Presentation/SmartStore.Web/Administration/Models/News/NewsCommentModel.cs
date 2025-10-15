@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -11,7 +11,6 @@ namespace SmartStore.Admin.Models.News
         public int NewsItemId { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.Comments.Fields.NewsItem")]
-        [AllowHtml]
         public string NewsItemTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.Comments.Fields.Customer")]
@@ -21,11 +20,9 @@ namespace SmartStore.Admin.Models.News
         [SmartResourceDisplayName("Admin.ContentManagement.News.Comments.Fields.IPAddress")]
         public string IpAddress { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.ContentManagement.News.Comments.Fields.CommentTitle")]
         public string CommentTitle { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.ContentManagement.News.Comments.Fields.CommentText")]
         public string CommentText { get; set; }
 

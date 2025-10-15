@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -26,36 +26,28 @@ namespace SmartStore.Admin.Models.Catalog
         public int GridPageSize { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Manufacturers.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Manufacturers.Fields.Description")]
-        [AllowHtml]
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Manufacturers.Fields.BottomDescription")]
-        [AllowHtml]
         public string BottomDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Manufacturers.Fields.ManufacturerTemplate")]
-        [AllowHtml]
         public int ManufacturerTemplateId { get; set; }
         public IList<SelectListItem> AvailableManufacturerTemplates { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaKeywords")]
-        [AllowHtml]
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
         public string MetaTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
         public string SeName { get; set; }
 
         [UIHint("Media"), AdditionalMetadata("album", "catalog")]
@@ -151,31 +143,24 @@ namespace SmartStore.Admin.Models.Catalog
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Manufacturers.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Manufacturers.Fields.Description")]
-        [AllowHtml]
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Manufacturers.Fields.BottomDescription")]
-        [AllowHtml]
         public string BottomDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaKeywords")]
-        [AllowHtml]
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
         public string MetaTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
         public string SeName { get; set; }
     }
 

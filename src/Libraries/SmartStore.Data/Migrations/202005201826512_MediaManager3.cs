@@ -1,6 +1,6 @@
 namespace SmartStore.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
     using SmartStore.Data.Setup;
 
     public partial class MediaManager3 : DbMigration, IDataSeeder<SmartObjectContext>
