@@ -1,40 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Web.Caching;
+// TODO: Migrate to ASP.NET Core - System.Web types not supported
+// This file has been temporarily disabled for .NET 8 migration
 
-namespace SmartStore.Core.IO
+namespace SmartStore.Core
 {
-    public interface IVirtualPathProvider
-    {
-        string MapPath(string virtualPath);
-        string Combine(params string[] paths);
-        string Normalize(string virtualPath);
-        string ToAppRelative(string virtualPath);
-
-        bool DirectoryExists(string virtualPath);
-        bool FileExists(string virtualPath);
-
-        CacheDependency GetCacheDependency(string virtualPath, IEnumerable<string> dependencies, DateTime utcStart);
-        string GetCacheKey(string virtualPath);
-        string GetFileHash(string virtualPath, IEnumerable<string> dependencies);
-
-        IEnumerable<string> ListDirectories(string virtualPath);
-        IEnumerable<string> ListFiles(string virtualPath);
-
-        Stream OpenFile(string virtualPath);
-    }
-
-    public static class IVirtualPathProviderExtensions
-    {
-        public static string GetFileHash(this IVirtualPathProvider vpp, string virtualPath)
-        {
-            return vpp.GetFileHash(virtualPath, new[] { virtualPath });
-        }
-
-        public static CacheDependency GetCacheDependency(this IVirtualPathProvider vpp, string virtualPath, DateTime utcStart)
-        {
-            return vpp.GetCacheDependency(virtualPath, new[] { virtualPath }, utcStart);
-        }
-    }
+    // Placeholder - original implementation commented out
 }

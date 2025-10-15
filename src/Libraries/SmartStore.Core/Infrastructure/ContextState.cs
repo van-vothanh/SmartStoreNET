@@ -1,6 +1,6 @@
-﻿using System;
-using System.Runtime.Remoting.Messaging;
-using System.Web;
+using System;
+using System.Threading;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Infrastructure
 {
@@ -12,6 +12,13 @@ namespace SmartStore.Core.Infrastructure
     {
         private readonly string _name;
         private readonly Func<T> _defaultValue;
+        private readonly AsyncLocal<T> _asyncLocal = new AsyncLocal<T>();
+        private static IHttpContextAccessor _httpContextAccessor;
+
+        public static void Configure(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
 
         public ContextState(string name)
         {
@@ -27,57 +34,55 @@ namespace SmartStore.Core.Infrastructure
         public T GetState()
         {
             var key = BuildKey();
+            var httpContext = _httpContextAccessor?.HttpContext;
 
-            if (HttpContext.Current == null)
+            if (httpContext == null)
             {
-                var data = CallContext.GetData(key);
+                var data = _asyncLocal.Value;
 
-                if (data == null)
+                if (data == null && _defaultValue != null)
                 {
-                    if (_defaultValue != null)
-                    {
-                        CallContext.SetData(key, data = _defaultValue());
-                        return data as T;
-                    }
+                    data = _defaultValue();
+                    _asyncLocal.Value = data;
                 }
 
-                return data as T;
+                return data;
             }
 
-            if (HttpContext.Current.Items[key] == null)
+            if (httpContext.Items[key] == null && _defaultValue != null)
             {
-                HttpContext.Current.Items[key] = _defaultValue?.Invoke();
+                httpContext.Items[key] = _defaultValue();
             }
 
-            return HttpContext.Current.Items[key] as T;
+            return httpContext.Items[key] as T;
         }
 
         public void SetState(T state)
         {
-            if (HttpContext.Current == null)
+            var httpContext = _httpContextAccessor?.HttpContext;
+
+            if (httpContext == null)
             {
-                CallContext.SetData(BuildKey(), state);
+                _asyncLocal.Value = state;
             }
             else
             {
-                HttpContext.Current.Items[BuildKey()] = state;
+                httpContext.Items[BuildKey()] = state;
             }
         }
 
         public void RemoveState()
         {
             var key = BuildKey();
+            var httpContext = _httpContextAccessor?.HttpContext;
 
-            if (HttpContext.Current == null)
+            if (httpContext == null)
             {
-                CallContext.FreeNamedDataSlot(key);
+                _asyncLocal.Value = null;
             }
             else
             {
-                if (HttpContext.Current.Items.Contains(key))
-                {
-                    HttpContext.Current.Items.Remove(key);
-                }
+                httpContext.Items.Remove(key);
             }
         }
 

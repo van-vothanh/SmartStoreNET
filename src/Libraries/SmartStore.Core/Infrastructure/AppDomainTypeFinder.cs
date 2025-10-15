@@ -133,7 +133,8 @@ namespace SmartStore.Core.Infrastructure
 
             if (ignoreInactivePlugins)
             {
-                return assemblies.Where(x => PluginManager.IsActivePluginAssembly(x)).AsReadOnly();
+                // TODO: Restore PluginManager.IsActivePluginAssembly after migration
+                return assemblies.AsReadOnly(); // .Where(x => PluginManager.IsActivePluginAssembly(x)).AsReadOnly();
             }
 
             return assemblies.AsReadOnly();

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Caching.Memory;
 using System.Runtime.Caching;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
@@ -10,6 +11,9 @@ using System.Threading.Tasks;
 using SmartStore.Core.Infrastructure.DependencyManagement;
 using SmartStore.Utilities;
 using SmartStore.Utilities.Threading;
+using MemoryCache = System.Runtime.Caching.MemoryCache;
+using CacheItemPolicy = System.Runtime.Caching.CacheItemPolicy;
+using ObjectCache = System.Runtime.Caching.ObjectCache;
 
 namespace SmartStore.Core.Caching
 {

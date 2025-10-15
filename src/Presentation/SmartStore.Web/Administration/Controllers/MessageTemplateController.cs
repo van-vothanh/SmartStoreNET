@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Caching;
-using System.Web.Mvc;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Messages;
 using SmartStore.Core.Domain.Messages;
 using SmartStore.Core.Email;

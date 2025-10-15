@@ -2,8 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -44,7 +44,7 @@ namespace SmartStore.Core
 
             _totalCount = totalCount;
             _queryIsPagedAlready = totalCount.HasValue;
-            _isEfQuery = source.Provider is IDbAsyncQueryProvider;
+            _isEfQuery = false; // EF Core doesn't use IDbAsyncQueryProvider
         }
 
         private void EnsureIsLoaded()
@@ -109,18 +109,9 @@ namespace SmartStore.Core
             else
             {
                 var skip = PageIndex * PageSize;
-                if (_isEfQuery)
-                {
-                    return skip == 0
-                        ? query.Take(() => PageSize)
-                        : query.Skip(() => skip).Take(() => PageSize);
-                }
-                else
-                {
-                    return skip == 0
-                        ? query.Take(PageSize)
-                        : query.Skip(skip).Take(PageSize);
-                }
+                return skip == 0
+                    ? query.Take(PageSize)
+                    : query.Skip(skip).Take(PageSize);
             }
         }
 

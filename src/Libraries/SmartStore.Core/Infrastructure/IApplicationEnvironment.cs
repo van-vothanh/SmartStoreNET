@@ -1,16 +1,7 @@
-﻿using SmartStore.Core.IO;
+// TODO: Migrate to ASP.NET Core - IVirtualFolder/IVirtualPathProvider not supported
+// This file has been temporarily disabled for .NET 8 migration
 
 namespace SmartStore.Core
 {
-    public interface IApplicationEnvironment
-    {
-        string MachineName { get; }
-        string EnvironmentIdentifier { get; }
-
-        IVirtualFolder WebRootFolder { get; }
-        IVirtualFolder AppDataFolder { get; }
-        IVirtualFolder ThemesFolder { get; }
-        IVirtualFolder PluginsFolder { get; }
-        IVirtualFolder TenantFolder { get; }
-    }
+    // Placeholder - original implementation commented out
 }

@@ -1,34 +1,7 @@
-﻿using System.Text;
-using System.Web;
+// TODO: Rewrite for ASP.NET Core - HttpContext API has changed
+// This file has been temporarily disabled for .NET 8 migration
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpResponse : HttpResponseBase
-    {
-        private readonly HttpCookieCollection _cookies;
-        private readonly StringBuilder _outputString = new StringBuilder();
-
-        public FakeHttpResponse()
-        {
-            this._cookies = new HttpCookieCollection();
-        }
-
-        public string ResponseOutput => _outputString.ToString();
-
-        public override int StatusCode { get; set; }
-
-        public override string RedirectLocation { get; set; }
-
-        public override void Write(string s)
-        {
-            _outputString.Append(s);
-        }
-
-        public override string ApplyAppPathModifier(string virtualPath)
-        {
-            return virtualPath;
-        }
-
-        public override HttpCookieCollection Cookies => _cookies;
-    }
+    // Placeholder - original test fakes commented out
 }

@@ -9,6 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Net;
 using System.Web;
 using SmartStore.Core.Html;
 using SmartStore.Utilities.ObjectPools;
@@ -1032,7 +1033,8 @@ namespace SmartStore
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string SanitizeHtmlId(this string value)
         {
-            return System.Web.Mvc.TagBuilder.CreateSanitizedId(value);
+            // TODO: Migrate to ASP.NET Core TagBuilder
+            return value?.Replace(" ", "_").Replace("-", "_") ?? string.Empty;
         }
 
         [DebuggerStepThrough]

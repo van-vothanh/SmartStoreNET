@@ -26,7 +26,6 @@ namespace SmartStore.Core.Domain.Customers
         /// Indicates whether the mapping is created by the user or by the system.
         /// </summary>
         [DataMember]
-        [Index]
         public bool IsSystemMapping { get; set; }
 
         /// <summary>

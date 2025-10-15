@@ -2,7 +2,7 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -344,6 +344,32 @@ namespace SmartStore.Core.Async
         }
     }
 
+    // TODO: Migrate to IHostedService - IRegisteredObject not supported in .NET 8
+    // Temporary stub to allow compilation
+    internal class BackgroundWorkHost
+    {
+        private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
+
+        public CancellationTokenSource ShutdownCancellationTokenSource => _shutdownCancellationTokenSource;
+
+        public CancellationTokenSource CreateCompositeCancellationTokenSource(CancellationToken userCancellationToken)
+        {
+            if (userCancellationToken == CancellationToken.None)
+            {
+                return _shutdownCancellationTokenSource;
+            }
+            return CancellationTokenSource.CreateLinkedTokenSource(_shutdownCancellationTokenSource.Token, userCancellationToken);
+        }
+
+        public void Register(Task work, CancellationToken cancellationToken)
+        {
+            // Stub implementation - just continue the task
+            work.ContinueWith(_ => { }, CancellationToken.None, TaskContinuationOptions.ExecuteSynchronously, TaskScheduler.Default);
+        }
+    }
+
+    /*
+    // Original implementation commented out
     internal class BackgroundWorkHost : IRegisteredObject
     {
         private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
@@ -421,4 +447,5 @@ namespace SmartStore.Core.Async
         }
 
     }
+    */
 }

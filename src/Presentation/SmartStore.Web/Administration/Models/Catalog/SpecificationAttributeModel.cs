@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Search.Facets;
@@ -20,7 +20,6 @@ namespace SmartStore.Admin.Models.Catalog
         }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Fields.Alias")]
@@ -52,7 +51,6 @@ namespace SmartStore.Admin.Models.Catalog
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Fields.Alias")]

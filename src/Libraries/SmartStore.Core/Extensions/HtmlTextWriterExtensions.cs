@@ -1,6 +1,7 @@
+// TODO: HtmlTextWriter not supported in .NET 8 - use TagBuilder instead
+/*
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.UI;
 
 namespace SmartStore
 {
@@ -19,3 +20,4 @@ namespace SmartStore
         }
     }
 }
+*/

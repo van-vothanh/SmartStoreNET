@@ -10,8 +10,9 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Newtonsoft.Json;
 using SmartStore.ComponentModel;
 
@@ -78,12 +79,14 @@ namespace SmartStore.Utilities
             if (path == null)
                 throw new ArgumentNullException(nameof(path));
 
-            if (HostingEnvironment.IsHosted)
-            {
-                // hosted
-                return HostingEnvironment.MapPath(path);
-            }
-            else
+            // TODO: Migrate to IWebHostEnvironment
+            // For now, assume non-hosted and use current directory
+            // if (HostingEnvironment.IsHosted)
+            // {
+            //     // hosted
+            //     return HostingEnvironment.MapPath(path);
+            // }
+            // else
             {
                 // not hosted. For example, running in unit tests or EF tooling
                 string baseDirectory = AppDomain.CurrentDomain.BaseDirectory;
@@ -124,19 +127,20 @@ namespace SmartStore.Utilities
 
         private static bool IsDevEnvironmentInternal()
         {
-            if (!HostingEnvironment.IsHosted)
-                return true;
+            // TODO: Migrate to IWebHostEnvironment
+            // if (!HostingEnvironment.IsHosted)
+            //     return true;
 
-            if (HostingEnvironment.IsDevelopmentEnvironment)
-                return true;
+            // if (HostingEnvironment.IsDevelopmentEnvironment)
+            //     return true;
 
             if (System.Diagnostics.Debugger.IsAttached)
                 return true;
 
             // if there's a 'SmartStore.NET.sln' in one of the parent folders,
             // then we're likely in a dev environment
-            if (FindSolutionRoot(HostingEnvironment.MapPath("~/")) != null)
-                return true;
+            // if (FindSolutionRoot(HostingEnvironment.MapPath("~/")) != null)
+            //     return true;
 
             return false;
         }
@@ -249,7 +253,8 @@ namespace SmartStore.Utilities
         {
             Guard.NotNull(value, nameof(value));
 
-            var anonymousDictionary = HtmlHelper.AnonymousObjectToHtmlAttributes(value);
+            // TODO: Migrate to ASP.NET Core HtmlHelper
+            var anonymousDictionary = Microsoft.AspNetCore.Mvc.ViewFeatures.HtmlHelper.AnonymousObjectToHtmlAttributes(value);
             IDictionary<string, object> expando = new ExpandoObject();
             foreach (var item in anonymousDictionary)
             {
@@ -398,7 +403,7 @@ namespace SmartStore.Utilities
             {
                 if (instanceLookup == null)
                 {
-                    instanceLookup = new HashSet<object>(ReferenceEqualityComparer.Default);
+                    instanceLookup = new HashSet<object>(SmartStore.ComponentModel.ReferenceEqualityComparer.Default);
                 }
 
                 if (!type.IsValueType && instanceLookup.Contains(obj))

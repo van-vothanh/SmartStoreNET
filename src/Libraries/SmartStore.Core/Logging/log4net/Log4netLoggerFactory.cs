@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using log4net;
 using log4net.Appender;
 using log4net.Config;
@@ -13,7 +13,8 @@ using SmartStore.Utilities;
 
 namespace SmartStore.Core.Logging
 {
-    public class Log4netLoggerFactory : ILoggerFactory, IRegisteredObject
+    // TODO: Migrate to IHostedService - IRegisteredObject not supported in .NET 8
+    public class Log4netLoggerFactory : ILoggerFactory //, IRegisteredObject
     {
         private readonly ConcurrentDictionary<string, ILogger> _loggerCache = new ConcurrentDictionary<string, ILogger>(StringComparer.OrdinalIgnoreCase);
 
@@ -94,7 +95,8 @@ namespace SmartStore.Core.Logging
             }
         }
 
-
+        // TODO: Migrate to IHostedService
+        /*
         #region IRegisteredObject
 
         public void Stop(bool immediate)
@@ -121,6 +123,7 @@ namespace SmartStore.Core.Logging
         }
 
         #endregion
+        */
     }
 
     //public class DbAppender : AdoNetAppender

@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using SmartStore.Services.Tasks;
 
 namespace SmartStore.Services.Messages

@@ -1,32 +1,7 @@
-﻿using System;
-using Autofac;
-using Autofac.Integration.Mvc;
+// TODO: Migrate to ASP.NET Core - System.Web types not supported
+// This file has been temporarily disabled for .NET 8 migration
 
-namespace SmartStore.Core.Infrastructure.DependencyManagement
+namespace SmartStore.Core
 {
-    public class DefaultLifetimeScopeProvider : ILifetimeScopeProvider
-    {
-        private readonly ILifetimeScopeAccessor _accessor;
-
-        public DefaultLifetimeScopeProvider(ILifetimeScopeAccessor accessor)
-        {
-            Guard.NotNull(accessor, nameof(accessor));
-
-            this._accessor = accessor;
-            AutofacRequestLifetimeHttpModule.SetLifetimeScopeProvider(this);
-        }
-
-        public ILifetimeScope ApplicationContainer => _accessor.ApplicationContainer;
-
-        public void EndLifetimeScope()
-        {
-            _accessor.EndLifetimeScope();
-        }
-
-        public ILifetimeScope GetLifetimeScope(Action<ContainerBuilder> configurationAction)
-        {
-            return _accessor.GetLifetimeScope(configurationAction);
-        }
-
-    }
+    // Placeholder - original implementation commented out
 }
