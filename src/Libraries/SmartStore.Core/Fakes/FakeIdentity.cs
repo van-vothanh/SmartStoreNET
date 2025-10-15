@@ -1,3 +1,6 @@
+// TODO: Rewrite for ASP.NET Core - HttpContext API has changed
+// This file is commented out and needs to be rewritten
+/*
 ﻿using System;
 using System.Security.Principal;
 
@@ -19,4 +22,4 @@ namespace SmartStore.Core.Fakes
         public string Name => _name;
 
     }
-}
+}*/

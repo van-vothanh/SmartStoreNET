@@ -1,24 +1,8 @@
-﻿using System.Linq;
-using NuGet;
-
-namespace SmartStore.Core.Packaging
+// TODO: Migrate to NuGet.Protocol v3 API
+namespace SmartStore.Core.Packaging.NuGet
 {
-    /// <summary>
-    /// This repository implementation fakes a source (remote) repository
-    /// </summary>
-    internal class NullSourceRepository : PackageRepositoryBase
+    public class NullSourceRepository
     {
-        public override IQueryable<IPackage> GetPackages()
-        {
-            return Enumerable.Empty<IPackage>().AsQueryable();
-        }
-
-        public override string Source => string.Empty;
-
-        public override bool SupportsPrereleasePackages => true;
-
-        public override void AddPackage(IPackage package) { }
-
-        public override void RemovePackage(IPackage package) { }
+        // TODO: Implement using NuGet.Protocol v3 API
     }
 }

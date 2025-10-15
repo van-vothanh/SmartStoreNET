@@ -1,3 +1,6 @@
+// TODO: Rewrite for ASP.NET Core - HttpContext API has changed
+// This file is commented out and needs to be rewritten
+/*
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Web;
@@ -50,4 +53,4 @@ namespace SmartStore.Core.Fakes
             _sessionItems.Remove(name);
         }
     }
-}
+}*/

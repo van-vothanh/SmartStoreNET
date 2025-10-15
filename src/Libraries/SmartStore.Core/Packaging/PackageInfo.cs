@@ -1,3 +1,6 @@
+// TODO: Migrate to NuGet.Protocol v3 API
+// This file uses NuGet.Core v2 API which is obsolete
+/*
 ﻿namespace SmartStore.Core.Packaging
 {
     public class PackageInfo
@@ -10,3 +13,4 @@
         public ExtensionDescriptor ExtensionDescriptor { get; set; }
     }
 }
+*/

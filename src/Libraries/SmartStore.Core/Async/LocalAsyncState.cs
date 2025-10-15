@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
 using System.Threading;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 
 namespace SmartStore.Core.Async
 {
     public partial class LocalAsyncState : IAsyncState
     {
-        private readonly MemoryCache _states = new MemoryCache("SmartStore.AsyncState.Progress");
-        private readonly MemoryCache _cancelTokens = new MemoryCache("SmartStore.AsyncState.CancelTokenSources");
+        private readonly MemoryCache _states = new MemoryCache(Options.Create(new MemoryCacheOptions()));
+        private readonly MemoryCache _cancelTokens = new MemoryCache(Options.Create(new MemoryCacheOptions()));
 
         public virtual bool Exists<T>(string name = null)
         {
@@ -32,6 +33,9 @@ namespace SmartStore.Core.Async
 
         public virtual IEnumerable<T> GetAll<T>()
         {
+            // TODO: MemoryCache in .NET 8 is not enumerable. Need to track keys separately.
+            throw new NotImplementedException("GetAll is not supported with Microsoft.Extensions.Caching.Memory. Consider tracking keys separately.");
+            /*
             var keyPrefix = BuildKey<T>(null);
             return _states
                 .Where(x => x.Key.StartsWith(keyPrefix))
@@ -39,6 +43,7 @@ namespace SmartStore.Core.Async
                 .OfType<AsyncStateInfo>()
                 .Select(x => x.Progress)
                 .OfType<T>();
+            */
         }
 
 
@@ -60,17 +65,17 @@ namespace SmartStore.Core.Async
             {
                 // add new entry
                 var duration = neverExpires ? TimeSpan.Zero : TimeSpan.FromMinutes(15);
-                var policy = new CacheItemPolicy
+                var options = new MemoryCacheEntryOptions
                 {
                     SlidingExpiration = duration,
-                    Priority = CacheItemPriority.NotRemovable
+                    Priority = CacheItemPriority.NeverRemove
                 };
                 var key = BuildKey<T>(name);
 
                 // On expiration or removal: remove corresponding cancel token also.
-                policy.RemovedCallback = (x) => OnRemoveCancelTokenSource(key);
+                options.RegisterPostEvictionCallback((k, v, r, s) => OnRemoveCancelTokenSource(key));
 
-                _states.Set(key, new AsyncStateInfo { Progress = state, Duration = duration }, policy);
+                _states.Set(key, new AsyncStateInfo { Progress = state, Duration = duration }, options);
             }
         }
 
@@ -155,9 +160,9 @@ namespace SmartStore.Core.Async
                 OnRemoveCancelTokenSource(key);
             }
 
-            var policy = new CacheItemPolicy { Priority = CacheItemPriority.NotRemovable };
+            var options = new MemoryCacheEntryOptions { Priority = CacheItemPriority.NeverRemove };
 
-            _cancelTokens.Set(key, cancelTokenSource, policy);
+            _cancelTokens.Set(key, cancelTokenSource, options);
         }
 
         public bool Cancel<T>(string name = null)

@@ -14,9 +14,9 @@ namespace SmartStore.Core.Caching
 
         private readonly IDictionary _emptyDictionary = new Dictionary<string, object>();
 
-        private readonly HttpContextBase _context;
+        private readonly HttpContext _context;
 
-        public RequestCache(HttpContextBase context)
+        public RequestCache(HttpContext context)
         {
             _context = context;
         }

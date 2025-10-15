@@ -1,12 +1,15 @@
+// TODO: Rewrite for ASP.NET Core - HttpContext API has changed
+// This file is commented out and needs to be rewritten
+/*
 ﻿using System;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpRequest : HttpRequestBase
+    public class FakeHttpRequest : HttpRequest
     {
         private readonly HttpCookieCollection _cookies;
         private readonly NameValueCollection _formParams;
@@ -101,4 +104,4 @@ namespace SmartStore.Core.Fakes
             set => _requestContext = value;
         }
     }
-}
+}*/

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 using EfState = System.Data.Entity.EntityState;
 
 namespace SmartStore.Core.Data.Hooks
@@ -14,7 +14,7 @@ namespace SmartStore.Core.Data.Hooks
         /// <summary>
         /// Gets the hooked entity entry
         /// </summary>
-        DbEntityEntry Entry { get; }
+        EntityEntry Entry { get; }
 
         /// <summary>
         /// Gets the hooked entity instance
@@ -61,12 +61,12 @@ namespace SmartStore.Core.Data.Hooks
     {
         private Type _entityType;
 
-        public HookedEntity(IDbContext context, DbEntityEntry entry)
+        public HookedEntity(IDbContext context, EntityEntry entry)
             : this(context.GetType(), entry)
         {
         }
 
-        internal HookedEntity(Type contextType, DbEntityEntry entry)
+        internal HookedEntity(Type contextType, EntityEntry entry)
         {
             ContextType = contextType;
             Entry = entry;
@@ -78,7 +78,7 @@ namespace SmartStore.Core.Data.Hooks
             get;
         }
 
-        public DbEntityEntry Entry
+        public EntityEntry Entry
         {
             get;
         }

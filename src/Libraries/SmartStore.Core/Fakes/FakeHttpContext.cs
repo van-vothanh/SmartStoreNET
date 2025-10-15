@@ -1,3 +1,6 @@
+// TODO: Rewrite for ASP.NET Core - HttpContext API has changed
+// This file is commented out and needs to be rewritten
+/*
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -7,7 +10,7 @@ using System.Web.SessionState;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpContext : HttpContextBase
+    public class FakeHttpContext : HttpContext
     {
         private readonly HttpCookieCollection _cookies;
         private readonly NameValueCollection _formParams;
@@ -17,8 +20,8 @@ namespace SmartStore.Core.Fakes
         private readonly string _method;
         private readonly SessionStateItemCollection _sessionItems;
         private readonly NameValueCollection _serverVariables;
-        private HttpResponseBase _response;
-        private HttpRequestBase _request;
+        private HttpResponse _response;
+        private HttpRequest _request;
         private readonly Dictionary<object, object> _items;
 
         public static FakeHttpContext Root()
@@ -72,16 +75,16 @@ namespace SmartStore.Core.Fakes
 
         public override IHttpHandler Handler { get; set; }
 
-        public override HttpRequestBase Request => _request ?? new FakeHttpRequest(_relativeUrl, _method, _formParams, _queryStringParams, _cookies, _serverVariables);
+        public override HttpRequest Request => _request ?? new FakeHttpRequest(_relativeUrl, _method, _formParams, _queryStringParams, _cookies, _serverVariables);
 
-        public void SetRequest(HttpRequestBase request)
+        public void SetRequest(HttpRequest request)
         {
             _request = request;
         }
 
-        public override HttpResponseBase Response => _response ?? new FakeHttpResponse();
+        public override HttpResponse Response => _response ?? new FakeHttpResponse();
 
-        public void SetResponse(HttpResponseBase response)
+        public void SetResponse(HttpResponse response)
         {
             _response = response;
         }
@@ -103,4 +106,4 @@ namespace SmartStore.Core.Fakes
             return null;
         }
     }
-}
+}*/

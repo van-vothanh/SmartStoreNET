@@ -10,7 +10,7 @@ namespace SmartStore.Core.Fakes
         /// </summary>
         /// <param name="httpContext">HTTP context</param>
         /// <returns>Result</returns>
-        public static bool IsFakeContext(this HttpContextBase httpContext)
+        public static bool IsFakeContext(this HttpContext httpContext)
         {
             if (httpContext == null)
                 throw new ArgumentNullException("httpContext");

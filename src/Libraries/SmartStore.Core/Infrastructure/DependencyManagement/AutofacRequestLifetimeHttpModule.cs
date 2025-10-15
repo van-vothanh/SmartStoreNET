@@ -1,9 +1,13 @@
-﻿using System;
-using System.Web;
-using Autofac.Integration.Mvc;
+using System;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
+    // TODO: Migrate to ASP.NET Core middleware
+    // IHttpModule is not supported in ASP.NET Core
+    // Request scoping is handled automatically by ASP.NET Core DI
+    // This class needs to be converted to middleware or removed if functionality is built-in
+
+    /*
     /// <summary>
     /// An <see cref="IHttpModule"/> and <see cref="ILifetimeScopeProvider"/> implementation 
     /// that creates a nested lifetime scope for each HTTP request.
@@ -72,5 +76,20 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
         {
         }
 
+    }
+    */
+
+    // Stub to allow compilation
+    public class AutofacRequestLifetimeHttpModule
+    {
+        public static void SetLifetimeScopeProvider(ILifetimeScopeProvider lifetimeScopeProvider)
+        {
+            // TODO: Implement for ASP.NET Core
+        }
+
+        public static void OnEndRequest(object sender, EventArgs e)
+        {
+            // TODO: Implement for ASP.NET Core
+        }
     }
 }

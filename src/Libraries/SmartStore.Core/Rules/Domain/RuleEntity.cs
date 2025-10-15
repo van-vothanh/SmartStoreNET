@@ -17,7 +17,6 @@ namespace SmartStore.Rules.Domain
 
         [DataMember]
         [Required, StringLength(100)]
-        [Index("IX_PageBuilder_RuleType")]
         public string RuleType { get; set; }
 
         //[DataMember]
@@ -33,7 +32,6 @@ namespace SmartStore.Rules.Domain
         public string Value { get; set; }
 
         [DataMember]
-        [Index("IX_PageBuilder_DisplayOrder")]
         public int DisplayOrder { get; set; }
 
         [NotMapped]

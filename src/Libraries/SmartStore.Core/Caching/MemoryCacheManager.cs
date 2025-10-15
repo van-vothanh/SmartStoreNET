@@ -2,11 +2,12 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 using SmartStore.Core.Infrastructure.DependencyManagement;
 using SmartStore.Utilities;
 using SmartStore.Utilities.Threading;
@@ -33,7 +34,7 @@ namespace SmartStore.Core.Caching
 
         private MemoryCache CreateCache()
         {
-            return new MemoryCache("SmartStore");
+            return new MemoryCache(Options.Create(new MemoryCacheOptions()));
         }
 
         public bool IsDistributedCache => false;
@@ -207,34 +208,27 @@ namespace SmartStore.Core.Caching
             return result;
         }
 
-        private CacheItemPolicy GetCacheItemPolicy(TimeSpan? duration, IEnumerable<string> dependencies)
+        private MemoryCacheEntryOptions GetCacheItemPolicy(TimeSpan? duration, IEnumerable<string> dependencies)
         {
-            var absoluteExpiration = ObjectCache.InfiniteAbsoluteExpiration;
+            var options = new MemoryCacheEntryOptions
+            {
+                Priority = CacheItemPriority.Normal
+            };
 
             if (duration.HasValue)
             {
-                absoluteExpiration = DateTime.UtcNow + duration.Value;
+                options.AbsoluteExpirationRelativeToNow = duration.Value;
             }
 
-            var cacheItemPolicy = new CacheItemPolicy
-            {
-                AbsoluteExpiration = absoluteExpiration,
-                SlidingExpiration = ObjectCache.NoSlidingExpiration
-            };
-
+            // TODO: ChangeMonitors not supported in Microsoft.Extensions.Caching.Memory
+            // Need to implement cache dependencies differently using IChangeToken
             if (dependencies != null && dependencies.Any())
             {
-                // INFO: we can only depend on existing items, otherwise this entry will be removed immediately.
-                dependencies = dependencies.Where(x => x != null && _cache.Contains(x));
-                if (dependencies.Any())
-                {
-                    cacheItemPolicy.ChangeMonitors.Add(_cache.CreateCacheEntryChangeMonitor(dependencies));
-                }
+                // INFO: Cache dependencies need to be reimplemented using IChangeToken
+                // For now, dependencies are ignored
             }
 
-            //cacheItemPolicy.RemovedCallback = OnRemoveEntry;
-
-            return cacheItemPolicy;
+            return options;
         }
 
         //private void OnRemoveEntry(CacheEntryRemovedArguments args)

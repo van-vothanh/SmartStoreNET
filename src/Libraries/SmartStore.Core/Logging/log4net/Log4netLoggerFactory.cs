@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using log4net;
 using log4net.Appender;
 using log4net.Config;
@@ -13,7 +13,7 @@ using SmartStore.Utilities;
 
 namespace SmartStore.Core.Logging
 {
-    public class Log4netLoggerFactory : ILoggerFactory, IRegisteredObject
+    public class Log4netLoggerFactory : ILoggerFactory //, IRegisteredObject // TODO: Migrate to IHostedService
     {
         private readonly ConcurrentDictionary<string, ILogger> _loggerCache = new ConcurrentDictionary<string, ILogger>(StringComparer.OrdinalIgnoreCase);
 
@@ -95,13 +95,15 @@ namespace SmartStore.Core.Logging
         }
 
 
-        #region IRegisteredObject
+        #region IRegisteredObject - TODO: Migrate to IHostedService
 
+        /*
         public void Stop(bool immediate)
         {
             RemoveEmptyLogFiles();
             HostingEnvironment.UnregisterObject(this);
         }
+        */
 
         internal static void RemoveEmptyLogFiles()
         {

@@ -1,9 +1,12 @@
+// TODO: Rewrite for ASP.NET Core - HttpContext API has changed
+// This file is commented out and needs to be rewritten
+/*
 ﻿using System.Text;
 using System.Web;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpResponse : HttpResponseBase
+    public class FakeHttpResponse : HttpResponse
     {
         private readonly HttpCookieCollection _cookies;
         private readonly StringBuilder _outputString = new StringBuilder();
@@ -31,4 +34,4 @@ namespace SmartStore.Core.Fakes
 
         public override HttpCookieCollection Cookies => _cookies;
     }
-}
+}*/
