@@ -1,3 +1,4 @@
+/* TODO: Replace CacheDependency with IChangeToken
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -229,3 +230,4 @@ namespace SmartStore.Core.IO
         }
     }
 }
+*/

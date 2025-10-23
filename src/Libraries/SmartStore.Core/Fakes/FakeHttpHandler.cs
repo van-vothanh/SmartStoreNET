@@ -1,3 +1,4 @@
+/* TODO: Replace with ASP.NET Core test helpers
 ﻿using System;
 using System.Web;
 
@@ -13,3 +14,4 @@ namespace SmartStore.Core.Fakes
         }
     }
 }
+*/

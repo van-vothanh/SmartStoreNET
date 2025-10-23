@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.DataExchange;
 using SmartStore.Admin.Models.Tasks;
 using SmartStore.ComponentModel;

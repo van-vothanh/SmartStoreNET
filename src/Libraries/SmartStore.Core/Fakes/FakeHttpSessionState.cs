@@ -1,3 +1,4 @@
+/* TODO: Replace with ASP.NET Core test helpers
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Web;
@@ -50,4 +51,4 @@ namespace SmartStore.Core.Fakes
             _sessionItems.Remove(name);
         }
     }
-}
+}*/

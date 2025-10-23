@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.Entity.Core.EntityClient;
 using System.Data.Entity.Core.Metadata.Edm;
-using System.Data.Entity.Core.Objects;
-using System.Data.Entity.Infrastructure;
+// using System.Data.Entity.Core.Objects; // TODO: Replace with EF Core
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Reflection;
 using SmartStore.ComponentModel;

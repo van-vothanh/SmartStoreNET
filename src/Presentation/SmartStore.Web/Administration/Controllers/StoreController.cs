@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Store;
 using SmartStore.Admin.Models.Stores;
 using SmartStore.Core.Domain.Stores;

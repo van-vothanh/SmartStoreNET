@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using NuGet;
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;

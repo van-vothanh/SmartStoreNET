@@ -1,3 +1,4 @@
+/* TODO: Replace System.Web.UI with ASP.NET Core
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
@@ -19,3 +20,4 @@ namespace SmartStore
         }
     }
 }
+*/

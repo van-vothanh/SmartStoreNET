@@ -1,3 +1,4 @@
+/* TODO: Replace with ASP.NET Core test helpers
 ﻿using System;
 using System.Security.Principal;
 
@@ -19,4 +20,4 @@ namespace SmartStore.Core.Fakes
         public string Name => _name;
 
     }
-}
+}*/

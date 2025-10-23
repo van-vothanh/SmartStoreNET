@@ -2,7 +2,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using System.Runtime.CompilerServices;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -23,7 +23,7 @@ namespace SmartStore.Core.Caching
         public const string FakeNull = "__[NULL]__";
 
         private readonly Work<ICacheScopeAccessor> _scopeAccessor;
-        private MemoryCache _cache;
+        private IMemoryCache _cache;
 
         public MemoryCacheManager(Work<ICacheScopeAccessor> scopeAccessor)
         {
@@ -31,9 +31,9 @@ namespace SmartStore.Core.Caching
             _cache = CreateCache();
         }
 
-        private MemoryCache CreateCache()
+        private IMemoryCache CreateCache()
         {
-            return new MemoryCache("SmartStore");
+            return new MemoryCache(new MemoryCacheOptions());
         }
 
         public bool IsDistributedCache => false;
@@ -207,34 +207,27 @@ namespace SmartStore.Core.Caching
             return result;
         }
 
-        private CacheItemPolicy GetCacheItemPolicy(TimeSpan? duration, IEnumerable<string> dependencies)
+        private MemoryCacheEntryOptions GetCacheItemPolicy(TimeSpan? duration, IEnumerable<string> dependencies)
         {
-            var absoluteExpiration = ObjectCache.InfiniteAbsoluteExpiration;
+            var options = new MemoryCacheEntryOptions();
 
             if (duration.HasValue)
             {
-                absoluteExpiration = DateTime.UtcNow + duration.Value;
+                options.AbsoluteExpirationRelativeToNow = duration.Value;
             }
 
-            var cacheItemPolicy = new CacheItemPolicy
-            {
-                AbsoluteExpiration = absoluteExpiration,
-                SlidingExpiration = ObjectCache.NoSlidingExpiration
-            };
+            // TODO: Implement cache dependencies using IChangeToken in .NET 8
+            //if (dependencies != null && dependencies.Any())
+            //{
+            //    // INFO: we can only depend on existing items, otherwise this entry will be removed immediately.
+            //    dependencies = dependencies.Where(x => x != null && _cache.Contains(x));
+            //    if (dependencies.Any())
+            //    {
+            //        // cacheItemPolicy.ChangeMonitors.Add(_cache.CreateCacheEntryChangeMonitor(dependencies));
+            //    }
+            //}
 
-            if (dependencies != null && dependencies.Any())
-            {
-                // INFO: we can only depend on existing items, otherwise this entry will be removed immediately.
-                dependencies = dependencies.Where(x => x != null && _cache.Contains(x));
-                if (dependencies.Any())
-                {
-                    cacheItemPolicy.ChangeMonitors.Add(_cache.CreateCacheEntryChangeMonitor(dependencies));
-                }
-            }
-
-            //cacheItemPolicy.RemovedCallback = OnRemoveEntry;
-
-            return cacheItemPolicy;
+            return options;
         }
 
         //private void OnRemoveEntry(CacheEntryRemovedArguments args)

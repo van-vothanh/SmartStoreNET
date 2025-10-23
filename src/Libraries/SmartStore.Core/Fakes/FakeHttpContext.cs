@@ -1,3 +1,4 @@
+/* TODO: Replace with ASP.NET Core test helpers
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -103,4 +104,4 @@ namespace SmartStore.Core.Fakes
             return null;
         }
     }
-}
+}*/

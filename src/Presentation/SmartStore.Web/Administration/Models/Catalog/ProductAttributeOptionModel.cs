@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -24,11 +24,9 @@ namespace SmartStore.Admin.Models.Catalog
         public int ProductVariantAttributeId { get; set; }
         public int ProductAttributeOptionsSetId { get; set; }
 
-        [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Values.Fields.Name")]
         public string Name { get; set; }
         public string NameString { get; set; }
 
-        [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Values.Fields.Alias")]
         public string Alias { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Values.Fields.ColorSquaresRgb")]
@@ -80,10 +78,8 @@ namespace SmartStore.Admin.Models.Catalog
     {
         public int LanguageId { get; set; }
 
-        [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Values.Fields.Name")]
         public string Name { get; set; }
 
-        [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Values.Fields.Alias")]
         public string Alias { get; set; }
     }
 

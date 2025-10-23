@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Directory;
 using SmartStore.Core.Domain.Tax;
 using SmartStore.Services.Directory;

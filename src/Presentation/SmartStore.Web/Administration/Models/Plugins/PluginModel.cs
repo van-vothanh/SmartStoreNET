@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -18,27 +18,21 @@ namespace SmartStore.Admin.Models.Plugins
         }
 
         [SmartResourceDisplayName("Admin.Configuration.Plugins.Fields.Group")]
-        [AllowHtml]
         public string Group { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Plugins.Fields.FriendlyName")]
-        [AllowHtml]
         public string FriendlyName { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Plugins.Fields.SystemName")]
-        [AllowHtml]
         public string SystemName { get; set; }
 
         [SmartResourceDisplayName("Common.Description")]
-        [AllowHtml]
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Plugins.Fields.Version")]
-        [AllowHtml]
         public string Version { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Plugins.Fields.Author")]
-        [AllowHtml]
         public string Author { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]
@@ -71,11 +65,9 @@ namespace SmartStore.Admin.Models.Plugins
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Plugins.Fields.FriendlyName")]
-        [AllowHtml]
         public string FriendlyName { get; set; }
 
         [SmartResourceDisplayName("Common.Description")]
-        [AllowHtml]
         public string Description { get; set; }
     }
 

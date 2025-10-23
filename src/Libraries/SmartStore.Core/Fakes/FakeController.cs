@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+/* TODO: Replace with ASP.NET Core test helpers
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Core.Fakes
 {
@@ -6,3 +7,4 @@ namespace SmartStore.Core.Fakes
     {
     }
 }
+*/

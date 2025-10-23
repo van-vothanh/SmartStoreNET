@@ -1,8 +1,9 @@
+/* TODO: Replace with ASP.NET Core authorization
 ﻿using System;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Core.Security
 {
@@ -131,3 +132,4 @@ namespace SmartStore.Core.Security
         }
     }
 }
+*/

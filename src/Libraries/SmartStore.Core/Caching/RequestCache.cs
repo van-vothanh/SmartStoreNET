@@ -1,3 +1,4 @@
+/* TODO: Replace HttpContextBase with HttpContext for .NET 8
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -132,3 +133,4 @@ namespace SmartStore.Core.Caching
         }
     }
 }
+*/

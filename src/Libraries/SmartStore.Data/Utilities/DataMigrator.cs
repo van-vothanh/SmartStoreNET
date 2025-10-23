@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -33,7 +33,7 @@ using SmartStore.Rules;
 using SmartStore.Rules.Domain;
 using SmartStore.Utilities;
 using SmartStore.Utilities.ObjectPools;
-using EfState = System.Data.Entity.EntityState;
+using EfState = Microsoft.EntityFrameworkCore.EntityState;
 
 namespace SmartStore.Data.Utilities
 {
