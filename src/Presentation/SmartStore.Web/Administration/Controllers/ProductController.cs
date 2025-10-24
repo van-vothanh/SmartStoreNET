@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Autofac;
-using NuGet;
+// TODO: .NET 8 - Replace NuGet.Core with NuGet.Protocol
 using SmartStore.Admin.Models.Catalog;
 using SmartStore.Collections;
 using SmartStore.ComponentModel;

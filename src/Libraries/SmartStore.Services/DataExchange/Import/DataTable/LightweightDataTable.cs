@@ -6,7 +6,7 @@ using System.Data.Common;
 using System.Dynamic;
 using System.IO;
 using System.Linq;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Services.DataExchange.Csv;
 using SmartStore.Services.DataExchange.Excel;
 

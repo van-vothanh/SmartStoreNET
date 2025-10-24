@@ -1,4 +1,6 @@
-﻿using System.Web.Mvc;
+// TODO: .NET 8 Migration - GlobalFilterCollection not supported
+#if FALSE_NOT_COMPATIBLE
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Core.Events
 {
@@ -10,3 +12,4 @@ namespace SmartStore.Core.Events
         public GlobalFilterCollection Filters { get; set; }
     }
 }
+#endif

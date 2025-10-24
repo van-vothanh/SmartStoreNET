@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.OData;
 using SmartStore.Collections;
 using SmartStore.Core.Domain.Media;

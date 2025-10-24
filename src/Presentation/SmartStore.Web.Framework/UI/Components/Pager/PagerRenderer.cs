@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Web.Routing;
-using System.Web.UI;
+using Microsoft.AspNetCore.Routing;
+// TODO: .NET 8 - System.Web.UI removed
 
 namespace SmartStore.Web.Framework.UI
 {

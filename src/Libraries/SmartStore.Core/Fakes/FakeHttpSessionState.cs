@@ -1,7 +1,9 @@
+// TODO: .NET 8 Migration - Fake classes need rewrite for ASP.NET Core
+#if FALSE_FAKE_CLASSES_NOT_COMPATIBLE
 ﻿using System.Collections;
 using System.Collections.Specialized;
-using System.Web;
-using System.Web.SessionState;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Fakes
 {
@@ -51,3 +53,4 @@ namespace SmartStore.Core.Fakes
         }
     }
 }
+#endif

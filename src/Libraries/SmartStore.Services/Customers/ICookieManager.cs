@@ -1,7 +1,7 @@
 ﻿using SmartStore.Core.Plugins;
 using System.Collections.Generic;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Services.Customers
 {
@@ -33,6 +33,6 @@ namespace SmartStore.Services.Customers
         /// <param name="response">Cookie will be set to this response.</param>
         /// <param name="allowAnalytics">Defines whether analytical cookies are allowed to be set.</param>
         /// <param name="allowThirdParty">Defines whether third party cookies are allowed to be set.</param>
-        void SetConsentCookie(HttpResponseBase response, bool allowAnalytics = false, bool allowThirdParty = false);
+        void SetConsentCookie(HttpResponse response, bool allowAnalytics = false, bool allowThirdParty = false);
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Dynamic;
 using System.Globalization;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Utilities;
 
 namespace SmartStore.ComponentModel

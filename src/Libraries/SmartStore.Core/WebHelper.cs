@@ -1,3 +1,5 @@
+// TODO: .NET 8 Migration - File requires significant refactoring
+#if FALSE_REQUIRES_REFACTORING
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -840,3 +842,4 @@ namespace SmartStore.Core
         }
     }
 }
+#endif

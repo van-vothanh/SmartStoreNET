@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Core.Security;
 using SmartStore.Services.Customers;

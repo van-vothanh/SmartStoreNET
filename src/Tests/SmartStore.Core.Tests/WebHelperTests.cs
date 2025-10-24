@@ -1,5 +1,5 @@
 ﻿using System.Collections.Specialized;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using NUnit.Framework;
 using SmartStore.Core.Fakes;
 using SmartStore.Tests;
@@ -9,7 +9,7 @@ namespace SmartStore.Core.Tests
     [TestFixture]
     public class WebHelperTests
     {
-        private HttpContextBase _httpContext;
+        private HttpContext _httpContext;
         private IWebHelper _webHelper;
 
         [Test]

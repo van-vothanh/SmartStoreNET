@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Logging;
 using SmartStore.Core.Packaging;
 using SmartStore.Core.Security;

@@ -1,12 +1,14 @@
+// TODO: .NET 8 Migration - Fake classes need rewrite for ASP.NET Core
+#if FALSE_FAKE_CLASSES_NOT_COMPATIBLE
 ﻿using System;
 using System.Collections.Specialized;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpRequest : HttpRequestBase
+    public class FakeHttpRequest : HttpRequest
     {
         private readonly HttpCookieCollection _cookies;
         private readonly NameValueCollection _formParams;
@@ -102,3 +104,4 @@ namespace SmartStore.Core.Fakes
         }
     }
 }
+#endif

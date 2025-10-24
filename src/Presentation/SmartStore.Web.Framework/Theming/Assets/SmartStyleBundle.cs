@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Web.Optimization;
+// TODO: Replace with WebOptimizer
 using BundleTransformer.Core;
 using BundleTransformer.Core.Builders;
 

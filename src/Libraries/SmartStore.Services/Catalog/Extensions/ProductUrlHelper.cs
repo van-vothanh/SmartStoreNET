@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Collections;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Localization;
@@ -16,7 +16,7 @@ namespace SmartStore.Services.Catalog.Extensions
 {
     public class ProductUrlHelper
     {
-        private readonly HttpRequestBase _httpRequest;
+        private readonly HttpRequest _httpRequest;
         private readonly ICommonServices _services;
         private readonly IProductAttributeParser _productAttributeParser;
         private readonly IProductAttributeService _productAttributeService;
@@ -27,7 +27,7 @@ namespace SmartStore.Services.Catalog.Extensions
         private readonly int _languageId;
 
         public ProductUrlHelper(
-            HttpRequestBase httpRequest,
+            HttpRequest httpRequest,
             ICommonServices services,
             IProductAttributeParser productAttributeParser,
             IProductAttributeService productAttributeService,

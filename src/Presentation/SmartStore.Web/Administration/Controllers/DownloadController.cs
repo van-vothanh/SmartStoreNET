@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Core.Security;
 using SmartStore.Services.Media;

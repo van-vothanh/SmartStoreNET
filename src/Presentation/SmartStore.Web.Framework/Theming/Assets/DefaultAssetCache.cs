@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.Caching;
-using System.Web.Hosting;
-using System.Web.Optimization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Hosting;
+// TODO: Replace with WebOptimizer
 using SmartStore.Core;
 using SmartStore.Core.Domain.Themes;
 using SmartStore.Core.IO;
@@ -239,7 +239,7 @@ namespace SmartStore.Web.Framework.Theming.Assets
 
             var cacheKey = CacheKeyPrefix + "{0}:{1}".FormatInvariant(entry.ThemeName, entry.StoreId);
 
-            var cacheDependency = new CacheDependency(
+            var cacheDependency = new // TODO: .NET 8 - CacheDependency removed, use IChangeToken(
                 new string[0],
                 new[] { FrameworkCacheConsumer.BuildThemeVarsCacheKey(entry.ThemeName, entry.StoreId) },
                 DateTime.UtcNow);

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Utilities;
@@ -68,7 +68,7 @@ namespace SmartStore.Web.Infrastructure
             }
         }
 
-        private string GetMappedPath(HttpRequestBase request)
+        private string GetMappedPath(HttpRequest request)
         {
             var path = request.AppRelativeCurrentExecutionFilePath.TrimStart('~').TrimEnd('/');
             var method = request.HttpMethod.EmptyNull();

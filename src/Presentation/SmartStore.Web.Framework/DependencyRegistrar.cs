@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
-using System.Web;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 using Autofac;
 using Autofac.Builder;
 using Autofac.Core;
 using Autofac.Core.Registration;
-using Autofac.Integration.Mvc;
-using Autofac.Integration.WebApi;
+using Autofac.Extensions.DependencyInjection;
+using Autofac.Extensions.DependencyInjection;
 using SmartStore.ComponentModel;
 using SmartStore.Core;
 using SmartStore.Core.Async;
@@ -697,7 +697,7 @@ namespace SmartStore.Web.Framework
             var foundAssemblies = _typeFinder.GetAssemblies(ignoreInactivePlugins: true).ToArray();
 
             builder.RegisterModule(new AutofacWebTypesModule());
-            builder.Register(HttpContextBaseFactory).As<HttpContextBase>();
+            builder.Register(HttpContextFactory).As<HttpContext>();
 
             // register all controllers
             builder.RegisterControllers(foundAssemblies);
@@ -732,7 +732,7 @@ namespace SmartStore.Web.Framework
             }
         }
 
-        static HttpContextBase HttpContextBaseFactory(IComponentContext ctx)
+        static HttpContext HttpContextFactory(IComponentContext ctx)
         {
             if (IsRequestValid())
             {

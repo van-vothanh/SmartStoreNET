@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using NuGet;
+// TODO: .NET 8 - Replace NuGet.Core with NuGet.Protocol
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Data;

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Mvc.Async;
 using System.Web.Mvc.Html;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Logging;
@@ -408,7 +408,7 @@ namespace SmartStore.Services.Cms.Blocks
             {
             }
 
-            protected override void AddVersionHeader(HttpContextBase httpContext)
+            protected override void AddVersionHeader(HttpContext httpContext)
             {
                 // No version header for child actions
             }

@@ -1,5 +1,5 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Services.Pdf;
 using SmartStore.Utilities;
 
@@ -26,7 +26,7 @@ namespace SmartStore.Web.Framework.Pdf
         /// </summary>
         public string FileName { get; set; }
 
-        protected HttpResponseBase PrepareResponse(HttpResponseBase response)
+        protected HttpResponse PrepareResponse(HttpResponse response)
         {
             response.ContentType = ContentType;
 

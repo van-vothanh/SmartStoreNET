@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -64,24 +64,19 @@ namespace SmartStore.Admin.Models.Catalog
         public ProductCondition Condition { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.ProductTemplate")]
-        [AllowHtml]
         public int ProductTemplateId { get; set; }
         public IList<SelectListItem> AvailableProductTemplates { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.ShortDescription")]
-        [AllowHtml]
         public string ShortDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.FullDescription")]
-        [AllowHtml]
         public string FullDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.AdminComment")]
-        [AllowHtml]
         public string AdminComment { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.ShowOnHomePage")]
@@ -91,19 +86,15 @@ namespace SmartStore.Admin.Models.Catalog
         public int HomePageDisplayOrder { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaKeywords")]
-        [AllowHtml]
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
         public string MetaTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.AllowCustomerReviews")]
@@ -114,15 +105,12 @@ namespace SmartStore.Admin.Models.Catalog
         public MultiSelectList AvailableProductTags { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.Sku")]
-        [AllowHtml]
         public string Sku { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.ManufacturerPartNumber")]
-        [AllowHtml]
         public string ManufacturerPartNumber { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.GTIN")]
-        [AllowHtml]
         public string Gtin { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.CustomsTariffNumber")]
@@ -193,10 +181,8 @@ namespace SmartStore.Admin.Models.Catalog
         public bool HasUserAgreement { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.UserAgreementText")]
-        [AllowHtml]
         public string UserAgreementText { get; set; }
 
-        [AllowHtml]
         public string AddChangelog { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.IsRecurring")]
@@ -643,11 +629,9 @@ namespace SmartStore.Admin.Models.Catalog
             public string ProductAttribute { get; set; }
 
             [SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Fields.TextPrompt")]
-            [AllowHtml]
             public string TextPrompt { get; set; }
 
             [SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Fields.CustomData")]
-            [AllowHtml]
             public string CustomData { get; set; }
 
             [SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Fields.IsRequired")]
@@ -697,7 +681,6 @@ namespace SmartStore.Admin.Models.Catalog
             public string Alias { get; set; }
 
             [SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Values.Fields.Name")]
-            [AllowHtml]
             public string Name { get; set; }
             public string NameString { get; set; }
 
@@ -754,7 +737,6 @@ namespace SmartStore.Admin.Models.Catalog
             public string Alias { get; set; }
 
             [SmartResourceDisplayName("Admin.Catalog.Products.ProductVariantAttributes.Attributes.Values.Fields.Name")]
-            [AllowHtml]
             public string Name { get; set; }
         }
 
@@ -766,31 +748,24 @@ namespace SmartStore.Admin.Models.Catalog
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.ShortDescription")]
-        [AllowHtml]
         public string ShortDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.FullDescription")]
-        [AllowHtml]
         public string FullDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaKeywords")]
-        [AllowHtml]
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
         public string MetaTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Fields.BundleTitleText")]

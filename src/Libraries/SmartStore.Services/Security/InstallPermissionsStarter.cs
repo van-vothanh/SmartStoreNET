@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Security;
 using SmartStore.Core.Infrastructure;
@@ -39,7 +39,7 @@ namespace SmartStore.Services.Security
         public bool ThrowOnError => true;
         public int MaxAttempts => 1;
 
-        public void Start(HttpContextBase httpContext)
+        public void Start(HttpContext httpContext)
         {
             var removeUnusedPermissions = true;
             var providers = new List<IPermissionProvider>();

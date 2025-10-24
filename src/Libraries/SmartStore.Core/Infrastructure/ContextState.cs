@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Runtime.Remoting.Messaging;
-using System.Web;
+// TODO: .NET 8 - Remoting not supported
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Infrastructure
 {

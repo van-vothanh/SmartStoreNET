@@ -1,9 +1,11 @@
+// TODO: .NET 8 Migration - Fake classes need rewrite for ASP.NET Core
+#if FALSE_FAKE_CLASSES_NOT_COMPATIBLE
 ﻿using System.Text;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Fakes
 {
-    public class FakeHttpResponse : HttpResponseBase
+    public class FakeHttpResponse : HttpResponse
     {
         private readonly HttpCookieCollection _cookies;
         private readonly StringBuilder _outputString = new StringBuilder();
@@ -32,3 +34,4 @@ namespace SmartStore.Core.Fakes
         public override HttpCookieCollection Cookies => _cookies;
     }
 }
+#endif

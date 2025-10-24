@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Optimization;
+using Microsoft.AspNetCore.Http;
+// TODO: Replace with WebOptimizer
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Themes;

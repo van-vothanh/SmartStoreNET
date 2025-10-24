@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Services.Catalog.Modelling;
@@ -21,7 +21,7 @@ namespace SmartStore.Services.Catalog.Extensions
             ILocalizationService localization,
             IDownloadService downloadService,
             CatalogSettings catalogSettings,
-            HttpRequestBase request,
+            HttpRequest request,
             List<string> warnings)
         {
             var result = string.Empty;

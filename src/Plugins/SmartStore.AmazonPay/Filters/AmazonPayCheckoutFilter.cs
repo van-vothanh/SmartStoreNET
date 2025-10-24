@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.AmazonPay.Services;
 
 namespace SmartStore.AmazonPay.Filters

@@ -1,5 +1,5 @@
 ﻿using System;
-using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+// TODO: .NET 8 - Microsoft.Web.Infrastructure removed
 using SmartStore.Core.Infrastructure;
 using SmartStore.Web.Framework;
 using StackExchange.Profiling;

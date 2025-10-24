@@ -1,10 +1,13 @@
 ﻿using System;
-using System.Web;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Html;
+using System.IO;
+using System.Text.Encodings.Web;
 
 namespace SmartStore.Core.Localization
 {
     [Serializable]
-    public class LocalizedString : IHtmlString
+    public class LocalizedString : IHtmlContent
     {
         private readonly string _localized;
         private readonly string _textHint;
@@ -39,7 +42,7 @@ namespace SmartStore.Core.Localization
         /// <summary>
         /// Returns a js encoded string which already contains delimiters.
         /// </summary>
-        public IHtmlString JsText => System.Web.Mvc.MvcHtmlString.Create(_localized.EncodeJsString());
+        public IHtmlContent JsText => new HtmlString(_localized.EncodeJsString());
 
         public static implicit operator string(LocalizedString obj)
         {
@@ -56,9 +59,9 @@ namespace SmartStore.Core.Localization
             return _localized;
         }
 
-        public string ToHtmlString()
+        public void WriteTo(TextWriter writer, HtmlEncoder encoder)
         {
-            return _localized;
+            writer.Write(_localized);
         }
 
         public override int GetHashCode()

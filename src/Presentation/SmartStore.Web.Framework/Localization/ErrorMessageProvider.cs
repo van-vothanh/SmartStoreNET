@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Globalization;
-using System.Web.ModelBinding;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace SmartStore.Web.Framework.Localization
 {

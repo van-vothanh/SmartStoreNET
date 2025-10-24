@@ -1,5 +1,5 @@
-﻿using System.Web;
-using System.Web.Caching;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Plugins;
 

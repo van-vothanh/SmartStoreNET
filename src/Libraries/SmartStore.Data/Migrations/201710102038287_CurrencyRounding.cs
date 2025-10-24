@@ -1,6 +1,6 @@
 namespace SmartStore.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
     using Setup;
 
     public partial class CurrencyRounding : DbMigration, ILocaleResourcesProvider, IDataSeeder<SmartObjectContext>

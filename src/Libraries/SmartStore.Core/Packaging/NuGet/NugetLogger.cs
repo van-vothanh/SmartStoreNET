@@ -1,8 +1,10 @@
 ﻿using System;
-using NuGet;
+// TODO: .NET 8 - Replace NuGet.Core with NuGet.Protocol
 using SmartStore.Core.Logging;
 using Log = SmartStore.Core.Logging;
 
+// TODO: .NET 8 Migration - NuGet.Core not compatible, needs replacement with NuGet.Protocol
+#if FALSE_NUGET_CORE_NOT_SUPPORTED
 namespace SmartStore.Core.Packaging
 {
     internal class NugetLogger : NuGet.ILogger
@@ -39,3 +41,4 @@ namespace SmartStore.Core.Packaging
         }
     }
 }
+#endif

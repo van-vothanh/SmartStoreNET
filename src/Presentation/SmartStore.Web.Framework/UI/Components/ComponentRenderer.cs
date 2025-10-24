@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.UI;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+// TODO: .NET 8 - System.Web.UI removed
 
 namespace SmartStore.Web.Framework.UI
 {

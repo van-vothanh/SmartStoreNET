@@ -1,6 +1,6 @@
 ﻿//using System;
 //using System.Collections.Generic;
-//using System.Runtime.Caching;
+//using Microsoft.Extensions.Caching.Memory;
 //using System.Threading;
 //using NUnit.Framework;
 //using System.Linq;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Globalization;
 using System.Linq;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Search;
@@ -17,7 +17,7 @@ namespace SmartStore.Services.Search.Extensions
         private readonly ICatalogSearchQueryAliasMapper _catalogAliasMapper;
         private readonly IForumSearchQueryAliasMapper _forumAliasMapper;
         private readonly IWorkContext _workContext;
-        private readonly HttpRequestBase _httpRequest;
+        private readonly HttpRequest _httpRequest;
 
         private readonly int _languageId;
         private readonly string _url;
@@ -44,7 +44,7 @@ namespace SmartStore.Services.Search.Extensions
             ICatalogSearchQueryAliasMapper catalogAliasMapper,
             IForumSearchQueryAliasMapper forumAliasMapper,
             IWorkContext workContext,
-            HttpRequestBase httpRequest)
+            HttpRequest httpRequest)
         {
             _catalogAliasMapper = catalogAliasMapper;
             _forumAliasMapper = forumAliasMapper;

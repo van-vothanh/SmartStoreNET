@@ -1,5 +1,5 @@
-﻿using System.Web;
-using System.Web.Hosting;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 using System.Web.Mvc.Razor;
 using System.Web.WebPages.Razor;
 using SmartStore.Utilities;

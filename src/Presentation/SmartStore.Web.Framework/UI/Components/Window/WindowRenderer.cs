@@ -1,4 +1,4 @@
-﻿using System.Web.UI;
+﻿// TODO: .NET 8 - System.Web.UI removed
 
 namespace SmartStore.Web.Framework.UI
 {

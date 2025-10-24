@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
-using NuGet;
+// TODO: .NET 8 - Replace NuGet.Core with NuGet.Protocol
 using SmartStore.Core.IO;
 using SmartStore.Core.Localization;
 using SmartStore.Core.Logging;
@@ -9,6 +9,8 @@ using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
 using Log = SmartStore.Core.Logging;
 
+// TODO: .NET 8 Migration - NuGet.Core not compatible, needs replacement with NuGet.Protocol
+#if FALSE_NUGET_CORE_NOT_SUPPORTED
 namespace SmartStore.Core.Packaging
 {
     public class PackageInstaller : IPackageInstaller
@@ -294,3 +296,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

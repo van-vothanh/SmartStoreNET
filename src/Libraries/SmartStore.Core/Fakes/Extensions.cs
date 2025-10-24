@@ -1,5 +1,7 @@
+// TODO: .NET 8 Migration - Fake classes need rewrite for ASP.NET Core
+#if FALSE_FAKE_CLASSES_NOT_COMPATIBLE
 ﻿using System;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Fakes
 {
@@ -10,7 +12,7 @@ namespace SmartStore.Core.Fakes
         /// </summary>
         /// <param name="httpContext">HTTP context</param>
         /// <returns>Result</returns>
-        public static bool IsFakeContext(this HttpContextBase httpContext)
+        public static bool IsFakeContext(this HttpContext httpContext)
         {
             if (httpContext == null)
                 throw new ArgumentNullException("httpContext");
@@ -20,3 +22,4 @@ namespace SmartStore.Core.Fakes
 
     }
 }
+#endif

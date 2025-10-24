@@ -1,8 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Runtime.Versioning;
-using NuGet;
+// TODO: .NET 8 - Replace NuGet.Core with NuGet.Protocol
 
+// TODO: .NET 8 Migration - NuGet.Core not compatible, needs replacement with NuGet.Protocol
+#if FALSE_NUGET_CORE_NOT_SUPPORTED
 namespace SmartStore.Core.Packaging
 {
     internal class FileBasedProjectSystem : PhysicalFileSystem, IProjectSystem
@@ -83,3 +85,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

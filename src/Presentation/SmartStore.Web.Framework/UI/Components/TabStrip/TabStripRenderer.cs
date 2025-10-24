@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using System.Web.Mvc;
-using System.Web.UI;
+using Microsoft.AspNetCore.Mvc;
+// TODO: .NET 8 - System.Web.UI removed
 using SmartStore.Web.Framework.Modelling;
 
 namespace SmartStore.Web.Framework.UI

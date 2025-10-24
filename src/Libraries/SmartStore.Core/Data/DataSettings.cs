@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Data.SqlServerCe;
+// TODO: .NET 8 - SQL Server CE not supported
 using System.IO;
 using System.Linq;
 using System.Threading;

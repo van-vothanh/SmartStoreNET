@@ -1,4 +1,4 @@
-using System.Data.Entity.ModelConfiguration;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SmartStore.Core.Domain.Blogs;
 
 namespace SmartStore.Data.Mapping.Blogs

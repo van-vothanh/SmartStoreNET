@@ -1,8 +1,10 @@
+// TODO: .NET 8 Migration - File requires significant refactoring
+#if FALSE_REQUIRES_REFACTORING
 ﻿using System;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Core.Security
 {
@@ -131,3 +133,4 @@ namespace SmartStore.Core.Security
         }
     }
 }
+#endif

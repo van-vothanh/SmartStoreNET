@@ -1,4 +1,4 @@
-﻿using System.Web.Optimization;
+﻿// TODO: Replace with WebOptimizer
 
 namespace SmartStore.Web.Framework.Bundling
 {

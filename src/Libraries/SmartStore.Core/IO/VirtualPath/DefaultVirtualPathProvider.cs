@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
-using System.Web.Caching;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Logging;
 using SmartStore.Utilities;
 
 namespace SmartStore.Core.IO
 {
+    // TODO: .NET 8 Migration - VirtualPathProvider not supported, replace with IFileProvider
+    /*
     public class DefaultVirtualPathProvider : IVirtualPathProvider
     {
         private readonly ILogger _logger;
@@ -158,4 +160,5 @@ namespace SmartStore.Core.IO
             return false;
         }
     }
+    */
 }

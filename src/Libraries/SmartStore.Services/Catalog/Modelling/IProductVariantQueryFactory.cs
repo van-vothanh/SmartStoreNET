@@ -8,7 +8,7 @@
         ProductVariantQuery Current { get; }
 
         /// <summary>
-        /// Creates a name value collection with product variants from the current <see cref="HttpContextBase"/> 
+        /// Creates a name value collection with product variants from the current <see cref="HttpContext"/> 
         /// by looking up corresponding keys in posted form and/or query string
         /// </summary>
         /// <returns>Product variant query</returns>

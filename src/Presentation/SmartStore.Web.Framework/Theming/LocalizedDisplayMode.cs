@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.WebPages;
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;
@@ -21,7 +21,7 @@ namespace SmartStore.Web.Framework.Theming
             _enabled = enables;
         }
 
-        public override DisplayInfo GetDisplayInfo(HttpContextBase httpContext, string virtualPath, Func<string, bool> virtualPathExists)
+        public override DisplayInfo GetDisplayInfo(HttpContext httpContext, string virtualPath, Func<string, bool> virtualPathExists)
         {
             if (!_enabled)
             {
@@ -38,7 +38,7 @@ namespace SmartStore.Web.Framework.Theming
             return result;
         }
 
-        private DisplayInfo GetDisplayInfoInternal(HttpContextBase httpContext, string virtualPath, string lang, Func<string, bool> virtualPathExists)
+        private DisplayInfo GetDisplayInfoInternal(HttpContext httpContext, string virtualPath, string lang, Func<string, bool> virtualPathExists)
         {
             string path = this.TransformPath(virtualPath, "{0}{1}".FormatInvariant(base.DisplayModeId, lang.IsEmpty() ? "" : "." + lang));
             if (path != null && virtualPathExists(path))

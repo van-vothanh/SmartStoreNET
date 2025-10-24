@@ -1,11 +1,13 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Web.Hosting;
-using NuGet;
+using Microsoft.AspNetCore.Hosting;
+// TODO: .NET 8 - Replace NuGet.Core with NuGet.Protocol
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
 
+// TODO: .NET 8 Migration - NuGet.Core not compatible, needs replacement with NuGet.Protocol
+#if FALSE_NUGET_CORE_NOT_SUPPORTED
 namespace SmartStore.Core.Packaging
 {
     public static class PackagingUtils
@@ -145,3 +147,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

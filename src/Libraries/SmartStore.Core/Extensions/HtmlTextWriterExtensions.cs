@@ -1,6 +1,8 @@
+// TODO: .NET 8 Migration - HtmlTextWriter not supported
+#if FALSE_NOT_COMPATIBLE
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.UI;
+// TODO: .NET 8 - System.Web.UI removed
 
 namespace SmartStore
 {
@@ -19,3 +21,4 @@ namespace SmartStore
         }
     }
 }
+#endif

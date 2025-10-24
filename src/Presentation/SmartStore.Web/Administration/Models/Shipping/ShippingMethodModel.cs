@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Rules;
@@ -19,11 +19,9 @@ namespace SmartStore.Admin.Models.Shipping
         }
 
         [SmartResourceDisplayName("Admin.Configuration.Shipping.Methods.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Shipping.Methods.Fields.Description")]
-        [AllowHtml]
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]
@@ -58,11 +56,9 @@ namespace SmartStore.Admin.Models.Shipping
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Shipping.Methods.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Shipping.Methods.Fields.Description")]
-        [AllowHtml]
         public string Description { get; set; }
     }
 

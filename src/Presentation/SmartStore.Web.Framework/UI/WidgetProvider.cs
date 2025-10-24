@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json.Linq;
 using SmartStore.Collections;
 using SmartStore.Core;
@@ -13,12 +13,12 @@ namespace SmartStore.Web.Framework.UI
     public class WidgetProvider : IWidgetProvider
     {
         private readonly IApplicationEnvironment _env;
-        private readonly HttpRequestBase _httpRequest;
+        private readonly HttpRequest _httpRequest;
 
         private Multimap<string, WidgetRouteInfo> _zoneWidgetsMap;
         private Multimap<Regex, WidgetRouteInfo> _zoneExpressionWidgetsMap;
 
-        public WidgetProvider(IApplicationEnvironment env, HttpRequestBase httpRequest)
+        public WidgetProvider(IApplicationEnvironment env, HttpRequest httpRequest)
         {
             _env = env;
             _httpRequest = httpRequest;
@@ -132,7 +132,7 @@ namespace SmartStore.Web.Framework.UI
                 {
                     rawJson = _env.AppDataFolder.ReadFile(fileName);
                     var virtualPath = _env.AppDataFolder.GetVirtualPath(fileName);
-                    var cacheDependency = _env.AppDataFolder.VirtualPathProvider.GetCacheDependency(virtualPath, DateTime.UtcNow);
+                    var cacheDependency = _env.AppDataFolder.VirtualPathProvider.Get// TODO: .NET 8 - CacheDependency removed, use IChangeToken(virtualPath, DateTime.UtcNow);
                     HttpRuntime.Cache.Insert(cacheKey, rawJson, cacheDependency);
                 }
                 else

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using DotLiquid;
 using DotLiquid.FileSystems;
 using DotLiquid.NamingConventions;
@@ -109,7 +109,7 @@ namespace SmartStore.Templating.Liquid
                 // Read from file, compile and put to cache with file dependeny
                 var source = ReadTemplateFileInternal(virtualPath);
                 cachedTemplate = Template.Parse(source);
-                var cacheDependency = _vpp.GetCacheDependency(virtualPath, DateTime.UtcNow);
+                var cacheDependency = _vpp.Get// TODO: .NET 8 - CacheDependency removed, use IChangeToken(virtualPath, DateTime.UtcNow);
                 HttpRuntime.Cache.Insert(cacheKey, cachedTemplate, cacheDependency);
             }
 

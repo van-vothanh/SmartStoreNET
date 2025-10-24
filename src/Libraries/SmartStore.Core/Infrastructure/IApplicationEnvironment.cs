@@ -1,3 +1,5 @@
+// TODO: .NET 8 Migration - File requires significant refactoring
+#if FALSE_REQUIRES_REFACTORING
 ﻿using SmartStore.Core.IO;
 
 namespace SmartStore.Core
@@ -14,3 +16,4 @@ namespace SmartStore.Core
         IVirtualFolder TenantFolder { get; }
     }
 }
+#endif

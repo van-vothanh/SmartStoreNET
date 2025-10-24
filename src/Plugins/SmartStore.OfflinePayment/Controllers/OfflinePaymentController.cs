@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Autofac;
 using FluentValidation;
 using FluentValidation.Results;
@@ -21,11 +21,11 @@ namespace SmartStore.OfflinePayment.Controllers
     public class OfflinePaymentController : PaymentControllerBase
     {
         private readonly IComponentContext _ctx;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly IMediaService _mediaService;
 
         public OfflinePaymentController(
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             IComponentContext ctx,
             IMediaService mediaService)
         {

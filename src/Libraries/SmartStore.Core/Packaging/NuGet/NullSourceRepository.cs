@@ -1,6 +1,8 @@
 ﻿using System.Linq;
-using NuGet;
+// TODO: .NET 8 - Replace NuGet.Core with NuGet.Protocol
 
+// TODO: .NET 8 Migration - NuGet.Core not compatible, needs replacement with NuGet.Protocol
+#if FALSE_NUGET_CORE_NOT_SUPPORTED
 namespace SmartStore.Core.Packaging
 {
     /// <summary>
@@ -22,3 +24,4 @@ namespace SmartStore.Core.Packaging
         public override void RemovePackage(IPackage package) { }
     }
 }
+#endif

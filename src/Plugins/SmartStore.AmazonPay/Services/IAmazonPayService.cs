@@ -1,5 +1,5 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using AmazonPay;
 using SmartStore.AmazonPay.Models;
 using SmartStore.Core.Domain.Orders;
@@ -39,7 +39,7 @@ namespace SmartStore.AmazonPay.Services
 
         VoidPaymentResult Void(VoidPaymentRequest request);
 
-        void ProcessIpn(HttpRequestBase request);
+        void ProcessIpn(HttpRequest request);
 
         void StartDataPolling();
 

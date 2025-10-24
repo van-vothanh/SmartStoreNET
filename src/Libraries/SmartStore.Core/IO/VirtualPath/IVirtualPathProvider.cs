@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Web.Caching;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace SmartStore.Core.IO
 {
+    // TODO: .NET 8 Migration - VirtualPathProvider not supported, replace with IFileProvider
+    /*
     public interface IVirtualPathProvider
     {
         string MapPath(string virtualPath);
@@ -37,4 +39,5 @@ namespace SmartStore.Core.IO
             return vpp.GetCacheDependency(virtualPath, new[] { virtualPath }, utcStart);
         }
     }
+    */
 }

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Common;
@@ -78,7 +78,7 @@ namespace SmartStore.Web.Controllers
         private readonly ICustomerActivityService _customerActivityService;
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly IDeliveryTimeService _deliveryTimeService;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly MediaSettings _mediaSettings;
         private readonly ShoppingCartSettings _shoppingCartSettings;
         private readonly CatalogSettings _catalogSettings;
@@ -140,7 +140,7 @@ namespace SmartStore.Web.Controllers
             CaptchaSettings captchaSettings,
             AddressSettings addressSettings,
             CustomerSettings customerSettings,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             PluginMediator pluginMediator,
             IQuantityUnitService quantityUnitService,
             IMeasureService measureService,

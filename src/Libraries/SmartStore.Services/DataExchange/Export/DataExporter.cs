@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Data;
@@ -54,7 +54,7 @@ namespace SmartStore.Services.DataExchange.Export
 
         private readonly ICommonServices _services;
         private readonly IDbContext _dbContext;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly Lazy<IPriceFormatter> _priceFormatter;
         private readonly Lazy<IExportProfileService> _exportProfileService;
         private readonly Lazy<ILocalizedEntityService> _localizedEntityService;
@@ -103,7 +103,7 @@ namespace SmartStore.Services.DataExchange.Export
         public DataExporter(
             ICommonServices services,
             IDbContext dbContext,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             Lazy<IPriceFormatter> priceFormatter,
             Lazy<IExportProfileService> exportProfileService,
             Lazy<ILocalizedEntityService> localizedEntityService,

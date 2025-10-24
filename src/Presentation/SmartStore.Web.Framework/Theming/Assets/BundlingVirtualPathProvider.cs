@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web.Caching;
-using System.Web.Hosting;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Infrastructure;
 
 namespace SmartStore.Web.Framework.Theming.Assets
@@ -77,18 +77,18 @@ namespace SmartStore.Web.Framework.Theming.Assets
             return base.GetFile(virtualPath);
         }
 
-        public override CacheDependency GetCacheDependency(string virtualPath, IEnumerable virtualPathDependencies, DateTime utcStart)
+        public override // TODO: .NET 8 - CacheDependency removed, use IChangeToken Get// TODO: .NET 8 - CacheDependency removed, use IChangeToken(string virtualPath, IEnumerable virtualPathDependencies, DateTime utcStart)
         {
             if (ThemeHelper.IsStyleValidationRequest())
             {
                 var themeVarsPath = virtualPathDependencies.Cast<string>().FirstOrDefault(x => ThemeHelper.PathIsThemeVars(x));
                 if (themeVarsPath.HasValue())
                 {
-                    return base.GetCacheDependency(virtualPath, new[] { themeVarsPath }, utcStart);
+                    return base.Get// TODO: .NET 8 - CacheDependency removed, use IChangeToken(virtualPath, new[] { themeVarsPath }, utcStart);
                 }
             }
 
-            return base.GetCacheDependency(virtualPath, virtualPathDependencies, utcStart);
+            return base.Get// TODO: .NET 8 - CacheDependency removed, use IChangeToken(virtualPath, virtualPathDependencies, utcStart);
         }
     }
 

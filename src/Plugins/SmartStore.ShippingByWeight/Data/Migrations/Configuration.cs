@@ -1,6 +1,6 @@
 namespace SmartStore.ShippingByWeight.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
 
     internal sealed class Configuration : DbMigrationsConfiguration<ShippingByWeightObjectContext>
     {

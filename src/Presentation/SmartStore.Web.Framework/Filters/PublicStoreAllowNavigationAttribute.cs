@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Data;
 using SmartStore.Core.Security;
 
@@ -29,7 +29,7 @@ namespace SmartStore.Web.Framework.Filters
             if (filterContext == null || filterContext.HttpContext == null)
                 return;
 
-            HttpRequestBase request = filterContext.HttpContext.Request;
+            HttpRequest request = filterContext.HttpContext.Request;
             if (request == null)
                 return;
 

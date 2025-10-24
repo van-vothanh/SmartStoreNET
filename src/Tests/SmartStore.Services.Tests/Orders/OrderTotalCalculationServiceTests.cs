@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using NUnit.Framework;
 using Rhino.Mocks;
 using SmartStore.Core;
@@ -64,7 +64,7 @@ namespace SmartStore.Services.Tests.Orders
         ISettingService _settingService;
         IDownloadService _downloadService;
         ICommonServices _services;
-        HttpRequestBase _httpRequestBase;
+        HttpRequest _httpRequestBase;
         IGeoCountryLookup _geoCountryLookup;
         Store _store;
         Currency _currency;
@@ -144,7 +144,7 @@ namespace SmartStore.Services.Tests.Orders
             _addressService = MockRepository.GenerateMock<IAddressService>();
             _addressService.Expect(x => x.GetAddressById(_taxSettings.DefaultTaxAddressId)).Return(new Address { Id = _taxSettings.DefaultTaxAddressId });
             _downloadService = MockRepository.GenerateMock<IDownloadService>();
-            _httpRequestBase = MockRepository.GenerateMock<HttpRequestBase>();
+            _httpRequestBase = MockRepository.GenerateMock<HttpRequest>();
             _geoCountryLookup = MockRepository.GenerateMock<IGeoCountryLookup>();
 
             _taxService = new TaxService(_addressService, _workContext, _taxSettings, _shoppingCartSettings, pluginFinder, _geoCountryLookup, this.ProviderManager);

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Services;
 using SmartStore.Services.Common;
 using SmartStore.Services.Customers;
@@ -102,7 +102,7 @@ namespace SmartStore.DevTools.Filters
             _services.Chronometer.StepStop("ActionFilter");
         }
 
-        private bool ShouldProfile(HttpContextBase ctx)
+        private bool ShouldProfile(HttpContext ctx)
         {
             if (_mobileDeviceHelper.Value.IsMobileDevice())
                 return false;

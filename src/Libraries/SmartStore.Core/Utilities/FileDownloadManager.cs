@@ -8,7 +8,7 @@ using System.Net.Http.Headers;
 using System.Net.Mime;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Core;
 using SmartStore.Core.IO;
 using SmartStore.Core.Logging;
@@ -19,9 +19,9 @@ namespace SmartStore.Utilities
     {
         private const int _bufferSize = 16384;
 
-        private readonly HttpRequestBase _httpRequest;
+        private readonly HttpRequest _httpRequest;
 
-        public FileDownloadManager(HttpRequestBase httpRequest)
+        public FileDownloadManager(HttpRequest httpRequest)
         {
             _httpRequest = httpRequest;
         }

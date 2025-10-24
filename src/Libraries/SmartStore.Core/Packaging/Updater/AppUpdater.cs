@@ -4,13 +4,15 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using NuGet;
+// TODO: .NET 8 - Replace NuGet.Core with NuGet.Protocol
 using SmartStore.Core.Data;
 using SmartStore.Core.Logging;
 using SmartStore.Core.Plugins;
 using SmartStore.Utilities;
 using SmartStore.Utilities.Threading;
 
+// TODO: .NET 8 Migration - NuGet.Core not compatible, needs replacement with NuGet.Protocol
+#if FALSE_NUGET_CORE_NOT_SUPPORTED
 namespace SmartStore.Core.Packaging
 {
     public sealed class AppUpdater : DisposableObject
@@ -463,3 +465,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

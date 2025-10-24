@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
-using System.Web.Optimization;
+using Microsoft.AspNetCore.Http;
+// TODO: Replace with WebOptimizer
 using BundleTransformer.Core.Bundles;
 using BundleTransformer.Core.Orderers;
 using SmartStore.Core;

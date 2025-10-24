@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Http;
-using System.Web.Http.Controllers;
+using Microsoft.AspNetCore.Mvc.Controllers;
 using System.Web.Http.ModelBinding;
 using SmartStore.Services.Search;
 using SmartStore.Services.Search.Modelling;

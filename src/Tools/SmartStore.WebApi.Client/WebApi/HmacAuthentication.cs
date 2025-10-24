@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.WebApi.Client
 {

@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web.Caching;
-using System.Web.Hosting;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Themes;
 using SmartStore.Utilities;
@@ -100,7 +100,7 @@ namespace SmartStore.Web.Framework.Theming
             return combiner.CombinedHashString;
         }
 
-        public override CacheDependency GetCacheDependency(string virtualPath, IEnumerable virtualPathDependencies, DateTime utcStart)
+        public override // TODO: .NET 8 - CacheDependency removed, use IChangeToken Get// TODO: .NET 8 - CacheDependency removed, use IChangeToken(string virtualPath, IEnumerable virtualPathDependencies, DateTime utcStart)
         {
             if (virtualPathDependencies == null)
             {
@@ -109,7 +109,7 @@ namespace SmartStore.Web.Framework.Theming
 
             var mappedPaths = MapDependencyPaths(virtualPathDependencies.Cast<string>(), out var cacheKeys);
 
-            return new CacheDependency(mappedPaths, cacheKeys, utcStart);
+            return new // TODO: .NET 8 - CacheDependency removed, use IChangeToken(mappedPaths, cacheKeys, utcStart);
         }
 
         /// <summary>

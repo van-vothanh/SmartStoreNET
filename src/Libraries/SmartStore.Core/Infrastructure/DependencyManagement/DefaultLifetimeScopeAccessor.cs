@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using Autofac;
 using SmartStore.Utilities;
 

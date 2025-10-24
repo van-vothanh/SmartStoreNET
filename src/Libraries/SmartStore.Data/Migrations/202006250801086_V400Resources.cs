@@ -1,9 +1,9 @@
 namespace SmartStore.Data.Migrations
 {
     using System;
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
     using System.Linq;
-    using System.Web.Hosting;
+    using Microsoft.AspNetCore.Hosting;
     using SmartStore.Core.Data;
     using SmartStore.Core.Domain.Configuration;
     using SmartStore.Core.Domain.Media;

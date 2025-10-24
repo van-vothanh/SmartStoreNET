@@ -1,6 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Web.Mvc.Routing.Constraints;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Data;
 using SmartStore.Services.Media;
 using SmartStore.Web.Framework;

@@ -1,6 +1,8 @@
+// TODO: .NET 8 Migration - File not compatible
+#if FALSE_NOT_COMPATIBLE
 ﻿using System;
 using Autofac;
-using Autofac.Integration.Mvc;
+using Autofac.Extensions.DependencyInjection;
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
@@ -30,3 +32,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+#endif

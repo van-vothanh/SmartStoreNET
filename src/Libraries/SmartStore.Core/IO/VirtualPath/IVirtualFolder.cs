@@ -1,3 +1,5 @@
+// TODO: .NET 8 Migration - File not compatible
+#if FALSE_NOT_COMPATIBLE
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -61,3 +63,4 @@ namespace SmartStore.Core.IO
         }
     }
 }
+#endif
