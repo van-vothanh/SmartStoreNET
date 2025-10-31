@@ -9,7 +9,7 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Core.Html;
 using SmartStore.Utilities.ObjectPools;
 

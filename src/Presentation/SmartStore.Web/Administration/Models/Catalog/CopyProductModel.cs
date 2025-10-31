@@ -18,7 +18,6 @@ namespace SmartStore.Admin.Models.Catalog
         public int NumberOfCopies { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Copy.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.Copy.Published")]

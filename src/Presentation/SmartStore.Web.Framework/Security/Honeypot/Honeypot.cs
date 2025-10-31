@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Security;
 using Newtonsoft.Json;
 using SmartStore.Utilities;

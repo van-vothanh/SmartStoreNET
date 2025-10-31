@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Domain.Messages;

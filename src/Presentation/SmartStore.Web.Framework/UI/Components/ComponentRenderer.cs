@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.UI;
 
 namespace SmartStore.Web.Framework.UI

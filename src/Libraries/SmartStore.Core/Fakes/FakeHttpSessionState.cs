@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.SessionState;
 
 namespace SmartStore.Core.Fakes

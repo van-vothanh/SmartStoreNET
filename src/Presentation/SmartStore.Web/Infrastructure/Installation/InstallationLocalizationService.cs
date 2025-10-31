@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Xml;
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;

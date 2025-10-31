@@ -11,7 +11,7 @@ using SmartStore.Core.Events;
 using System.Xml;
 using SmartStore.Core;
 using System.Net;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.IO;
 
 namespace SmartStore.Services.Themes

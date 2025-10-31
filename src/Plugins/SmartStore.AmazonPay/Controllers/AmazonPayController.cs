@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.AmazonPay.Models;
 using SmartStore.AmazonPay.Services;
 using SmartStore.ComponentModel;

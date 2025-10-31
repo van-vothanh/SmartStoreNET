@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Script.Serialization;
 using DotNetOpenAuth.AspNet;
 using DotNetOpenAuth.AspNet.Clients;

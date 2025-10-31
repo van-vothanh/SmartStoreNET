@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -25,11 +25,9 @@ namespace SmartStore.Admin.Models.Catalog
         [SmartResourceDisplayName("Admin.Catalog.ProductReviews.Fields.IPAddress")]
         public string IpAddress { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.Catalog.ProductReviews.Fields.Title")]
         public string Title { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.Catalog.ProductReviews.Fields.ReviewText")]
         public string ReviewText { get; set; }
 

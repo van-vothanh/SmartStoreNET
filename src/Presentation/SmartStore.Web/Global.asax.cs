@@ -1,11 +1,11 @@
 ﻿using System.Linq;
 using System.Net;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Helpers;
 using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Optimization;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using System.Web.WebPages;
 using FluentValidation;
 using FluentValidation.Mvc;

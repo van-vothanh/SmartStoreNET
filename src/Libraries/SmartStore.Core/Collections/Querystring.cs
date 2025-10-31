@@ -1,7 +1,7 @@
 ﻿using System.Collections.Specialized;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Utilities.ObjectPools;
 
 namespace SmartStore.Collections

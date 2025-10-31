@@ -10,7 +10,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Configuration;
 using SmartStore.Collections;
 using SmartStore.Core.Data;

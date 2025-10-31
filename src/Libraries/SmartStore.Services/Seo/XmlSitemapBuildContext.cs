@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Core.Configuration;
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Domain.Stores;

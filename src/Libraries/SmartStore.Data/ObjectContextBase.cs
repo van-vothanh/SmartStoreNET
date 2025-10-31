@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Runtime.CompilerServices;

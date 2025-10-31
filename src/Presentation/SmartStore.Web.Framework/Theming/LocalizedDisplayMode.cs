@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.WebPages;
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;

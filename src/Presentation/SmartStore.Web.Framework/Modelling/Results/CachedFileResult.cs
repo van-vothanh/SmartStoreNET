@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.IO;
 using SmartStore.Utilities;
 

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Specialized;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using NUnit.Framework;
 using SmartStore.Core.Fakes;
 using SmartStore.Tests;

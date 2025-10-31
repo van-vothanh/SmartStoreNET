@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Caching;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Common;

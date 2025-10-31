@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Services.Media.Imaging;
 
 namespace SmartStore.Services.Media

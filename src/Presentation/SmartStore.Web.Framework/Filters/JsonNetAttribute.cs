@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Data;
 using SmartStore.Services.Helpers;
 using SmartStore.Web.Framework.Modelling;

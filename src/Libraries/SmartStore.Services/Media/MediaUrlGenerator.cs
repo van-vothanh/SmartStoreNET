@@ -1,5 +1,5 @@
 ﻿using System.Globalization;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Hosting;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Media;

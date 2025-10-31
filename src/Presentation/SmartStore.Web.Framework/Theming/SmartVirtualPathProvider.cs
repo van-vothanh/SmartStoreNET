@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Threading;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Hosting;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Themes;

@@ -1,4 +1,4 @@
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using Autofac;
 using Autofac.Integration.Mvc;
 using SmartStore.Core.Data;

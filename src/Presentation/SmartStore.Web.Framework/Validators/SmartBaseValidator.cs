@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 
 namespace SmartStore.Web.Framework.Validators

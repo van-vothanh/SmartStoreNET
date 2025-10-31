@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Payments;
 using SmartStore.Core.Logging;
 using SmartStore.PayPal.Models;

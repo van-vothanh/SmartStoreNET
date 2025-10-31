@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Caching;
 using BundleTransformer.Core;
 using BundleTransformer.Core.Assets;

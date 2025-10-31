@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Web.Optimization;
 using BundleTransformer.Core.Bundles;
 using BundleTransformer.Core.Orderers;

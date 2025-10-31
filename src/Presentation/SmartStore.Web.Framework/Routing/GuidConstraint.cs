@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Web;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Web.Framework.Routing
 {

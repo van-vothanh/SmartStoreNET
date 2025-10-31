@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Web.Framework.Filters
 {
