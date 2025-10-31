@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Routing;
 using SmartStore.Collections;
 using SmartStore.Core.Domain.Catalog;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Caching;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using System.Web.Optimization;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Themes;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Data.Entity.Core.Metadata.Edm;
-using System.Data.Entity.Infrastructure.MappingViews;
+using Microsoft.EntityFrameworkCore.Core.Metadata.Edm;
+using Microsoft.EntityFrameworkCore.Infrastructure.MappingViews;
 using System.Linq;
 
 namespace SmartStore.Data.Caching

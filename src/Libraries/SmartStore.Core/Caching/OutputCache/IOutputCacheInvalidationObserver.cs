@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using SmartStore.Core.Configuration;
-using SmartStore.Core.Data.Hooks;
 using SmartStore.Core.Infrastructure.DependencyManagement;
 using SmartStore.Utilities;
 

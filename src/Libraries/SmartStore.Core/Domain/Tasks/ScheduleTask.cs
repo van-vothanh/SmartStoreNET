@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics;
-using SmartStore.Core.Data.Hooks;
 
 namespace SmartStore.Core.Domain.Tasks
 {
@@ -14,7 +13,6 @@ namespace SmartStore.Core.Domain.Tasks
     }
 
     [DebuggerDisplay("{Name} (Type: {Type})")]
-    [Hookable(false)]
     public class ScheduleTask : BaseEntity, ICloneable<ScheduleTask>
     {
         private ICollection<ScheduleTaskHistory> _scheduleTaskHistory;
@@ -37,13 +35,11 @@ namespace SmartStore.Core.Domain.Tasks
         /// <summary>
         /// Gets or sets the type of appropriate ITask class
         /// </summary>
-		[Index("IX_Type")]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or sets the value indicating whether a task is enabled
         /// </summary>
-        [Index("IX_NextRun_Enabled", 1)]
         public bool Enabled { get; set; }
 
         /// <summary>
@@ -56,7 +52,6 @@ namespace SmartStore.Core.Domain.Tasks
         /// </summary>
         public bool StopOnError { get; set; }
 
-        [Index("IX_NextRun_Enabled", 0)]
         public DateTime? NextRunUtc { get; set; }
 
         /// <summary>

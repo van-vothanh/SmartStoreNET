@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.Entity.Core.Common;
-using System.Data.Entity.Core.Common.CommandTrees;
-using System.Data.Entity.Core.Metadata.Edm;
-using System.Data.Entity.Spatial;
+using Microsoft.EntityFrameworkCore.Core.Common;
+using Microsoft.EntityFrameworkCore.Core.Common.CommandTrees;
+using Microsoft.EntityFrameworkCore.Core.Metadata.Edm;
+using Microsoft.EntityFrameworkCore.Spatial;
 using SmartStore.Data.Setup;
 using SmartStore.Utilities;
 

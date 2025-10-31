@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using SmartStore.Core.Data.Hooks;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Core.Logging;
 
@@ -9,13 +8,11 @@ namespace SmartStore.Core.Domain.Logging
     /// <summary>
     /// Represents a log record
     /// </summary>
-    [Hookable(false)]
     public partial class Log : BaseEntity
     {
         /// <summary>
         /// Gets or sets the log level identifier
         /// </summary>
-        [Index("IX_Log_Level", IsUnique = false)]
         public int LogLevelId { get; set; }
 
         /// <summary>
@@ -56,7 +53,6 @@ namespace SmartStore.Core.Domain.Logging
         /// <summary>
         /// Gets or sets the logger name
         /// </summary>
-        [Index("IX_Log_Logger", IsUnique = false)]
         public string Logger { get; set; }
 
         /// <summary>

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.Serialization;
-using SmartStore.Core.Data.Hooks;
 using SmartStore.Utilities;
 
 namespace SmartStore.Core.Domain.Media
@@ -13,7 +12,6 @@ namespace SmartStore.Core.Domain.Media
     }
 
     [DataContract]
-    [Hookable(false)]
     public partial class MediaTrack : BaseEntity, IEquatable<MediaTrack>
     {
         private int _mediaFileId;
@@ -26,7 +24,6 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the media file identifier.
         /// </summary>
         [DataMember]
-        [Index("IX_MediaTrack_Composite", IsUnique = true, Order = 0)]
         public int MediaFileId
         {
             get => _mediaFileId;
@@ -52,7 +49,6 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the related entity identifier.
         /// </summary>
         [DataMember]
-        [Index("IX_MediaTrack_Composite", IsUnique = true, Order = 1)]
         public int EntityId
         {
             get => _entityId;
@@ -67,7 +63,6 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the related entity set name.
         /// </summary>
         [DataMember]
-        [Index("IX_MediaTrack_Composite", IsUnique = true, Order = 2)]
         public string EntityName
         {
             get => _entityName;
@@ -82,7 +77,6 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the media file property name in the tracked entity.
         /// </summary>
         [DataMember]
-        [Index("IX_MediaTrack_Composite", IsUnique = true, Order = 3)]
         public string Property
         {
             get => _property;

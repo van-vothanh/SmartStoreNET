@@ -1,4 +1,4 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using Microsoft.EntityFrameworkCore.ModelConfiguration;
 using SmartStore.Core.Domain.Catalog;
 
 namespace SmartStore.Data.Mapping.Catalog

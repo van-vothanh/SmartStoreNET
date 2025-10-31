@@ -1,4 +1,4 @@
-﻿using System.Data.Entity.ModelConfiguration;
+﻿using Microsoft.EntityFrameworkCore.ModelConfiguration;
 using SmartStore.Core.Domain.Common;
 
 namespace SmartStore.Data.Mapping.Common

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Http;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Filters;
 using System.Web.OData;
 using SmartStore.Web.Framework.WebApi.Caching;

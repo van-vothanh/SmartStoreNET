@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Caching;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Themes;
 using SmartStore.Utilities;
