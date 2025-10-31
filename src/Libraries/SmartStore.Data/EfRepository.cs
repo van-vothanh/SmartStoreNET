@@ -1,21 +1,20 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Validation;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using SmartStore.Core;
 using SmartStore.Core.Data;
-using EfState = System.Data.Entity.EntityState;
+using EfState = Microsoft.EntityFrameworkCore.EntityState;
 
 namespace SmartStore.Data
 {
     public partial class EfRepository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly IDbContext _context;
-        private IDbSet<T> _entities;
+        private DbSet<T> _entities;
 
         public EfRepository(IDbContext context)
         {
@@ -46,13 +45,13 @@ namespace SmartStore.Data
         public virtual ICollection<T> Local
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => this.Entities.Local;
+            get => this.Entities.Local.ToList();
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual T Create()
         {
-            return this.Entities.Create();
+            return Activator.CreateInstance<T>();
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -64,13 +63,14 @@ namespace SmartStore.Data
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual Task<T> GetByIdAsync(object id)
         {
-            return this.Entities.FindAsync(id);
+            return this.Entities.FindAsync(id).AsTask();
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public virtual T Attach(T entity)
         {
-            return this.Entities.Attach(entity);
+            this.Entities.Attach(entity);
+            return entity;
         }
 
         public virtual void Insert(T entity)
