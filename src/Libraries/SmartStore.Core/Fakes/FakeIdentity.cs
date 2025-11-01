@@ -1,3 +1,4 @@
+#if FALSE
 ﻿using System;
 using System.Security.Principal;
 
@@ -19,4 +20,3 @@ namespace SmartStore.Core.Fakes
         public string Name => _name;
 
     }
-}

@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -108,7 +107,7 @@ namespace SmartStore.Core.Async
 
         #endregion
 
-        private static readonly BackgroundWorkHost _host = new BackgroundWorkHost();
+        // private static readonly BackgroundWorkHost _host = null; // new BackgroundWorkHost();
 
         /// <summary>
         /// Gets the global cancellation token which signals the application shutdown
@@ -344,6 +343,8 @@ namespace SmartStore.Core.Async
         }
     }
 
+    // TODO: Replace IRegisteredObject with IHostedService in ASP.NET Core
+    /*
     internal class BackgroundWorkHost : IRegisteredObject
     {
         private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
@@ -417,8 +418,9 @@ namespace SmartStore.Core.Async
 
         private void FinalShutdown()
         {
-            HostingEnvironment.UnregisterObject(this);
+            // HostingEnvironment.UnregisterObject(this);
         }
 
     }
+    */
 }

@@ -1,3 +1,4 @@
+using Microsoft.Extensions.FileProviders;
 ﻿using System.IO;
 using System.Threading;
 using SmartStore.Utilities.Threading;
@@ -8,11 +9,11 @@ namespace SmartStore.Core.IO
     {
         private readonly string _path;
         private readonly string _content;
-        private readonly IVirtualFolder _folder;
+        private readonly IFileProvider _folder;
         private readonly ReaderWriterLockSlim _rwLock;
         private bool _released;
 
-        public LockFile(IVirtualFolder folder, string path, string content, ReaderWriterLockSlim rwLock)
+        public LockFile(IFileProvider folder, string path, string content, ReaderWriterLockSlim rwLock)
         {
             _folder = folder;
             _content = content;

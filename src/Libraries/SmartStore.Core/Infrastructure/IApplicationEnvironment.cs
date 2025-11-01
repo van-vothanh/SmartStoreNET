@@ -1,3 +1,4 @@
+using Microsoft.Extensions.FileProviders;
 ﻿using SmartStore.Core.IO;
 
 namespace SmartStore.Core
@@ -7,10 +8,10 @@ namespace SmartStore.Core
         string MachineName { get; }
         string EnvironmentIdentifier { get; }
 
-        IVirtualFolder WebRootFolder { get; }
-        IVirtualFolder AppDataFolder { get; }
-        IVirtualFolder ThemesFolder { get; }
-        IVirtualFolder PluginsFolder { get; }
-        IVirtualFolder TenantFolder { get; }
+        IFileProvider WebRootFolder { get; }
+        IFileProvider AppDataFolder { get; }
+        IFileProvider ThemesFolder { get; }
+        IFileProvider PluginsFolder { get; }
+        IFileProvider TenantFolder { get; }
     }
 }

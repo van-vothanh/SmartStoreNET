@@ -1,3 +1,4 @@
+#if FALSE
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
@@ -8,7 +9,7 @@ namespace SmartStore.Core.Infrastructure
     /// Holds some state for the current HttpContext or thread
     /// </summary>
     /// <typeparam name="T">The type of data to store</typeparam>
-    public class ContextState<T> where T : class
+    public class // ContextState<T> where T : class
     {
         private readonly string _name;
         private readonly Func<T> _defaultValue;
@@ -87,3 +88,4 @@ namespace SmartStore.Core.Infrastructure
         }
     }
 }
+#endif

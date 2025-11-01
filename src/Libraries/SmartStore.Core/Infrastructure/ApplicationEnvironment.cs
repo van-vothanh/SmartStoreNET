@@ -1,3 +1,4 @@
+using Microsoft.Extensions.FileProviders;
 ﻿using System;
 using SmartStore.Core.Data;
 using SmartStore.Core.IO;
@@ -8,7 +9,7 @@ namespace SmartStore.Core
 {
     public class ApplicationEnvironment : IApplicationEnvironment
     {
-        public ApplicationEnvironment(IVirtualPathProvider vpp, ILogger logger)
+        public ApplicationEnvironment(IFileProvider vpp, ILogger logger)
         {
             WebRootFolder = new VirtualFolder("~/", vpp, logger);
             AppDataFolder = new VirtualFolder("~/App_Data/", vpp, logger);
@@ -27,10 +28,10 @@ namespace SmartStore.Core
                 // use the current host and the process id as two servers could run on the same machine
                 Environment.MachineName + "-" + System.Diagnostics.Process.GetCurrentProcess().Id;
 
-        public virtual IVirtualFolder WebRootFolder { get; private set; }
-        public virtual IVirtualFolder AppDataFolder { get; private set; }
-        public virtual IVirtualFolder ThemesFolder { get; private set; }
-        public virtual IVirtualFolder PluginsFolder { get; private set; }
-        public virtual IVirtualFolder TenantFolder { get; private set; }
+        public virtual IFileProvider WebRootFolder { get; private set; }
+        public virtual IFileProvider AppDataFolder { get; private set; }
+        public virtual IFileProvider ThemesFolder { get; private set; }
+        public virtual IFileProvider PluginsFolder { get; private set; }
+        public virtual IFileProvider TenantFolder { get; private set; }
     }
 }

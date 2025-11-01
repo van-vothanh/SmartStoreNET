@@ -1,7 +1,7 @@
+#if FALSE
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.SessionState;
 
 namespace SmartStore.Core.Fakes
 {
@@ -50,4 +50,3 @@ namespace SmartStore.Core.Fakes
             _sessionItems.Remove(name);
         }
     }
-}

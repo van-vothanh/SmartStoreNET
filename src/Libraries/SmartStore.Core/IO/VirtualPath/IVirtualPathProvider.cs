@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Web.Caching;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace SmartStore.Core.IO
 {
-    public interface IVirtualPathProvider
+    public interface IFileProvider
     {
         string MapPath(string virtualPath);
         string Combine(params string[] paths);
@@ -25,14 +25,14 @@ namespace SmartStore.Core.IO
         Stream OpenFile(string virtualPath);
     }
 
-    public static class IVirtualPathProviderExtensions
+    public static class IFileProviderExtensions
     {
-        public static string GetFileHash(this IVirtualPathProvider vpp, string virtualPath)
+        public static string GetFileHash(this IFileProvider vpp, string virtualPath)
         {
             return vpp.GetFileHash(virtualPath, new[] { virtualPath });
         }
 
-        public static CacheDependency GetCacheDependency(this IVirtualPathProvider vpp, string virtualPath, DateTime utcStart)
+        public static CacheDependency GetCacheDependency(this IFileProvider vpp, string virtualPath, DateTime utcStart)
         {
             return vpp.GetCacheDependency(virtualPath, new[] { virtualPath }, utcStart);
         }

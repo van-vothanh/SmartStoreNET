@@ -7,18 +7,18 @@ using SmartStore.Core.Logging;
 
 namespace SmartStore.Core.IO
 {
-    public class VirtualFolder : IVirtualFolder
+    public class VirtualFolder : IFileProvider
     {
-        private readonly IVirtualPathProvider _vpp;
+        private readonly IFileProvider _vpp;
         private readonly ILogger _logger;
         private readonly string _root;
 
-        public VirtualFolder(string root, IVirtualPathProvider vpp)
+        public VirtualFolder(string root, IFileProvider vpp)
             : this(root, vpp, NullLogger.Instance)
         {
         }
 
-        public VirtualFolder(string root, IVirtualPathProvider vpp, ILogger logger)
+        public VirtualFolder(string root, IFileProvider vpp, ILogger logger)
         {
             Guard.NotEmpty(root, nameof(root));
             Guard.NotNull(vpp, nameof(vpp));
@@ -34,7 +34,7 @@ namespace SmartStore.Core.IO
             _logger = logger;
         }
 
-        public IVirtualPathProvider VirtualPathProvider => _vpp;
+        public IFileProvider VirtualPathProvider => _vpp;
 
         public string RootPath => _root;
 

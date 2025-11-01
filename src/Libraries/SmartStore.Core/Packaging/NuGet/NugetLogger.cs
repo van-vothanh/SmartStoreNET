@@ -1,3 +1,4 @@
+#if FALSE
 ﻿using System;
 using NuGet;
 using SmartStore.Core.Logging;
@@ -39,3 +40,4 @@ namespace SmartStore.Core.Packaging
         }
     }
 }
+#endif

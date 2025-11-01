@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using System.Threading;
 
 namespace SmartStore.Core.Async
 {
     public partial class LocalAsyncState : IAsyncState
     {
-        private readonly MemoryCache _states = new MemoryCache("SmartStore.AsyncState.Progress");
-        private readonly MemoryCache _cancelTokens = new MemoryCache("SmartStore.AsyncState.CancelTokenSources");
+        private readonly IMemoryCache _states = new MemoryCache(new MemoryCacheOptions());
+        private readonly IMemoryCache _cancelTokens = new MemoryCache(new MemoryCacheOptions());
 
         public virtual bool Exists<T>(string name = null)
         {

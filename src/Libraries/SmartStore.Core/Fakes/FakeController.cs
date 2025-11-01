@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+#if FALSE
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Core.Fakes
 {

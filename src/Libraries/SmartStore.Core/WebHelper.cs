@@ -10,8 +10,8 @@ using System.Net.Sockets;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web;
-using System.Web.Configuration;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using SmartStore.Collections;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Stores;
@@ -24,13 +24,13 @@ namespace SmartStore.Core
     {
         private static readonly object s_lock = new object();
         private static bool? s_optimizedCompilationsEnabled;
-        private static AspNetHostingPermissionLevel? s_trustLevel;
+        // private static AspNetHostingPermissionLevel? s_trustLevel;
         private static readonly Regex s_staticExts = new Regex(@"(.*?)\.(css|js|png|jpg|jpeg|gif|webp|liquid|bmp|html|htm|xml|txt|pdf|doc|xls|rar|zip|7z|ico|eot|svg|ttf|woff|woff2|otf|json)", RegexOptions.Compiled | RegexOptions.IgnoreCase);
         private static readonly Regex s_htmlPathPattern = new Regex(@"(?<=(?:href|src)=(?:""|'))(?!https?://)(?<url>[^(?:""|')]+)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline);
         private static readonly Regex s_cssPathPattern = new Regex(@"url\('(?<url>.+)'\)", RegexOptions.IgnoreCase | RegexOptions.Compiled | RegexOptions.Multiline);
         private static readonly ConcurrentDictionary<int, string> s_safeLocalHostNames = new ConcurrentDictionary<int, string>();
 
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private bool? _isCurrentConnectionSecured;
         private string _storeHost;
         private string _storeHostSsl;
@@ -40,7 +40,7 @@ namespace SmartStore.Core
 
         private Store _currentStore;
 
-        public WebHelper(HttpContextBase httpContext)
+        public WebHelper(HttpContext httpContext)
         {
             _httpContext = httpContext;
         }
@@ -366,12 +366,6 @@ namespace SmartStore.Core
 
         public static bool IsStaticResourceRequested(HttpRequest request)
         {
-            Guard.NotNull(request, nameof(request));
-            return s_staticExts.IsMatch(request.Path);
-        }
-
-        public static bool IsStaticResourceRequested(HttpRequestBase request)
-        {
             // unit testable
             Guard.NotNull(request, nameof(request));
             return s_staticExts.IsMatch(request.Path);
@@ -542,6 +536,7 @@ namespace SmartStore.Core
             }
         }
 
+        /*
         /// <summary>
         /// Finds the trust level of the running application (http://blogs.msdn.com/dmitryr/archive/2007/01/23/finding-out-the-current-trust-level-in-asp-net.aspx)
         /// </summary>
@@ -577,6 +572,7 @@ namespace SmartStore.Core
             }
             return s_trustLevel.Value;
         }
+        */
 
         /// <summary>
         /// Prepends protocol and host to all (relative) urls in a html string
@@ -587,7 +583,7 @@ namespace SmartStore.Core
         /// <remarks>
         /// All html attributed named <c>src</c> and <c>href</c> are affected, also occurences of <c>url('path')</c> within embedded stylesheets.
         /// </remarks>
-        public static string MakeAllUrlsAbsolute(string html, HttpRequestBase request)
+        public static string MakeAllUrlsAbsolute(string html, HttpRequest request)
         {
             Guard.NotNull(request, nameof(request));
 
@@ -634,7 +630,7 @@ namespace SmartStore.Core
         /// </summary>
         /// <param name="protocol">Changes the protocol if passed.</param>
         [SuppressMessage("ReSharper", "AccessToModifiedClosure")]
-        public static string GetAbsoluteUrl(string url, HttpRequestBase request, bool enforceScheme = false, string protocol = null)
+        public static string GetAbsoluteUrl(string url, HttpRequest request, bool enforceScheme = false, string protocol = null)
         {
             Guard.NotEmpty(url, nameof(url));
             Guard.NotNull(request, nameof(request));

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Web.Caching;
-using System.Web.Hosting;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Logging;
 using SmartStore.Utilities;
 
 namespace SmartStore.Core.IO
 {
-    public class DefaultVirtualPathProvider : IVirtualPathProvider
+    public class DefaultVirtualPathProvider : IFileProvider
     {
         private readonly ILogger _logger;
 

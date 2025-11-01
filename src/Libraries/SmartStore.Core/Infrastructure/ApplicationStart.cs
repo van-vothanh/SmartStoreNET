@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Filters;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using SmartStore.Core.Logging;
 
 namespace SmartStore.Core.Infrastructure
@@ -32,7 +32,7 @@ namespace SmartStore.Core.Infrastructure
     /// </summary>
     public interface IPostApplicationStart
     {
-        void Start(HttpContextBase httpContext);
+        void Start(HttpContext httpContext);
 
         /// <summary>
         /// Called when an error occurred and <see cref="ThrowOnError"/> is <c>false</c>.

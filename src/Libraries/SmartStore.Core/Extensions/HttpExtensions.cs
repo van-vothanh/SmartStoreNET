@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,11 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Web;
-using System.Web.Caching;
-using System.Web.Mvc;
-using System.Web.Security;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using SmartStore.Core;
-using SmartStore.Core.Fakes;
+// using SmartStore.Core.Fakes;
 using SmartStore.Core.Infrastructure;
 
 namespace SmartStore
@@ -32,11 +33,11 @@ namespace SmartStore
         };
 
         /// <summary>
-        /// Tries to get the <see cref="HttpRequestBase"/> instance without throwing exceptions
+        /// Tries to get the <see cref="HttpRequest"/> instance without throwing exceptions
         /// </summary>
-        /// <returns>The <see cref="HttpRequestBase"/> instance or <c>null</c>.</returns>
+        /// <returns>The <see cref="HttpRequest"/> instance or <c>null</c>.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static HttpRequestBase SafeGetHttpRequest(this HttpContext httpContext)
+        public static HttpRequest SafeGetHttpRequest(this HttpContext httpContext)
         {
             if (httpContext == null)
             {
@@ -47,10 +48,10 @@ namespace SmartStore
         }
 
         /// <summary>
-        /// Tries to get the <see cref="HttpRequestBase"/> instance without throwing exceptions
+        /// Tries to get the <see cref="HttpRequest"/> instance without throwing exceptions
         /// </summary>
-        /// <returns>The <see cref="HttpRequestBase"/> instance or <c>null</c>.</returns>
-        public static HttpRequestBase SafeGetHttpRequest(this HttpContextBase httpContext)
+        /// <returns>The <see cref="HttpRequest"/> instance or <c>null</c>.</returns>
+        public static HttpRequest SafeGetHttpRequest(this HttpContext httpContext)
         {
             if (httpContext == null)
             {
@@ -79,7 +80,7 @@ namespace SmartStore
         /// <param name="request"></param>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static bool IsAppLocalUrl(this HttpRequestBase request, string url)
+        public static bool IsAppLocalUrl(this HttpRequest request, string url)
         {
             if (string.IsNullOrWhiteSpace(url))
             {
@@ -156,7 +157,7 @@ namespace SmartStore
         /// Gets a value which indicates whether the HTTP connection uses secure sockets (HTTPS protocol). 
         /// Works with Cloud's load balancers.
         /// </summary>
-        public static bool IsHttps(this HttpRequestBase request)
+        public static bool IsHttps(this HttpRequest request)
         {
             if (request.IsSecureConnection)
             {
@@ -187,7 +188,7 @@ namespace SmartStore
         /// <summary>
         /// Gets a value which indicates whether the current request requests a static resource, like .txt, .pdf, .js, .css etc.
         /// </summary>
-        public static bool IsStaticResourceRequested(this HttpContextBase context)
+        public static bool IsStaticResourceRequested(this HttpContext context)
         {
             if (context?.Request == null)
                 return false;
@@ -200,26 +201,26 @@ namespace SmartStore
 
         [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetFormsAuthenticationCookie(this HttpWebRequest webRequest, HttpRequestBase httpRequest)
+        public static void SetFormsAuthenticationCookie(this HttpWebRequest webRequest, HttpRequest httpRequest)
         {
             CopyCookie(webRequest, httpRequest, FormsAuthentication.FormsCookieName);
         }
 
         [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetAnonymousIdentCookie(this HttpWebRequest webRequest, HttpRequestBase httpRequest)
+        public static void SetAnonymousIdentCookie(this HttpWebRequest webRequest, HttpRequest httpRequest)
         {
             CopyCookie(webRequest, httpRequest, "SMARTSTORE.ANONYMOUS");
         }
 
         [SuppressMessage("ReSharper", "PossibleNullReferenceException")]
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void SetVisitorCookie(this HttpWebRequest webRequest, HttpRequestBase httpRequest)
+        public static void SetVisitorCookie(this HttpWebRequest webRequest, HttpRequest httpRequest)
         {
             CopyCookie(webRequest, httpRequest, "SMARTSTORE.VISITOR");
         }
 
-        private static void CopyCookie(HttpWebRequest webRequest, HttpRequestBase sourceHttpRequest, string cookieName)
+        private static void CopyCookie(HttpWebRequest webRequest, HttpRequest sourceHttpRequest, string cookieName)
         {
             Guard.NotNull(webRequest, nameof(webRequest));
             Guard.NotNull(sourceHttpRequest, nameof(sourceHttpRequest));
@@ -239,12 +240,12 @@ namespace SmartStore
             webRequest.CookieContainer.Add(sendCookie);
         }
 
-        public static string BuildScopedKey(this Cache cache, string key)
+        public static string BuildScopedKey(this IMemoryCache cache, string key)
         {
             return key.HasValue() ? CacheRegionName + key : null;
         }
 
-        public static T GetOrAdd<T>(this Cache cache, string key, Func<T> acquirer, TimeSpan? duration = null)
+        public static T GetOrAdd<T>(this IMemoryCache cache, string key, Func<T> acquirer, TimeSpan? duration = null)
         {
             Guard.NotEmpty(key, nameof(key));
             Guard.NotNull(acquirer, nameof(acquirer));
@@ -258,25 +259,25 @@ namespace SmartStore
 
             var value = acquirer();
 
-            var absoluteExpiration = Cache.NoAbsoluteExpiration;
+            var absoluteExpiration = IMemoryCache.NoAbsoluteExpiration;
             if (duration.HasValue)
             {
                 absoluteExpiration = DateTime.UtcNow + duration.Value;
             }
 
-            cache.Insert(key, value, null, Cache.NoAbsoluteExpiration, Cache.NoSlidingExpiration);
+            cache.Insert(key, value, null, IMemoryCache.NoAbsoluteExpiration, IMemoryCache.NoSlidingExpiration);
 
             return value;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static void RememberAppRelativePath(this HttpContextBase httpContext)
+        public static void RememberAppRelativePath(this HttpContext httpContext)
         {
             httpContext.Items[RememberPathKey] = httpContext.Request.AppRelativeCurrentExecutionFilePath;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static string GetOriginalAppRelativePath(this HttpContextBase httpContext)
+        public static string GetOriginalAppRelativePath(this HttpContext httpContext)
         {
             return GetItem<string>(httpContext, RememberPathKey, forceCreation: false) ?? httpContext.Request.AppRelativeCurrentExecutionFilePath;
         }
@@ -287,7 +288,7 @@ namespace SmartStore
             return GetItem<T>(new HttpContextWrapper(httpContext), key, factory, forceCreation);
         }
 
-        public static T GetItem<T>(this HttpContextBase httpContext, string key, Func<T> factory = null, bool forceCreation = true)
+        public static T GetItem<T>(this HttpContext httpContext, string key, Func<T> factory = null, bool forceCreation = true)
         {
             Guard.NotEmpty(key, nameof(key));
 
@@ -315,7 +316,7 @@ namespace SmartStore
             }
         }
 
-        public static void RemoveByPattern(this Cache cache, string pattern)
+        public static void RemoveByPattern(this IMemoryCache cache, string pattern)
         {
             var keys = cache.AllKeys(pattern);
 
@@ -325,11 +326,11 @@ namespace SmartStore
             }
         }
 
-        public static string[] AllKeys(this Cache cache, string pattern)
+        public static string[] AllKeys(this IMemoryCache cache, string pattern)
         {
             pattern = pattern == "*" ? CacheRegionName : pattern;
 
-            var keys = from entry in HttpRuntime.Cache.AsParallel().Cast<DictionaryEntry>()
+            var keys = from entry in HttpRuntime.IMemoryCache.AsParallel().Cast<DictionaryEntry>()
                        let key = entry.Key.ToString()
                        where key.StartsWith(pattern, StringComparison.OrdinalIgnoreCase)
                        select key;

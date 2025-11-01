@@ -1,3 +1,4 @@
+#if FALSE
 ﻿using System;
 using System.IO;
 using System.Runtime.Versioning;
@@ -83,3 +84,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

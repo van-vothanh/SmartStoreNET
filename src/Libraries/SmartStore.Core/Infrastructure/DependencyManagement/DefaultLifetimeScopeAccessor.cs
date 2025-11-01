@@ -22,7 +22,7 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
             }
         }
 
-        private readonly ContextState<ILifetimeScope> _state;
+        // private readonly ContextState<ILifetimeScope> _state;
         private readonly ILifetimeScope _rootContainer;
         internal static readonly object ScopeTag = "AutofacWebRequest";
 
@@ -33,7 +33,7 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
             //rootContainer.ChildLifetimeScopeBeginning += OnScopeBeginning;
 
             _rootContainer = rootContainer;
-            _state = new ContextState<ILifetimeScope>("CustomLifetimeScopeProvider.WorkScope");
+            // _state = new ContextState<ILifetimeScope>("CustomLifetimeScopeProvider.WorkScope");
         }
 
         public ILifetimeScope ApplicationContainer => _rootContainer;

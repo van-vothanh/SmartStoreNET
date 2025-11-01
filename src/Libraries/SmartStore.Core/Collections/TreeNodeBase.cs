@@ -18,7 +18,7 @@ namespace SmartStore.Collections
         private IDictionary<object, TreeNodeBase<T>> _idNodeMap;
 
         protected IDictionary<string, object> _metadata;
-        private readonly static ContextState<Dictionary<string, object>> _contextState = new ContextState<Dictionary<string, object>>("TreeNodeBase.ThreadMetadata");
+        // private readonly static ContextState<Dictionary<string, object>> _contextState = new ContextState<Dictionary<string, object>>("TreeNodeBase.ThreadMetadata");
 
         public TreeNodeBase()
         {

@@ -8,9 +8,9 @@ namespace SmartStore.Core.IO
     /// <summary>
     /// Abstraction over the virtual files/directories of a web site.
     /// </summary>
-    public interface IVirtualFolder
+    public interface IFileProvider
     {
-        IVirtualPathProvider VirtualPathProvider { get; }
+        IFileProvider VirtualPathProvider { get; }
 
         /// <summary>
         /// Virtual root path, e.g. ~/App_Data or ~/Themes
@@ -45,9 +45,9 @@ namespace SmartStore.Core.IO
         DateTime GetFileLastWriteTimeUtc(string relativePath);
     }
 
-    public static class IVirtualFolderExtensions
+    public static class IFileProviderExtensions
     {
-        public static bool TryDeleteDirectory(this IVirtualFolder folder, string relativePath)
+        public static bool TryDeleteDirectory(this IFileProvider folder, string relativePath)
         {
             try
             {

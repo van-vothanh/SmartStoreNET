@@ -15,13 +15,13 @@ namespace SmartStore.Core.Logging
     public class Log4netLogger : ILogger
     {
         private static readonly Type _declaringType = typeof(Log4netLogger);
-        private static readonly ContextState<Dictionary<string, object>> _state;
+        // private static readonly ContextState<Dictionary<string, object>> _state;
 
         private readonly log4net.Core.ILogger _logger;
 
         static Log4netLogger()
         {
-            _state = new ContextState<Dictionary<string, object>>("Log4netLogger.LogicalThreadContext", () => new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase));
+            // _state = new ContextState<Dictionary<string, object>>("Log4netLogger.LogicalThreadContext", () => new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase));
         }
 
         public Log4netLogger(log4net.Core.ILogger logger)

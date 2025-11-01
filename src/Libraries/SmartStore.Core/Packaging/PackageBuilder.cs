@@ -1,3 +1,4 @@
+#if FALSE
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -94,7 +95,7 @@ namespace SmartStore.Core.Packaging
             }
         }
 
-        private static void EstablishPaths(BuildContext context, IVirtualFolder webRootFolder, string extensionName, string extensionType = "Plugin")
+        private static void EstablishPaths(BuildContext context, IFileProvider webRootFolder, string extensionName, string extensionType = "Plugin")
         {
             context.SourceFolder = webRootFolder;
             if (extensionType.IsCaseInsensitiveEqual("theme"))
@@ -144,7 +145,7 @@ namespace SmartStore.Core.Packaging
             public Stream Stream { get; set; }
             public NuGetPackageBuilder Builder { get; set; }
 
-            public IVirtualFolder SourceFolder { get; set; }
+            public IFileProvider SourceFolder { get; set; }
             public string SourcePath { get; set; }
             public string TargetPath { get; set; }
         }
@@ -155,11 +156,11 @@ namespace SmartStore.Core.Packaging
 
         private class VirtualPackageFile : IPackageFile
         {
-            private readonly IVirtualFolder _webRootFolder;
+            private readonly IFileProvider _webRootFolder;
             private readonly string _relativePath;
             private readonly string _packagePath;
 
-            public VirtualPackageFile(IVirtualFolder webRootFolder, string relativePath, string packagePath)
+            public VirtualPackageFile(IFileProvider webRootFolder, string relativePath, string packagePath)
             {
                 _webRootFolder = webRootFolder;
                 _relativePath = relativePath;
@@ -187,3 +188,4 @@ namespace SmartStore.Core.Packaging
         #endregion
     }
 }
+#endif

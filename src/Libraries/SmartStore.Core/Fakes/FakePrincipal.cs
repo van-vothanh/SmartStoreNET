@@ -1,3 +1,4 @@
+#if FALSE
 ﻿using System.Linq;
 using System.Security.Principal;
 
@@ -22,4 +23,3 @@ namespace SmartStore.Core.Fakes
             return _roles != null && _roles.Contains(role);
         }
     }
-}

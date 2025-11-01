@@ -1,3 +1,4 @@
+#if FALSE
 ﻿using System.Linq;
 using NuGet;
 
@@ -22,3 +23,4 @@ namespace SmartStore.Core.Packaging
         public override void RemovePackage(IPackage package) { }
     }
 }
+#endif

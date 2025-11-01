@@ -1,3 +1,4 @@
+#if FALSE
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -13,7 +14,7 @@ namespace SmartStore.Core.Packaging
 {
     public class PackageInstaller : IPackageInstaller
     {
-        private readonly IVirtualPathProvider _virtualPathProvider;
+        private readonly IFileProvider _virtualPathProvider;
         private readonly IPluginFinder _pluginFinder;
         private readonly IThemeRegistry _themeRegistry;
         private readonly IFolderUpdater _folderUpdater;
@@ -21,7 +22,7 @@ namespace SmartStore.Core.Packaging
         private readonly Log.ILogger _logger;
 
         public PackageInstaller(
-            IVirtualPathProvider virtualPathProvider,
+            IFileProvider virtualPathProvider,
             IPluginFinder pluginFinder,
             IThemeRegistry themeRegistry,
             IFolderUpdater folderUpdater,
@@ -294,3 +295,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif
