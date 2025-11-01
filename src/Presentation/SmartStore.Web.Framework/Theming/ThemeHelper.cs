@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
-using System.Web.Optimization;
+// using WebOptimizer; // TODO: Migrate bundling
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Themes;

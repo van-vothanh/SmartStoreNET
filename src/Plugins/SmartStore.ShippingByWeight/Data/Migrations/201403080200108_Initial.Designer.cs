@@ -2,8 +2,8 @@
 namespace SmartStore.ShippingByWeight.Data.Migrations
 {
     using System.CodeDom.Compiler;
-    using System.Data.Entity.Migrations;
-    using System.Data.Entity.Migrations.Infrastructure;
+    using Microsoft.EntityFrameworkCore.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations.Infrastructure;
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.2-21211")]

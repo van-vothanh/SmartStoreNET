@@ -1,7 +1,7 @@
 ﻿namespace SmartStore.Data.Migrations
 {
     using System;
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
     using System.Linq;
     using Setup;
     using SmartStore.Core.Data;

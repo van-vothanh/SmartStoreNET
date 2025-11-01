@@ -13,7 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SmartStore.Admin.Models.Common;
 using SmartStore.ComponentModel;

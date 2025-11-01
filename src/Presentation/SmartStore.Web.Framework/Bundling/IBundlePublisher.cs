@@ -1,4 +1,4 @@
-﻿using System.Web.Optimization;
+﻿// using WebOptimizer; // TODO: Migrate bundling
 
 namespace SmartStore.Web.Framework.Bundling
 {

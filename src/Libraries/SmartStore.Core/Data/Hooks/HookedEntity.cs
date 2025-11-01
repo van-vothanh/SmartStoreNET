@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using EfState = System.Data.Entity.EntityState;
 
 namespace SmartStore.Core.Data.Hooks

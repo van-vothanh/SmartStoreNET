@@ -1,5 +1,5 @@
-﻿using System.Data.Entity.Migrations;
-using System.Web.Routing;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Plugins;
 using SmartStore.GoogleMerchantCenter.Data.Migrations;
 using SmartStore.GoogleMerchantCenter.Providers;

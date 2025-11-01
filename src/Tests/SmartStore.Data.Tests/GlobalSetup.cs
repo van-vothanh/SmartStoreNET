@@ -1,4 +1,4 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.EntityFrameworkCore;
 using NUnit.Framework;
 using SmartStore.Core.Data;
 

@@ -5,9 +5,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Hosting;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+// using WebOptimizer; // TODO: Migrate bundling
+using Microsoft.AspNetCore.Routing;
 using System.Web.WebPages;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Seo;

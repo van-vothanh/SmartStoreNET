@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Security;
 using System.Web;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Controllers;
 using System.Web.Http.Dependencies;
 using SmartStore.Core;

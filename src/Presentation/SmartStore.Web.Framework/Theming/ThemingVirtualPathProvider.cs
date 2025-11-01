@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Web.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using System.Web.Hosting;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Themes;

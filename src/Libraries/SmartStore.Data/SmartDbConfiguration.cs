@@ -1,7 +1,7 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.Core.Common;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Infrastructure.DependencyResolution;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Core.Common;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure.DependencyResolution;
 using System.Web.Hosting;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;

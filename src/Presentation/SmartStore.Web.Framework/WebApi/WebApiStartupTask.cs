@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Net.Http.Formatting;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Cors;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;

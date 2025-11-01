@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Core.Mapping;
-using System.Data.Entity.Core.Metadata.Edm;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Infrastructure.MappingViews;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Core.Mapping;
+using Microsoft.EntityFrameworkCore.Core.Metadata.Edm;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure.MappingViews;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;

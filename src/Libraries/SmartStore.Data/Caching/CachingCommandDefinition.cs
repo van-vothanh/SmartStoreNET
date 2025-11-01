@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Data.Common;
-using System.Data.Entity.Core.Common;
-using System.Data.Entity.Core.Metadata.Edm;
+using Microsoft.EntityFrameworkCore.Core.Common;
+using Microsoft.EntityFrameworkCore.Core.Metadata.Edm;
 
 namespace SmartStore.Data.Caching
 {

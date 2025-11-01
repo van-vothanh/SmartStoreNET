@@ -1,5 +1,5 @@
-﻿using System.Data.Entity;
-using System.Data.Entity.Migrations;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 using SmartStore.Data.Migrations;
 
 namespace SmartStore.Data.Setup

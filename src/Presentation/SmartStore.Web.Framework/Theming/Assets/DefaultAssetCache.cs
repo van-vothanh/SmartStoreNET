@@ -4,9 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Web;
-using System.Web.Caching;
+using Microsoft.Extensions.Caching.Memory;
 using System.Web.Hosting;
-using System.Web.Optimization;
+// using WebOptimizer; // TODO: Migrate bundling
 using SmartStore.Core;
 using SmartStore.Core.Domain.Themes;
 using SmartStore.Core.IO;

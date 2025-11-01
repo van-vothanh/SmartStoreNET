@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Domain.Directory;
@@ -31,22 +31,18 @@ namespace SmartStore.Admin.Models.Directory
             };
         }
         [SmartResourceDisplayName("Admin.Configuration.Currencies.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Currencies.Fields.CurrencyCode")]
-        [AllowHtml]
         public string CurrencyCode { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Currencies.Fields.DisplayLocale")]
-        [AllowHtml]
         public string DisplayLocale { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Currencies.Fields.Rate")]
         public decimal Rate { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Currencies.Fields.CustomFormatting")]
-        [AllowHtml]
         public string CustomFormatting { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Currencies.Fields.Published")]
@@ -110,7 +106,6 @@ namespace SmartStore.Admin.Models.Directory
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Currencies.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
     }
 

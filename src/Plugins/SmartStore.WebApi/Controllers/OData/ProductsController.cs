@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.ModelBinding;
 using System.Web.OData;
 using SmartStore.Core.Domain.Catalog;

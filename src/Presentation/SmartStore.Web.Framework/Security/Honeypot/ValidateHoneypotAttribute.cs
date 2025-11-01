@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Security;
 using SmartStore.Core.Localization;
