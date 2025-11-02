@@ -1,5 +1,5 @@
 ﻿
-using System.Data.Entity.ModelConfiguration;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SmartStore.Core.Domain.Themes;
 
 namespace SmartStore.Data.Mapping.Themes

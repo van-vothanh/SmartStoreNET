@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -15,7 +15,6 @@ namespace SmartStore.Admin.Models.Orders
         public int GridPageSize { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.List.CouponCode")]
-        [AllowHtml]
         public string CouponCode { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.List.Activated")]

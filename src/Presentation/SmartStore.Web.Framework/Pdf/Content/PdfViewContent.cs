@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Services.Pdf;
 using SmartStore.Web.Framework.Controllers;
 

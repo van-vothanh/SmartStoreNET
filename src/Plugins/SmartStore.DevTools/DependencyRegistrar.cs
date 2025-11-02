@@ -1,6 +1,5 @@
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using Autofac;
-using Autofac.Integration.Mvc;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Infrastructure.DependencyManagement;

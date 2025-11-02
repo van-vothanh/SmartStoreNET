@@ -1,5 +1,4 @@
 ﻿using Autofac;
-using Autofac.Integration.Mvc;
 using SmartStore.AmazonPay.Filters;
 using SmartStore.AmazonPay.Services;
 using SmartStore.Core.Infrastructure;

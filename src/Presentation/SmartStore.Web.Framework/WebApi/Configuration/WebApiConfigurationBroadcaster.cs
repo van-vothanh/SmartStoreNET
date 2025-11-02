@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.OData.Builder;
 using System.Web.OData.Routing.Conventions;
 

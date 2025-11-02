@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using Autofac.Integration.Mvc;
 
 namespace SmartStore.Services.Catalog.Modelling
 {

@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
-using System.Web;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Services.Configuration;

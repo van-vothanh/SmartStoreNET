@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using NuGet;
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Data;

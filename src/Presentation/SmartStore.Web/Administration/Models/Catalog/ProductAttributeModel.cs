@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Search.Facets;
@@ -17,15 +17,12 @@ namespace SmartStore.Admin.Models.Catalog
             Locales = new List<ProductAttributeLocalizedModel>();
         }
 
-        [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Attributes.ProductAttributes.Fields.Alias")]
         public string Alias { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.ProductAttributes.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.ProductAttributes.Fields.Description")]
-        [AllowHtml]
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.ProductAttributes.Fields.AllowFiltering")]
@@ -50,15 +47,12 @@ namespace SmartStore.Admin.Models.Catalog
     {
         public int LanguageId { get; set; }
 
-        [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Attributes.ProductAttributes.Fields.Alias")]
         public string Alias { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.ProductAttributes.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.ProductAttributes.Fields.Description")]
-        [AllowHtml]
         public string Description { get; set; }
     }
 

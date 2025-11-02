@@ -1,6 +1,6 @@
 using System;
 using System.Text.RegularExpressions;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Html.CodeFormatter
 {

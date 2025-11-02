@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Mvc.Html;
-using System.Web.Routing;
-using System.Web.WebPages;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Utilities;
 
 namespace SmartStore.Web.Framework.UI

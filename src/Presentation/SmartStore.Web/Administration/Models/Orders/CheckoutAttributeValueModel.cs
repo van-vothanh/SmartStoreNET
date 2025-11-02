@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -20,7 +20,6 @@ namespace SmartStore.Admin.Models.Orders
         public int CheckoutAttributeId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.CheckoutAttributes.Values.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
         public string NameString { get; set; }
 
@@ -43,7 +42,6 @@ namespace SmartStore.Admin.Models.Orders
         public int? MediaFileId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.CheckoutAttributes.Values.Fields.Color")]
-        [AllowHtml, UIHint("Color")]
         public string Color { get; set; }
 
         public bool IsListTypeAttribute { get; set; }
@@ -55,7 +53,6 @@ namespace SmartStore.Admin.Models.Orders
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.CheckoutAttributes.Values.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
     }
 

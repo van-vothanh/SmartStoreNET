@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -17,7 +17,6 @@ namespace SmartStore.Admin.Models.Catalog
         }
 
         [SmartResourceDisplayName("Admin.Catalog.ProductTags.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.ProductTags.Published")]
@@ -34,7 +33,6 @@ namespace SmartStore.Admin.Models.Catalog
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.ProductTags.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
     }
 

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using NuGet;
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
 

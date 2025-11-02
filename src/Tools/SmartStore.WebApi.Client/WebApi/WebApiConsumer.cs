@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using SmartStore.WebApi.Client.Models;

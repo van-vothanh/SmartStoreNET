@@ -1,5 +1,4 @@
 ﻿using System;
-using NuGet;
 using SmartStore.Core.Logging;
 using Log = SmartStore.Core.Logging;
 

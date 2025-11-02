@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using DotLiquid;
 using DotLiquid.FileSystems;
 using DotLiquid.NamingConventions;

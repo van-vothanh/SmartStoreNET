@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -21,7 +21,6 @@ namespace SmartStore.Admin.Models.Logging
         public DateTime? CreatedOnTo { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.ActivityLog.ActivityLog.Fields.CustomerEmail")]
-        [AllowHtml]
         public string CustomerEmail { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.ActivityLog.ActivityLog.Fields.CustomerSystemAccount")]

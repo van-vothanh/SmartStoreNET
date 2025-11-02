@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using log4net.Core;
 using log4net.Util;
 using SmartStore.Core.Data;

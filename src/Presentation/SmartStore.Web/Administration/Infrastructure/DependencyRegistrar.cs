@@ -1,5 +1,4 @@
 using Autofac;
-using Autofac.Integration.Mvc;
 using SmartStore.Admin.Controllers;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;

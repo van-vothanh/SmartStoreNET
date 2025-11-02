@@ -1,7 +1,7 @@
 ﻿using SmartStore.Core.Plugins;
 using System.Collections.Generic;
-using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Services.Customers
 {

@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.Globalization;
 using System.Net;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Web.Framework.Modelling
 {

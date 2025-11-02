@@ -3,7 +3,7 @@ using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Services.Themes;
 

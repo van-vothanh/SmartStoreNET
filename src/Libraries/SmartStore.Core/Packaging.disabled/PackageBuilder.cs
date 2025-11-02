@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Versioning;
-using NuGet;
 using SmartStore.Core.IO;
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;

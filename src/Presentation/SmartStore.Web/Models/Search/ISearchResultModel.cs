@@ -1,5 +1,4 @@
 ﻿using System.Web.Mvc;
-using Autofac.Integration.Mvc;
 using SmartStore.Services.Search;
 
 namespace SmartStore.Web.Models.Search

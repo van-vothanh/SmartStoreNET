@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Web.WebPages;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Utilities;
 
 namespace SmartStore.Web.Framework.UI

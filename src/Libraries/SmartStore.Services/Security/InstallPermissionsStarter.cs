@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Security;
 using SmartStore.Core.Infrastructure;

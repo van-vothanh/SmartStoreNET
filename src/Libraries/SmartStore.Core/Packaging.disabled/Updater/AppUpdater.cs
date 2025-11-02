@@ -4,7 +4,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using NuGet;
 using SmartStore.Core.Data;
 using SmartStore.Core.Logging;
 using SmartStore.Core.Plugins;

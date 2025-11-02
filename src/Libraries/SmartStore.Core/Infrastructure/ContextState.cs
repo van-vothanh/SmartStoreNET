@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Runtime.Remoting.Messaging;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Infrastructure
 {

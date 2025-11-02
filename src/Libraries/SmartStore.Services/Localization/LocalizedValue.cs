@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using SmartStore.Core.Domain.Localization;
 

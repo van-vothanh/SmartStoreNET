@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web;
+using Microsoft.AspNetCore.Http;
 using NUnit.Framework;
 using Rhino.Mocks;
 using SmartStore.Core;
