@@ -27,7 +27,7 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets the parent menu item identifier. 0 if the item has no parent.
         /// </summary>
-        [Index("IX_MenuItem_ParentItemId")]
+        // // [Index("IX_MenuItem_ParentItemId")]
         public int ParentItemId { get; set; }
 
         /// <summary>
@@ -63,13 +63,13 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets a value indicating whether the menu item is published.
         /// </summary>
-        [Index("IX_MenuItem_Published")]
+        // // [Index("IX_MenuItem_Published")]
         public bool Published { get; set; } = true;
 
         /// <summary>
         /// Gets or sets the display order.
         /// </summary>
-        [Index("IX_MenuItem_DisplayOrder")]
+        // // [Index("IX_MenuItem_DisplayOrder")]
         public int DisplayOrder { get; set; }
 
         /// <summary>
@@ -125,13 +125,13 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets a value indicating whether the entity is limited/restricted to certain stores.
         /// </summary>
-        [Index("IX_MenuItem_LimitedToStores")]
+        // // [Index("IX_MenuItem_LimitedToStores")]
         public bool LimitedToStores { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is subject to ACL.
         /// </summary>
-        [Index("IX_MenuItem_SubjectToAcl")]
+        // // [Index("IX_MenuItem_SubjectToAcl")]
         public bool SubjectToAcl { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Security;
 using System.Security.Claims;
 using System.Security.Principal;
-using System.Web.Security;
+// using System.Web.Security;
 using SmartStore.Core.Domain.Customers;
 
 namespace SmartStore.Core

@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web.Mvc;
+// using System.Web.Mvc; // TODO: Replace with ASP.NET Core MVC
 
 namespace SmartStore.Core.Security
 {

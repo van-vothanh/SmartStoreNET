@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+// using System.Web.Mvc; // TODO: Replace with ASP.NET Core MVC
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Domain.Stores;
 

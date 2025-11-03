@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+// using System.Web.Mvc; // TODO: Replace with ASP.NET Core MVC
 using Autofac;
-using Autofac.Integration.Mvc;
+// using Autofac.Integration.Mvc;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure.DependencyManagement;
 using SmartStore.Core.Logging;

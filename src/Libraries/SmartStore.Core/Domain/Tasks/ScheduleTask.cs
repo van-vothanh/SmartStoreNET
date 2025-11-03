@@ -37,13 +37,13 @@ namespace SmartStore.Core.Domain.Tasks
         /// <summary>
         /// Gets or sets the type of appropriate ITask class
         /// </summary>
-		[Index("IX_Type")]
+        // // [Index("IX_Type")]
         public string Type { get; set; }
 
         /// <summary>
         /// Gets or sets the value indicating whether a task is enabled
         /// </summary>
-        [Index("IX_NextRun_Enabled", 1)]
+        // // [Index("IX_NextRun_Enabled", 1)]
         public bool Enabled { get; set; }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace SmartStore.Core.Domain.Tasks
         /// </summary>
         public bool StopOnError { get; set; }
 
-        [Index("IX_NextRun_Enabled", 0)]
+        // // [Index("IX_NextRun_Enabled", 0)]
         public DateTime? NextRunUtc { get; set; }
 
         /// <summary>

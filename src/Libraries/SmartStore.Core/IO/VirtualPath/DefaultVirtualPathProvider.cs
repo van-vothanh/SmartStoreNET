@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Web.Caching;
-using System.Web.Hosting;
+// using System.Web.Caching;
+// using System.Web.Hosting; // TODO: Replace with Microsoft.AspNetCore.Hosting
 using SmartStore.Core.Logging;
 using SmartStore.Utilities;
 

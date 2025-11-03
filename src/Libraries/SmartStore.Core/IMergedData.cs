@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Hosting;
+// using System.Web.Hosting; // TODO: Replace with Microsoft.AspNetCore.Hosting
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;
 

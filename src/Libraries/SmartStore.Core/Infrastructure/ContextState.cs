@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Runtime.Remoting.Messaging;
+// using System.Runtime.Remoting.Messaging;
 using System.Web;
 
 namespace SmartStore.Core.Infrastructure

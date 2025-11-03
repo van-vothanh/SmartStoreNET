@@ -14,7 +14,7 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the parent folder id.
         /// </summary>
         [DataMember]
-        [Index("IX_NameParentId", Order = 0, IsUnique = true)]
+        // // [Index("IX_NameParentId", Order = 0, IsUnique = true)]
         public int? ParentId { get; set; }
 
         /// <summary>
@@ -26,7 +26,7 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the media folder name.
         /// </summary>
         [DataMember]
-        [Index("IX_NameParentId", Order = 1, IsUnique = true)]
+        // // [Index("IX_NameParentId", Order = 1, IsUnique = true)]
         public string Name { get; set; }
 
         /// <summary>

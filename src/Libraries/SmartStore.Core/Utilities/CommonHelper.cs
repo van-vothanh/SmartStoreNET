@@ -10,8 +10,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web.Hosting;
-using System.Web.Mvc;
+// using System.Web.Hosting; // TODO: Replace with Microsoft.AspNetCore.Hosting
+// using System.Web.Mvc; // TODO: Replace with ASP.NET Core MVC
 using Newtonsoft.Json;
 using SmartStore.ComponentModel;
 

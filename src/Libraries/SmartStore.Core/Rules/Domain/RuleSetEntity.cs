@@ -29,11 +29,11 @@ namespace SmartStore.Rules.Domain
         [StringLength(400)]
         public string Description { get; set; }
 
-        [Index("IX_RuleSetEntity_Scope", Order = 0)]
+        // // [Index("IX_RuleSetEntity_Scope", Order = 0)]
         public bool IsActive { get; set; } = true;
 
         [Required]
-        [Index("IX_RuleSetEntity_Scope", Order = 1)]
+        // // [Index("IX_RuleSetEntity_Scope", Order = 1)]
         public RuleScope Scope { get; set; }
 
 

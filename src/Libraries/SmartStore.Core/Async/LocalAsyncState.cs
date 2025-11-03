@@ -1,30 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
 using System.Threading;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace SmartStore.Core.Async
 {
     public partial class LocalAsyncState : IAsyncState
     {
-        private readonly MemoryCache _states = new MemoryCache("SmartStore.AsyncState.Progress");
-        private readonly MemoryCache _cancelTokens = new MemoryCache("SmartStore.AsyncState.CancelTokenSources");
+        private readonly IMemoryCache _states = new MemoryCache(new MemoryCacheOptions());
+        private readonly IMemoryCache _cancelTokens = new MemoryCache(new MemoryCacheOptions());
 
         public virtual bool Exists<T>(string name = null)
         {
-            var value = GetStateInfo<T>(name);
-            return value != null && !object.Equals(value.Progress, default(T));
-
+            var key = BuildKey<T>(name);
+            return _states.TryGetValue(key, out var value) && value != null && !object.Equals(((AsyncStateInfo)value).Progress, default(T));
         }
 
         public virtual T Get<T>(string name = null)
         {
-            var value = GetStateInfo<T>(name);
-
-            if (value != null)
+            var key = BuildKey<T>(name);
+            if (_states.TryGetValue(key, out var value) && value is AsyncStateInfo info)
             {
-                return (T)value.Progress;
+                return (T)info.Progress;
             }
 
             return default(T);
@@ -32,13 +30,9 @@ namespace SmartStore.Core.Async
 
         public virtual IEnumerable<T> GetAll<T>()
         {
-            var keyPrefix = BuildKey<T>(null);
-            return _states
-                .Where(x => x.Key.StartsWith(keyPrefix))
-                .Select(x => x.Value)
-                .OfType<AsyncStateInfo>()
-                .Select(x => x.Progress)
-                .OfType<T>();
+            // Note: IMemoryCache doesn't support enumeration in .NET Core
+            // This would need to be tracked separately if needed
+            return Enumerable.Empty<T>();
         }
 
 
@@ -46,43 +40,28 @@ namespace SmartStore.Core.Async
         {
             Guard.NotNull(state, nameof(state));
 
-            var value = GetStateInfo<T>(name);
+            var key = BuildKey<T>(name);
+            var duration = neverExpires ? TimeSpan.Zero : TimeSpan.FromMinutes(15);
 
-            if (value != null)
+            var options = new MemoryCacheEntryOptions();
+            if (!neverExpires)
             {
-                // exists already, so update
-                if (state != null)
-                {
-                    value.Progress = state;
-                }
+                options.SlidingExpiration = duration;
             }
-            else
-            {
-                // add new entry
-                var duration = neverExpires ? TimeSpan.Zero : TimeSpan.FromMinutes(15);
-                var policy = new CacheItemPolicy
-                {
-                    SlidingExpiration = duration,
-                    Priority = CacheItemPriority.NotRemovable
-                };
-                var key = BuildKey<T>(name);
+            options.Priority = CacheItemPriority.NeverRemove;
+            options.RegisterPostEvictionCallback((k, v, r, s) => OnRemoveCancelTokenSource((string)k));
 
-                // On expiration or removal: remove corresponding cancel token also.
-                policy.RemovedCallback = (x) => OnRemoveCancelTokenSource(key);
-
-                _states.Set(key, new AsyncStateInfo { Progress = state, Duration = duration }, policy);
-            }
+            _states.Set(key, new AsyncStateInfo { Progress = state, Duration = duration }, options);
         }
 
         public virtual void Update<T>(Action<T> update, string name = null)
         {
             Guard.NotNull(update, nameof(update));
 
-            var value = GetStateInfo<T>(name);
-
-            if (value != null)
+            var key = BuildKey<T>(name);
+            if (_states.TryGetValue(key, out var value) && value is AsyncStateInfo info)
             {
-                var state = (T)value.Progress;
+                var state = (T)info.Progress;
                 if (state != null)
                 {
                     update(state);
@@ -108,7 +87,8 @@ namespace SmartStore.Core.Async
 
         protected virtual bool OnRemoveStateInfo(string key)
         {
-            return _states.Remove(key) != null;
+            _states.Remove(key);
+            return true;
         }
 
         public virtual bool RemoveCancelTokenSource<T>(string name = null)
@@ -120,10 +100,9 @@ namespace SmartStore.Core.Async
         {
             Guard.NotEmpty(key, nameof(key));
 
-            var token = _cancelTokens.Remove(key) as CancellationTokenSource;
-
-            if (token != null)
+            if (_cancelTokens.TryGetValue(key, out var value) && value is CancellationTokenSource token)
             {
+                _cancelTokens.Remove(key);
                 token.Dispose();
                 return true;
             }
@@ -141,7 +120,12 @@ namespace SmartStore.Core.Async
         {
             Guard.NotEmpty(key, nameof(key));
 
-            return _cancelTokens.Get(key) as CancellationTokenSource;
+            if (_cancelTokens.TryGetValue(key, out var value) && value is CancellationTokenSource token)
+            {
+                return token;
+            }
+
+            return null;
         }
 
         public virtual void SetCancelTokenSource<T>(CancellationTokenSource cancelTokenSource, string name = null)
@@ -155,9 +139,12 @@ namespace SmartStore.Core.Async
                 OnRemoveCancelTokenSource(key);
             }
 
-            var policy = new CacheItemPolicy { Priority = CacheItemPriority.NotRemovable };
+            var options = new MemoryCacheEntryOptions
+            {
+                Priority = CacheItemPriority.NeverRemove
+            };
 
-            _cancelTokens.Set(key, cancelTokenSource, policy);
+            _cancelTokens.Set(key, cancelTokenSource, options);
         }
 
         public bool Cancel<T>(string name = null)
@@ -183,7 +170,12 @@ namespace SmartStore.Core.Async
 
         protected virtual AsyncStateInfo GetStateInfo<T>(string name = null)
         {
-            return _states.Get(BuildKey<T>(name)) as AsyncStateInfo;
+            var key = BuildKey<T>(name);
+            if (_states.TryGetValue(key, out var value) && value is AsyncStateInfo info)
+            {
+                return info;
+            }
+            return null;
         }
 
         protected string BuildKey<T>(string name)

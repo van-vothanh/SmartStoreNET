@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.SessionState;
+// using System.Web.SessionState;
 
 namespace SmartStore.Core.Fakes
 {

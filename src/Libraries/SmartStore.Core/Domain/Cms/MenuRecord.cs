@@ -35,7 +35,7 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets the value indicating whether this menu is deleteable by a user.
         /// </summary>
-        [Index("IX_Menu_SystemName_IsSystemMenu", Order = 1)]
+        // // [Index("IX_Menu_SystemName_IsSystemMenu", Order = 1)]
         public bool IsSystemMenu { get; set; }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets a value indicating whether the menu is published.
         /// </summary>
-        [Index("IX_Menu_Published")]
+        // // [Index("IX_Menu_Published")]
         public bool Published { get; set; } = true;
 
         /// <summary>
@@ -70,13 +70,13 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets a value indicating whether the entity is limited/restricted to certain stores.
         /// </summary>
-        [Index("IX_Menu_LimitedToStores")]
+        // // [Index("IX_Menu_LimitedToStores")]
         public bool LimitedToStores { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is subject to ACL.
         /// </summary>
-        [Index("IX_Menu_SubjectToAcl")]
+        // // [Index("IX_Menu_SubjectToAcl")]
         public bool SubjectToAcl { get; set; }
 
         /// <summary>

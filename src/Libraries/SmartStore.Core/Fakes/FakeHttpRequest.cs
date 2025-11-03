@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+// using System.Web.Mvc; // TODO: Replace with ASP.NET Core MVC
+// using System.Web.Routing; // TODO: Replace with Microsoft.AspNetCore.Routing
 
 namespace SmartStore.Core.Fakes
 {

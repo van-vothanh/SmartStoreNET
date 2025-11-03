@@ -51,7 +51,7 @@ namespace SmartStore.Core.Domain.Customers
         /// </summary>
         [DataMember]
         [Index]
-        [Index("IX_CustomerRole_SystemName_IsSystemRole", 2)]
+        // // [Index("IX_CustomerRole_SystemName_IsSystemRole", 2)]
         public bool IsSystemRole { get; set; }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace SmartStore.Core.Domain.Customers
         /// </summary>
         [DataMember]
         [Index]
-        [Index("IX_CustomerRole_SystemName_IsSystemRole", 1)]
+        // // [Index("IX_CustomerRole_SystemName_IsSystemRole", 1)]
         public string SystemName { get; set; }
 
         /// <summary>

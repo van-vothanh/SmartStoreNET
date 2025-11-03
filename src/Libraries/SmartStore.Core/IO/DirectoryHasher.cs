@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Web.Hosting;
+// using System.Web.Hosting; // TODO: Replace with Microsoft.AspNetCore.Hosting
 using SmartStore.Core.Data;
 using SmartStore.Utilities;
 

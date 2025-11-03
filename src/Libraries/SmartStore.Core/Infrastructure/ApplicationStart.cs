@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Filters;
+// using System.Web.Mvc; // TODO: Replace with ASP.NET Core MVC
+// using System.Web.Mvc.Filters;
 using SmartStore.Core.Logging;
 
 namespace SmartStore.Core.Infrastructure

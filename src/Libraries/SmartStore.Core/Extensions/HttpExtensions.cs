@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Web;
-using System.Web.Caching;
-using System.Web.Mvc;
-using System.Web.Security;
+// using System.Web.Caching;
+// using System.Web.Mvc; // TODO: Replace with ASP.NET Core MVC
+// using System.Web.Security;
 using SmartStore.Core;
 using SmartStore.Core.Fakes;
 using SmartStore.Core.Infrastructure;

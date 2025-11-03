@@ -106,7 +106,7 @@ namespace SmartStore.Core.Domain.Customers
         /// Gets or sets a value indicating whether the customer has been deleted
         /// </summary>
 		[Index]
-        [Index("IX_Customer_Deleted_IsSystemAccount", 1)]
+        // // [Index("IX_Customer_Deleted_IsSystemAccount", 1)]
         public bool Deleted { get; set; }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace SmartStore.Core.Domain.Customers
         /// </summary>
 		[DataMember]
         [Index]
-        [Index("IX_Customer_Deleted_IsSystemAccount", 2)]
+        // // [Index("IX_Customer_Deleted_IsSystemAccount", 2)]
         public bool IsSystemAccount { get; set; }
 
         /// <summary>
