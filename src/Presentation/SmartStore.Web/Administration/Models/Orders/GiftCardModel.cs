@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -26,27 +26,21 @@ namespace SmartStore.Admin.Models.Orders
         public bool IsGiftCardActivated { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.Fields.GiftCardCouponCode")]
-        [AllowHtml]
         public string GiftCardCouponCode { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.Fields.RecipientName")]
-        [AllowHtml]
         public string RecipientName { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.Fields.RecipientEmail")]
-        [AllowHtml]
         public string RecipientEmail { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.Fields.SenderName")]
-        [AllowHtml]
         public string SenderName { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.Fields.SenderEmail")]
-        [AllowHtml]
         public string SenderEmail { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.Fields.Message")]
-        [AllowHtml]
         public string Message { get; set; }
 
         [SmartResourceDisplayName("Admin.GiftCards.Fields.IsRecipientNotified")]

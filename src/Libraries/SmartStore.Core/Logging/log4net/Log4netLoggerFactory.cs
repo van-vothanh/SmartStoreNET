@@ -1,10 +1,11 @@
+#if FALSE // TODO: Replace with Microsoft.Extensions.Logging
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Data;
 using System.IO;
 using System.Linq;
-using System.Web.Hosting;
-using log4net;
+using Microsoft.AspNetCore.Hosting;
+// using log4net; // TODO: Replace with Microsoft.Extensions.Logging
 using log4net.Appender;
 using log4net.Config;
 using log4net.Repository;
@@ -138,3 +139,4 @@ namespace SmartStore.Core.Logging
     //	}
     //}
 }
+#endif

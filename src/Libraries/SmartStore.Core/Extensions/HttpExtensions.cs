@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core equivalents
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,9 +7,9 @@ using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Web;
-using System.Web.Caching;
-using System.Web.Mvc;
-using System.Web.Security;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.Security; // TODO: Replace with Microsoft.AspNetCore.Identity
 using SmartStore.Core;
 using SmartStore.Core.Fakes;
 using SmartStore.Core.Infrastructure;
@@ -368,3 +369,4 @@ namespace SmartStore
         }
     }
 }
+#endif

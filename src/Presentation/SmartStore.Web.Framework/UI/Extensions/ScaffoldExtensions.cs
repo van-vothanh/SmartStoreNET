@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.WebPages;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Localization;

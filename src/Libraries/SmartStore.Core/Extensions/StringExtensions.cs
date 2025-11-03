@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -661,7 +662,6 @@ namespace SmartStore
         /// <summary>Splits a string into two strings</summary>
         /// <returns>true: success, false: failure</returns>
         [DebuggerStepThrough]
-        [SuppressMessage("ReSharper", "StringIndexOfIsCultureSpecific.1")]
         public static bool SplitToPair(this string value, out string leftPart, out string rightPart, string delimiter, bool splitAfterLast = false)
         {
             leftPart = value;
@@ -1218,3 +1218,4 @@ namespace SmartStore
     }
 
 }
+#endif

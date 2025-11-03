@@ -1,9 +1,10 @@
+#if FALSE // TODO: Replace NuGet.Core with NuGet.Protocol or remove
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Versioning;
-using NuGet;
+// using NuGet; // TODO: Replace with NuGet.Protocol or remove
 using SmartStore.Core.IO;
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
@@ -187,3 +188,4 @@ namespace SmartStore.Core.Packaging
         #endregion
     }
 }
+#endif

@@ -1,5 +1,5 @@
 using Autofac;
-using Autofac.Integration.Mvc;
+// using Autofac.Integration.Mvc; // TODO: Replace with Autofac.Extensions.DependencyInjection
 using SmartStore.Admin.Controllers;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;

@@ -1,3 +1,4 @@
+#if FALSE // TODO: Rewrite for ASP.NET Core IHttpContextAccessor
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
-using System.Web.Configuration;
+// using System.Web.Configuration; // TODO: Replace with IConfiguration
 using SmartStore.Collections;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Stores;
@@ -840,3 +841,4 @@ namespace SmartStore.Core
         }
     }
 }
+#endif

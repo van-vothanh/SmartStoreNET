@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to IFileProvider
 ﻿
 namespace SmartStore.Core.Themes
 {
@@ -41,3 +42,4 @@ namespace SmartStore.Core.Themes
 		ThemeManifest CurrentTheme { get; }
     }
 }
+#endif

@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to IFileProvider
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -170,3 +171,4 @@ namespace SmartStore.Core.Themes
         }
     }
 }
+#endif

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Domain.Cms;
 using SmartStore.Core.Plugins;
 using SmartStore.GoogleAnalytics.Services;

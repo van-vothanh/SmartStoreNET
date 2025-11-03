@@ -73,17 +73,14 @@ namespace SmartStore.ComponentModel
             for (int paramIndex = 0; paramIndex < paramsInfo.Length; paramIndex++)
             {
                 var indexExpression = Expression.Constant(paramIndex);
-                var parameterType = paramsInfo[paramIndex].ParameterType;
 
                 var parameterIndexExpression = Expression.ArrayIndex(parametersExpression, indexExpression);
                 var convertExpression = Expression.Convert(parameterIndexExpression, parameterType);
-                argumentsExpression[paramIndex] = convertExpression;
 
                 if (!parameterType.GetTypeInfo().IsValueType)
                     continue;
 
                 var nullConditionExpression = Expression.Equal(parameterIndexExpression, Expression.Constant(null));
-                argumentsExpression[paramIndex] = Expression.Condition(nullConditionExpression, Expression.Default(parameterType), convertExpression);
             }
 
             var newExpression = Expression.New(constructorInfo, argumentsExpression);

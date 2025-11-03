@@ -1,8 +1,9 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -421,4 +422,6 @@ namespace SmartStore.Core.Async
         }
 
     }
-}
+}#endif
+
+#endif

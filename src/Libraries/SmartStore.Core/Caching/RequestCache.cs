@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -132,3 +133,4 @@ namespace SmartStore.Core.Caching
         }
     }
 }
+#endif

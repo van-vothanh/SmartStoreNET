@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using NuGet;
+// using NuGet; // TODO: Replace with NuGet.Protocol or remove
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Data;

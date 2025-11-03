@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate packaging system
 ﻿using System;
 using System.IO;
 using SmartStore.Core.Plugins;
@@ -93,3 +94,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

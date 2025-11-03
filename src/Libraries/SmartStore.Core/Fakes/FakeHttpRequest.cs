@@ -1,8 +1,9 @@
+#if FALSE // TODO: Migrate to ASP.NET Core test helpers
 ﻿using System;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Core.Fakes
 {
@@ -101,4 +102,6 @@ namespace SmartStore.Core.Fakes
             set => _requestContext = value;
         }
     }
-}
+}#endif
+
+#endif

@@ -131,7 +131,6 @@ namespace SmartStore.Core.Localization
 
             if (hasRegion)
             {
-                if (languageName[bracketIndex] == '[') 
                 {
                     endBracket = ']';
                 }

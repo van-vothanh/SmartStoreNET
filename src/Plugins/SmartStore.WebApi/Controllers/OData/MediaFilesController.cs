@@ -6,7 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.OData;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Domain.Media;

@@ -1,7 +1,8 @@
+#if FALSE // TODO: Migrate to ASP.NET Core test helpers
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.SessionState;
+// using System.Web.SessionState; // TODO: Remove or replace
 
 namespace SmartStore.Core.Fakes
 {
@@ -50,4 +51,6 @@ namespace SmartStore.Core.Fakes
             _sessionItems.Remove(name);
         }
     }
-}
+}#endif
+
+#endif

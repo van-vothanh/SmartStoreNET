@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using Autofac.Integration.Mvc;
+// using Autofac.Integration.Mvc; // TODO: Replace with Autofac.Extensions.DependencyInjection
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Infrastructure.DependencyManagement;
 using SmartStore.PayPal.Filters;

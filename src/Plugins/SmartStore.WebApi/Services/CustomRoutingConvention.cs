@@ -124,7 +124,6 @@ namespace SmartStore.WebApi.Services
         {
             if (odataPath.Segments.Count > segmentIndex)
             {
-                var rawKey = (odataPath.Segments[segmentIndex] as KeyValuePathSegment).Value;
                 if (rawKey.HasValue())
                 {
                     if (rawKey.StartsWith("'"))

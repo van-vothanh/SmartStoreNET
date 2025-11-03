@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using System.Web;
-using System.Web.Security;
+// using System.Web.Security; // TODO: Replace with Microsoft.AspNetCore.Identity
 using Newtonsoft.Json;
 using SmartStore.Utilities;
 

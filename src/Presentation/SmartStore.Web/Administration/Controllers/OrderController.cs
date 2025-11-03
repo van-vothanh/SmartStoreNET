@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Admin.Models.Dashboard;
 using SmartStore.Admin.Models.Orders;
 using SmartStore.Core;
@@ -3018,7 +3018,6 @@ namespace SmartStore.Admin.Controllers
             // Within this year
             if (dataPoint.CreatedOn.Year == userTime.Year)
             {
-                var year = reports[reports.Count - 1].Data[dataIndex];
                 year.Quantity++;
                 year.Amount += dataPoint.OrderTotal;
             }
@@ -3029,7 +3028,6 @@ namespace SmartStore.Admin.Controllers
                 // Apply data to all periods (but year)
                 for (int i = 0; i < reports.Count - 1; i++)
                 {
-                    var today = reports[i].Data[dataIndex];
                     today.Amount += dataPoint.OrderTotal;
                     today.Quantity++;
                 }
@@ -3040,7 +3038,6 @@ namespace SmartStore.Admin.Controllers
                 // Apply data to week and month periods
                 for (int i = 1; i < reports.Count - 1; i++)
                 {
-                    var week = reports[i].Data[dataIndex];
                     week.Amount += dataPoint.OrderTotal;
                     week.Quantity++;
                 }
@@ -3048,7 +3045,6 @@ namespace SmartStore.Admin.Controllers
             // Within last 28 days
             else if (dataPoint.CreatedOn >= userTime.AddDays(-27).Date)
             {
-                var month = reports[2].Data[dataIndex];
                 month.Amount += dataPoint.OrderTotal;
                 month.Quantity++;
             }
@@ -3174,14 +3170,12 @@ namespace SmartStore.Admin.Controllers
             // Today
             if (dataPoint.CreatedOn >= userTime.Date)
             {
-                var today = reports[0].DataSets[dataIndex];
                 today.Amount[dataPoint.CreatedOn.Hour] += dataPoint.OrderTotal;
                 today.Quantity[dataPoint.CreatedOn.Hour]++;
             }
             // Yesterday
             else if (dataPoint.CreatedOn >= userTime.AddDays(-1).Date)
             {
-                var yesterday = reports[1].DataSets[dataIndex];
                 yesterday.Amount[dataPoint.CreatedOn.Hour] += dataPoint.OrderTotal;
                 yesterday.Quantity[dataPoint.CreatedOn.Hour]++;
             }
@@ -3189,25 +3183,18 @@ namespace SmartStore.Admin.Controllers
             // Within last 7 days
             if (dataPoint.CreatedOn >= userTime.AddDays(-6).Date)
             {
-                var week = reports[2].DataSets[dataIndex];
                 var weekIndex = (userTime.Date - dataPoint.CreatedOn.Date).Days;
-                week.Amount[week.Amount.Length - weekIndex - 1] += dataPoint.OrderTotal;
-                week.Quantity[week.Quantity.Length - weekIndex - 1]++;
             }
 
             // Within last 28 days
             if (dataPoint.CreatedOn >= userTime.AddDays(-27).Date)
             {
-                var month = reports[3].DataSets[dataIndex];
                 var monthIndex = (userTime.Date - dataPoint.CreatedOn.Date).Days / 7;
-                month.Amount[month.Amount.Length - monthIndex - 1] += dataPoint.OrderTotal;
-                month.Quantity[month.Quantity.Length - monthIndex - 1]++;
             }
 
             // Within this year
             if (dataPoint.CreatedOn.Year == userTime.Year)
             {
-                var year = reports[4].DataSets[dataIndex];
                 year.Amount[dataPoint.CreatedOn.Month - 1] += dataPoint.OrderTotal;
                 year.Quantity[dataPoint.CreatedOn.Month - 1]++;
             }

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Diagnostics;
 using System.IO;
 using System.Reflection;

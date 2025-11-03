@@ -1,7 +1,8 @@
+#if FALSE // TODO: Replace NuGet.Core with NuGet.Protocol or remove
 ﻿using System;
 using System.IO;
 using System.Runtime.Versioning;
-using NuGet;
+// using NuGet; // TODO: Replace with NuGet.Protocol or remove
 
 namespace SmartStore.Core.Packaging
 {
@@ -83,3 +84,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

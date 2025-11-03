@@ -1,6 +1,7 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System;
 using System.Web;
-using Autofac.Integration.Mvc;
+// using Autofac.Integration.Mvc; // TODO: Replace with Autofac.Extensions.DependencyInjection
 
 namespace SmartStore.Core.Infrastructure.DependencyManagement
 {
@@ -74,3 +75,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+#endif

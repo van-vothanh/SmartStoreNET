@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Polls;
 using SmartStore.Core.Domain.Common;
 using SmartStore.Core.Domain.Customers;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.OData;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Common;

@@ -30,7 +30,6 @@ namespace SmartStore.Services.Forums
 
             var bag = new ModelPart
             {
-                ["TopicPageIndex"] = topicPageIndex
             };
 
             return factory.CreateMessage(MessageContext.Create(MessageTemplateNames.NewForumPost, languageId, customer: customer), true, bag, forumPost, forumPost.ForumTopic, forumPost.ForumTopic.Forum);

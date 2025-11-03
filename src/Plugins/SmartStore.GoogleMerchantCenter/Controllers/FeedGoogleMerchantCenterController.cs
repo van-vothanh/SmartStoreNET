@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Common;
 using SmartStore.GoogleMerchantCenter.Models;

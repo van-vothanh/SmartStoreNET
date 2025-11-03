@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core startup
 ﻿using System.Web.Mvc;
 
 namespace SmartStore.Core.Events
@@ -10,3 +11,4 @@ namespace SmartStore.Core.Events
         public GlobalFilterCollection Filters { get; set; }
     }
 }
+#endif

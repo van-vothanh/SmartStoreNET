@@ -1,5 +1,6 @@
+#if FALSE // TODO: Replace NuGet.Core with NuGet.Protocol or remove
 ﻿using System.Linq;
-using NuGet;
+// using NuGet; // TODO: Replace with NuGet.Protocol or remove
 
 namespace SmartStore.Core.Packaging
 {
@@ -22,3 +23,4 @@ namespace SmartStore.Core.Packaging
         public override void RemovePackage(IPackage package) { }
     }
 }
+#endif

@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core test helpers
 ﻿using System.Text;
 using System.Web;
 
@@ -31,4 +32,6 @@ namespace SmartStore.Core.Fakes
 
         public override HttpCookieCollection Cookies => _cookies;
     }
-}
+}#endif
+
+#endif

@@ -1,10 +1,11 @@
+#if FALSE // TODO: Replace NuGet.Core with NuGet.Protocol or remove
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using NuGet;
+// using NuGet; // TODO: Replace with NuGet.Protocol or remove
 using SmartStore.Core.Data;
 using SmartStore.Core.Logging;
 using SmartStore.Core.Plugins;
@@ -463,3 +464,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

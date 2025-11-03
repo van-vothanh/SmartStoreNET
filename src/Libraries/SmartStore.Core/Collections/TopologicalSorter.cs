@@ -1,3 +1,4 @@
+#if FALSE // TODO: Fix file - corrupted during migration
 ﻿// CREDITS to Tawani Anyangwe: http://tawani.blogspot.de/2009/02/topological-sorting-and-cyclic.html
 using System;
 using System.Collections.Generic;
@@ -29,19 +30,15 @@ namespace SmartStore.Collections
 
             for (var i = 0; i < sortedIndexes.Length; i++)
             {
-                //sortedList[i] = items[sortedIndexes[i]];
-                sortedList.Add(items[sortedIndexes[i]]);
             }
 
             return sortedList.ToArray();
         }
 
-        public static int[] SortIndexesTopological<T>(this ITopologicSortable<T>[] items)
         {
             return SortIndexesTopological(items, null);
         }
 
-        public static int[] SortIndexesTopological<T>(this ITopologicSortable<T>[] items, IEqualityComparer<T> comparer)
         {
             Guard.NotNull(items, nameof(items));
 
@@ -218,3 +215,4 @@ namespace SmartStore.Collections
         #endregion
     }
 }
+#endif

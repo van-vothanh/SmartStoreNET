@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Data.Entity.Infrastructure;
-using EfState = System.Data.Entity.EntityState;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace SmartStore.Core.Data.Hooks
 {
@@ -14,7 +14,7 @@ namespace SmartStore.Core.Data.Hooks
         /// <summary>
         /// Gets the hooked entity entry
         /// </summary>
-        DbEntityEntry Entry { get; }
+        EntityEntry Entry { get; }
 
         /// <summary>
         /// Gets the hooked entity instance
@@ -61,42 +61,32 @@ namespace SmartStore.Core.Data.Hooks
     {
         private Type _entityType;
 
-        public HookedEntity(IDbContext context, DbEntityEntry entry)
+        public HookedEntity(IDbContext context, EntityEntry entry)
             : this(context.GetType(), entry)
         {
         }
 
-        internal HookedEntity(Type contextType, DbEntityEntry entry)
+        internal HookedEntity(Type contextType, EntityEntry entry)
         {
             ContextType = contextType;
             Entry = entry;
-            InitialState = (EntityState)entry.State;
+            InitialState = entry.State;
         }
 
-        public Type ContextType
-        {
-            get;
-        }
+        public Type ContextType { get; }
 
-        public DbEntityEntry Entry
-        {
-            get;
-        }
+        public EntityEntry Entry { get; }
 
         public BaseEntity Entity => Entry.Entity as BaseEntity;
 
         public Type EntityType => _entityType ?? (_entityType = this.Entity?.GetUnproxiedType());
 
-        public EntityState InitialState
-        {
-            get;
-            set;
-        }
+        public EntityState InitialState { get; set; }
 
         public EntityState State
         {
-            get => (EntityState)Entry.State;
-            set => Entry.State = (EfState)((int)value);
+            get => Entry.State;
+            set => Entry.State = value;
         }
 
         public bool HasStateChanged => InitialState != State;
@@ -126,7 +116,7 @@ namespace SmartStore.Core.Data.Hooks
                 var entity = Entry.Entity as ISoftDeletable;
                 if (entity != null)
                 {
-                    return Entry.State == EfState.Modified
+                    return Entry.State == EntityState.Modified
                         ? entity.Deleted && IsPropertyModified("Deleted")
                         : entity.Deleted;
                 }

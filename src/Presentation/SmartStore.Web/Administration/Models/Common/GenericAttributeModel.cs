@@ -12,7 +12,6 @@ namespace SmartStore.Admin.Models.Common
         [SmartResourceDisplayName("Admin.Common.GenericAttributes.Fields.Name")]
         public string Key { get; set; }
 
-        [AllowHtml]
         [SmartResourceDisplayName("Admin.Common.GenericAttributes.Fields.Value")]
         public string Value { get; set; }
 

@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 using System.Web;
 
 namespace SmartStore.Core
@@ -127,3 +128,4 @@ namespace SmartStore.Core
 		void RestartAppDomain(bool makeRedirect = false, string redirectUrl = "", bool aggressive = false);
     }
 }
+#endif

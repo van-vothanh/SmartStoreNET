@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using Autofac.Integration.Mvc;
+// using Autofac.Integration.Mvc; // TODO: Replace with Autofac.Extensions.DependencyInjection
 
 namespace SmartStore.Services.Catalog.Modelling
 {

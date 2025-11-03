@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Web.Framework.Localization;
 using SmartStore.Web.Framework.UI;

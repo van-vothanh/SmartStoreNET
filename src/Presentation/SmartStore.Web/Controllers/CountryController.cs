@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 using SmartStore.Core.Caching;
 using SmartStore.Services.Directory;

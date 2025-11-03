@@ -1,7 +1,8 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Caching;
+// using System.Runtime.Caching; // TODO: Replace with Microsoft.Extensions.Caching.Memory
 using System.Threading;
 
 namespace SmartStore.Core.Async
@@ -197,3 +198,4 @@ namespace SmartStore.Core.Async
         }
     }
 }
+#endif

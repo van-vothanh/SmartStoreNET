@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate theme system
 ﻿using System;
 using System.Collections.Generic;
 
@@ -132,3 +133,4 @@ namespace SmartStore.Core.Themes
         Modified
     }
 }
+#endif

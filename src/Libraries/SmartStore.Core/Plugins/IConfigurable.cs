@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System.Web.Routing;
 
 namespace SmartStore.Core.Plugins
@@ -16,3 +17,4 @@ namespace SmartStore.Core.Plugins
         void GetConfigurationRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues);
     }
 }
+#endif

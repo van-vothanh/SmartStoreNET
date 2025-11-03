@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate theme system
 ﻿using System.IO;
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
@@ -10,3 +11,4 @@ namespace SmartStore.Core.Packaging
         Stream BuildPackage(ThemeManifest themeManifest);
     }
 }
+#endif

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Security.Principal;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
-using System.Web.Mvc;
-using System.Web.SessionState;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.SessionState; // TODO: Remove or replace
 using Autofac;
 using SmartStore.Core;
 using SmartStore.Core.Async;

@@ -20,8 +20,6 @@ namespace SmartStore.Core.Html
         /// <summary>
         /// Shortens any absolute URL to a specified maximum length
         /// </summary>
-        [SuppressMessage("ReSharper", "StringIndexOfIsCultureSpecific.1")]
-        [SuppressMessage("ReSharper", "StringLastIndexOfIsCultureSpecific.1")]
         private static string ShortenUrl(string url, int max)
         {
             if (url.Length <= max)

@@ -470,7 +470,6 @@ namespace SmartStore.Web.Framework.Modelling
 
             MovePastSpaceCharacters(rangeHeader, ref startIndex);
 
-            if (startIndex < rangeHeader.Length && rangeHeader[startIndex] == '-')
             {
                 // this range is of the form "-mmm"
                 startIndex++;
@@ -504,7 +503,6 @@ namespace SmartStore.Web.Framework.Modelling
                 }
 
                 // increment startIndex past '-'
-                if (startIndex < rangeHeader.Length && rangeHeader[startIndex] == '-')
                 {
                     startIndex++;
                 }
@@ -552,7 +550,6 @@ namespace SmartStore.Web.Framework.Modelling
 
             if (startIndex < s.Length)
             {
-                if (s[startIndex] != ',')
                 {
                     return false;
                 }
@@ -575,7 +572,6 @@ namespace SmartStore.Web.Framework.Modelling
 
         private static void MovePastSpaceCharacters(string s, ref int startIndex)
         {
-            while (startIndex < s.Length && s[startIndex] == ' ')
             {
                 startIndex++;
             }
@@ -583,7 +579,6 @@ namespace SmartStore.Web.Framework.Modelling
 
         private static void MovePastDigits(string s, ref int startIndex)
         {
-            while (startIndex < s.Length && s[startIndex] <= '9' && s[startIndex] >= '0')
             {
                 startIndex++;
             }

@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core test helpers
 ﻿using System;
 using System.Web;
 
@@ -20,3 +21,4 @@ namespace SmartStore.Core.Fakes
 
     }
 }
+#endif

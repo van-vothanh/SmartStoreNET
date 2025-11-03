@@ -1,5 +1,6 @@
+#if FALSE // TODO: Migrate to ASP.NET Core equivalents
 ﻿using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 
 // use base SmartStore Namespace to ensure the extension methods are always available
 namespace SmartStore
@@ -55,3 +56,4 @@ namespace SmartStore
 
     }
 }
+#endif

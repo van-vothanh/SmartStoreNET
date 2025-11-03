@@ -1,6 +1,7 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using Newtonsoft.Json;
 
 namespace SmartStore
@@ -127,3 +128,4 @@ namespace SmartStore
 
     #endregion
 }
+#endif

@@ -19,7 +19,6 @@ namespace SmartStore.Services.DataExchange.Import
         private CultureInfo _culture;
         private ColumnMap _columnMap;
 
-        private readonly IDictionary<string, string[]> _columnIndexes = new Dictionary<string, string[]>(StringComparer.OrdinalIgnoreCase);
 
         public ImportDataSegmenter(IDataTable table, ColumnMap map)
         {

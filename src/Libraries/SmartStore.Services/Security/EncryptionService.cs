@@ -2,7 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web.Security;
+// using System.Web.Security; // TODO: Replace with Microsoft.AspNetCore.Identity
 using SmartStore.Core.Domain.Security;
 
 namespace SmartStore.Services.Security

@@ -1,11 +1,12 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Autofac;
-using Autofac.Integration.Mvc;
+// using Autofac.Integration.Mvc; // TODO: Replace with Autofac.Extensions.DependencyInjection
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure.DependencyManagement;
 using SmartStore.Core.Logging;
@@ -167,3 +168,4 @@ namespace SmartStore.Core.Infrastructure
         public ContainerManager ContainerManager => _containerManager;
     }
 }
+#endif

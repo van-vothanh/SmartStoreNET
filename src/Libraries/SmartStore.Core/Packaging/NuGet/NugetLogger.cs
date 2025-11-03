@@ -1,5 +1,6 @@
+#if FALSE // TODO: Replace NuGet.Core with NuGet.Protocol or remove
 ﻿using System;
-using NuGet;
+// using NuGet; // TODO: Replace with NuGet.Protocol or remove
 using SmartStore.Core.Logging;
 using Log = SmartStore.Core.Logging;
 
@@ -39,3 +40,4 @@ namespace SmartStore.Core.Packaging
         }
     }
 }
+#endif

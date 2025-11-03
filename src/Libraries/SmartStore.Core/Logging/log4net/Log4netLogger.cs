@@ -1,3 +1,4 @@
+#if FALSE // TODO: Replace with Microsoft.Extensions.Logging
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -154,3 +155,4 @@ namespace SmartStore.Core.Logging
         }
     }
 }
+#endif

@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to IFileProvider
 ﻿using System;
 using System.Globalization;
 using System.IO;
@@ -93,3 +94,4 @@ namespace SmartStore.Core.IO
         }
     }
 }
+#endif

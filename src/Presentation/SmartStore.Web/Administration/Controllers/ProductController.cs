@@ -4,9 +4,9 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Autofac;
-using NuGet;
+// using NuGet; // TODO: Replace with NuGet.Protocol or remove
 using SmartStore.Admin.Models.Catalog;
 using SmartStore.Collections;
 using SmartStore.ComponentModel;

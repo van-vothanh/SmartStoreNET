@@ -1,8 +1,9 @@
+#if FALSE // TODO: Replace NuGet.Core with NuGet.Protocol or remove
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Web.Hosting;
-using NuGet;
+using Microsoft.AspNetCore.Hosting;
+// using NuGet; // TODO: Replace with NuGet.Protocol or remove
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Themes;
 
@@ -145,3 +146,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.Common;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Data.SqlClient;
 using System.IO;
 using System.Threading.Tasks;

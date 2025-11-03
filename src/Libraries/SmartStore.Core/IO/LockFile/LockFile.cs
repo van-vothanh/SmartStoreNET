@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to IFileProvider
 ﻿using System.IO;
 using System.Threading;
 using SmartStore.Utilities.Threading;
@@ -51,3 +52,4 @@ namespace SmartStore.Core.IO
         }
     }
 }
+#endif

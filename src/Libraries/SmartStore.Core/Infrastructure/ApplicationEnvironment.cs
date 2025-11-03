@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to IFileProvider
 ﻿using System;
 using SmartStore.Core.Data;
 using SmartStore.Core.IO;
@@ -34,3 +35,4 @@ namespace SmartStore.Core
         public virtual IVirtualFolder TenantFolder { get; private set; }
     }
 }
+#endif

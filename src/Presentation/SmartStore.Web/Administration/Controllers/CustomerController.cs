@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SmartStore.Admin.Models.Common;
 using SmartStore.Admin.Models.Customers;
@@ -1381,7 +1381,6 @@ namespace SmartStore.Admin.Controllers
             {
                 var week = reports[2].DataSets[0];
                 var weekIndex = (userTime.Date - dataPoint.Date).Days;
-                week.Quantity[week.Quantity.Length - weekIndex - 1]++;
             }
 
             // Within last 28 days  
@@ -1389,7 +1388,6 @@ namespace SmartStore.Admin.Controllers
             {
                 var month = reports[3].DataSets[0];
                 var monthIndex = (userTime.Date - dataPoint.Date).Days / 7;
-                month.Quantity[month.Quantity.Length - monthIndex - 1]++;
             }
 
             // Within this year

@@ -1,7 +1,8 @@
+#if FALSE // TODO: Migrate to ASP.NET Core
 ﻿using System.Security;
 using System.Security.Claims;
 using System.Security.Principal;
-using System.Web.Security;
+// using System.Web.Security; // TODO: Replace with Microsoft.AspNetCore.Identity
 using SmartStore.Core.Domain.Customers;
 
 namespace SmartStore.Core
@@ -36,3 +37,4 @@ namespace SmartStore.Core
         public IIdentity Identity { get; private set; }
     }
 }
+#endif

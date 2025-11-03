@@ -105,35 +105,28 @@ namespace SmartStore.Core.Domain.Customers
         /// <summary>
         /// Gets or sets a value indicating whether the customer has been deleted
         /// </summary>
-		[Index]
-        [Index("IX_Customer_Deleted_IsSystemAccount", 1)]
         public bool Deleted { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the customer account is system
         /// </summary>
 		[DataMember]
-        [Index]
-        [Index("IX_Customer_Deleted_IsSystemAccount", 2)]
         public bool IsSystemAccount { get; set; }
 
         /// <summary>
         /// Gets or sets the customer system name
         /// </summary>
 		[DataMember]
-        [Index]
         public string SystemName { get; set; }
 
         /// <summary>
         /// Gets or sets the last IP address
         /// </summary>
-		[DataMember, Index("IX_Customer_LastIpAddress")]
         public string LastIpAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time of entity creation
         /// </summary>
-		[DataMember, Index("IX_Customer_CreatedOn")]
         public DateTime CreatedOnUtc { get; set; }
 
         /// <summary>
@@ -145,7 +138,6 @@ namespace SmartStore.Core.Domain.Customers
         /// <summary>
         /// Gets or sets the date and time of last activity
         /// </summary>
-		[DataMember, Index("IX_Customer_LastActivity")]
         public DateTime LastActivityDateUtc { get; set; }
 
         /// <summary>
@@ -162,16 +154,12 @@ namespace SmartStore.Core.Domain.Customers
         [DataMember]
         public string LastName { get; set; }
 
-        [DataMember, Index("IX_Customer_FullName")]
         public string FullName { get; set; }
 
-        [DataMember, Index("IX_Customer_Company")]
         public string Company { get; set; }
 
-        [DataMember, Index("IX_Customer_CustomerNumber")]
         public string CustomerNumber { get; set; }
 
-        [DataMember, Index("IX_Customer_BirthDate")]
         public DateTime? BirthDate { get; set; }
 
         [DataMember]

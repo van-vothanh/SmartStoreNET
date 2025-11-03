@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Common;
-using System.Data.Entity.Core.Objects;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Text;
 using SmartStore.Core;

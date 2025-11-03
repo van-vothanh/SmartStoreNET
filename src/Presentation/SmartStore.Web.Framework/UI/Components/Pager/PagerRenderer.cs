@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Web.Routing;
-using System.Web.UI;
+using Microsoft.AspNetCore.Routing;
+// using System.Web.UI; // TODO: Remove or replace
 
 namespace SmartStore.Web.Framework.UI
 {

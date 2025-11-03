@@ -1,3 +1,4 @@
+#if FALSE // TODO: Replace with Microsoft.Extensions.Logging
 ﻿using System.Collections.Generic;
 using log4net.Appender;
 using log4net.Util;
@@ -99,3 +100,4 @@ namespace SmartStore.Core.Logging
         }
     }
 }
+#endif

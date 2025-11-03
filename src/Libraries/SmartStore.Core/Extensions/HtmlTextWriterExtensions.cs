@@ -1,6 +1,7 @@
+#if FALSE // TODO: Migrate to ASP.NET Core equivalents
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.UI;
+// using System.Web.UI; // TODO: Remove or replace
 
 namespace SmartStore
 {
@@ -19,3 +20,4 @@ namespace SmartStore
         }
     }
 }
+#endif

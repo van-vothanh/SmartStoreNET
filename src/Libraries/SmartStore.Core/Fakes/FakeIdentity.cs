@@ -1,3 +1,4 @@
+#if FALSE // TODO: Migrate to ASP.NET Core test helpers
 ﻿using System;
 using System.Security.Principal;
 
@@ -19,4 +20,6 @@ namespace SmartStore.Core.Fakes
         public string Name => _name;
 
     }
-}
+}#endif
+
+#endif

@@ -1,5 +1,5 @@
 ﻿using System.Net;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Seo;
 using SmartStore.Services.Seo;
 using SmartStore.Web.Framework.WebApi.OData;
