@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - NuGet.Core is obsolete
 ﻿using System.IO;
 
 namespace SmartStore.Core.Packaging
@@ -9,3 +10,4 @@ namespace SmartStore.Core.Packaging
         void Uninstall(string packageId, string applicationFolder);
     }
 }
+#endif

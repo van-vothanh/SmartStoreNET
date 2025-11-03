@@ -1,5 +1,6 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Domain.Stores;
 
@@ -82,3 +83,4 @@ namespace SmartStore.Core.Domain.Messages
         public int? Attachment3FileId { get; set; }
     }
 }
+#endif

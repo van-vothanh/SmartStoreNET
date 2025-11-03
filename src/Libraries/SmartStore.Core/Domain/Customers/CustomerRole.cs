@@ -43,23 +43,23 @@ namespace SmartStore.Core.Domain.Customers
         /// Gets or sets a value indicating whether the customer role is active
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool Active { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the customer role is system
         /// </summary>
         [DataMember]
-        [Index]
-        [Index("IX_CustomerRole_SystemName_IsSystemRole", 2)]
+        // [Index] removed for .NET 8 - use Fluent API
+        // [Index] removed for .NET 8 - use Fluent API
         public bool IsSystemRole { get; set; }
 
         /// <summary>
         /// Gets or sets the customer role system name
         /// </summary>
         [DataMember]
-        [Index]
-        [Index("IX_CustomerRole_SystemName_IsSystemRole", 1)]
+        // [Index] removed for .NET 8 - use Fluent API
+        // [Index] removed for .NET 8 - use Fluent API
         public string SystemName { get; set; }
 
         /// <summary>

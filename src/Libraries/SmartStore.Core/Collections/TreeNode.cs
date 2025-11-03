@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - depends on TreeNodeBase
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -255,3 +256,4 @@ namespace SmartStore.Collections
         }
     }
 }
+#endif

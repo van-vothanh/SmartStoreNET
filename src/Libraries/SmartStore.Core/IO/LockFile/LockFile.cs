@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses IVirtualFolder/IVirtualPathProvider
 ﻿using System.IO;
 using System.Threading;
 using SmartStore.Utilities.Threading;
@@ -51,3 +52,4 @@ namespace SmartStore.Core.IO
         }
     }
 }
+#endif

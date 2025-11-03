@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - NuGet.Core is obsolete
 ﻿namespace SmartStore.Core.Packaging
 {
     public class PackageInfo
@@ -10,3 +11,4 @@
         public ExtensionDescriptor ExtensionDescriptor { get; set; }
     }
 }
+#endif

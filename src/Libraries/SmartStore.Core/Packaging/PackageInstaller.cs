@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - NuGet.Core is obsolete
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
@@ -294,3 +295,4 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+#endif

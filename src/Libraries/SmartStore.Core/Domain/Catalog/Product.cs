@@ -90,7 +90,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets the visibility level of the product.
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public ProductVisibility Visibility { get; set; }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets the manufacturer part number
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public string ManufacturerPartNumber
         {
             [DebuggerStepThrough]
@@ -228,7 +228,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets the Global Trade Item Number (GTIN). These identifiers include UPC (in North America), EAN (in Europe), JAN (in Japan), and ISBN (for books).
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public string Gtin
         {
             [DebuggerStepThrough]
@@ -669,30 +669,30 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets a value indicating whether the entity is published
         /// </summary>
 		[DataMember]
-        [Index("IX_Product_Published_Deleted_IsSystemProduct", 1)]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool Published { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity has been deleted
         /// </summary>
-		[Index]
-        [Index("IX_Product_Published_Deleted_IsSystemProduct", 2)]
+        // [Index] removed for .NET 8 - use Fluent API
+        // [Index] removed for .NET 8 - use Fluent API
         public bool Deleted { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is a system product.
         /// </summary>
         [DataMember]
-        [Index]
-        [Index("IX_Product_SystemName_IsSystemProduct", 2)]
-        [Index("IX_Product_Published_Deleted_IsSystemProduct", 3)]
+        // [Index] removed for .NET 8 - use Fluent API
+        // [Index] removed for .NET 8 - use Fluent API
+        // [Index] removed for .NET 8 - use Fluent API
         public bool IsSystemProduct { get; set; }
 
         /// <summary>
         /// Gets or sets the product system name.
         /// </summary>
         [DataMember]
-        [Index("IX_Product_SystemName_IsSystemProduct", 1)]
+        // [Index] removed for .NET 8 - use Fluent API
         public string SystemName { get; set; }
 
         /// <summary>

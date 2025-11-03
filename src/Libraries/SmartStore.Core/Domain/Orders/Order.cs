@@ -440,7 +440,7 @@ namespace SmartStore.Core.Domain.Orders
         /// <summary>
         /// Gets or sets a value indicating whether the entity has been deleted
         /// </summary>
-		[Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool Deleted { get; set; }
 
         /// <summary>

@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - VirtualPathProvider is obsolete, use IFileProvider
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -61,3 +62,4 @@ namespace SmartStore.Core.IO
         }
     }
 }
+#endif

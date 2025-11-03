@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System;
 using System.Web;
 using Autofac;
@@ -97,3 +98,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+#endif

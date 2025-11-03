@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -531,3 +532,4 @@ namespace SmartStore.Core.Themes
     }
 
 }
+#endif

@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+#if false // Disabled for .NET 8 migration
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Core.Events
 {
@@ -10,3 +11,4 @@ namespace SmartStore.Core.Events
         public GlobalFilterCollection Filters { get; set; }
     }
 }
+#endif

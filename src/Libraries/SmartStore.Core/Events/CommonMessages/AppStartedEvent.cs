@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System.Web;
 
 namespace SmartStore.Core.Events
@@ -7,3 +8,4 @@ namespace SmartStore.Core.Events
         public HttpContextBase HttpContext { get; set; }
     }
 }
+#endif

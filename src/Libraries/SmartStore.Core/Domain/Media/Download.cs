@@ -15,7 +15,7 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets a GUID
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public Guid DownloadGuid { get; set; }
 
         /// <summary>
@@ -34,14 +34,14 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets a value indicating whether the entity transient/preliminary
         /// </summary>
         [DataMember]
-        [Index("IX_UpdatedOn_IsTransient", 1)]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool IsTransient { get; set; }
 
         /// <summary>
         /// Gets or sets the date and time of instance update
         /// </summary>
         [DataMember]
-        [Index("IX_UpdatedOn_IsTransient", 0)]
+        // [Index] removed for .NET 8 - use Fluent API
         public DateTime UpdatedOnUtc { get; set; }
 
         /// <summary>
@@ -60,14 +60,14 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets a value indicating the corresponding entity id
         /// </summary>
         [DataMember]
-        [Index("IX_EntityId_EntityName", 0)]
+        // [Index] removed for .NET 8 - use Fluent API
         public int EntityId { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating the corresponding entity name
         /// </summary>
         [DataMember]
-        [Index("IX_EntityId_EntityName", 1)]
+        // [Index] removed for .NET 8 - use Fluent API
         [StringLength(100)]
         public string EntityName { get; set; }
 

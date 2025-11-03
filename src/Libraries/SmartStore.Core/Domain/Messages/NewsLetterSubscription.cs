@@ -20,14 +20,14 @@ namespace SmartStore.Core.Domain.Messages
         /// Gets or sets the subcriber email
         /// </summary>
         [DataMember]
-        [Index("IX_NewsletterSubscription_Email_StoreId", 1)]
+        // [Index] removed for .NET 8 - use Fluent API
         public string Email { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether subscription is active
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool Active { get; set; }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace SmartStore.Core.Domain.Messages
         /// Gets or sets the store identifier
         /// </summary>
         [DataMember]
-        [Index("IX_NewsletterSubscription_Email_StoreId", 2)]
+        // [Index] removed for .NET 8 - use Fluent API
         public int StoreId { get; set; }
 
         /// <summary>

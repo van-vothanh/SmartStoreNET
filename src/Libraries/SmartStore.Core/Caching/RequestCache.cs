@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses HttpRequestBase/HttpContextBase
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -132,3 +133,4 @@ namespace SmartStore.Core.Caching
         }
     }
 }
+#endif

@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses HttpRequestBase/HttpContextBase
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -343,4 +344,4 @@ namespace SmartStore.Utilities
             return str;
         }
     }
-}
+#endif

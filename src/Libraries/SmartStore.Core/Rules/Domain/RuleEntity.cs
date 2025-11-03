@@ -17,7 +17,7 @@ namespace SmartStore.Rules.Domain
 
         [DataMember]
         [Required, StringLength(100)]
-        [Index("IX_PageBuilder_RuleType")]
+        // [Index("IX_PageBuilder_RuleType")] // Removed for .NET 8 - use Fluent API
         public string RuleType { get; set; }
 
         //[DataMember]
@@ -33,7 +33,7 @@ namespace SmartStore.Rules.Domain
         public string Value { get; set; }
 
         [DataMember]
-        [Index("IX_PageBuilder_DisplayOrder")]
+        // [Index("IX_PageBuilder_DisplayOrder")] // Removed for .NET 8 - use Fluent API
         public int DisplayOrder { get; set; }
 
         [NotMapped]

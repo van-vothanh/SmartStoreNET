@@ -37,14 +37,14 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets whether the attribute can be filtered
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool AllowFiltering { get; set; }
 
         /// <summary>
         /// Gets or sets the display order
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public int DisplayOrder { get; set; }
 
         /// <summary>

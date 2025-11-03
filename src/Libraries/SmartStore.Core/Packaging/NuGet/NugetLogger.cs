@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - NuGet.Core is obsolete
 ﻿using System;
 using NuGet;
 using SmartStore.Core.Logging;
@@ -39,3 +40,4 @@ namespace SmartStore.Core.Packaging
         }
     }
 }
+#endif

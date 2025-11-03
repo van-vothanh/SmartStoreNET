@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses HostingEnvironment
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -5,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Utilities;
 
 namespace SmartStore.Core.IO
@@ -723,4 +724,4 @@ namespace SmartStore.Core.IO
         }
 
     }
-}
+#endif

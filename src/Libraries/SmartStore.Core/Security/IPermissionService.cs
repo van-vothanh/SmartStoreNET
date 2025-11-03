@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses TreeNode
 ﻿using System.Collections.Generic;
 using SmartStore.Collections;
 using SmartStore.Core.Domain.Customers;
@@ -175,3 +176,4 @@ namespace SmartStore.Core.Security
         string GetUnauthorizedMessage(string permissionSystemName);
     }
 }
+#endif

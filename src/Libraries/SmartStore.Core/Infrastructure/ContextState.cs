@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
@@ -87,3 +88,4 @@ namespace SmartStore.Core.Infrastructure
         }
     }
 }
+#endif

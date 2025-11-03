@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - Autofac.Integration is obsolete
 ﻿using System;
 using Autofac;
 using Autofac.Integration.Mvc;
@@ -30,3 +31,4 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+#endif

@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
+using System.Web; // TODO: Replace with System.Net.WebUtility for HTML encoding
 using AngleSharp;
 using AngleSharp.Dom;
-using AngleSharp.Extensions;
-using AngleSharp.Parser.Html;
-using Ganss.XSS;
+using AngleSharp.Html.Parser;
+using Ganss.Xss;
 using SmartStore.Utilities.ObjectPools;
 
 namespace SmartStore.Core.Html

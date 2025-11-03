@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses IVirtualFolder/IVirtualPathProvider
 ﻿using SmartStore.Core.IO;
 
 namespace SmartStore.Core
@@ -14,3 +15,4 @@ namespace SmartStore.Core
         IVirtualFolder TenantFolder { get; }
     }
 }
+#endif

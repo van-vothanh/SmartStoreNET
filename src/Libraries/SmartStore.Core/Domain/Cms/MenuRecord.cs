@@ -29,13 +29,13 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets the system name. It identifies the menu.
         /// </summary>
-        [Required, StringLength(400), Index("IX_Menu_SystemName_IsSystemMenu", Order = 0)]
+        [Required, StringLength(400)] // [Index("IX_Menu_SystemName_IsSystemMenu", Order = 0)] removed for .NET 8
         public string SystemName { get; set; }
 
         /// <summary>
         /// Gets or sets the value indicating whether this menu is deleteable by a user.
         /// </summary>
-        [Index("IX_Menu_SystemName_IsSystemMenu", Order = 1)]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool IsSystemMenu { get; set; }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets a value indicating whether the menu is published.
         /// </summary>
-        [Index("IX_Menu_Published")]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool Published { get; set; } = true;
 
         /// <summary>
@@ -70,13 +70,13 @@ namespace SmartStore.Core.Domain.Cms
         /// <summary>
         /// Gets or sets a value indicating whether the entity is limited/restricted to certain stores.
         /// </summary>
-        [Index("IX_Menu_LimitedToStores")]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool LimitedToStores { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is subject to ACL.
         /// </summary>
-        [Index("IX_Menu_SubjectToAcl")]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool SubjectToAcl { get; set; }
 
         /// <summary>

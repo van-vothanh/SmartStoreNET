@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿namespace SmartStore.Core.Data
 {
     public abstract class DataProviderFactory
@@ -17,3 +18,4 @@
         public abstract IDataProvider LoadDataProvider();
     }
 }
+#endif

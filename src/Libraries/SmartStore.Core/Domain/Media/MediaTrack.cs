@@ -26,7 +26,7 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the media file identifier.
         /// </summary>
         [DataMember]
-        [Index("IX_MediaTrack_Composite", IsUnique = true, Order = 0)]
+        // [Index] removed for .NET 8 - use Fluent API
         public int MediaFileId
         {
             get => _mediaFileId;
@@ -52,7 +52,7 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the related entity identifier.
         /// </summary>
         [DataMember]
-        [Index("IX_MediaTrack_Composite", IsUnique = true, Order = 1)]
+        // [Index] removed for .NET 8 - use Fluent API
         public int EntityId
         {
             get => _entityId;
@@ -67,7 +67,7 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the related entity set name.
         /// </summary>
         [DataMember]
-        [Index("IX_MediaTrack_Composite", IsUnique = true, Order = 2)]
+        // [Index] removed for .NET 8 - use Fluent API
         public string EntityName
         {
             get => _entityName;
@@ -82,7 +82,7 @@ namespace SmartStore.Core.Domain.Media
         /// Gets or sets the media file property name in the tracked entity.
         /// </summary>
         [DataMember]
-        [Index("IX_MediaTrack_Composite", IsUnique = true, Order = 3)]
+        // [Index] removed for .NET 8 - use Fluent API
         public string Property
         {
             get => _property;

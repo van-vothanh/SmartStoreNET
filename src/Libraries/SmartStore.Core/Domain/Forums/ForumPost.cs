@@ -35,7 +35,7 @@ namespace SmartStore.Core.Domain.Forums
         /// <summary>
         /// Gets or sets the date and time of instance creation
         /// </summary>
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public DateTime CreatedOnUtc { get; set; }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace SmartStore.Core.Domain.Forums
         /// <summary>
         /// Gets or sets a value indicating whether the entity is published
         /// </summary>
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool Published { get; set; }
 
         /// <summary>

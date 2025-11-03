@@ -1,5 +1,6 @@
+#if false // Disabled for .NET 8 - uses HostingEnvironment
 ﻿using System.Collections.Generic;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;
 
@@ -45,3 +46,4 @@ namespace SmartStore.Core
         }
     }
 }
+#endif

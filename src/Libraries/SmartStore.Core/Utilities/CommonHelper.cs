@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses HostingEnvironment
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
-using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SmartStore.ComponentModel;
 
@@ -445,3 +446,4 @@ namespace SmartStore.Utilities
         }
     }
 }
+#endif

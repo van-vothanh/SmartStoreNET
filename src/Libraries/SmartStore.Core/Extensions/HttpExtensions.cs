@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses System.Web types extensively
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,11 +7,11 @@ using System.Linq;
 using System.Net;
 using System.Runtime.CompilerServices;
 using System.Web;
-using System.Web.Caching;
-using System.Web.Mvc;
-using System.Web.Security;
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Identity;
 using SmartStore.Core;
-using SmartStore.Core.Fakes;
+// using SmartStore.Core.Fakes; // Removed - Fakes directory deleted
 using SmartStore.Core.Infrastructure;
 
 namespace SmartStore
@@ -368,3 +369,4 @@ namespace SmartStore
         }
     }
 }
+#endif

@@ -29,18 +29,18 @@ namespace SmartStore.Rules.Domain
         [StringLength(400)]
         public string Description { get; set; }
 
-        [Index("IX_RuleSetEntity_Scope", Order = 0)]
+        // [Index("IX_RuleSetEntity_Scope", Order = 0)] // Removed for .NET 8 - use Fluent API
         public bool IsActive { get; set; } = true;
 
         [Required]
-        [Index("IX_RuleSetEntity_Scope", Order = 1)]
+        // [Index("IX_RuleSetEntity_Scope", Order = 1)] // Removed for .NET 8 - use Fluent API
         public RuleScope Scope { get; set; }
 
 
         /// <summary>
         /// True when this set is an internal composite container for rules within another ruleset.
         /// </summary>
-        [Index]
+        // [Index] // Removed for .NET 8 - use Fluent API
         public bool IsSubGroup { get; set; }
 
         public LogicalRuleOperator LogicalOperator { get; set; }

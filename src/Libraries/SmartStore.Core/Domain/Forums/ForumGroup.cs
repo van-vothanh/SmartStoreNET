@@ -28,7 +28,7 @@ namespace SmartStore.Core.Domain.Forums
         /// <summary>
         /// Gets or sets the display order
         /// </summary>
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public int DisplayOrder { get; set; }
 
         /// <summary>
@@ -44,13 +44,13 @@ namespace SmartStore.Core.Domain.Forums
         /// <summary>
         /// Gets or sets a value indicating whether the entity is limited/restricted to certain stores
         /// </summary>
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool LimitedToStores { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether the entity is subject to ACL
         /// </summary>
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool SubjectToAcl { get; set; }
 
         /// <summary>

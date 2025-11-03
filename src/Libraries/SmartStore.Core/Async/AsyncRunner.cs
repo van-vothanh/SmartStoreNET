@@ -2,7 +2,6 @@
 using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web.Hosting;
 using Autofac;
 using SmartStore.Core.Infrastructure;
 
@@ -344,14 +343,14 @@ namespace SmartStore.Core.Async
         }
     }
 
-    internal class BackgroundWorkHost : IRegisteredObject
+    internal class BackgroundWorkHost : IDisposable
     {
         private readonly CancellationTokenSource _shutdownCancellationTokenSource = new CancellationTokenSource();
         private int _numRunningWorkItems;
 
         public BackgroundWorkHost()
         {
-            HostingEnvironment.RegisterObject(this);
+            // No longer using HostingEnvironment.RegisterObject in .NET Core
         }
 
         public CancellationTokenSource ShutdownCancellationTokenSource => _shutdownCancellationTokenSource;
@@ -417,7 +416,13 @@ namespace SmartStore.Core.Async
 
         private void FinalShutdown()
         {
-            HostingEnvironment.UnregisterObject(this);
+            // No longer using HostingEnvironment.UnregisterObject in .NET Core
+            _shutdownCancellationTokenSource.Dispose();
+        }
+
+        public void Dispose()
+        {
+            _shutdownCancellationTokenSource?.Dispose();
         }
 
     }

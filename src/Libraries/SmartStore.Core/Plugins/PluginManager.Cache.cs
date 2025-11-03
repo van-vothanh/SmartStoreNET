@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 - uses commented-out types
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -297,3 +298,4 @@ namespace SmartStore.Core.Plugins
         }
     }
 }
+#endif

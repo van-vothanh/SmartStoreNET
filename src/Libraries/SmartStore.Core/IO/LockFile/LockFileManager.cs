@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System;
 using System.Globalization;
 using System.IO;
@@ -93,3 +94,4 @@ namespace SmartStore.Core.IO
         }
     }
 }
+#endif

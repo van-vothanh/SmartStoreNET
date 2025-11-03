@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -354,3 +355,4 @@ namespace SmartStore.Core.Data
         #endregion
     }
 }
+#endif

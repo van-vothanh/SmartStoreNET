@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -698,3 +699,4 @@ namespace SmartStore.Collections
         protected abstract T CreateInstance();
     }
 }
+#endif

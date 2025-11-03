@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
@@ -19,3 +20,4 @@ namespace SmartStore
         }
     }
 }
+#endif

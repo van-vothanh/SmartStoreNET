@@ -20,11 +20,11 @@ namespace SmartStore.Core.Domain.Catalog
         public string Sku { get; set; }
 
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public string Gtin { get; set; }
 
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public string ManufacturerPartNumber { get; set; }
 
         [DataMember]
@@ -61,7 +61,7 @@ namespace SmartStore.Core.Domain.Catalog
         public virtual QuantityUnit QuantityUnit { get; set; }
 
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool IsActive { get; set; }
         //public bool IsDefaultCombination { get; set; }
 

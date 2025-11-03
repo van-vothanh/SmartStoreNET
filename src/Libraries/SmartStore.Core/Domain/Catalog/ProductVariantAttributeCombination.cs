@@ -24,14 +24,14 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets the stock quantity
         /// </summary>
 		[DataMember]
-        [Index("IX_StockQuantity_AllowOutOfStockOrders", 1)]
+        // [Index] removed for .NET 8 - use Fluent API
         public int StockQuantity { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether to allow orders when out of stock
         /// </summary>
 		[DataMember]
-        [Index("IX_StockQuantity_AllowOutOfStockOrders", 2)]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool AllowOutOfStockOrders { get; set; }
 
         /// <summary>

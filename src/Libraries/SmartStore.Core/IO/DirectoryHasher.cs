@@ -1,8 +1,9 @@
+#if false // Disabled for .NET 8 - uses HostingEnvironment
 ﻿using System;
 using System.Globalization;
 using System.IO;
 using System.Text;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Data;
 using SmartStore.Utilities;
 
@@ -152,3 +153,4 @@ namespace SmartStore.Core.IO
         }
     }
 }
+#endif

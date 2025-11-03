@@ -1,3 +1,4 @@
+#if false // Disabled for .NET 8 migration
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -154,3 +155,4 @@ namespace SmartStore.Core.Logging
         }
     }
 }
+#endif

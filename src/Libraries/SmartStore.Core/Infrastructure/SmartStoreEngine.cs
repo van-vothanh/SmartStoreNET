@@ -1,9 +1,10 @@
+#if false // Disabled for .NET 8 - Autofac.Integration is obsolete
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 using SmartStore.Core.Data;
@@ -167,3 +168,4 @@ namespace SmartStore.Core.Infrastructure
         public ContainerManager ContainerManager => _containerManager;
     }
 }
+#endif

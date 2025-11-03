@@ -15,7 +15,7 @@ namespace SmartStore.Core.Domain.Logging
         /// <summary>
         /// Gets or sets the log level identifier
         /// </summary>
-        [Index("IX_Log_Level", IsUnique = false)]
+        // [Index] removed for .NET 8 - use Fluent API
         public int LogLevelId { get; set; }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace SmartStore.Core.Domain.Logging
         /// <summary>
         /// Gets or sets the logger name
         /// </summary>
-        [Index("IX_Log_Logger", IsUnique = false)]
+        // [Index] removed for .NET 8 - use Fluent API
         public string Logger { get; set; }
 
         /// <summary>

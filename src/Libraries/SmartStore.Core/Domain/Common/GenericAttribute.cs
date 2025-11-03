@@ -23,7 +23,7 @@ namespace SmartStore.Core.Domain.Common
         /// <summary>
         /// Gets or sets the key
         /// </summary>
-		[DataMember, Index("IX_GenericAttribute_Key")]
+		[DataMember] // [Index("IX_GenericAttribute_Key")] removed for .NET 8
         public string Key { get; set; }
 
         /// <summary>

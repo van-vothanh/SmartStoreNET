@@ -43,7 +43,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets whether the specification attribute can be filtered. Only effective in accordance with MegaSearchPlus plugin.
         /// </summary>
         [DataMember]
-        [Index]
+        // [Index] removed for .NET 8 - use Fluent API
         public bool AllowFiltering { get; set; }
 
         /// <summary>
