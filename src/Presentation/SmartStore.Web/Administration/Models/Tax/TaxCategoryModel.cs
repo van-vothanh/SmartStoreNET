@@ -10,7 +10,6 @@ namespace SmartStore.Admin.Models.Tax
     public class TaxCategoryModel : EntityModelBase
     {
         [SmartResourceDisplayName("Admin.Configuration.Tax.Categories.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]

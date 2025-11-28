@@ -6,11 +6,11 @@ using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.Mvc.Html;
-using System.Web.Routing;
-using System.Web.WebPages;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.Mvc.Html; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Routing;
+// using System.Web.WebPages; // Removed for .NET 8 migration
 using SmartStore.Core;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Localization;

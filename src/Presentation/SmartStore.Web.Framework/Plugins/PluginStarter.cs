@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Plugins;
 using SmartStore.Services.Localization;
@@ -24,7 +24,7 @@ namespace SmartStore.Web.Framework.Plugins
         public bool ThrowOnError => false;
         public int MaxAttempts => 1;
 
-        public void Start(HttpContextBase httpContext)
+        public void Start(HttpContext httpContext)
         {
             //if (!PluginManager.PluginChangeDetected)
             //    return;

@@ -1,9 +1,10 @@
-﻿using System.Web;
+﻿// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Http;
 
 namespace SmartStore.Core.Events
 {
     public class AppStartedEvent
     {
-        public HttpContextBase HttpContext { get; set; }
+        public HttpContext? HttpContext { get; set; }
     }
 }

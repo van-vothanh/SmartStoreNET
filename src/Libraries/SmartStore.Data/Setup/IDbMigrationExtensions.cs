@@ -1,5 +1,5 @@
-﻿using System.Data.Entity.Migrations.Infrastructure;
-using System.Data.Entity.Migrations.Model;
+﻿using Microsoft.EntityFrameworkCore.Migrations.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations.Model;
 using System.Reflection;
 using SmartStore.Core.Data;
 

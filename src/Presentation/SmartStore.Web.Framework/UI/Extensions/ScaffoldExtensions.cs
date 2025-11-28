@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
-using System.Web.Mvc;
-using System.Web.WebPages;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.WebPages; // Removed for .NET 8 migration
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Localization;
 using SmartStore.Services.Localization;

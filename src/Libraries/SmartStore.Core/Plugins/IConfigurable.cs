@@ -1,4 +1,5 @@
-﻿using System.Web.Routing;
+﻿// using System.Web.Routing; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Core.Plugins
 {

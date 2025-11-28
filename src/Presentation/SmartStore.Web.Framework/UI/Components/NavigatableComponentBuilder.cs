@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Web.Routing;
-using System.Web.WebPages;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+// using System.Web.WebPages; // Removed for .NET 8 migration
 using SmartStore.Utilities;
 
 namespace SmartStore.Web.Framework.UI

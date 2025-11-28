@@ -1,5 +1,5 @@
-﻿using System.Web.Mvc;
-using System.Web.Routing;
+﻿// using System.Web.Mvc; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Routing;
 
 // use base SmartStore Namespace to ensure the extension methods are always available
 namespace SmartStore
@@ -8,15 +8,15 @@ namespace SmartStore
     {
         public static string GetAreaName(this RouteData routeData)
         {
-            if (routeData.DataTokens.TryGetValue("area", out object area))
+            if (routeData.Values.TryGetValue("area", out object? area))
             {
-                return (area as string);
+                return (area as string) ?? string.Empty;
             }
 
-            return routeData.Route.GetAreaName();
+            return string.Empty;
         }
 
-        public static string GetAreaName(this RouteBase route)
+        public static string GetAreaName(this IRouter route)
         {
             var area = route as IRouteWithArea;
             if (area != null)

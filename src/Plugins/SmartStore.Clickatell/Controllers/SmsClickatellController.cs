@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Clickatell.Models;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Plugins;

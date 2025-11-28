@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using SmartStore.Core;
@@ -41,7 +41,7 @@ namespace SmartStore
         {
             try
             {
-                ctx.ChangeState<TEntity>(entity, System.Data.Entity.EntityState.Unchanged);
+                ctx.ChangeState<TEntity>(entity, Microsoft.EntityFrameworkCore.EntityState.Unchanged);
                 return true;
             }
             catch (Exception ex)
@@ -111,7 +111,7 @@ namespace SmartStore
             var collection = entry.Collection(navigationProperty);
 
             // Avoid System.InvalidOperationException: Member 'IsLoaded' cannot be called for property...
-            if (entry.State == System.Data.Entity.EntityState.Detached)
+            if (entry.State == Microsoft.EntityFrameworkCore.EntityState.Detached)
             {
                 ctx.Attach(entity);
             }
@@ -166,7 +166,7 @@ namespace SmartStore
             var reference = entry.Reference(navigationProperty);
 
             // Avoid System.InvalidOperationException: Member 'IsLoaded' cannot be called for property...
-            if (entry.State == System.Data.Entity.EntityState.Detached)
+            if (entry.State == Microsoft.EntityFrameworkCore.EntityState.Detached)
             {
                 ctx.Attach(entity);
             }

@@ -1,6 +1,6 @@
 namespace SmartStore.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
     using Setup;
 
     public partial class V303Resources : DbMigration, ILocaleResourcesProvider, IDataSeeder<SmartObjectContext>

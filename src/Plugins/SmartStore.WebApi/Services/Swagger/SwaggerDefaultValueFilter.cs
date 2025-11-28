@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Http.Description;
+// using System.Web.Http.Description; // Removed for .NET 8 migration
 using Swashbuckle.Swagger;
 
 namespace SmartStore.WebApi.Services.Swagger

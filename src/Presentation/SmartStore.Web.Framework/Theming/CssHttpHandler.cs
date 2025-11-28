@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Web;
-using System.Web.Caching;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.Extensions.Caching.Memory;
 using BundleTransformer.Core;
 using BundleTransformer.Core.Assets;
 using BundleTransformer.Core.Configuration;

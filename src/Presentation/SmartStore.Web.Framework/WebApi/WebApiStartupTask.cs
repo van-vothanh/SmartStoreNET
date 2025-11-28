@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Net.Http.Formatting;
-using System.Web.Http;
-using System.Web.Http.Cors;
-using System.Web.OData.Builder;
-using System.Web.OData.Extensions;
-using System.Web.OData.Routing;
-using System.Web.OData.Routing.Conventions;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.Http.Cors; // Removed for .NET 8 migration
+// using System.Web.OData.Builder; // Removed for .NET 8 migration
+// using System.Web.OData.Extensions; // Removed for .NET 8 migration
+// using System.Web.OData.Routing; // Removed for .NET 8 migration
+// using System.Web.OData.Routing.Conventions; // Removed for .NET 8 migration
 using Newtonsoft.Json;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Web.Framework.WebApi.Configuration;

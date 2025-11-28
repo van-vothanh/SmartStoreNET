@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Diagnostics;
 using System.Linq;
 using SmartStore.Core;
@@ -100,7 +100,7 @@ namespace SmartStore
         public static void DumpAttachedEntities(this DbContext context)
         {
             context.ChangeTracker.Entries()
-                .Where(x => x.State != System.Data.Entity.EntityState.Detached)
+                .Where(x => x.State != Microsoft.EntityFrameworkCore.EntityState.Detached)
                 .ToList()
                 .ForEach(x => "{0} {1} {2}".FormatInvariant((x.Entity as BaseEntity).Id, x.State.ToString(), x.Entity.GetType().Name).Dump());
         }

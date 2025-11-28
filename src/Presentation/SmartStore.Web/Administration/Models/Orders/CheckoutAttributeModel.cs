@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -22,11 +22,9 @@ namespace SmartStore.Admin.Models.Orders
         public bool IsActive { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.CheckoutAttributes.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.CheckoutAttributes.Fields.TextPrompt")]
-        [AllowHtml]
         public string TextPrompt { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.CheckoutAttributes.Fields.IsRequired")]
@@ -45,7 +43,6 @@ namespace SmartStore.Admin.Models.Orders
         [SmartResourceDisplayName("Admin.Catalog.Attributes.AttributeControlType")]
         public int AttributeControlTypeId { get; set; }
         [SmartResourceDisplayName("Admin.Catalog.Attributes.AttributeControlType")]
-        [AllowHtml]
         public string AttributeControlTypeName { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]
@@ -67,11 +64,9 @@ namespace SmartStore.Admin.Models.Orders
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.CheckoutAttributes.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.CheckoutAttributes.Fields.TextPrompt")]
-        [AllowHtml]
         public string TextPrompt { get; set; }
     }
 

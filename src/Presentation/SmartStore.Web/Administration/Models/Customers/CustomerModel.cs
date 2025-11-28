@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Admin.Models.Common;
@@ -31,15 +31,12 @@ namespace SmartStore.Admin.Models.Customers
         public int GridPageSize { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.Username")]
-        [AllowHtml]
         public string Username { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.Email")]
-        [AllowHtml]
         public string Email { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.Password")]
-        [AllowHtml]
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
@@ -52,10 +49,8 @@ namespace SmartStore.Admin.Models.Customers
         public string Gender { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.FirstName")]
-        [AllowHtml]
         public string FirstName { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.LastName")]
-        [AllowHtml]
         public string LastName { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.FullName")]
         public string FullName { get; set; }
@@ -66,33 +61,27 @@ namespace SmartStore.Admin.Models.Customers
 
         public bool CompanyEnabled { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.Company")]
-        [AllowHtml]
         public string Company { get; set; }
 
         public bool CustomerNumberEnabled { get; set; }
         [SmartResourceDisplayName("Account.Fields.CustomerNumber")]
-        [AllowHtml]
         public string CustomerNumber { get; set; }
 
 
         public bool StreetAddressEnabled { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.StreetAddress")]
-        [AllowHtml]
         public string StreetAddress { get; set; }
 
         public bool StreetAddress2Enabled { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.StreetAddress2")]
-        [AllowHtml]
         public string StreetAddress2 { get; set; }
 
         public bool ZipPostalCodeEnabled { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.ZipPostalCode")]
-        [AllowHtml]
         public string ZipPostalCode { get; set; }
 
         public bool CityEnabled { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.City")]
-        [AllowHtml]
         public string City { get; set; }
 
         public bool CountryEnabled { get; set; }
@@ -107,16 +96,13 @@ namespace SmartStore.Admin.Models.Customers
 
         public bool PhoneEnabled { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.Phone")]
-        [AllowHtml]
         public string Phone { get; set; }
 
         public bool FaxEnabled { get; set; }
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.Fax")]
-        [AllowHtml]
         public string Fax { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.AdminComment")]
-        [AllowHtml]
         public string AdminComment { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.IsTaxExempt")]
@@ -130,7 +116,6 @@ namespace SmartStore.Admin.Models.Customers
         public string AffiliateFullName { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.TimeZoneId")]
-        [AllowHtml]
         public string TimeZoneId { get; set; }
 
         public bool AllowCustomersToSetTimeZone { get; set; }
@@ -138,7 +123,6 @@ namespace SmartStore.Admin.Models.Customers
         public IList<SelectListItem> AvailableTimeZones { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.Fields.VatNumber")]
-        [AllowHtml]
         public string VatNumber { get; set; }
 
         public string VatNumberStatusNote { get; set; }
@@ -172,7 +156,6 @@ namespace SmartStore.Admin.Models.Customers
         public int AddRewardPointsValue { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.Customers.RewardPoints.Fields.AddRewardPointsMessage")]
-        [AllowHtml]
         public string AddRewardPointsMessage { get; set; }
 
         public SendEmailModel SendEmail { get; set; }
@@ -209,7 +192,6 @@ namespace SmartStore.Admin.Models.Customers
             public int PointsBalance { get; set; }
 
             [SmartResourceDisplayName("Admin.Customers.Customers.RewardPoints.Fields.Message")]
-            [AllowHtml]
             public string Message { get; set; }
 
             [SmartResourceDisplayName("Common.CreatedOn")]
@@ -218,12 +200,10 @@ namespace SmartStore.Admin.Models.Customers
 
         public class SendEmailModel : ModelBase
         {
-            [AllowHtml]
             [Required]
             [SmartResourceDisplayName("Admin.Customers.Customers.SendEmail.Subject")]
             public string Subject { get; set; }
 
-            [AllowHtml]
             [Required]
             [SmartResourceDisplayName("Admin.Customers.Customers.SendEmail.Body")]
             public string Body { get; set; }

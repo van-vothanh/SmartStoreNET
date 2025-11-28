@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web;
-using System.Web.Hosting;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Logging;
 using SmartStore.Core.Plugins;
 using SmartStore.Utilities;

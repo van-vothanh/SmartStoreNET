@@ -1,7 +1,7 @@
 ﻿using System.Web;
-using System.Web.Hosting;
-using System.Web.Mvc.Razor;
-using System.Web.WebPages.Razor;
+using Microsoft.AspNetCore.Hosting;
+// using System.Web.Mvc.Razor; // Removed for .NET 8 migration
+// using System.Web.WebPages.Razor; // Removed for .NET 8 migration
 using SmartStore.Utilities;
 using SmartStore.Web.Framework.Theming;
 

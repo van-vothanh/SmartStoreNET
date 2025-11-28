@@ -98,7 +98,7 @@ namespace SmartStore.Services.Tasks
                 try
                 {
                     var dbContext = _componentContext.Resolve<IDbContext>();
-                    //dbContext.ChangeState(_originalTask, System.Data.Entity.EntityState.Modified);
+                    //dbContext.ChangeState(_originalTask, Microsoft.EntityFrameworkCore.EntityState.Modified);
                     dbContext.SaveChanges();
                 }
                 catch { }

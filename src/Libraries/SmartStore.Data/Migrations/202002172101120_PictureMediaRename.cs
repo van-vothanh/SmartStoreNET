@@ -1,9 +1,9 @@
 namespace SmartStore.Data.Migrations
 {
     using System;
-    using System.Data.Entity.Migrations;
-    using System.Data.Entity.Migrations.Builders;
-    using System.Data.Entity.Migrations.Model;
+    using Microsoft.EntityFrameworkCore.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations.Builders;
+    using Microsoft.EntityFrameworkCore.Migrations.Model;
     using SmartStore.Core.Data;
 
     public partial class PictureMediaRename : DbMigration

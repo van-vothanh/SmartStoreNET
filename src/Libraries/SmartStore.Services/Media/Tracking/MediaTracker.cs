@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Core;
@@ -159,7 +159,7 @@ namespace SmartStore.Services.Media
                     if (dbTrack != null)
                     {
                         file.Tracks.Remove(track);
-                        _dbContext.ChangeState(dbTrack, System.Data.Entity.EntityState.Deleted);
+                        _dbContext.ChangeState(dbTrack, Microsoft.EntityFrameworkCore.EntityState.Deleted);
                     }
                 }
 
@@ -267,7 +267,7 @@ namespace SmartStore.Services.Media
                             if (dbTrack != null)
                             {
                                 file.Tracks.Remove(track);
-                                _dbContext.ChangeState(dbTrack, System.Data.Entity.EntityState.Deleted);
+                                _dbContext.ChangeState(dbTrack, Microsoft.EntityFrameworkCore.EntityState.Deleted);
                             }
                         }
 

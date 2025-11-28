@@ -1,6 +1,6 @@
 namespace SmartStore.Data.Migrations
 {
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
     using SmartStore.Core.Domain.Catalog;
     using SmartStore.Core.Domain.Common;
     using SmartStore.Data.Setup;

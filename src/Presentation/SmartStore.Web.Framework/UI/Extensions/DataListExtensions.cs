@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.WebPages;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.WebPages; // Removed for .NET 8 migration
 
 namespace SmartStore.Web.Framework.UI
 {

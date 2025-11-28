@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
-using System.Data.Entity.Core.Common;
-using System.Data.Entity.Infrastructure;
-using System.Data.Entity.Infrastructure.DependencyResolution;
-using System.Web.Hosting;
+using Microsoft.EntityFrameworkCore.Core.Common;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure.DependencyResolution;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Data.Caching;

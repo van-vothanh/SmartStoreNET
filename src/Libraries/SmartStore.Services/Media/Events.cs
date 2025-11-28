@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using SmartStore.Services.Media.Imaging;
 
 namespace SmartStore.Services.Media
@@ -47,7 +47,7 @@ namespace SmartStore.Services.Media
     /// </summary>
     public class ImageQueryCreatedEvent
     {
-        public ImageQueryCreatedEvent(ProcessImageQuery query, HttpContextBase httpContext, string mimeType, string extension)
+        public ImageQueryCreatedEvent(ProcessImageQuery query, HttpContext httpContext, string mimeType, string extension)
         {
             Query = query;
             HttpContext = httpContext;
@@ -56,7 +56,7 @@ namespace SmartStore.Services.Media
         }
 
         public ProcessImageQuery Query { get; private set; }
-        public HttpContextBase HttpContext { get; private set; }
+        public HttpContext HttpContext { get; private set; }
         public string MimeType { get; private set; }
         public string Extension { get; private set; }
     }

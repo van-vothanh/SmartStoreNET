@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text.RegularExpressions;
-using System.Web;
-using System.Web.Hosting;
-using System.Web.Routing;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Collections;
 using SmartStore.Core.Data;
 using SmartStore.Core.Domain.Customers;

@@ -3,7 +3,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Data.Entity.Infrastructure.Interception;
+using Microsoft.EntityFrameworkCore.Infrastructure.Interception;
 
 namespace SmartStore.Data.Caching
 {

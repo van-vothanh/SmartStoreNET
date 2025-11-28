@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
-using System.Web.Http.Dependencies;
+// using System.Web.Http.Dependencies; // Removed for .NET 8 migration
 using Autofac;
 
 namespace SmartStore.Web.Framework.WebApi

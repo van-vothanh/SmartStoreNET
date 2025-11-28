@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.Security;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Identity;
 using SmartStore.Core;
 using SmartStore.Utilities;
 

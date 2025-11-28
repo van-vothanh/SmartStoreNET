@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Web.Mvc.Html;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.Mvc.Html; // Removed for .NET 8 migration
 using SmartStore.Admin.Models.Plugins;
 using SmartStore.Web.Framework.Plugins;
 

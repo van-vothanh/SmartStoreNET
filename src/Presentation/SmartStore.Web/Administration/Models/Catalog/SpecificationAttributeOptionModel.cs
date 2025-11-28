@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -22,11 +22,9 @@ namespace SmartStore.Admin.Models.Catalog
         public int SpecificationAttributeId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Options.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
         public string NameString { get; set; }
 
-        [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Options.Fields.Alias")]
         public string Alias { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]
@@ -41,7 +39,6 @@ namespace SmartStore.Admin.Models.Catalog
         public decimal NumberValue { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Options.Fields.ColorSquaresRgb")]
-        [AllowHtml, UIHint("Color")]
         public string Color { get; set; }
 
         [UIHint("Media"), AdditionalMetadata("album", "catalog")]
@@ -54,10 +51,8 @@ namespace SmartStore.Admin.Models.Catalog
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Options.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
-        [AllowHtml, SmartResourceDisplayName("Admin.Catalog.Attributes.SpecificationAttributes.Options.Fields.Alias")]
         public string Alias { get; set; }
     }
 

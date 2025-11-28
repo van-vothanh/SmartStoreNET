@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
-using System.Web;
-using System.Web.Hosting;
-using System.Web.Mvc;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.IO;
 using SmartStore.Utilities;
 
@@ -193,7 +193,7 @@ namespace SmartStore.Web.Framework.Modelling
             OnExecuted?.Invoke();
         }
 
-        private FileResponder ResolveResponder(HttpRequestBase request)
+        private FileResponder ResolveResponder(HttpRequest request)
         {
             // Is this a HEAD request
             if (request.HttpMethod == "HEAD")
@@ -219,7 +219,7 @@ namespace SmartStore.Web.Framework.Modelling
             return new FullFileResponder(this);
         }
 
-        private static string GenerateETag(HttpContextBase context, DateTime lastModified, DateTime now)
+        private static string GenerateETag(HttpContext context, DateTime lastModified, DateTime now)
         {
             // Get 64-bit FILETIME stamp
             var lastModFileTime = lastModified.ToFileTime();

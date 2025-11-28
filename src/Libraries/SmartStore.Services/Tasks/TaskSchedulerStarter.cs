@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using SmartStore.Core.Events;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Logging;
@@ -35,7 +35,7 @@ namespace SmartStore.Services.Tasks
         public int MaxAttempts => 10;
         public bool ThrowOnError => false;
 
-        public void Start(HttpContextBase httpContext)
+        public void Start(HttpContext httpContext)
         {
             var tasks = _taskService.GetAllTasks(true);
             _taskService.CalculateFutureSchedules(tasks, true /* isAppStart */);

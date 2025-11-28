@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Net.Http;
-using System.Web.Http;
-using System.Web.Http.Filters;
-using System.Web.OData;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+// using System.Web.OData; // Removed for .NET 8 migration
 using SmartStore.Web.Framework.WebApi.Caching;
 
 namespace SmartStore.Web.Framework.WebApi.OData

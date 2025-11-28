@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using SmartStore.Core.Data;

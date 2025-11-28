@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Common;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Core.Domain.Messages;
@@ -16,12 +16,12 @@ namespace SmartStore.Services.Messages
     public class CreateAttachmentsConsumer : IConsumer
     {
         private readonly PdfSettings _pdfSettings;
-        private readonly HttpRequestBase _httpRequest;
+        private readonly HttpRequest _httpRequest;
         private readonly Lazy<FileDownloadManager> _fileDownloadManager;
 
         public CreateAttachmentsConsumer(
             PdfSettings pdfSettings,
-            HttpRequestBase httpRequest,
+            HttpRequest httpRequest,
             Lazy<FileDownloadManager> fileDownloadManager)
         {
             this._pdfSettings = pdfSettings;

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.UI;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.UI; // Removed for .NET 8 migration
 
 namespace SmartStore.Web.Framework.UI
 {

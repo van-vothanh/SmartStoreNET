@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.OData;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.OData; // Removed for .NET 8 migration
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Security;
 using SmartStore.Services.Localization;

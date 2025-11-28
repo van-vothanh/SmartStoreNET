@@ -1,7 +1,7 @@
 namespace SmartStore.GoogleMerchantCenter.Data.Migrations
 {
     using System;
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
 
     public partial class IsTouched : DbMigration
     {

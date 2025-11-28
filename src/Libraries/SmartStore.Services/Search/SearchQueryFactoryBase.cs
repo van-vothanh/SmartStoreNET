@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using SmartStore.Collections;
 using SmartStore.Utilities;
 
@@ -7,11 +7,11 @@ namespace SmartStore.Services.Search
 {
     public abstract partial class SearchQueryFactoryBase
     {
-        protected readonly HttpContextBase _httpContext;
+        protected readonly HttpContext _httpContext;
 
         private Multimap<string, string> _aliases;
 
-        protected SearchQueryFactoryBase(HttpContextBase httpContext)
+        protected SearchQueryFactoryBase(HttpContext httpContext)
         {
             _httpContext = httpContext;
         }

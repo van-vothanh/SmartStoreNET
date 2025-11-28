@@ -1,5 +1,5 @@
 ﻿using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using NUnit.Framework;
 using Rhino.Mocks;
 using SmartStore.Core.Fakes;

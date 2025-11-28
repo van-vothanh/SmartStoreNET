@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Web.Http;
-using System.Web.OData.Builder;
-using System.Web.OData.Routing.Conventions;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.OData.Builder; // Removed for .NET 8 migration
+// using System.Web.OData.Routing.Conventions; // Removed for .NET 8 migration
 
 namespace SmartStore.Web.Framework.WebApi.Configuration
 {

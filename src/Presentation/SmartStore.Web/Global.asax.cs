@@ -1,12 +1,12 @@
 ﻿using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.Helpers;
-using System.Web.Hosting;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-using System.Web.WebPages;
+// using System.Web; // Removed for .NET 8 migration
+// using System.Web.Helpers; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using WebOptimizer;
+using Microsoft.AspNetCore.Routing;
+// using System.Web.WebPages; // Removed for .NET 8 migration
 using FluentValidation;
 using FluentValidation.Mvc;
 using JavaScriptEngineSwitcher.Core;

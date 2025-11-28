@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -57,7 +57,6 @@ namespace SmartStore.Admin.Models.Topics
         public IList<SelectListItem> AvailableCookieTypes { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.SystemName")]
-        [AllowHtml]
         public string SystemName { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.HtmlId")]
@@ -77,35 +76,27 @@ namespace SmartStore.Admin.Models.Topics
         public string Password { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.URL")]
-        [AllowHtml]
         public string Url { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.ShortTitle")]
-        [AllowHtml]
         public string ShortTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.Title")]
-        [AllowHtml]
         public string Title { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.Intro")]
-        [AllowHtml]
         public string Intro { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.Body")]
-        [AllowHtml]
         public string Body { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaKeywords")]
-        [AllowHtml]
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
         public string MetaTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
@@ -151,31 +142,24 @@ namespace SmartStore.Admin.Models.Topics
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.ShortTitle")]
-        [AllowHtml]
         public string ShortTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.Title")]
-        [AllowHtml]
         public string Title { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.Intro")]
-        [AllowHtml]
         public string Intro { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Topics.Fields.Body")]
-        [AllowHtml]
         public string Body { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaKeywords")]
-        [AllowHtml]
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
         public string MetaTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]

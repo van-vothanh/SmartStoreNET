@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Http;
-using System.Web.Http.Controllers;
-using System.Web.Http.ModelBinding;
+// using System.Web.Http.Controllers; // Removed for .NET 8 migration
+// using System.Web.Http.ModelBinding; // Removed for .NET 8 migration
 using SmartStore.Services.Search;
 using SmartStore.Services.Search.Modelling;
 using SmartStore.Web.Framework.WebApi.Caching;

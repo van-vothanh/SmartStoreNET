@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web.Http;
-using System.Web.Http.Description;
-using System.Web.OData;
-using System.Web.OData.Routing;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.Http.Description; // Removed for .NET 8 migration
+// using System.Web.OData; // Removed for .NET 8 migration
+// using System.Web.OData.Routing; // Removed for .NET 8 migration
 using Swashbuckle.Swagger;
 
 namespace SmartStore.WebApi.Services.Swagger

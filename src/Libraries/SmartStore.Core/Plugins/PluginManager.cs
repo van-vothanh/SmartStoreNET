@@ -6,14 +6,14 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Web;
-using System.Web.Compilation;
-using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+// using System.Web; // Removed for .NET 8 migration
+// using System.Web.Compilation; // Removed for .NET 8 migration
+// using Microsoft.Web.Infrastructure.DynamicModuleHelper; // Removed for .NET 8 migration
 using SmartStore.Core.Data;
 using SmartStore.Core.Infrastructure;
-using SmartStore.Core.Infrastructure.DependencyManagement;
+// using SmartStore.Core.Infrastructure.DependencyManagement; // Removed for .NET 8 migration
 using SmartStore.Core.Logging;
-using SmartStore.Core.Packaging;
+// using SmartStore.Core.Packaging; // Removed for .NET 8 migration
 using SmartStore.Core.Plugins;
 using SmartStore.Utilities;
 
@@ -21,7 +21,7 @@ using SmartStore.Utilities;
 // SEE THIS POST for full details of what this does
 //http://shazwazza.com/post/Developing-a-plugin-framework-in-ASPNET-with-medium-trust.aspx
 
-[assembly: PreApplicationStartMethod(typeof(PluginManager), "Initialize")]
+// [assembly: PreApplicationStartMethod(typeof(PluginManager), "Initialize")] // Removed for .NET 8 migration
 namespace SmartStore.Core.Plugins
 {
     /// <summary>

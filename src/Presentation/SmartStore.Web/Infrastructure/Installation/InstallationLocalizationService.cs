@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using System.Xml;
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;
@@ -45,7 +45,7 @@ namespace SmartStore.Web.Infrastructure.Installation
 
         public virtual InstallationLanguage GetCurrentLanguage()
         {
-            var httpContext = EngineContext.Current.Resolve<HttpContextBase>();
+            var httpContext = EngineContext.Current.Resolve<HttpContext>();
 
             var cookieLanguageCode = "";
             var cookie = httpContext.Request.Cookies[LanguageCookieName];
@@ -94,7 +94,7 @@ namespace SmartStore.Web.Infrastructure.Installation
 
         public virtual void SaveCurrentLanguage(string languageCode)
         {
-            var httpContext = EngineContext.Current.Resolve<HttpContextBase>();
+            var httpContext = EngineContext.Current.Resolve<HttpContext>();
 
             var cookie = new HttpCookie(LanguageCookieName);
             cookie.HttpOnly = true;

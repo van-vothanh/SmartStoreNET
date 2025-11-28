@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
-using System.Web;
-using System.Web.Security;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 using SmartStore.Utilities;
 
@@ -58,7 +58,7 @@ namespace SmartStore.Web.Framework.Security
             return result;
         }
 
-        public static bool IsBot(HttpContextBase httpContext)
+        public static bool IsBot(HttpContext httpContext)
         {
             var tokenString = httpContext.Request.Form[TokenFieldName];
             if (tokenString.IsEmpty())

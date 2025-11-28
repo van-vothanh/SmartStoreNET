@@ -1,6 +1,6 @@
 ﻿using System.Globalization;
-using System.Web;
-using System.Web.Hosting;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Services.Configuration;
@@ -10,7 +10,7 @@ namespace SmartStore.Services.Media
 {
     public partial class MediaUrlGenerator : IMediaUrlGenerator
     {
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
 
         private readonly string _host;
         private readonly string _appPath;
@@ -29,7 +29,7 @@ namespace SmartStore.Services.Media
             ISettingService settingService,
             MediaSettings mediaSettings,
             IStoreContext storeContext,
-            HttpContextBase httpContext)
+            HttpContext httpContext)
         {
             _httpContext = httpContext;
 

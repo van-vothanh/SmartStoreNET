@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Domain.Common;
@@ -29,7 +29,7 @@ namespace SmartStore.PayPal.Controllers
 {
     public class PayPalInstalmentsController : PayPalRestApiControllerBase<PayPalInstalmentsSettings>
     {
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly IGenericAttributeService _genericAttributeService;
         private readonly IOrderService _orderService;
         private readonly ICurrencyService _currencyService;
@@ -38,7 +38,7 @@ namespace SmartStore.PayPal.Controllers
         private readonly Lazy<IPluginFinder> _pluginFinder;
 
         public PayPalInstalmentsController(
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             IPayPalService payPalService,
             IGenericAttributeService genericAttributeService,
             IOrderService orderService,

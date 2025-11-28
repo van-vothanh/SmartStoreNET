@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Linq.Expressions;
@@ -45,7 +45,7 @@ namespace SmartStore.Core.Data
             entity.Id = id;
 
             // must downcast 'cause of Rhino mocks stub  
-            rs.Context.ChangeState((BaseEntity)entity, System.Data.Entity.EntityState.Deleted);
+            rs.Context.ChangeState((BaseEntity)entity, Microsoft.EntityFrameworkCore.EntityState.Deleted);
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]

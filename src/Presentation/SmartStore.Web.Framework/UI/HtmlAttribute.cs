@@ -2,7 +2,7 @@
  * Source: http://stackoverflow.com/questions/3800473/how-to-concisely-create-optional-html-attributes-with-razor-view-engine/4232630#4232630
 */
 using System;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 
 namespace SmartStore.Web.Framework
 {

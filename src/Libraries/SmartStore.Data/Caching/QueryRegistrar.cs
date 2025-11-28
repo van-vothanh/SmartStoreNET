@@ -1,6 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Data.Entity.Core.Metadata.Edm;
+using Microsoft.EntityFrameworkCore.Core.Metadata.Edm;
 
 namespace SmartStore.Data.Caching
 {

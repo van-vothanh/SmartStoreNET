@@ -7,14 +7,12 @@ namespace SmartStore.Admin.Models.Catalog
     public class BulkEditProductModel : EntityModelBase
     {
         [SmartResourceDisplayName("Admin.Catalog.BulkEdit.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         public string ProductTypeName { get; set; }
         public string ProductTypeLabelHint { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.BulkEdit.Fields.SKU")]
-        [AllowHtml]
         public string Sku { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.BulkEdit.Fields.Price")]

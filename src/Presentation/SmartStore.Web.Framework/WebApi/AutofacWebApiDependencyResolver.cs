@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security;
-using System.Web.Http.Dependencies;
+// using System.Web.Http.Dependencies; // Removed for .NET 8 migration
 using Autofac;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Infrastructure.DependencyManagement;

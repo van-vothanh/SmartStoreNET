@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using SmartStore.Core.Configuration;
 using SmartStore.Core.Domain.Localization;
 using SmartStore.Core.Domain.Stores;

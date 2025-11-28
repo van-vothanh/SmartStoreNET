@@ -116,7 +116,7 @@ namespace SmartStore.Services.DataExchange.Excel
         public string GetFormatted(int i)
         {
             ValidateDataReader();
-            return _sheet.Cells[ExcelRowIndex(_currentRowIndex), i + 1].Text;
+            return _sheet.Cells[ExcelRowi + 1].Text;
         }
 
         public int GetColumnIndex(string name)
@@ -196,7 +196,7 @@ namespace SmartStore.Services.DataExchange.Excel
             {
                 ValidateDataReader();
                 // Excel indexes start from 1
-                return _sheet.GetValue(ExcelRowIndex(_currentRowIndex), i + 1);
+                return _sheet.GetValue(ExcelRowi + 1);
             }
         }
 

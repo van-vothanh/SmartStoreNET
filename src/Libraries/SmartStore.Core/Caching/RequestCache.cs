@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Http;
 using SmartStore.Utilities;
 
 namespace SmartStore.Core.Caching
@@ -14,9 +15,9 @@ namespace SmartStore.Core.Caching
 
         private readonly IDictionary _emptyDictionary = new Dictionary<string, object>();
 
-        private readonly HttpContextBase _context;
+        private readonly HttpContext _context;
 
-        public RequestCache(HttpContextBase context)
+        public RequestCache(HttpContext context)
         {
             _context = context;
         }

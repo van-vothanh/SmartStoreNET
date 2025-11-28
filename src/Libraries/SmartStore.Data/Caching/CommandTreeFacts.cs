@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Data.Entity.Core.Common.CommandTrees;
-using System.Data.Entity.Core.Mapping;
-using System.Data.Entity.Core.Metadata.Edm;
+using Microsoft.EntityFrameworkCore.Core.Common.CommandTrees;
+using Microsoft.EntityFrameworkCore.Core.Mapping;
+using Microsoft.EntityFrameworkCore.Core.Metadata.Edm;
 using System.Diagnostics;
 using System.Linq;
 

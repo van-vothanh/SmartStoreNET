@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web;
-using System.Web.Caching;
-using System.Web.Hosting;
-using System.Web.Optimization;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.Extensions.Caching.Memory;
+using Microsoft.AspNetCore.Hosting;
+using WebOptimizer;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Themes;
 using SmartStore.Core.IO;

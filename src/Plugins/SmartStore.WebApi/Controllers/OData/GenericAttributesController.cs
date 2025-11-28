@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.OData;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.OData; // Removed for .NET 8 migration
 using SmartStore.Core.Domain.Common;
 using SmartStore.Services.Common;
 using SmartStore.Web.Framework.WebApi.OData;

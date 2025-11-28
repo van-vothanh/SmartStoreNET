@@ -8,8 +8,8 @@ using SmartStore.Services.Localization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Services.Customers
 {
@@ -27,7 +27,7 @@ namespace SmartStore.Services.Customers
     {
         private readonly ICommonServices _services;
         private readonly ITypeFinder _typeFinder;
-        private readonly HttpContextBase _httpContext;
+        private readonly HttpContext _httpContext;
         private readonly PrivacySettings _privacySettings;
 
         public const string ConsentCookieName = "CookieConsent";
@@ -38,7 +38,7 @@ namespace SmartStore.Services.Customers
         public CookieManager(
             ICommonServices services,
             ITypeFinder typeFinder,
-            HttpContextBase httpContext,
+            HttpContext httpContext,
             PrivacySettings privacySettings)
         {
             _services = services;

@@ -1,8 +1,8 @@
 ﻿using System.IO;
 using System.Linq;
 using System.Text;
-using System.Web.Mvc;
-using System.Web.Mvc.Html;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.Mvc.Html; // Removed for .NET 8 migration
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Themes;

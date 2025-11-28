@@ -5,9 +5,9 @@ using System.Globalization;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web.Mvc;
-using System.Web.Routing;
-using System.Web.SessionState;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+// using System.Web.SessionState; // Removed for .NET 8 migration
 using SmartStore.Core;
 using SmartStore.Core.Domain.Media;
 using SmartStore.Core.Domain.Seo;

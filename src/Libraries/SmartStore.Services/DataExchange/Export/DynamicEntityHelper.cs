@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using SmartStore.Collections;
 using SmartStore.ComponentModel;
 using SmartStore.Core;

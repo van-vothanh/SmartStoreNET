@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Core.Domain.Directory;
@@ -30,7 +30,7 @@ namespace SmartStore.Services.Catalog
         private readonly IProductAttributeService _productAttributeService;
         private readonly IDownloadService _downloadService;
         private readonly ICommonServices _services;
-        private readonly HttpRequestBase _httpRequestBase;
+        private readonly HttpRequest _httpRequestBase;
         private readonly ITaxService _taxService;
         private readonly TaxSettings _taxSettings;
 
@@ -44,7 +44,7 @@ namespace SmartStore.Services.Catalog
             IProductAttributeService productAttributeService,
             IDownloadService downloadService,
             ICommonServices services,
-            HttpRequestBase httpRequestBase,
+            HttpRequest httpRequestBase,
             ITaxService taxService,
             TaxSettings taxSettings)
         {

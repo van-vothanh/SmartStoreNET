@@ -133,7 +133,7 @@ namespace SmartStore.Tests
                     ctx.Stub(x => x.ExecuteStoredProcedureList<T>(Arg<string>.Is.Anything, Arg<object[]>.Is.Anything)).Return(new List<T>());
                     ctx.Stub(x => x.GetModifiedProperties(Arg<BaseEntity>.Is.Anything)).Return(new Dictionary<string, object>());
                     ctx.Stub(x => x.BeginTransaction(Arg<IsolationLevel>.Is.Anything)).Return(MockRepository.GenerateMock<ITransaction>());
-                    ctx.Stub(x => x.ChangeState(Arg<BaseEntity>.Is.TypeOf, Arg<System.Data.Entity.EntityState>.Is.Anything))
+                    ctx.Stub(x => x.ChangeState(Arg<BaseEntity>.Is.TypeOf, Arg<Microsoft.EntityFrameworkCore.EntityState>.Is.Anything))
                         .WhenCalled(ChangeState);
 
                     _dbContext = ctx;
@@ -146,16 +146,16 @@ namespace SmartStore.Tests
         private void ChangeState(MethodInvocation invocation)
         {
             var entity = (T)invocation.Arguments[0];
-            var state = (System.Data.Entity.EntityState)invocation.Arguments[1];
+            var state = (Microsoft.EntityFrameworkCore.EntityState)invocation.Arguments[1];
 
-            if (state == System.Data.Entity.EntityState.Deleted)
+            if (state == Microsoft.EntityFrameworkCore.EntityState.Deleted)
             {
                 if (_dbSet.Contains(entity))
                 {
                     _dbSet.Remove(entity);
                 }
             }
-            else if (state == System.Data.Entity.EntityState.Added)
+            else if (state == Microsoft.EntityFrameworkCore.EntityState.Added)
             {
                 if (!_dbSet.Contains(entity))
                 {

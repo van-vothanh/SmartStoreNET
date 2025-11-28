@@ -9,8 +9,8 @@ using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Web;
-using SmartStore.Core.Html;
+// using System.Web; // Removed for .NET 8 migration
+// using SmartStore.Core.Html; // Removed for .NET 8 migration
 using SmartStore.Utilities.ObjectPools;
 
 namespace SmartStore

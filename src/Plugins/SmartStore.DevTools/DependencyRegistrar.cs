@@ -1,4 +1,4 @@
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using Autofac;
 using Autofac.Integration.Mvc;
 using SmartStore.Core.Data;
@@ -20,7 +20,7 @@ namespace SmartStore.DevTools
             {
                 builder.Register<IChronometer>(c =>
                 {
-                    var ctx = c.Resolve<HttpContextBase>();
+                    var ctx = c.Resolve<HttpContext>();
 
                     if (ProfilerHttpModule.MiniProfilerStarted(ctx.ApplicationInstance))
                     {

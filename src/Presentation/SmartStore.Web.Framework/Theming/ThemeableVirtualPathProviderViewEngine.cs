@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using System.Web.WebPages;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.WebPages; // Removed for .NET 8 migration
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Logging;
 using SmartStore.Core.Themes;
@@ -434,7 +434,7 @@ namespace SmartStore.Web.Framework.Theming
             return (c == '~' || c == '/');
         }
 
-        protected virtual bool IsMobileDevice(HttpContextBase httpContext)
+        protected virtual bool IsMobileDevice(HttpContext httpContext)
         {
             var mobileDeviceHelper = EngineContext.Current.Resolve<IMobileDeviceHelper>();
             var result = mobileDeviceHelper.IsMobileDevice();

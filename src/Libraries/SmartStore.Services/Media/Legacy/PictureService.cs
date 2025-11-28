@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.Hosting;
+// using System.Web; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Caching;
@@ -56,7 +56,7 @@ namespace SmartStore.Services.Media
         private readonly IImageProcessor _imageProcessor;
         private readonly IImageCache _imageCache;
 		private readonly Provider<IMediaStorageProvider> _storageProvider;
-		private readonly HttpContextBase _httpContext;
+		private readonly HttpContext _httpContext;
 		private readonly ICacheManager _cacheManager;
 
 		private readonly string _host;
@@ -84,7 +84,7 @@ namespace SmartStore.Services.Media
             IImageCache imageCache,
 			IProviderManager providerManager,
             IStoreContext storeContext,
-			HttpContextBase httpContext,
+			HttpContext httpContext,
 			ICacheManager cacheManager)
         {
             _pictureRepository = pictureRepository;

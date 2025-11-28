@@ -1,7 +1,7 @@
 ﻿namespace SmartStore.Data.Migrations
 {
     using System;
-    using System.Data.Entity.Migrations;
+    using Microsoft.EntityFrameworkCore.Migrations;
     
     public partial class AddBlogAndNewsLanguage : DbMigration
     {

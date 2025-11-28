@@ -12,7 +12,6 @@ namespace SmartStore.Admin.Models.Polls
         public int PollId { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Polls.Answers.Fields.Name")]
-        [AllowHtml]
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Polls.Answers.Fields.NumberOfVotes")]

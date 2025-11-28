@@ -1,8 +1,8 @@
 ﻿using System.Globalization;
 using System.IO;
-using System.Web.Mvc;
-using System.Web.Mvc.Html;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.Mvc.Html; // Removed for .NET 8 migration
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Services.Common;

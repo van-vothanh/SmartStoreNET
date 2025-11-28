@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data.Entity.Core.Objects;
+// using Microsoft.EntityFrameworkCore.Core.Objects; // Removed for .NET 8 migration
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -32,7 +32,7 @@ namespace SmartStore.Core
         {
             #region Old
             //var t = GetType();
-            //if (t.AssemblyQualifiedName.StartsWith("System.Data.Entity."))
+            //if (t.AssemblyQualifiedName.StartsWith("Microsoft.EntityFrameworkCore."))
             //{
             //	// it's a proxied type
             //	t = t.BaseType;

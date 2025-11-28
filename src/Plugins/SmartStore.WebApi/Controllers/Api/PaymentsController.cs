@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Plugins;
 using SmartStore.Core.Security;
 using SmartStore.Services.Payments;

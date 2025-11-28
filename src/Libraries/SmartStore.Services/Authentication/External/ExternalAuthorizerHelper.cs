@@ -1,7 +1,7 @@
 //Contributor:  Nicholas Mayne
 
 using System.Collections.Generic;
-using System.Web;
+// using System.Web; // Removed for .NET 8 migration
 using SmartStore.Core.Infrastructure;
 
 namespace SmartStore.Services.Authentication.External

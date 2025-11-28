@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web.Http;
-using System.Web.Http.ModelBinding;
-using System.Web.OData;
+using Microsoft.AspNetCore.Mvc;
+// using System.Web.Http.ModelBinding; // Removed for .NET 8 migration
+// using System.Web.OData; // Removed for .NET 8 migration
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Search;
 using SmartStore.Core.Security;
