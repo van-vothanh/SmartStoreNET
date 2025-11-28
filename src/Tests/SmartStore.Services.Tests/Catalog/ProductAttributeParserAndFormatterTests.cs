@@ -145,7 +145,6 @@ namespace SmartStore.Services.Tests.Catalog
                 ProductAttributeId = pa3.Id
             };
 
-
             #endregion
 
             _productAttributeRepo = MockRepository.GenerateMock<IRepository<ProductAttribute>>();

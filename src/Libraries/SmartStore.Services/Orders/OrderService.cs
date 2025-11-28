@@ -338,7 +338,6 @@ namespace SmartStore.Services.Orders
             if (ss.HasValue)
                 shippingStatusId = (int)ss.Value;
 
-
             var query = from orderItem in _orderItemRepository.Table
                         join o in _orderRepository.Table on orderItem.OrderId equals o.Id
                         join p in _productRepository.Table on orderItem.ProductId equals p.Id

@@ -152,7 +152,6 @@ namespace SmartStore.WebApi.Client
         }
     }
 
-
     public enum HmacResult : int
     {
         Success = 0,

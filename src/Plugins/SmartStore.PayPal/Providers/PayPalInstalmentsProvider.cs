@@ -44,7 +44,6 @@ namespace SmartStore.PayPal.Providers
         }
     }
 
-
     [Serializable]
     public class PayPalInstalmentsOrderAttribute
     {

@@ -49,12 +49,10 @@ namespace SmartStore.Tax.Services
                 if (stateProvinceId == taxRate.StateProvinceId)
                     matchedByStateProvince.Add(taxRate);
 
-
             if (matchedByStateProvince.Count == 0)
                 foreach (var taxRate in existingRates)
                     if (taxRate.StateProvinceId == 0)
                         matchedByStateProvince.Add(taxRate);
-
 
             //filter by zip
             var matchedByZip = new List<TaxRate>();

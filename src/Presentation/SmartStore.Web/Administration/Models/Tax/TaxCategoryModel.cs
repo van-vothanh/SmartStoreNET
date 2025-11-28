@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -10,7 +10,7 @@ namespace SmartStore.Admin.Models.Tax
     public class TaxCategoryModel : EntityModelBase
     {
         [SmartResourceDisplayName("Admin.Configuration.Tax.Categories.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]

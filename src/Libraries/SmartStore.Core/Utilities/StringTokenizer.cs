@@ -44,7 +44,6 @@ namespace SmartStore.Utilities
             // Char an aktueller Cursor-Position
             char ch = _text[_pos];
 
-
             if (_delim.IndexOf(ch) != -1) // Ist Char ein Delim-Zeichen?...
             {
                 // ...ja!

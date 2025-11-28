@@ -145,7 +145,6 @@ namespace SmartStore.Services.Messages
             return new Money(price, currency);
         }
 
-
         private MediaFileInfo GetMediaFileFor(Product product, string attributesXml)
         {
             var attrParser = _services.Resolve<IProductAttributeParser>();

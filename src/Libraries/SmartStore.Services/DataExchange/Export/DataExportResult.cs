@@ -60,7 +60,6 @@ namespace SmartStore.Services.DataExchange.Export
         }
     }
 
-
     public class DataExportPreviewResult
     {
         public DataExportPreviewResult()

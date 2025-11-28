@@ -391,7 +391,6 @@ namespace SmartStore.Web.Infrastructure.Installation
 
         protected SmartObjectContext DataContext => _ctx;
 
-
         protected ISettingService SettingService
         {
             get

@@ -133,7 +133,6 @@ namespace SmartStore.Data.Tests.Customers
             fromDb.ShouldNotBeNull();
             fromDb.ReviewText.ShouldEqual("A review");
 
-
             fromDb.ProductReviewHelpfulnessEntries.ShouldNotBeNull();
             (fromDb.ProductReviewHelpfulnessEntries.Count == 1).ShouldBeTrue();
             fromDb.ProductReviewHelpfulnessEntries.First().WasHelpful.ShouldEqual(true);

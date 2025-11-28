@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System.Text;
 using System.Web;
 
@@ -32,3 +33,4 @@ namespace SmartStore.Core.Fakes
         public override HttpCookieCollection Cookies => _cookies;
     }
 }
+#endif

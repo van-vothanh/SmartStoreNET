@@ -92,7 +92,6 @@ namespace SmartStore.Core
         /// <returns>The physical path. E.g. "c:\inetpub\wwwroot\bin"</returns>
         string MapPath(string path);
 
-
         /// <summary>
         /// Modifies query string
         /// </summary>

@@ -18,13 +18,11 @@ namespace SmartStore.AmazonPay.Services
         public bool SubmitForm { get; set; }
     }
 
-
     public class AmazonPayActionState
     {
         public Guid OrderGuid { get; set; }
         public List<string> Errors { get; set; }
     }
-
 
     [Serializable]
     public class AmazonPayOrderAttribute
@@ -32,7 +30,6 @@ namespace SmartStore.AmazonPay.Services
         public string OrderReferenceId { get; set; }
         public bool OrderReferenceClosed { get; set; }
     }
-
 
     internal class PollingLoopData
     {

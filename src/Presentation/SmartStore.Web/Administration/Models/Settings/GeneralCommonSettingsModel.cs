@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Domain.Localization;
@@ -106,7 +106,7 @@ namespace SmartStore.Admin.Models.Settings
             }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.PageTitleSeparator")]
-            [AllowHtml]
+
             public string PageTitleSeparator { get; set; }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.PageTitleSeoAdjustment")]
@@ -175,11 +175,11 @@ namespace SmartStore.Admin.Models.Settings
         public partial class SecuritySettingsModel
         {
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.EncryptionKey")]
-            [AllowHtml]
+
             public string EncryptionKey { get; set; }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.AdminAreaAllowedIpAddresses")]
-            [AllowHtml]
+
             public string AdminAreaAllowedIpAddresses { get; set; }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.HideAdminMenuItemsBasedOnPermissions")]
@@ -225,11 +225,11 @@ namespace SmartStore.Admin.Models.Settings
             public bool ShowOnProductReviewPage { get; set; }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.reCaptchaPublicKey")]
-            [AllowHtml]
+
             public string ReCaptchaPublicKey { get; set; }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.reCaptchaPrivateKey")]
-            [AllowHtml]
+
             public string ReCaptchaPrivateKey { get; set; }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.UseInvisibleReCaptcha")]
@@ -327,7 +327,7 @@ namespace SmartStore.Admin.Models.Settings
             public int? CountryId { get; set; }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.CompanyInformationSettings.Country")]
-            [AllowHtml]
+
             public string CountryName { get; set; }
 
             [SmartResourceDisplayName("Admin.Configuration.Settings.GeneralCommon.CompanyInformationSettings.State")]

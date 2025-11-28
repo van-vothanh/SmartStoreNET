@@ -100,7 +100,6 @@ namespace SmartStore.Services.Orders
             return orderTotal;
         }
 
-
         /// <summary>
         /// Gets a value indicating whether an order has items to dispatch
         /// </summary>
@@ -165,7 +164,6 @@ namespace SmartStore.Services.Orders
             }
             return false;
         }
-
 
         /// <summary>
         /// Gets the total number of items which can be added to new shipments

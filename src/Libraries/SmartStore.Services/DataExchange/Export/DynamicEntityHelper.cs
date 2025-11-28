@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -1284,7 +1284,6 @@ namespace SmartStore.Services.DataExchange.Export
             return result;
         }
 
-
         private List<dynamic> Convert(DataExporterContext ctx, Product product)
         {
             var result = new List<dynamic>();
@@ -1576,7 +1575,6 @@ namespace SmartStore.Services.DataExchange.Export
             return result;
         }
     }
-
 
     internal class DynamicProductContext
     {

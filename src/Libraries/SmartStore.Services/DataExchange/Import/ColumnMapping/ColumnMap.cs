@@ -104,7 +104,6 @@ namespace SmartStore.Services.DataExchange.Import
         }
     }
 
-
     [JsonObject(MemberSerialization.OptIn)]
     public class ColumnMappingItem
     {

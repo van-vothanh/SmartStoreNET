@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -20,15 +20,15 @@ namespace SmartStore.Admin.Models.Polls
         public List<SelectListItem> AvailableLanguages { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Polls.Fields.Language")]
-        [AllowHtml]
+
         public string LanguageName { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Polls.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Polls.Fields.SystemKeyword")]
-        [AllowHtml]
+
         public string SystemKeyword { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Polls.Fields.Published")]

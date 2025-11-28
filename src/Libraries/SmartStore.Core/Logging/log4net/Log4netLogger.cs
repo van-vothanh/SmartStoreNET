@@ -112,7 +112,6 @@ namespace SmartStore.Core.Logging
                             }
                         }
 
-
                         // Url & stuff
                         if (container.TryResolve<IWebHelper>(null, out IWebHelper webHelper))
                         {

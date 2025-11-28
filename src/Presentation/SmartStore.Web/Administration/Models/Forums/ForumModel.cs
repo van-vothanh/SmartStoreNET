@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -25,15 +25,15 @@ namespace SmartStore.Admin.Models.Forums
         public int ForumGroupId { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Forums.Forum.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
+
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Forums.Forum.Fields.Description")]
-        [AllowHtml]
+
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]
@@ -52,15 +52,15 @@ namespace SmartStore.Admin.Models.Forums
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Forums.Forum.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
+
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Forums.Forum.Fields.Description")]
-        [AllowHtml]
+
         public string Description { get; set; }
     }
 

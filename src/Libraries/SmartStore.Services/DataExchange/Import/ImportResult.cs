@@ -178,7 +178,6 @@ namespace SmartStore.Services.DataExchange.Import
         }
     }
 
-
     [Serializable]
     public partial class SerializableImportResult
     {

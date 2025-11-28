@@ -195,7 +195,6 @@ namespace SmartStore.Services.Catalog
         /// <returns>Trail</returns>
         IEnumerable<ICategoryNode> GetCategoryTrail(ICategoryNode node);
 
-
         /// <summary>
         /// Builds a category breadcrumb (path) for a particular category node
         /// </summary>
@@ -208,7 +207,7 @@ namespace SmartStore.Services.Catalog
             TreeNode<ICategoryNode> treeNode,
             int? languageId = null,
             string aliasPattern = null,
-            string separator = " » ");
+            string separator = "  ");
 
         /// <summary>
         /// Gets the tree representation of categories
@@ -249,7 +248,7 @@ namespace SmartStore.Services.Catalog
             Product product,
             int? languageId = null,
             int? storeId = null,
-            string separator = " » ")
+            string separator = "  ")
         {
             Guard.NotNull(product, nameof(product));
 

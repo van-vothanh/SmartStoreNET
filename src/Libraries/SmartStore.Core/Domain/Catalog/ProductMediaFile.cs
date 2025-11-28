@@ -46,7 +46,6 @@ namespace SmartStore.Core.Domain.Catalog
 		[DataMember]
         public int DisplayOrder { get; set; }
 
-
         /// <summary>
         /// Gets the media file
         /// </summary>

@@ -1,8 +1,9 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System;
 using System.Collections.Specialized;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Core.Fakes
 {
@@ -37,7 +38,6 @@ namespace SmartStore.Core.Fakes
             _cookies = cookies ?? new HttpCookieCollection();
             _serverVariables = serverVariables ?? new NameValueCollection();
         }
-
 
         public FakeHttpRequest(string relativeUrl,
             string method,
@@ -102,3 +102,4 @@ namespace SmartStore.Core.Fakes
         }
     }
 }
+#endif

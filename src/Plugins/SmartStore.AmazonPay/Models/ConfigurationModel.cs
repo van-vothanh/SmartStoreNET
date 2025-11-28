@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.AmazonPay.Services;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
@@ -73,7 +73,6 @@ namespace SmartStore.AmazonPay.Models
 
         [SmartResourceDisplayName("Plugins.Payments.AmazonPay.InformCustomerAddErrors")]
         public bool InformCustomerAddErrors { get; set; }
-
 
         [SmartResourceDisplayName("Plugins.Payments.AmazonPay.PayButtonColor")]
         public string PayButtonColor { get; set; }

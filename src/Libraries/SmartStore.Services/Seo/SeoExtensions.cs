@@ -238,7 +238,6 @@ namespace SmartStore.Services.Seo
             return seName;
         }
 
-
         /// <summary>
         /// Get SEO friendly name
         /// </summary>

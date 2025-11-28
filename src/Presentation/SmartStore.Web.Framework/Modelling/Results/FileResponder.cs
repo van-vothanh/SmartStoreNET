@@ -45,7 +45,6 @@ namespace SmartStore.Web.Framework.Modelling
         public abstract void SendFile(HttpContextBase context);
     }
 
-
     internal sealed class HeadFileResponder : FileResponder
     {
         public HeadFileResponder(IFileResponse fileResponse)
@@ -79,7 +78,6 @@ namespace SmartStore.Web.Framework.Modelling
         }
     }
 
-
     internal sealed class UnmodifiedFileResponder : FileResponder
     {
         public UnmodifiedFileResponder(IFileResponse fileResponse)
@@ -109,8 +107,6 @@ namespace SmartStore.Web.Framework.Modelling
         }
     }
 
-
-
     internal sealed class FullFileResponder : FileResponder
     {
         public FullFileResponder(IFileResponse fileResponse)
@@ -134,8 +130,6 @@ namespace SmartStore.Web.Framework.Modelling
             FileResponse.Transmitter.TransmitFile(0, fileLength, fileLength, context);
         }
     }
-
-
 
     internal sealed class RangeFileResponder : FileResponder
     {

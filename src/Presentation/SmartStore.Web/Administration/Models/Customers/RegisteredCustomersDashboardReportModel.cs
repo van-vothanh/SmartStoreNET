@@ -5,6 +5,5 @@ namespace SmartStore.Admin.Models.Customers
     public class RegisteredCustomersDashboardReportModel : ModelBase
     {
 
-
     }
 }

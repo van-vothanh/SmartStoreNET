@@ -103,6 +103,5 @@ namespace SmartStore.Core.Domain.Seo
 
         #endregion
 
-
     }
 }

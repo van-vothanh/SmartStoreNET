@@ -513,7 +513,6 @@ namespace SmartStore.Services.Tests.Search
             result = Search(new CatalogSearchQuery().WithStockQuantity(null, 10002, null, false), products);
             Assert.That(result.Hits.Count(), Is.EqualTo(5));
 
-
             result = Search(new CatalogSearchQuery().WithStockQuantity(10000, 10000), products);
             Assert.That(result.Hits.Count(), Is.EqualTo(1));
 

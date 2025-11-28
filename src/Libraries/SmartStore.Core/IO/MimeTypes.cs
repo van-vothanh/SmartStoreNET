@@ -759,7 +759,6 @@ namespace SmartStore.Core.IO
                 }
             }
 
-
             return DefaultMimeType;
         }
 

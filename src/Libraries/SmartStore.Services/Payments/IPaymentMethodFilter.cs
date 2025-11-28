@@ -18,7 +18,6 @@ namespace SmartStore.Services.Payments
         bool IsExcluded(PaymentFilterRequest request);
     }
 
-
     public partial class PaymentFilterRequest
     {
         /// <summary>

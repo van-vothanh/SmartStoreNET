@@ -54,7 +54,6 @@ namespace SmartStore.Core.Security
         /// <param name="permission">Permission.</param>
         void DeletePermission(PermissionRecord permission);
 
-
         /// <summary>
         /// Gets a permission role mapping.
         /// </summary>
@@ -80,14 +79,12 @@ namespace SmartStore.Core.Security
         /// <param name="mapping">Permission role mapping.</param>
         void DeletePermissionRoleMapping(PermissionRoleMapping mapping);
 
-
         /// <summary>
         /// Installs permissions. Permissions are automatically installed by <see cref="InstallPermissionsStarter"/>.
         /// </summary>
         /// <param name="permissionProviders">Providers whose permissions are to be installed.</param>
         /// <param name="removeUnusedPermissions">Whether to remove permissions no longer supported by the providers.</param>
         void InstallPermissions(IPermissionProvider[] permissionProviders, bool removeUnusedPermissions = false);
-
 
         /// <summary>
         /// Authorize permission.
@@ -127,7 +124,6 @@ namespace SmartStore.Core.Security
         /// <returns><c>true</c> authorized otherwise <c>false</c>.</returns>
         bool AuthorizeByAlias(string permissionSystemName);
 
-
         /// <summary>
         /// Search all child permissions for an authorization (initial permission included).
         /// </summary>
@@ -142,7 +138,6 @@ namespace SmartStore.Core.Security
         /// <param name="customer">Customer.</param>
         /// <returns><c>true</c> authorization found otherwise <c>false</c>.</returns>
         bool FindAuthorization(string permissionSystemName, Customer customer);
-
 
         /// <summary>
         /// Gets the permission tree for a customer role.

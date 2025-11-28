@@ -63,7 +63,6 @@ namespace SmartStore.Core.Tests
             Assert.That(file.Name, Is.EqualTo("testfile.txt"));
         }
 
-
         [Test]
         public void ListFilesReturnsItemsWithShortPathAndEnvironmentSlashes()
         {
@@ -76,7 +75,6 @@ namespace SmartStore.Core.Tests
             Assert.That(one.Path, Is.EqualTo("Subfolder1" + Path.DirectorySeparatorChar + "one.txt"));
             Assert.That(two.Path, Is.EqualTo("Subfolder1" + Path.DirectorySeparatorChar + "two.txt"));
         }
-
 
         [Test]
         public void AnySlashInGetFileBecomesEnvironmentAppropriate()
@@ -152,7 +150,6 @@ namespace SmartStore.Core.Tests
             Assert.That(GetFolder(Path.Combine("SubFolder1", "SubSubFolder5")), Is.Not.Null);
         }
 
-
         [Test]
         public void CreateFileAndDeleteFileTakesAnySlash()
         {
@@ -184,6 +181,4 @@ namespace SmartStore.Core.Tests
         }
     }
 }
-
-
 

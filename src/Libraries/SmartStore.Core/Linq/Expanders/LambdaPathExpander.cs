@@ -147,7 +147,6 @@ namespace SmartStore.Linq
 
         //    DoExpand(type, path);
 
-
         //    //for (int i = 0; i < members.Count; i++)
         //    //{
         //    //    string member = members[i];

@@ -38,8 +38,6 @@ namespace SmartStore.Services.Pdf
         /// </summary>
         public string CustomFlags { get; set; }
 
-
-
         public virtual void Process(string flag, StringBuilder builder)
         {
             if (UserStylesheetUrl.HasValue())

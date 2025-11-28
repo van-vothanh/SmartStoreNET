@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System.Linq;
 using System.Security.Principal;
 
@@ -14,7 +15,6 @@ namespace SmartStore.Core.Fakes
             _roles = roles;
         }
 
-
         public IIdentity Identity => _identity;
 
         public bool IsInRole(string role)
@@ -23,3 +23,4 @@ namespace SmartStore.Core.Fakes
         }
     }
 }
+#endif

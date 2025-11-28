@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Rules;
@@ -23,7 +23,7 @@ namespace SmartStore.Admin.Models.Discounts
         public int GridPageSize { get; set; }
 
         [SmartResourceDisplayName("Admin.Promotions.Discounts.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Promotions.Discounts.Fields.DiscountType")]
@@ -67,7 +67,7 @@ namespace SmartStore.Admin.Models.Discounts
         public bool RequiresCouponCode { get; set; }
 
         [SmartResourceDisplayName("Admin.Promotions.Discounts.Fields.CouponCode")]
-        [AllowHtml]
+
         public string CouponCode { get; set; }
 
         [SmartResourceDisplayName("Admin.Promotions.Discounts.Fields.DiscountLimitation")]
@@ -75,7 +75,6 @@ namespace SmartStore.Admin.Models.Discounts
 
         [SmartResourceDisplayName("Admin.Promotions.Discounts.Fields.LimitationTimes")]
         public int LimitationTimes { get; set; }
-
 
         [SmartResourceDisplayName("Admin.Promotions.Discounts.Fields.AppliedToCategories")]
         public IList<AppliedToEntityModel> AppliedToCategories { get; set; }
@@ -85,7 +84,6 @@ namespace SmartStore.Admin.Models.Discounts
 
         [SmartResourceDisplayName("Admin.Promotions.Discounts.Fields.AppliedToProducts")]
         public IList<AppliedToEntityModel> AppliedToProducts { get; set; }
-
 
         [UIHint("RuleSets")]
         [AdditionalMetadata("multiple", true)]

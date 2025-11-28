@@ -291,7 +291,6 @@ namespace SmartStore.Services.Payments
             }
         }
 
-
         /// <summary>
         /// Pre process a payment
         /// </summary>
@@ -396,8 +395,6 @@ namespace SmartStore.Services.Payments
             return paymentMethod.Value.CanRePostProcessPayment(order);
         }
 
-
-
         /// <summary>
         /// Gets an additional handling fee of a payment method
         /// </summary>
@@ -413,8 +410,6 @@ namespace SmartStore.Services.Payments
 
             return paymentMethodAdditionalFee;
         }
-
-
 
         /// <summary>
         /// Gets a value indicating whether capture is supported by payment method
@@ -455,8 +450,6 @@ namespace SmartStore.Services.Payments
                 throw;
             }
         }
-
-
 
         /// <summary>
         /// Gets a value indicating whether partial refund is supported by payment method
@@ -511,8 +504,6 @@ namespace SmartStore.Services.Payments
             }
         }
 
-
-
         /// <summary>
         /// Gets a value indicating whether void is supported by payment method
         /// </summary>
@@ -552,8 +543,6 @@ namespace SmartStore.Services.Payments
                 throw;
             }
         }
-
-
 
         /// <summary>
         /// Gets a recurring payment type of payment method
@@ -636,8 +625,6 @@ namespace SmartStore.Services.Payments
                 throw;
             }
         }
-
-
 
         /// <summary>
         /// Gets a payment method type

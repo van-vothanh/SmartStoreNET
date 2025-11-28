@@ -42,7 +42,6 @@ namespace SmartStore.Services.Messages
         public Localizer T { get; set; } = NullLocalizer.Instance;
         public ILogger Logger { get; set; } = NullLogger.Instance;
 
-
         public virtual void InsertQueuedEmail(QueuedEmail queuedEmail)
         {
             Guard.NotNull(queuedEmail, nameof(queuedEmail));

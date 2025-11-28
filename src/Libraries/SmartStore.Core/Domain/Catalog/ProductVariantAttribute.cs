@@ -18,7 +18,7 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets the product identifier
         /// </summary>
 		[DataMember]
-        [Index("IX_Product_ProductAttribute_Mapping_ProductId_DisplayOrder", 1)]
+
         public int ProductId { get; set; }
 
         /// <summary>
@@ -51,14 +51,14 @@ namespace SmartStore.Core.Domain.Catalog
         /// Gets or sets the attribute control type identifier
         /// </summary>
 		[DataMember]
-        [Index]
+
         public int AttributeControlTypeId { get; set; }
 
         /// <summary>
         /// Gets or sets the display order
         /// </summary>
 		[DataMember]
-        [Index("IX_Product_ProductAttribute_Mapping_ProductId_DisplayOrder", 2)]
+
         public int DisplayOrder { get; set; }
 
         /// <summary>

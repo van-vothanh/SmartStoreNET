@@ -327,7 +327,6 @@ namespace SmartStore.Collections
                     ? _children.Where(x => !x.IsLeaf)
                     : Enumerable.Empty<T>();
 
-
         [JsonIgnore]
         public T FirstChild => _children?.FirstOrDefault();
 

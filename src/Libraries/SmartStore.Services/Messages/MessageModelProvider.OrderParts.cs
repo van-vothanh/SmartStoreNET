@@ -204,7 +204,6 @@ namespace SmartStore.Services.Messages
                 };
             }).ToArray();
 
-
             // Gift Cards
             m.GiftCardUsage = order.GiftCardUsageHistory.Count == 0 ? (object[])null : order.GiftCardUsageHistory.Select(x =>
             {

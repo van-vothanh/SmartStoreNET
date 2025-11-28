@@ -752,7 +752,6 @@ namespace SmartStore.Services.Catalog
             return result;
         }
 
-
         /// <summary>
         /// Gets the product cost
         /// </summary>
@@ -888,7 +887,6 @@ namespace SmartStore.Services.Catalog
             return appliedDiscountAmount;
         }
 
-
         /// <summary>
         /// Gets the shopping cart item sub total
         /// </summary>
@@ -959,8 +957,6 @@ namespace SmartStore.Services.Catalog
             return finalPrice;
         }
 
-
-
         /// <summary>
         /// Gets discount amount
         /// </summary>
@@ -1003,7 +999,6 @@ namespace SmartStore.Services.Catalog
             totalDiscountAmount = totalDiscountAmount.RoundIfEnabledFor(_services.WorkContext.WorkingCurrency);
             return totalDiscountAmount;
         }
-
 
         /// <summary>
         /// Gets the price adjustment of a variant attribute value

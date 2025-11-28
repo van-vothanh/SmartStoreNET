@@ -1042,7 +1042,6 @@ namespace SmartStore.Services.DataExchange.Export
         }
     }
 
-
     /// <summary>
     /// Allows to exclude XML nodes from export
     /// </summary>

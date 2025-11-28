@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using SmartStore.Data;
 using SmartStore.Data.Setup;
 using SmartStore.GoogleMerchantCenter.Data.Migrations;
@@ -31,7 +31,6 @@ namespace SmartStore.GoogleMerchantCenter.Data
             : base(nameOrConnectionString, ALIASKEY)
         {
         }
-
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

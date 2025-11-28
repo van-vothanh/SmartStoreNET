@@ -157,7 +157,6 @@ namespace SmartStore.Data.Setup
                 return this;
             }
 
-
             public IResourceAddBuilder Hint(string value)
             {
                 return Hint(null, value);

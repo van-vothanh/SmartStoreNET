@@ -30,7 +30,6 @@ namespace SmartStore
             return value.HasValue ? value.Value.ToLocalTime() : (DateTime?)null;
         }
 
-
         /// <summary>
         /// Returns a date that is rounded to the next even hour above the given
         /// date.

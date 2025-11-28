@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System;
 using System.Runtime.Remoting.Messaging;
 using System.Web;
@@ -87,3 +88,5 @@ namespace SmartStore.Core.Infrastructure
         }
     }
 }
+
+#endif

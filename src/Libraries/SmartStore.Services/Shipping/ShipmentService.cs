@@ -177,8 +177,6 @@ namespace SmartStore.Services.Shipping
             _eventPublisher.PublishOrderUpdated(shipment.Order);
         }
 
-
-
         /// <summary>
         /// Deletes a shipment item
         /// </summary>

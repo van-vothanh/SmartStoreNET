@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Script.Serialization;
 using FluentValidation;
 using FluentValidation.Attributes;
@@ -26,15 +26,15 @@ namespace SmartStore.Admin.Models.Messages
         public TreeNode<string> TokensTree { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.To")]
-        [AllowHtml]
+
         public string To { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.ReplyTo")]
-        [AllowHtml]
+
         public string ReplyTo { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.AllowedTokens")]
@@ -42,15 +42,15 @@ namespace SmartStore.Admin.Models.Messages
         public string LastModelTree { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.BccEmailAddresses")]
-        [AllowHtml]
+
         public string BccEmailAddresses { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.Subject")]
-        [AllowHtml]
+
         public string Subject { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.Body")]
-        [AllowHtml]
+
         public string Body { get; set; }
 
         [SmartResourceDisplayName("Common.Active")]
@@ -92,23 +92,23 @@ namespace SmartStore.Admin.Models.Messages
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.To")]
-        [AllowHtml]
+
         public string To { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.ReplyTo")]
-        [AllowHtml]
+
         public string ReplyTo { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.BccEmailAddresses")]
-        [AllowHtml]
+
         public string BccEmailAddresses { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.Subject")]
-        [AllowHtml]
+
         public string Subject { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.Body")]
-        [AllowHtml]
+
         public string Body { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.MessageTemplates.Fields.EmailAccount")]

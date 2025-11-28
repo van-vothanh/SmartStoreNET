@@ -140,7 +140,6 @@ namespace SmartStore.Services.Configuration
             }
         }
 
-
         public virtual Setting GetSettingById(int settingId)
         {
             if (settingId == 0)

@@ -148,7 +148,6 @@ namespace SmartStore.PayPal.Services
         }
     }
 
-
     public class FinancingOptions
     {
         public FinancingOptions(string origin)

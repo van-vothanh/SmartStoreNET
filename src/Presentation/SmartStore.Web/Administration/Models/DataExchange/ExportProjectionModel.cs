@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Web.Framework;
 
@@ -36,7 +36,7 @@ namespace SmartStore.Admin.Models.DataExchange
         public bool DescriptionToPlainText { get; set; }
 
         [SmartResourceDisplayName("Admin.DataExchange.Export.Projection.AppendDescriptionText")]
-        [AllowHtml]
+
         public string[] AppendDescriptionText { get; set; }
         public MultiSelectList AvailableAppendDescriptionTexts { get; set; }
 

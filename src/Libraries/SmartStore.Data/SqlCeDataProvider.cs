@@ -1,5 +1,5 @@
 ﻿using System.Data.Common;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Data.SqlClient;
 
 namespace SmartStore.Data

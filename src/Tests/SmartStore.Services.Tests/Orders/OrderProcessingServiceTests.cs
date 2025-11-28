@@ -259,7 +259,6 @@ namespace SmartStore.Services.Tests.Orders
             _paymentService.Expect(ps => ps.SupportCapture("paymentMethodSystemName_that_doesn't_support_capture")).Return(false);
             var order = new Order();
 
-
             order.PaymentMethodSystemName = "paymentMethodSystemName_that_supports_capture";
             foreach (OrderStatus os in Enum.GetValues(typeof(OrderStatus)))
                 foreach (PaymentStatus ps in Enum.GetValues(typeof(PaymentStatus)))
@@ -275,7 +274,6 @@ namespace SmartStore.Services.Tests.Orders
                         else
                             _orderProcessingService.CanCapture(order).ShouldBeFalse();
                     }
-
 
             order.PaymentMethodSystemName = "paymentMethodSystemName_that_doesn't_support_capture";
             foreach (OrderStatus os in Enum.GetValues(typeof(OrderStatus)))
@@ -331,8 +329,6 @@ namespace SmartStore.Services.Tests.Orders
                         else
                             _orderProcessingService.CanRefund(order).ShouldBeFalse();
                     }
-
-
 
             order.PaymentMethodSystemName = "paymentMethodSystemName_that_doesn't_support_refund";
             foreach (OrderStatus os in Enum.GetValues(typeof(OrderStatus)))
@@ -428,8 +424,6 @@ namespace SmartStore.Services.Tests.Orders
                             _orderProcessingService.CanVoid(order).ShouldBeFalse();
                     }
 
-
-
             order.PaymentMethodSystemName = "paymentMethodSystemName_that_doesn't_support_void";
             foreach (OrderStatus os in Enum.GetValues(typeof(OrderStatus)))
                 foreach (PaymentStatus ps in Enum.GetValues(typeof(PaymentStatus)))
@@ -523,8 +517,6 @@ namespace SmartStore.Services.Tests.Orders
                         else
                             _orderProcessingService.CanPartiallyRefund(order, 10).ShouldBeFalse();
                     }
-
-
 
             order.PaymentMethodSystemName = "paymentMethodSystemName_that_doesn't_support_partialrefund";
             foreach (OrderStatus os in Enum.GetValues(typeof(OrderStatus)))

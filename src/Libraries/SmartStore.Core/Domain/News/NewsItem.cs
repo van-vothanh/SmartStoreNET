@@ -130,7 +130,7 @@ namespace SmartStore.Core.Domain.News
         /// <summary>
         /// Gets or sets a language identifier for which the news item should be displayed.
         /// </summary>
-        [Index]
+
         public int? LanguageId { get; set; }
 
         /// <summary>

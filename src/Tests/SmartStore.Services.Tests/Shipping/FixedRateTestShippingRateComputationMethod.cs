@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Domain.Shipping;
 using SmartStore.Core.Plugins;
 using SmartStore.Services.Shipping;
@@ -58,7 +58,6 @@ namespace SmartStore.Services.Tests.Shipping
         }
 
         #region Properties
-
 
         /// <summary>
         /// Gets a shipping rate computation method type

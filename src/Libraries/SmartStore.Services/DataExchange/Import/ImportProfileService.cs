@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Metadata.Edm;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -364,7 +364,6 @@ namespace SmartStore.Services.DataExchange.Import
                             .Where(x => !x.Name.IsCaseInsensitiveEqual("Id") && x.BuiltInTypeKind.HasFlag(BuiltInTypeKind.EdmProperty))
                             .Select(x => x.Name)
                             .ToList();
-
 
                         foreach (ImportEntityType type in Enum.GetValues(typeof(ImportEntityType)))
                         {

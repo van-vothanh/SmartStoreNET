@@ -82,7 +82,6 @@ namespace SmartStore.Data.Tests.Customers
                 }
             );
 
-
             var fromDb = SaveAndLoadEntity(customer);
             fromDb.ShouldNotBeNull();
 
@@ -195,7 +194,6 @@ namespace SmartStore.Data.Tests.Customers
                 }
             );
 
-
             var fromDb = SaveAndLoadEntity(customer);
             fromDb.ShouldNotBeNull();
 
@@ -228,7 +226,6 @@ namespace SmartStore.Data.Tests.Customers
                         UpdatedOnUtc = new DateTime(2010, 01, 01)
                     }
                );
-
 
             var fromDb = SaveAndLoadEntity(customer);
             fromDb.ShouldNotBeNull();

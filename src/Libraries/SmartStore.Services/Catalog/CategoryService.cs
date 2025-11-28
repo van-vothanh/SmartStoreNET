@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using SmartStore.Collections;
 using SmartStore.Core;
 using SmartStore.Core.Caching;
@@ -127,7 +127,6 @@ namespace SmartStore.Services.Catalog
             }
 
             _cache.RemoveByPattern(AclService.ACL_SEGMENT_PATTERN);
-
 
             void ProcessCategory(DbContextScope scope, Category c)
             {
@@ -750,7 +749,7 @@ namespace SmartStore.Services.Catalog
             TreeNode<ICategoryNode> treeNode,
             int? languageId = null,
             string aliasPattern = null,
-            string separator = " » ")
+            string separator = "  ")
         {
             Guard.NotNull(treeNode, nameof(treeNode));
 

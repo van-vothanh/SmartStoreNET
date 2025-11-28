@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Common;
@@ -2026,7 +2026,6 @@ namespace SmartStore.Web.Controllers
                         && !string.IsNullOrEmpty(orderSubTotalAppliedDiscount.CouponCode)
                         && model.IsEditable;
                 }
-
 
                 //shipping info
                 model.RequiresShipping = cart.RequiresShipping();

@@ -211,7 +211,6 @@ namespace SmartStore.Services.Tests.Catalog
             });
             product.HasTierPrices = true;
 
-
             var customer = new Customer();
             customer.CustomerRoleMappings.Add(new CustomerRoleMapping
             {
@@ -398,7 +397,6 @@ namespace SmartStore.Services.Tests.Catalog
             product.AppliedDiscounts.Add(discount3);
             //discount is not valid
             _discountService.Expect(ds => ds.IsDiscountValid(discount3, customer)).Return(false);
-
 
             Discount appliedDiscount;
             _priceCalcService.GetDiscountAmount(product, customer, 0, 1, out appliedDiscount).ShouldEqual(4);

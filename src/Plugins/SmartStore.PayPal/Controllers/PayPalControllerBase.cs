@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Configuration;
 using SmartStore.Core.Domain.Orders;
 using SmartStore.Core.Domain.Payments;
@@ -32,7 +32,6 @@ namespace SmartStore.PayPal.Controllers
             model.PrimaryStoreCurrencyCode = store.PrimaryStoreCurrency.CurrencyCode;
         }
     }
-
 
     public abstract class PayPalControllerBase<TSetting> : PayPalPaymentControllerBase where TSetting : PayPalSettingsBase, ISettings, new()
     {

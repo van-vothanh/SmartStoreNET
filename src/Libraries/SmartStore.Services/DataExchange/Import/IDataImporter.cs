@@ -11,7 +11,6 @@ namespace SmartStore.Services.DataExchange.Import
         void Import(DataImportRequest request, CancellationToken cancellationToken);
     }
 
-
     public class DataImportRequest
     {
         private readonly static ProgressValueSetter _voidProgressValueSetter = DataImportRequest.SetProgress;
@@ -36,7 +35,6 @@ namespace SmartStore.Services.DataExchange.Import
         public IList<int> EntitiesToImport { get; set; }
 
         public IDictionary<string, object> CustomData { get; private set; }
-
 
         private static void SetProgress(int val, int max, string msg)
         {

@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Autofac.Integration.Mvc;
 
 namespace SmartStore.Services.Search.Modelling

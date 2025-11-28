@@ -1,7 +1,7 @@
 ﻿using System.Security;
 using System.Security.Claims;
 using System.Security.Principal;
-using System.Web.Security;
+using Microsoft.AspNetCore.Identity;
 using SmartStore.Core.Domain.Customers;
 
 namespace SmartStore.Core
@@ -19,7 +19,6 @@ namespace SmartStore.Core
 
         public override bool IsAuthenticated => CustomerId != 0;
     }
-
 
     public class SmartStorePrincipal : IPrincipal
     {

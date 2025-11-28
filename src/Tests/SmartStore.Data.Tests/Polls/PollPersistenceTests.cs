@@ -74,7 +74,6 @@ namespace SmartStore.Data.Tests.Polls
             var fromDb = SaveAndLoadEntity(poll);
             fromDb.ShouldNotBeNull();
 
-
             fromDb.PollAnswers.ShouldNotBeNull();
             (fromDb.PollAnswers.Count == 1).ShouldBeTrue();
             fromDb.PollAnswers.First().Name.ShouldEqual("Answer 1");
@@ -122,7 +121,6 @@ namespace SmartStore.Data.Tests.Polls
                 );
             var fromDb = SaveAndLoadEntity(poll);
             fromDb.ShouldNotBeNull();
-
 
             fromDb.PollAnswers.ShouldNotBeNull();
             (fromDb.PollAnswers.Count == 1).ShouldBeTrue();

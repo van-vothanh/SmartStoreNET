@@ -167,7 +167,7 @@ namespace SmartStore.Core.Domain.Blogs
         /// Gets or sets a language identifier for which the blog post should be displayed.
         /// </summary>
         [DataMember]
-        [Index]
+
         public int? LanguageId { get; set; }
 
         /// <summary>

@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System;
 using System.Web;
 using Autofac.Integration.Mvc;
@@ -61,7 +62,6 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
             LifetimeScopeProvider = lifetimeScopeProvider ?? throw new ArgumentNullException("lifetimeScopeProvider");
         }
 
-
         internal static ILifetimeScopeProvider LifetimeScopeProvider
         {
             get;
@@ -74,3 +74,5 @@ namespace SmartStore.Core.Infrastructure.DependencyManagement
 
     }
 }
+
+#endif

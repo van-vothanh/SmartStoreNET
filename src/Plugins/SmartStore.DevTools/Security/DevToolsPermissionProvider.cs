@@ -18,7 +18,6 @@ namespace SmartStore.DevTools.Security
         public const string Update = "devtools.update";
     }
 
-
     public class DevToolsPermissionProvider : IPermissionProvider
     {
         public IEnumerable<PermissionRecord> GetPermissions()

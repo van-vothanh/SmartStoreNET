@@ -101,7 +101,6 @@ namespace SmartStore.Data.Setup
             return newType as TType;
         }
 
-
         public static void ExecutePendingResourceMigrations(string resPath, SmartObjectContext dbContext)
         {
             Guard.NotNull(dbContext, nameof(dbContext));

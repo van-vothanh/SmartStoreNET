@@ -159,7 +159,6 @@ namespace SmartStore.Services.Logging
             return InsertActivity(systemKeyword, comment, _workContext.CurrentCustomer, commentParams);
         }
 
-
         /// <summary>
         /// Inserts an activity log item
         /// </summary>
@@ -271,7 +270,6 @@ namespace SmartStore.Services.Logging
         {
             if (activityLogId == 0)
                 return null;
-
 
             var query = from al in _activityLogRepository.Table
                         where al.Id == activityLogId

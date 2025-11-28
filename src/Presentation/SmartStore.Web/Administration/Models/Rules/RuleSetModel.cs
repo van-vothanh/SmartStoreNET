@@ -55,7 +55,6 @@ namespace SmartStore.Admin.Models.Rules
         }
     }
 
-
     public class RuleSetPreviewModel : RuleSetModel
     {
         public int GridPageSize { get; set; }
@@ -63,7 +62,6 @@ namespace SmartStore.Admin.Models.Rules
         public bool UsernamesEnabled { get; set; }
         public bool DisplayProductPictures { get; set; }
     }
-
 
     public partial class RuleSetValidator : AbstractValidator<RuleSetModel>
     {

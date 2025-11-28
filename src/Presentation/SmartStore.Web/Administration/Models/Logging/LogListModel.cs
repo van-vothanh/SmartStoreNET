@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -20,7 +20,7 @@ namespace SmartStore.Admin.Models.Logging
         public DateTime? CreatedOnTo { get; set; }
 
         [SmartResourceDisplayName("Admin.System.Log.List.Message")]
-        [AllowHtml]
+
         public string Message { get; set; }
 
         [SmartResourceDisplayName("Admin.System.Log.List.LogLevel")]

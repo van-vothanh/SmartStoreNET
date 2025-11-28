@@ -78,7 +78,6 @@ namespace SmartStore.Core.Domain.Directory
         #endregion
     }
 
-
     /// <summary>
     /// Represents how to present delivery times.
     /// </summary>

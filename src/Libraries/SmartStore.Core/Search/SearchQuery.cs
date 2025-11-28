@@ -205,7 +205,6 @@ namespace SmartStore.Core.Search
                 ResultFlags &= ~SearchResultFlags.WithHits;
             }
 
-
             return (this as TQuery);
         }
 
@@ -219,7 +218,6 @@ namespace SmartStore.Core.Search
             {
                 ResultFlags &= ~SearchResultFlags.WithFacets;
             }
-
 
             return (this as TQuery);
         }

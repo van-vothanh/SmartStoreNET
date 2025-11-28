@@ -286,7 +286,6 @@ namespace SmartStore.ComponentModel
             return new DelegatedAccessor(property);
         }
 
-
         /// <summary>
         /// <para>
         /// Creates and caches fast property helpers that expose getters for every non-hidden get property
@@ -469,8 +468,6 @@ namespace SmartStore.ComponentModel
             public string PropertyName => base.Item2;
         }
     }
-
-
 
     [DebuggerDisplay("DelegateAccessor: {Name}")]
     internal sealed class DelegatedAccessor : FastProperty

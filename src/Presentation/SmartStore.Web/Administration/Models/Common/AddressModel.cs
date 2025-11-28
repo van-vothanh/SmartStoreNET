@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -24,61 +24,61 @@ namespace SmartStore.Admin.Models.Common
         public string Title { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.FirstName")]
-        [AllowHtml]
+
         public string FirstName { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.LastName")]
-        [AllowHtml]
+
         public string LastName { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.Email")]
-        [AllowHtml]
+
         public string Email { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.EmailMatch")]
-        [AllowHtml]
+
         public string EmailMatch { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.Company")]
-        [AllowHtml]
+
         public string Company { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.Country")]
         public int? CountryId { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.Country")]
-        [AllowHtml]
+
         public string CountryName { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.StateProvince")]
         public int? StateProvinceId { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.StateProvince")]
-        [AllowHtml]
+
         public string StateProvinceName { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.City")]
-        [AllowHtml]
+
         public string City { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.Address1")]
-        [AllowHtml]
+
         public string Address1 { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.Address2")]
-        [AllowHtml]
+
         public string Address2 { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.ZipPostalCode")]
-        [AllowHtml]
+
         public string ZipPostalCode { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.PhoneNumber")]
-        [AllowHtml]
+
         public string PhoneNumber { get; set; }
 
         [SmartResourceDisplayName("Admin.Address.Fields.FaxNumber")]
-        [AllowHtml]
+
         public string FaxNumber { get; set; }
 
         public IList<SelectListItem> AvailableCountries { get; set; }

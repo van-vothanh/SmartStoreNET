@@ -41,7 +41,6 @@ namespace SmartStore.Services.Pdf
         /// </summary>
         public float? TocTextSizeShrink { get; set; }
 
-
         public override void Process(string flag, StringBuilder builder)
         {
             builder.Append(" toc");

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Web.Framework.Settings
 {
@@ -34,7 +34,6 @@ namespace SmartStore.Web.Framework.Settings
             _form = formParam != null
                 ? (FormCollection)filterContext.ActionParameters[formParam.ParameterName]
                 : BindFormCollection(filterContext.Controller.ControllerContext);
-
 
             _settingsWriteBatch = Services.Settings.BeginScope();
         }

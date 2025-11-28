@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Collections;
@@ -91,7 +91,6 @@ namespace SmartStore.Admin.Models.Menus
         public IList<MenuItemRecordLocalizedModel> Locales { get; set; }
     }
 
-
     public class MenuItemRecordLocalizedModel : ILocalizedModelLocal
     {
         public int LanguageId { get; set; }
@@ -102,7 +101,6 @@ namespace SmartStore.Admin.Models.Menus
         [SmartResourceDisplayName("Admin.ContentManagement.Menus.Item.ShortDescription")]
         public string ShortDescription { get; set; }
     }
-
 
     public partial class MenuItemRecordValidator : AbstractValidator<MenuItemRecordModel>
     {

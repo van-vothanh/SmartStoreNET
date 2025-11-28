@@ -35,7 +35,6 @@ namespace SmartStore.Core.Caching
             return acquirer();
         }
 
-
         public ISet GetHashSet(string key, Func<IEnumerable<string>> acquirer = null)
         {
             return new MemorySet(this);

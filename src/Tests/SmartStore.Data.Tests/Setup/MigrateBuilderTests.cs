@@ -134,8 +134,6 @@ namespace SmartStore.Data.Tests.Setup
             return builder.Build();
         }
 
-
-
         [Test]
         public void Can_add_setting_entries()
         {

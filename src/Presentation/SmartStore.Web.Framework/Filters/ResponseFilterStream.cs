@@ -54,7 +54,6 @@ namespace SmartStore.Web.Framework.Filters
             _captureStream = new MemoryStream(capacity);
         }
 
-
         /// <summary>
         /// Determines whether the stream is captured
         /// </summary>
@@ -65,7 +64,6 @@ namespace SmartStore.Web.Framework.Filters
         /// or delaying output until Flush() is fired.
         /// </summary>
         private bool IsOutputDelayed => TransformStream != null || TransformString != null;
-
 
         /// <summary>
         /// Event that captures Response output and makes it available
@@ -118,12 +116,10 @@ namespace SmartStore.Web.Framework.Filters
         /// </summary>
         public event Func<string, string> TransformString;
 
-
         protected virtual void OnCaptureStream(MemoryStream ms)
         {
             CaptureStream?.Invoke(ms);
         }
-
 
         private void OnCaptureStringInternal(MemoryStream ms)
         {
@@ -162,7 +158,6 @@ namespace SmartStore.Web.Framework.Filters
             return value;
         }
 
-
         protected virtual MemoryStream OnTransformCompleteStream(MemoryStream ms)
         {
             if (TransformStream != null)
@@ -170,7 +165,6 @@ namespace SmartStore.Web.Framework.Filters
 
             return ms;
         }
-
 
         /// <summary>
         /// Wrapper method form OnTransformString that handles

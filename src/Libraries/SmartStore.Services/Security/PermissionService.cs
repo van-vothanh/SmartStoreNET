@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using SmartStore.Collections;
@@ -215,7 +215,6 @@ namespace SmartStore.Services.Security
             }
         }
 
-
         public virtual PermissionRoleMapping GetPermissionRoleMappingById(int mappingId)
         {
             if (mappingId == 0)
@@ -253,7 +252,6 @@ namespace SmartStore.Services.Security
                 _cacheManager.RemoveByPattern(PERMISSION_TREE_PATTERN_KEY);
             }
         }
-
 
         public virtual void InstallPermissions(IPermissionProvider[] permissionProviders, bool removeUnusedPermissions = false)
         {
@@ -495,7 +493,6 @@ namespace SmartStore.Services.Security
             return false;
         }
 
-
         public virtual bool FindAuthorization(string permissionSystemName)
         {
             return FindAuthorization(permissionSystemName, _workContext.CurrentCustomer);
@@ -555,7 +552,6 @@ namespace SmartStore.Services.Security
                 return false;
             }
         }
-
 
         public virtual TreeNode<IPermissionNode> GetPermissionTree(CustomerRole role, bool addDisplayNames = false)
         {

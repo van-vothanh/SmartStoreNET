@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -612,7 +612,6 @@ DELETE TOP(20000) [c]
 
             genericAttributesSql = genericAttributesSql.FormatInvariant(paramClauses.ToString());
             guestCustomersSql = guestCustomersSql.FormatInvariant(paramClauses.ToString());
-
 
             // Delete generic attributes.
             while (true)

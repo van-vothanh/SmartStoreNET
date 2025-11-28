@@ -33,7 +33,6 @@ namespace SmartStore.Services.DataExchange.Export
             bool includeHidden = true);
     }
 
-
     public class DataExportRequest
     {
         private readonly static ProgressValueSetter _voidProgressValueSetter = DataExportRequest.SetProgress;
@@ -66,7 +65,6 @@ namespace SmartStore.Services.DataExchange.Export
         public IDictionary<string, object> CustomData { get; private set; }
 
         public IQueryable<Product> ProductQuery { get; set; }
-
 
         private static void SetProgress(int val, int max, string msg)
         {

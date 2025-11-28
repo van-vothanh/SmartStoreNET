@@ -159,7 +159,6 @@ namespace SmartStore.Services.Common
                 String.IsNullOrWhiteSpace(address.ZipPostalCode))
                 return false;
 
-
             if (_addressSettings.CountryEnabled)
             {
                 if (address.CountryId == null || address.CountryId.Value == 0)

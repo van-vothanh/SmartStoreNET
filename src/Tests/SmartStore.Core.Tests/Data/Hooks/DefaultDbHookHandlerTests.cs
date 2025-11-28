@@ -129,7 +129,6 @@ namespace SmartStore.Core.Tests.Data.Hooks
             Assert.IsTrue(processedHooks.All(x => expected.Contains(x.GetType())));
         }
 
-
         #region Utils
 
         private static IHookedEntity CreateEntry<T>(EntityState state) where T : BaseEntity, new()

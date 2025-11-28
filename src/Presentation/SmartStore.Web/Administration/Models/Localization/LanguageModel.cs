@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Localization;
@@ -21,21 +21,21 @@ namespace SmartStore.Admin.Models.Localization
         }
 
         [SmartResourceDisplayName("Admin.Configuration.Languages.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Languages.Fields.LanguageCulture")]
-        [AllowHtml]
+
         public string LanguageCulture { get; set; }
         public List<SelectListItem> AvailableCultures { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Languages.Fields.UniqueSeoCode")]
-        [AllowHtml]
+
         public string UniqueSeoCode { get; set; }
         public List<SelectListItem> AvailableTwoLetterLanguageCodes { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Languages.Fields.FlagImageFileName")]
-        [AllowHtml]
+
         public string FlagImageFileName { get; set; }
         public IList<string> FlagFileNames { get; set; }
         public List<SelectListItem> AvailableFlags { get; set; }

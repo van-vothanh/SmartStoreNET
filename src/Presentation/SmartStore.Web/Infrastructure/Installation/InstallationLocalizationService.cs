@@ -131,7 +131,6 @@ namespace SmartStore.Web.Infrastructure.Installation
                     var xmlDocument = new XmlDocument();
                     xmlDocument.Load(filePath);
 
-
                     //get language code
                     var languageCode = "";
                     //we file name format: installation.{languagecode}.xml

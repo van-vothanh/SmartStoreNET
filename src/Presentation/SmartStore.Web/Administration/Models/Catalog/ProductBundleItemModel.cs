@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Localization;
 using SmartStore.Web.Framework.Modelling;
@@ -59,7 +59,6 @@ namespace SmartStore.Admin.Models.Catalog
         public DateTime UpdatedOn { get; set; }
     }
 
-
     public class ProductBundleItemLocalizedModel : ILocalizedModelLocal
     {
         public int LanguageId { get; set; }
@@ -70,7 +69,6 @@ namespace SmartStore.Admin.Models.Catalog
         [SmartResourceDisplayName("Admin.Catalog.Products.BundleItems.Fields.ShortDescription")]
         public string ShortDescription { get; set; }
     }
-
 
     public class ProductBundleItemAttributeModel : EntityModelBase
     {

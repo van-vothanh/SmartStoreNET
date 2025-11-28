@@ -1,6 +1,4 @@
-﻿using System.Web.UI;
-
-namespace SmartStore.Web.Framework.UI
+﻿namespace SmartStore.Web.Framework.UI
 {
     // TODO: (mc) make modal window renderer BS4 ready (after backend has been updated to BS4)
     public class WindowRenderer : ComponentRenderer<Window>

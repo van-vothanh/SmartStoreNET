@@ -1,9 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Web;
-using System.Web.Mvc;
-using System.Web.UI;
-
+using Microsoft.AspNetCore.Mvc;
 namespace SmartStore.Web.Framework.UI
 {
     public abstract class ComponentRenderer<TComponent> : IHtmlString where TComponent : Component

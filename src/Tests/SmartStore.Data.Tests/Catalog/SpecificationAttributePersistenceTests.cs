@@ -43,7 +43,6 @@ namespace SmartStore.Data.Tests.Catalog
             fromDb.ShouldNotBeNull();
             fromDb.Name.ShouldEqual("Name 1");
 
-
             fromDb.SpecificationAttributeOptions.ShouldNotBeNull();
             (fromDb.SpecificationAttributeOptions.Count == 1).ShouldBeTrue();
             fromDb.SpecificationAttributeOptions.First().Name.ShouldEqual("SpecificationAttributeOption name 1");

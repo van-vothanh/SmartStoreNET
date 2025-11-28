@@ -5,7 +5,6 @@ using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq.Expressions;
 
-
 /*
  * NOTE: This class was re-used from the NHibernate.Linq project.
  */

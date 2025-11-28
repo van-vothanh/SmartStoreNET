@@ -266,7 +266,6 @@ namespace SmartStore.Core.Tests.Rules.Filters
             AssertEquality(expectedResult, result);
         }
 
-
         [Test]
         public void SimpleMemberFiltersMatchAnd()
         {

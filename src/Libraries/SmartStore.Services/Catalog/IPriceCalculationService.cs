@@ -201,7 +201,6 @@ namespace SmartStore.Services.Catalog
             PriceCalculationContext context = null,
             decimal? finalPrice = null);
 
-
         /// <summary>
         /// Gets the shopping cart item sub total
         /// </summary>
@@ -218,9 +217,6 @@ namespace SmartStore.Services.Catalog
         /// <returns>Shopping cart unit price (one item)</returns>
 		decimal GetUnitPrice(OrganizedShoppingCartItem shoppingCartItem, bool includeDiscounts);
 
-
-
-
         /// <summary>
         /// Gets discount amount
         /// </summary>
@@ -235,7 +231,6 @@ namespace SmartStore.Services.Catalog
         /// <param name="appliedDiscount">Applied discount</param>
         /// <returns>Discount amount</returns>
 		decimal GetDiscountAmount(OrganizedShoppingCartItem shoppingCartItem, out Discount appliedDiscount);
-
 
         /// <summary>
         /// Gets the price adjustment of a variant attribute value

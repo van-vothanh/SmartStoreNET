@@ -61,8 +61,6 @@ namespace SmartStore.Services.Pdf
         /// </summary>
         public string CustomFlags { get; set; }
 
-
-
         /// <summary>
         /// Cover content
         /// </summary>

@@ -1,4 +1,4 @@
-#region Copyright © 2001-2003 Jean-Claude Manoli [jc@manoli.net]
+#region Copyright  2001-2003 Jean-Claude Manoli [jc@manoli.net]
 /*
  * Based on code submitted by Mitsugi Ogawa.
  * 
@@ -44,7 +44,6 @@ namespace SmartStore.Core.Html.CodeFormatter
         /// Returns <b>false</b>, since T-SQL is not case sensitive.
         /// </summary>
         public override bool CaseSensitive => false;
-
 
         /// <summary>
         /// The list of T-SQL keywords.

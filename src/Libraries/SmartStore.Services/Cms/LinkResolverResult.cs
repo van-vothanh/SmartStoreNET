@@ -96,7 +96,6 @@ namespace SmartStore.Services.Cms
         }
     }
 
-
     public static class LinkResolverExtensions
     {
         public static (string Icon, string ResKey) GetLinkTypeInfo(this LinkType type)

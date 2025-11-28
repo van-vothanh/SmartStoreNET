@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.ComponentModel;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Common;
@@ -804,7 +804,6 @@ namespace SmartStore.Web.Controllers
                     model.AvailableCountries.Add(new SelectListItem() { Text = c.GetLocalized(x => x.Name), Value = c.Id.ToString(), Selected = (c.Id == model.CountryId) });
                 }
 
-
                 if (_customerSettings.StateProvinceEnabled)
                 {
                     //states
@@ -1195,7 +1194,6 @@ namespace SmartStore.Web.Controllers
 
             var customer = _workContext.CurrentCustomer;
 
-
             if (ModelState.IsValid)
             {
                 var address = model.Address.ToEntity();
@@ -1210,7 +1208,6 @@ namespace SmartStore.Web.Controllers
 
                 return RedirectToAction("Addresses");
             }
-
 
             // If we got this far, something failed, redisplay form
             model.Address.PrepareModel(null, true, _addressSettings, _localizationService, _stateProvinceService, () => _countryService.GetAllCountries());
@@ -1527,7 +1524,6 @@ namespace SmartStore.Web.Controllers
                 }
             }
 
-
             //If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -1662,7 +1658,6 @@ namespace SmartStore.Web.Controllers
             //If we got this far, something failed, redisplay form
             return View(model);
         }
-
 
         [RewriteUrl(SslRequirement.Yes)]
         public ActionResult PasswordRecoveryConfirm(string token, string email)

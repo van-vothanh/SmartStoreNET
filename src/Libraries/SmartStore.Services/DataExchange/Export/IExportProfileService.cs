@@ -83,7 +83,6 @@ namespace SmartStore.Services.DataExchange.Export
         /// <returns>List of export profiles</returns>
         IList<ExportProfile> GetExportProfilesBySystemName(string providerSystemName);
 
-
         /// <summary>
         /// Load all export providers
         /// </summary>

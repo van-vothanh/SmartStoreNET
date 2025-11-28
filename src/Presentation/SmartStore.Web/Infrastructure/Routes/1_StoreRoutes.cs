@@ -1,6 +1,6 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Web.Mvc.Routing.Constraints;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core.Data;
 using SmartStore.Services.Media;
 using SmartStore.Web.Framework;
@@ -65,7 +65,6 @@ namespace SmartStore.Web.Infrastructure
             RegisterMediaRoute("Media", "File", "{id}");
 
             #endregion
-
 
             /* Common
 			----------------------------------------*/
@@ -138,7 +137,6 @@ namespace SmartStore.Web.Infrastructure
                 new { customertaxtype = idConstraint },
                 new[] { "SmartStore.Web.Controllers" });
 
-
             /* Catalog
 			----------------------------------------*/
 
@@ -200,7 +198,6 @@ namespace SmartStore.Web.Infrastructure
                 new { productId = idConstraint, shoppingCartTypeId = idConstraint },
                 new[] { "SmartStore.Web.Controllers" });
 
-
             /* Checkout
 			----------------------------------------*/
 
@@ -208,7 +205,6 @@ namespace SmartStore.Web.Infrastructure
                 "checkout/",
                 new { controller = "Checkout", action = "Index" },
                 new[] { "SmartStore.Web.Controllers" });
-
 
             /* Newsletter
 			----------------------------------------*/
@@ -224,7 +220,6 @@ namespace SmartStore.Web.Infrastructure
                 new { controller = "Newsletter", action = "Subscribe" },
                 new[] { "SmartStore.Web.Controllers" });
 
-
             /* Customer
 			----------------------------------------*/
 
@@ -238,7 +233,6 @@ namespace SmartStore.Web.Infrastructure
                 new { controller = "Profile", action = "Index", id = UrlParameter.Optional },
                 new { id = idConstraint },
                 new[] { "SmartStore.Web.Controllers" });
-
 
             /* Blog
 			----------------------------------------*/
@@ -262,7 +256,6 @@ namespace SmartStore.Web.Infrastructure
                 "blog/rss",
                 new { controller = "Blog", action = "ListRss" },
                 new[] { "SmartStore.Web.Controllers" });
-
 
             /* Boards
 			----------------------------------------*/
@@ -312,7 +305,6 @@ namespace SmartStore.Web.Infrastructure
                 "boards/search",
                 new { controller = "Boards", action = "Search" },
                 new[] { "SmartStore.Web.Controllers" });
-
 
             /* Misc
 			----------------------------------------*/

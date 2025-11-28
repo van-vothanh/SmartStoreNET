@@ -23,7 +23,6 @@ namespace SmartStore.Core.Domain.Discounts
         /// </summary>
         public DateTime CreatedOnUtc { get; set; }
 
-
         /// <summary>
         /// Gets or sets the discount
         /// </summary>

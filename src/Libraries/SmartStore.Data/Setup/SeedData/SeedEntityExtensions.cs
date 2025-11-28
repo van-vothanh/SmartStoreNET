@@ -51,7 +51,6 @@ namespace SmartStore.Data.Setup
             }
         }
 
-
         public class SeedEntityAlterer<T, TKey> where T : BaseEntity
         {
             private readonly Dictionary<TKey, T> _entityMap; // for faster access!

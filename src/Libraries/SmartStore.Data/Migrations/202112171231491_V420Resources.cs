@@ -15,7 +15,6 @@
         {
         }
 
-
         public bool RollbackOnFailure => false;
 
         public void Seed(SmartObjectContext context)

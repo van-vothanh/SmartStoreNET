@@ -123,7 +123,6 @@ namespace SmartStore.Core.Domain.Stores
         [DataMember]
         public virtual Currency PrimaryExchangeRateCurrency { get; set; }
 
-
         /// <summary>
         /// Gets the security mode for the store
         /// </summary>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Domain.Orders;
@@ -53,7 +53,6 @@ namespace SmartStore.Admin.Models.Settings
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.Order.NumberOfDaysReturnRequestAvailable")]
         public int NumberOfDaysReturnRequestAvailable { get; set; }
-
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.Order.GiftCards_Activated")]
         public int? GiftCards_Activated_OrderStatusId { get; set; }

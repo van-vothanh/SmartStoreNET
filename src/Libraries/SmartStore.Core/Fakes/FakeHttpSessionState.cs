@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System.Collections;
 using System.Collections.Specialized;
 using System.Web;
@@ -51,3 +52,4 @@ namespace SmartStore.Core.Fakes
         }
     }
 }
+#endif

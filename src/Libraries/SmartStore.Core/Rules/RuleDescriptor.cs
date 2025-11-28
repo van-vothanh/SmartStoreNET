@@ -40,7 +40,6 @@ namespace SmartStore.Rules
         }
     }
 
-
     public class InvalidRuleDescriptor : RuleDescriptor
     {
         public InvalidRuleDescriptor(RuleScope scope)

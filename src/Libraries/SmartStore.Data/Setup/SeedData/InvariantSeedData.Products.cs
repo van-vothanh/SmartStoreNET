@@ -3734,7 +3734,6 @@ namespace SmartStore.Data.Setup
                 DisplayOrder = 3
             };
 
-
             var bundlePs4 = products["Sony-PS410099"];
 
             var bundleItemPs41 = new ProductBundleItem

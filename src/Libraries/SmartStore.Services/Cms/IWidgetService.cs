@@ -15,7 +15,6 @@ namespace SmartStore.Services.Cms
         /// <returns>Widgets</returns>
 		IEnumerable<Provider<IWidget>> LoadActiveWidgets(int storeId = 0);
 
-
         /// <summary>
         /// Load active widgets
         /// </summary>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SmartStore.Admin.Models.Common;
 using SmartStore.Admin.Models.Settings;
@@ -305,7 +305,6 @@ namespace SmartStore.Admin.Controllers
             return NotifyAndRedirect("Forum");
         }
 
-
         [Permission(Permissions.Configuration.Setting.Read)]
         [LoadSetting]
         public ActionResult News(NewsSettings newsSettings, int storeId)
@@ -596,7 +595,6 @@ namespace SmartStore.Admin.Controllers
             return NotifyAndRedirect("Tax");
         }
 
-
         [Permission(Permissions.Configuration.Setting.Read)]
         [LoadSetting]
         public ActionResult Catalog(CatalogSettings catalogSettings)
@@ -640,7 +638,6 @@ namespace SmartStore.Admin.Controllers
 
             return NotifyAndRedirect("Catalog");
         }
-
 
         [Permission(Permissions.Configuration.Setting.Read)]
         [LoadSetting]
@@ -687,7 +684,6 @@ namespace SmartStore.Admin.Controllers
 
             return NotifyAndRedirect("RewardPoints");
         }
-
 
         [Permission(Permissions.Configuration.Setting.Read)]
         public ActionResult Order()
@@ -786,7 +782,6 @@ namespace SmartStore.Admin.Controllers
             return NotifyAndRedirect("Order");
         }
 
-
         [Permission(Permissions.Configuration.Setting.Read)]
         public ActionResult ShoppingCart()
         {
@@ -838,7 +833,6 @@ namespace SmartStore.Admin.Controllers
             return NotifyAndRedirect("ShoppingCart");
         }
 
-
         [Permission(Permissions.Configuration.Setting.Read)]
         [LoadSetting]
         public ActionResult Payment(PaymentSettings settings)
@@ -865,7 +859,6 @@ namespace SmartStore.Admin.Controllers
 
             return NotifyAndRedirect("Payment");
         }
-
 
         [Permission(Permissions.Configuration.Setting.Read)]
         [LoadSetting]
@@ -943,7 +936,6 @@ namespace SmartStore.Admin.Controllers
 
             return RedirectToAction("Media");
         }
-
 
         [Permission(Permissions.Configuration.Setting.Read)]
         public ActionResult CustomerUser()
@@ -1031,7 +1023,6 @@ namespace SmartStore.Admin.Controllers
 
             return NotifyAndRedirect("CustomerUser");
         }
-
 
         #region CookieInfos
 
@@ -1239,7 +1230,6 @@ namespace SmartStore.Admin.Controllers
         }
 
         #endregion
-
 
         [Permission(Permissions.Configuration.Setting.Read)]
         [LoadSetting(IsRootedModel = true)]
@@ -1598,7 +1588,6 @@ namespace SmartStore.Admin.Controllers
             return Content(result);
         }
 
-
         [Permission(Permissions.Configuration.Setting.Read)]
         [LoadSetting]
         public ActionResult DataExchange(DataExchangeSettings settings)
@@ -1624,7 +1613,6 @@ namespace SmartStore.Admin.Controllers
 
             return NotifyAndRedirect("DataExchange");
         }
-
 
         [Permission(Permissions.Configuration.Setting.Read)]
         public ActionResult Search()
@@ -1907,7 +1895,6 @@ namespace SmartStore.Admin.Controllers
 
             return NotifyAndRedirect("Search");
         }
-
 
         [Permission(Permissions.Configuration.Setting.Read)]
         public ActionResult AllSettings()

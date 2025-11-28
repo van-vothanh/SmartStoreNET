@@ -2,7 +2,6 @@
 {
     public delegate void ProgressValueSetter(int value, int maximum, string message);
 
-
     /// <summary>
     /// Data exchange abortion types
     /// </summary>

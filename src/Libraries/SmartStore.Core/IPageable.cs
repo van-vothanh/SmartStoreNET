@@ -30,7 +30,6 @@ namespace SmartStore.Core
         [DataMember]
         int TotalCount { get; set; }
 
-
         /// <summary>
         /// The 1-based current page index
         /// </summary>
@@ -75,7 +74,6 @@ namespace SmartStore.Core
         /// </summary>
         bool IsLastPage { get; }
     }
-
 
     /// <summary>
     /// Paged list interface

@@ -11,7 +11,6 @@ namespace SmartStore.Services.DataExchange.Export.Deployment
         void Publish(ExportDeploymentContext context, ExportDeployment deployment);
     }
 
-
     public class ExportDeploymentContext
     {
         public Localizer T { get; set; }

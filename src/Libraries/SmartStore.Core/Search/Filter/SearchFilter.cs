@@ -153,7 +153,6 @@ namespace SmartStore.Core.Search
             };
         }
 
-
         public static RangeSearchFilter ByRange(string fieldName, string lower, string upper, bool includeLower = true, bool includeUpper = true)
         {
             return ByRange(fieldName, lower, upper, IndexTypeCode.String, includeLower, includeUpper);

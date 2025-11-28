@@ -26,7 +26,6 @@ namespace SmartStore.Data.Tests.Logging
             fromDb.Enabled.ShouldEqual(true);
         }
 
-
         protected Customer GetTestCustomer()
         {
             return new Customer

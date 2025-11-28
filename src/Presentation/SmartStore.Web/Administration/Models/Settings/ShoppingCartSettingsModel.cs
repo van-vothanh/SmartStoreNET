@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core.Domain.Directory;
 using SmartStore.Core.Domain.Orders;
 using SmartStore.Web.Framework;
@@ -85,7 +85,6 @@ namespace SmartStore.Admin.Models.Settings
         [SmartResourceDisplayName("Admin.Configuration.Settings.ShoppingCart.ShowCommentBox")]
         public bool ShowCommentBox { get; set; }
 
-
 		[SmartResourceDisplayName("Admin.Configuration.Settings.ShoppingCart.ShowEsdRevocationWaiverBox")]
 		public bool ShowEsdRevocationWaiverBox { get; set; }
 
@@ -106,7 +105,6 @@ namespace SmartStore.Admin.Models.Settings
         [SmartResourceDisplayName("Admin.Configuration.Settings.ShoppingCart.AddProductsToBasketInSinglePositions")]
         public bool AddProductsToBasketInSinglePositions { get; set; }
     }
-
 
 	public class ShoppingCartSettingsLocalizedModel : ILocalizedModelLocal
 	{

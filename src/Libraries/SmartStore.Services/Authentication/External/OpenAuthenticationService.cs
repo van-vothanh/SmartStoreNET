@@ -70,9 +70,6 @@ namespace SmartStore.Services.Authentication.External
             return _providerManager.GetProvider<IExternalAuthenticationMethod>(systemName, storeId);
         }
 
-
-
-
         public virtual void AssociateExternalAccountWithUser(Customer customer, OpenAuthenticationParameters parameters)
         {
             if (customer == null)

@@ -2,7 +2,7 @@ namespace SmartStore.Data.Migrations
 {
     using System.Data.Entity.Migrations;
     using System.Linq;
-    using System.Web.Hosting;
+    using Microsoft.AspNetCore.Hosting;
     using SmartStore.Core.Data;
     using SmartStore.Core.Domain.Localization;
     using SmartStore.Data.Setup;
@@ -74,7 +74,7 @@ namespace SmartStore.Data.Migrations
                 "Allowed template variables",
                 "Erlaubte Template Variablen",
                 "Inserts the selected variable in the HTML document.",
-                "Fügt die gewählte Variable in das HTML-Dokument ein.");
+                "Fgt die gewhlte Variable in das HTML-Dokument ein.");
         }
 
         private Language ResolveMasterLanguage(SmartObjectContext context)

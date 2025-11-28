@@ -5,7 +5,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using System.Text;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.DataExchange;
 using SmartStore.Admin.Models.Tasks;
 using SmartStore.ComponentModel;
@@ -452,7 +452,6 @@ namespace SmartStore.Admin.Controllers
                 })
                 .ToList();
 
-
             if (provider != null)
             {
                 model.Provider.Feature = provider.Metadata.ExportFeatures;
@@ -820,8 +819,6 @@ namespace SmartStore.Admin.Controllers
 
             return (continueEditing ? RedirectToAction("Edit", new { id = profile.Id }) : RedirectToAction("List"));
         }
-
-
 
         [Permission(Permissions.Configuration.Export.Read)]
         public ActionResult ResolveFileNamePatternExample(int id, string pattern)

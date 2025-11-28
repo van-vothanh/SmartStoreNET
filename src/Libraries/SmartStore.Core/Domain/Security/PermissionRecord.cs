@@ -13,7 +13,7 @@ namespace SmartStore.Core.Domain.Security
         /// <summary>
         /// Gets or sets the permission system name.
         /// </summary>
-        [Index]
+
         public string SystemName { get; set; }
 
         /// <summary>

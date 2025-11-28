@@ -1,4 +1,4 @@
-using System.Data.Entity.ModelConfiguration;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SmartStore.Core.Domain.Directory;
 
 namespace SmartStore.Data.Mapping.Directory
@@ -11,7 +11,6 @@ namespace SmartStore.Data.Mapping.Directory
             this.HasKey(sp => sp.Id);
             this.Property(sp => sp.Name).IsRequired().HasMaxLength(100);
             this.Property(sp => sp.Abbreviation).HasMaxLength(100);
-
 
             this.HasRequired(sp => sp.Country)
                 .WithMany(c => c.StateProvinces)

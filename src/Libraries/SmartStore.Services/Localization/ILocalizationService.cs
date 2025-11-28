@@ -78,7 +78,6 @@ namespace SmartStore.Services.Localization
         /// <param name="localeStringResource">Locale string resource</param>
         void UpdateLocaleStringResource(LocaleStringResource localeStringResource);
 
-
         /// <summary>
         /// Gets a resource string based on the specified ResourceKey property.
         /// </summary>

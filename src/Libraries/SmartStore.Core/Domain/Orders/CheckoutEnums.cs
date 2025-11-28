@@ -21,7 +21,6 @@
         Activated
     }
 
-
     /// <summary>
     /// Setting to hand over customer email to third party
     /// </summary>

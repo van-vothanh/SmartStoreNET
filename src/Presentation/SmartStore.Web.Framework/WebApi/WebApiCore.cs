@@ -55,7 +55,6 @@ namespace SmartStore.Web.Framework.WebApi
         }
     }
 
-
     public class WebApiRequestContext
     {
         public string PublicKey { get; set; }

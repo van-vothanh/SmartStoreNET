@@ -12,8 +12,8 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Hosting;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SmartStore.Admin.Models.Common;
 using SmartStore.ComponentModel;
@@ -447,7 +447,6 @@ namespace SmartStore.Admin.Controllers
                 stats.Add("AspNetCache:" + key.Replace(':', '_'), size + Encoding.Default.GetByteCount(key));
             }
 
-
             // Memory cache
             if (!cache.IsDistributedCache)
             {
@@ -649,7 +648,6 @@ namespace SmartStore.Admin.Controllers
                 });
             }
 
-
             // Base measure weight
             // ====================================
             var bWeight = _measureService.Value.GetMeasureWeightById(_measureSettings.Value.BaseWeightId);
@@ -678,7 +676,6 @@ namespace SmartStore.Admin.Controllers
                     Text = _localizationService.GetResource("Admin.System.Warnings.DefaultWeight.NotSet")
                 });
             }
-
 
             // Base dimension weight
             // ====================================
@@ -923,7 +920,6 @@ namespace SmartStore.Admin.Controllers
 
             DateTime? endDateValue = (model.DeleteExportedFiles.EndDate == null) ? null
                 : (DateTime?)_dateTimeHelper.Value.ConvertToUtcTime(model.DeleteExportedFiles.EndDate.Value, _dateTimeHelper.Value.CurrentTimeZone).AddDays(1);
-
 
             model.DeleteExportedFiles.NumberOfDeletedFiles = 0;
             model.DeleteExportedFiles.NumberOfDeletedFolders = 0;

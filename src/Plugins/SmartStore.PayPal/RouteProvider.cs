@@ -1,5 +1,5 @@
-﻿using System.Web.Mvc;
-using System.Web.Routing;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Web.Framework.Routing;
 
 namespace SmartStore.PayPal
@@ -35,8 +35,6 @@ namespace SmartStore.PayPal
                 new[] { "SmartStore.PayPal.Controllers" }
             )
             .DataTokens["area"] = Plugin.SystemName;
-
-
 
             //Legacay Routes
             routes.MapRoute("SmartStore.PayPalExpress.IPN",

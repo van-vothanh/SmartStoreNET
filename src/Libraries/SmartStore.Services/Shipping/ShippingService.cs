@@ -130,7 +130,6 @@ namespace SmartStore.Services.Shipping
 
         #region Shipping methods
 
-
         /// <summary>
         /// Deletes a shipping method
         /// </summary>

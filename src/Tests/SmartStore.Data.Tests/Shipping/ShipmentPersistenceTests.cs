@@ -55,12 +55,10 @@ namespace SmartStore.Data.Tests.Shipping
             var fromDb = SaveAndLoadEntity(shipment);
             fromDb.ShouldNotBeNull();
 
-
             fromDb.ShipmentItems.ShouldNotBeNull();
             (fromDb.ShipmentItems.Count == 1).ShouldBeTrue();
             fromDb.ShipmentItems.First().Quantity.ShouldEqual(2);
         }
-
 
         protected Customer GetTestCustomer()
         {

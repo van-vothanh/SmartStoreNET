@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System;
 using NuGet;
 using SmartStore.Core.Logging;
@@ -39,3 +40,5 @@ namespace SmartStore.Core.Packaging
         }
     }
 }
+
+#endif

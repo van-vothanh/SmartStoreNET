@@ -34,9 +34,6 @@ namespace SmartStore.Services.Tax
         /// <returns>Tax providers</returns>
         IEnumerable<Provider<ITaxProvider>> LoadAllTaxProviders();
 
-
-
-
         /// <summary>
         /// Gets tax rate
         /// </summary>
@@ -61,9 +58,6 @@ namespace SmartStore.Services.Tax
         /// <param name="customer">Customer</param>
         /// <returns>Tax rate</returns>
         decimal GetTaxRate(Product product, int taxCategoryId, Customer customer);
-
-
-
 
         /// <summary>
         /// Gets price
@@ -127,9 +121,6 @@ namespace SmartStore.Services.Tax
             bool priceIncludesTax,
             out decimal taxRate);
 
-
-
-
         /// <summary>
         /// Gets the shipping price
         /// </summary>
@@ -167,9 +158,6 @@ namespace SmartStore.Services.Tax
         /// <param name="taxRate">Tax rate</param>
         /// <returns>Shipping price</returns>
         decimal GetShippingPrice(decimal price, bool includingTax, Customer customer, int taxCategoryId, out decimal taxRate);
-
-
-
 
         /// <summary>
         /// Gets payment method additional handling fee
@@ -209,9 +197,6 @@ namespace SmartStore.Services.Tax
         /// <returns>Payment fee</returns>
         decimal GetPaymentMethodAdditionalFee(decimal price, bool includingTax, Customer customer, int taxCategoryId, out decimal taxRate);
 
-
-
-
         /// <summary>
         /// Gets checkout attribute value price
         /// </summary>
@@ -247,11 +232,6 @@ namespace SmartStore.Services.Tax
         /// <returns>Price</returns>
         decimal GetCheckoutAttributePrice(CheckoutAttributeValue cav,
             bool includingTax, Customer customer, out decimal taxRate);
-
-
-
-
-
 
         /// <summary>
         /// Gets VAT Number status
@@ -299,8 +279,6 @@ namespace SmartStore.Services.Tax
         /// <returns>VAT number status</returns>
         VatNumberStatus DoVatCheck(string twoLetterIsoCode, string vatNumber,
             out string name, out string address, out Exception exception);
-
-
 
         /// <summary>
         /// Gets a value indicating whether tax exempt

@@ -1,4 +1,4 @@
-using System.Data.Entity.ModelConfiguration;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SmartStore.Core.Domain.Localization;
 
 namespace SmartStore.Data.Mapping.Localization
@@ -11,7 +11,6 @@ namespace SmartStore.Data.Mapping.Localization
             this.HasKey(lsr => lsr.Id);
             this.Property(lsr => lsr.ResourceName).IsRequired().HasMaxLength(200);
             this.Property(lsr => lsr.ResourceValue).IsRequired().IsMaxLength();
-
 
             this.HasRequired(lsr => lsr.Language)
                 .WithMany(l => l.LocaleStringResources)

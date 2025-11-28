@@ -87,7 +87,6 @@ namespace SmartStore.Services.Payments
         /// <param name="paymentMethod">Payment method</param>
         void DeletePaymentMethod(PaymentMethod paymentMethod);
 
-
         /// <summary>
         /// Pre process a payment
         /// </summary>
@@ -115,7 +114,6 @@ namespace SmartStore.Services.Payments
         /// <returns>Result</returns>
         bool CanRePostProcessPayment(Order order);
 
-
         /// <summary>
         /// Gets an additional handling fee of a payment method
         /// </summary>
@@ -123,8 +121,6 @@ namespace SmartStore.Services.Payments
         /// <param name="paymentMethodSystemName">Payment method system name</param>
         /// <returns>Additional handling fee</returns>
 		decimal GetAdditionalHandlingFee(IList<OrganizedShoppingCartItem> cart, string paymentMethodSystemName);
-
-
 
         /// <summary>
         /// Gets a value indicating whether capture is supported by payment method
@@ -139,8 +135,6 @@ namespace SmartStore.Services.Payments
         /// <param name="capturePaymentRequest">Capture payment request</param>
         /// <returns>Capture payment result</returns>
         CapturePaymentResult Capture(CapturePaymentRequest capturePaymentRequest);
-
-
 
         /// <summary>
         /// Gets a value indicating whether partial refund is supported by payment method
@@ -163,8 +157,6 @@ namespace SmartStore.Services.Payments
         /// <returns>Result</returns>
         RefundPaymentResult Refund(RefundPaymentRequest refundPaymentRequest);
 
-
-
         /// <summary>
         /// Gets a value indicating whether void is supported by payment method
         /// </summary>
@@ -178,8 +170,6 @@ namespace SmartStore.Services.Payments
         /// <param name="voidPaymentRequest">Request</param>
         /// <returns>Result</returns>
         VoidPaymentResult Void(VoidPaymentRequest voidPaymentRequest);
-
-
 
         /// <summary>
         /// Gets a recurring payment type of payment method
@@ -201,8 +191,6 @@ namespace SmartStore.Services.Payments
         /// <param name="cancelPaymentRequest">Request</param>
         /// <returns>Result</returns>
         CancelRecurringPaymentResult CancelRecurringPayment(CancelRecurringPaymentRequest cancelPaymentRequest);
-
-
 
         /// <summary>
         /// Gets a payment method type

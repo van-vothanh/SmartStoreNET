@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq.Expressions;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Web.Framework.UI
 {
@@ -63,7 +63,6 @@ namespace SmartStore.Web.Framework.UI
             return this;
         }
 
-
         public EntityPickerBuilder<TModel> For<TValue>(Expression<Func<TModel, TValue>> expression)
         {
             Guard.NotNull(expression, nameof(expression));
@@ -76,7 +75,6 @@ namespace SmartStore.Web.Framework.UI
             base.Component.TargetInputSelector = "#" + this.HtmlHelper.ViewContext.ViewData.TemplateInfo.GetFullHtmlFieldId(expression);
             return this;
         }
-
 
         public EntityPickerBuilder<TModel> DisableGroupedProducts(bool value)
         {
@@ -114,7 +112,6 @@ namespace SmartStore.Web.Framework.UI
             return this;
         }
 
-
         public EntityPickerBuilder<TModel> MaxItems(int value)
         {
             base.Component.MaxItems = value;
@@ -138,7 +135,6 @@ namespace SmartStore.Web.Framework.UI
             base.Component.FieldName = value;
             return this;
         }
-
 
         public EntityPickerBuilder<TModel> OnDialogLoading(string handlerName)
         {

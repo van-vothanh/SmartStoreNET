@@ -102,7 +102,6 @@ namespace SmartStore.Services.Localization
             string value,
             int languageId) where T : BaseEntity, ILocalizedEntity;
 
-
         /// <summary>
         /// Save localized value
         /// </summary>

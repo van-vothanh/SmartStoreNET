@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Linq.Expressions;
 using Newtonsoft.Json;
@@ -293,7 +293,6 @@ namespace SmartStore.Services.Messages
                 }
             }
         }
-
 
         private void ValidateMessageContext(MessageContext ctx, ref object[] modelParts)
         {

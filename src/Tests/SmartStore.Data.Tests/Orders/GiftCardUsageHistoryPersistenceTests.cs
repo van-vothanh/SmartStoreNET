@@ -31,7 +31,6 @@ namespace SmartStore.Data.Tests.Orders
             fromDb.UsedWithOrder.ShouldNotBeNull();
         }
 
-
         protected Customer GetTestCustomer()
         {
             return new Customer

@@ -10,7 +10,6 @@ namespace SmartStore.Services.Catalog.Rules
         public new SearchFilterDescriptor Descriptor { get; set; }
     }
 
-
     public class SearchFilterExpressionGroup : SearchFilterExpression, IRuleExpressionGroup
     {
         private readonly List<IRuleExpression> _expressions = new List<IRuleExpression>();

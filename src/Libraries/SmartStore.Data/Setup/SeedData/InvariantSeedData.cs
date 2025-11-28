@@ -873,7 +873,6 @@ namespace SmartStore.Data.Setup
                 DisplayOrder = 20
             };
 
-
             var entities = new List<Forum>
             {
                 newProductsForum, packagingShippingForum
@@ -954,7 +953,6 @@ namespace SmartStore.Data.Setup
                 StartDateUtc = new DateTime(2020, 5, 10),
                 EndDateUtc = new DateTime(2020, 5, 15)
             };
-
 
             var entities = new List<Discount>
             {
@@ -1131,7 +1129,6 @@ namespace SmartStore.Data.Setup
                 DisplayOrder = 4,
             });
 
-
             var poll2 = new Poll
             {
                 Language = defaultLanguage,
@@ -1164,7 +1161,6 @@ namespace SmartStore.Data.Setup
                 Name = "Once a month",
                 DisplayOrder = 4,
             });
-
 
             var entities = new List<Poll>
             {
@@ -1266,7 +1262,6 @@ namespace SmartStore.Data.Setup
                 Value = "90"
             });
 
-
             // Offer free shipping method for major customers.
             var freeShipping = _ctx.Set<ShippingMethod>().FirstOrDefault(x => x.DisplayOrder == 2);
             if (freeShipping != null)
@@ -1281,7 +1276,6 @@ namespace SmartStore.Data.Setup
             {
                 inactiveNewCustomersRole.RuleSets.Add(inactiveNewCustomers);
             }
-
 
             var entities = new List<RuleSetEntity>
             {

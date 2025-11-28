@@ -57,5 +57,3 @@ namespace SmartStore.Services.Tests.Seo
     }
 }
 
-
-

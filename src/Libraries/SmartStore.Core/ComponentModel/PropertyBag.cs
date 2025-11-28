@@ -109,7 +109,6 @@ namespace SmartStore.ComponentModel
                 //return type.ToString().ToLower();
             }
 
-
             public static Type MapXmlTypeToType(string xmlType)
             {
                 xmlType = xmlType.ToLower();
@@ -138,7 +137,6 @@ namespace SmartStore.ComponentModel
                 if (xmlType == "base64binary")
                     return typeof(byte[]);
 
-
                 // return null if no match is found
                 // don't throw so the caller can decide more efficiently what to do 
                 // with this error result
@@ -157,7 +155,6 @@ namespace SmartStore.ComponentModel
         {
             return null;
         }
-
 
         /// <summary>
         /// Serializes the dictionary to XML. Keys are 
@@ -211,7 +208,6 @@ namespace SmartStore.ComponentModel
                     writer.WriteEndAttribute();
                 }
 
-
                 // Serialize simple types with WriteValue
                 if (!isCustom)
                 {
@@ -230,7 +226,6 @@ namespace SmartStore.ComponentModel
                 writer.WriteEndElement(); // item
             }
         }
-
 
         /// <summary>
         /// Reads the custom serialized format
@@ -281,7 +276,6 @@ namespace SmartStore.ComponentModel
             }
         }
 
-
         /// <summary>
         /// Serializes this dictionary to an XML string
         /// </summary>
@@ -318,7 +312,6 @@ namespace SmartStore.ComponentModel
 
             return true;
         }
-
 
         /// <summary>
         /// Creates an instance of a propertybag from an Xml string

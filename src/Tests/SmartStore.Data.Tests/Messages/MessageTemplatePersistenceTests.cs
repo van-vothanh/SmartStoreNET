@@ -22,7 +22,6 @@ namespace SmartStore.Data.Tests.Messages
                 LimitedToStores = true
             };
 
-
             var fromDb = SaveAndLoadEntity(mt);
             fromDb.ShouldNotBeNull();
             fromDb.Name.ShouldEqual("Template1");

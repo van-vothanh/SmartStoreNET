@@ -535,7 +535,6 @@ namespace SmartStore.Web.Framework
             return _cachedTaxDisplayType.Value;
         }
 
-
         public bool IsAdmin
         {
             get

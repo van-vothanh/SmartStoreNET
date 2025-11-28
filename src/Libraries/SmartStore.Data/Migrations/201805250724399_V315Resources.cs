@@ -43,7 +43,6 @@ namespace SmartStore.Data.Migrations
             var displayPrivacyAgreementOnContactUs = settings.FirstOrDefault(x => x.Name == "CustomerSettings.DisplayPrivacyAgreementOnContactUs");
             if (displayPrivacyAgreementOnContactUs != null) settings.Remove(displayPrivacyAgreementOnContactUs);
 
-
             var showShareButtonName = TypeHelper.NameOf<CatalogSettings>(y => y.ShowShareButton, true);
             var showShareButtonSetting = context.Set<Setting>().FirstOrDefault(x => x.Name == showShareButtonName);
             if (showShareButtonSetting != null)
@@ -74,7 +73,7 @@ namespace SmartStore.Data.Migrations
         {
             builder.AddOrUpdate("Admin.Configuration.Settings.ShoppingCart.ThirdPartyEmailHandOver.Hint",
                 "Specifies whether customers can agree to a transferring of their email address to third parties when ordering, and whether the checkbox is enabled by default during checkout. Please note that the 'Show activated' option isn't legally compliant in line with the GDPR.",
-                "Legt fest, ob Kunden bei einer Bestellung der Weitergabe ihrer E-Mail Adresse an Dritte zustimmen können und ob die Checkbox dafür standardmäßig aktiviert ist. Bitte beachten Sie, dass die Option 'Aktiviert anzeigen' im Rahmen der DSVGO nicht rechtskonform ist.");
+                "Legt fest, ob Kunden bei einer Bestellung der Weitergabe ihrer E-Mail Adresse an Dritte zustimmen knnen und ob die Checkbox dafr standardmig aktiviert ist. Bitte beachten Sie, dass die Option 'Aktiviert anzeigen' im Rahmen der DSVGO nicht rechtskonform ist.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.CustomerUser.Privacy", "Privacy", "Datenschutz");
 
@@ -82,7 +81,7 @@ namespace SmartStore.Data.Migrations
                 "Enable cookie consent",
                 "Cookie-Hinweis aktivieren",
                 "Specifies whether the cookie consent box will be displayed in the frontend.",
-                "Legt fest, ob ein Element für die Zustimmung zur Nutzung von Cookies im Frontend angezeigt wird.");
+                "Legt fest, ob ein Element fr die Zustimmung zur Nutzung von Cookies im Frontend angezeigt wird.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.CustomerUser.Privacy.CookieConsentBadgetext",
                 "Cookie consent display text",
@@ -92,7 +91,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("CookieConsent.BadgeText",
                 "{0} is using cookies, to guarantee the best shopping experience. Partially cookies will be set by third parties. <a href='{1}'>Privacy Info</a>",
-                "{0} benutzt Cookies, um Ihnen das beste Einkaufserlebnis zu ermöglichen. Zum Teil werden Cookies auch von Drittanbietern gesetzt. <a href='{1}'>Datenschutzerklärung</a>");
+                "{0} benutzt Cookies, um Ihnen das beste Einkaufserlebnis zu ermglichen. Zum Teil werden Cookies auch von Drittanbietern gesetzt. <a href='{1}'>Datenschutzerklrung</a>");
 
             builder.AddOrUpdate("CookieConsent.Button", "Okay, got it", "Ok, verstanden");
 
@@ -110,7 +109,7 @@ namespace SmartStore.Data.Migrations
             builder.Delete("Admin.Configuration.Settings.CustomerUser.DisplayPrivacyAgreementOnContactUs.Hint");
             builder.AddOrUpdate("Admin.Configuration.Settings.CustomerUser.Privacy.DisplayGdprConsentOnForms",
                 "Get privacy consent for form submissions",
-                "Einwilligungserklärung in Formularen fordern",
+                "Einwilligungserklrung in Formularen fordern",
                 "Specifies whether a checkbox is displayed in forms that prompts the user to agree to the processing of his data.",
                 "Bestimmt ob in Formularen eine Checkbox angezeigt wird, die den Benutzer auffordert der Verarbeitung seiner Daten zuzustimmen.");
 
@@ -122,14 +121,14 @@ namespace SmartStore.Data.Migrations
             builder.Delete("ContactUs.PrivacyAgreement.DetailText");
             builder.AddOrUpdate("Gdpr.Consent.DetailText",
                 "Yes I've read the <a href=\"{0}\">privacy terms</a> and agree that my data given by me can be stored electronically. My data will thereby only be used to process my inquiry.",
-                "Ja, ich habe die <a href=\"{0}\">Datenschutzerklärung</a> zur Kenntnis genommen und bin damit einverstanden, dass die von mir angegebenen Daten elektronisch erhoben und gespeichert werden. Meine Daten werden dabei nur zur Bearbeitung meiner Anfrage genutzt.");
+                "Ja, ich habe die <a href=\"{0}\">Datenschutzerklrung</a> zur Kenntnis genommen und bin damit einverstanden, dass die von mir angegebenen Daten elektronisch erhoben und gespeichert werden. Meine Daten werden dabei nur zur Bearbeitung meiner Anfrage genutzt.");
 
             builder.AddOrUpdate("Gdpr.Anonymous", "Anonymous", "Anonym");
             builder.AddOrUpdate("Gdpr.Anonymize", "Anonymize", "Anonymisieren");
-            builder.AddOrUpdate("Gdpr.DeletedText", "Deleted", "Gelöscht");
+            builder.AddOrUpdate("Gdpr.DeletedText", "Deleted", "Gelscht");
             builder.AddOrUpdate("Gdpr.DeletedLongText",
                 "This content was deleted by the author.",
-                "Dieser Inhalt wurde vom Autor gelöscht.");
+                "Dieser Inhalt wurde vom Autor gelscht.");
             builder.AddOrUpdate("Gdpr.Anonymize.Success",
                 "The customer record '{0}' has been anonymized.",
                 "Der Kundendatensatz '{0}' wurde anonymisiert.");
@@ -166,7 +165,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Checkout.TermsOfService.IAccept",
                 "I agree with the {0}terms of service{1} and I adhere to them unconditionally. I've read the {3}privacy terms{1} and agree that my data given by me can be stored electronically.",
-                "Ich habe {0}die AGB{1} und {2}das Widerrufsrecht{1} gelesen und bin mit der Geltung einverstanden. Ich habe die {3}Datenschutzerklärung{1} zur Kenntnis genommen und bin damit einverstanden, dass die von mir angegebenen Daten elektronisch erhoben und gespeichert werden.");
+                "Ich habe {0}die AGB{1} und {2}das Widerrufsrecht{1} gelesen und bin mit der Geltung einverstanden. Ich habe die {3}Datenschutzerklrung{1} zur Kenntnis genommen und bin damit einverstanden, dass die von mir angegebenen Daten elektronisch erhoben und gespeichert werden.");
 
             builder.AddOrUpdate("Admin.Customers.Customers.List.SearchDeletedOnly", "Only deactivated customers", "Nur deaktivierte Kunden");
 
@@ -180,13 +179,13 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Account.Fields.Newsletter",
                 "I would like to subscribe to the newsletter. I agree to the <a href=\"{0}\" Privacy policy</a>. Unsubscription is possible at any time.",
-                "Ich möchte den Newsletter abonnieren. Mit den Bestimmungen zum <a href=\"{0}\">Datenschutz</a> bin ich einverstanden. Eine Abmeldung ist jederzeit möglich.");
+                "Ich mchte den Newsletter abonnieren. Mit den Bestimmungen zum <a href=\"{0}\">Datenschutz</a> bin ich einverstanden. Eine Abmeldung ist jederzeit mglich.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.GeneralCommon.EnableHoneypotProtection",
                 "Enable Honeypot protection",
                 "Honeypot aktivieren",
                 "Honeypot is a simple but reliable bot detection method that does not require any captcha. If active, registration and contact forms are protected against bots and attackers.",
-                "Honeypot ist eine simple aber zuverlässige Bot-Erkennungsmethode, die ganz ohne Captcha auskommt. Wenn aktiv, werden Registrierungs- und Kontaktformular vor Bots und Angreifern geschützt.");
+                "Honeypot ist eine simple aber zuverlssige Bot-Erkennungsmethode, die ganz ohne Captcha auskommt. Wenn aktiv, werden Registrierungs- und Kontaktformular vor Bots und Angreifern geschtzt.");
         }
     }
 }

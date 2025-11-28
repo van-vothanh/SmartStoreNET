@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework.Modelling;
@@ -24,25 +24,23 @@ namespace SmartStore.Web.Models.Install
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
 
-        [AllowHtml]
         public string DatabaseConnectionString { get; set; }
         public string DataProvider { get; set; }
         //SQL Server properties
         public string SqlConnectionInfo { get; set; }
-        [AllowHtml]
+
         public string SqlServerName { get; set; }
 
         public string SqlDatabaseName { get; set; }
-        [AllowHtml]
+
         public string SqlServerUsername { get; set; }
-        [AllowHtml]
+
         public string SqlServerPassword { get; set; }
         public string SqlAuthenticationType { get; set; }
         public bool SqlServerCreateDatabase { get; set; }
 
         public bool UseCustomCollation { get; set; }
         public string Collation { get; set; }
-
 
         public bool InstallSampleData { get; set; }
 

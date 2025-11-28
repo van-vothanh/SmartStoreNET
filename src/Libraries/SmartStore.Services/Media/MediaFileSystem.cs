@@ -49,7 +49,6 @@ namespace SmartStore.Services.Media
                 _mediaPublicPath = path.TrimStart('~', '/').Replace('\\', '/').ToLower().EnsureEndsWith("/");
             }
 
-
             return _mediaPublicPath;
         }
     }

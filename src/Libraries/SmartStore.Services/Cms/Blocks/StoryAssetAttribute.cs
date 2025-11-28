@@ -19,7 +19,6 @@ namespace SmartStore.Services.Cms.Blocks
         public StoryAssetKind Kind { get; private set; }
     }
 
-
     public enum StoryAssetKind
     {
         /// <summary>

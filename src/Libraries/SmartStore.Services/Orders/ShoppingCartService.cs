@@ -1018,7 +1018,6 @@ namespace SmartStore.Services.Orders
                             out giftCardSenderEmail2,
                             out giftCardMessage2);
 
-
                         if (giftCardRecipientName1.ToLowerInvariant() != giftCardRecipientName2.ToLowerInvariant() ||
                             giftCardSenderName1.ToLowerInvariant() != giftCardSenderName2.ToLowerInvariant())
                         {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -25,19 +25,19 @@ namespace SmartStore.Admin.Models.Blogs
         public bool IsPublished { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.Title")]
-        [AllowHtml]
+
         public string Title { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
+
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.Intro")]
-        [AllowHtml]
+
         public string Intro { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.Body")]
-        [AllowHtml]
+
         public string Body { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.PreviewDisplayType")]
@@ -77,15 +77,15 @@ namespace SmartStore.Admin.Models.Blogs
         public DateTime? EndDate { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.MetaKeywords")]
-        [AllowHtml]
+
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
+
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
+
         public string MetaTitle { get; set; }
 
         [SmartResourceDisplayName("Common.CreatedOn")]
@@ -117,34 +117,33 @@ namespace SmartStore.Admin.Models.Blogs
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.Title")]
-        [AllowHtml]
+
         public string Title { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
+
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.Intro")]
-        [AllowHtml]
+
         public string Intro { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.Body")]
-        [AllowHtml]
+
         public string Body { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Blog.BlogPosts.Fields.MetaKeywords")]
-        [AllowHtml]
+
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
+
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
+
         public string MetaTitle { get; set; }
     }
-
 
     public partial class BlogPostValidator : AbstractValidator<BlogPostModel>
     {

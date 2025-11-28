@@ -311,7 +311,6 @@ namespace SmartStore.Services.Themes
             return sb.ToString();
         }
 
-
         /// <summary>
         /// Validates the result SASS file by calling it's url.
         /// </summary>

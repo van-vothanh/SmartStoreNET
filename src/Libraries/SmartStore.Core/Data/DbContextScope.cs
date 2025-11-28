@@ -18,7 +18,6 @@ namespace SmartStore.Core.Data
         private readonly bool _autoCommit;
         private readonly bool _lazyLoading;
 
-
         public DbContextScope(IDbContext ctx = null,
             bool? autoDetectChanges = null,
             bool? proxyCreation = null,

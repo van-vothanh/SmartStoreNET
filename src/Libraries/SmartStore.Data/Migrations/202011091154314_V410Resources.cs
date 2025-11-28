@@ -289,7 +289,6 @@
                         <li><b>Strict:</b> Cookies werden nur an Anfragen derselben Website gesendet.</li>
                     </ul>");
 
-
             builder.AddOrUpdate("Admin.Configuration.Settings.CustomerUser.Privacy.ModalCookieConsent",
                 "Modal Cookie Manager",
                 "Cookie-Manager modal anzeigen",

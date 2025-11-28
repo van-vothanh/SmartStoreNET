@@ -121,7 +121,6 @@ namespace SmartStore.Services.Orders
         /// <returns>Order profit.</returns>
         decimal GetProfit(IQueryable<Order> orderQuery);
 
-
         /// <summary>
         /// Get paged list of incomplete orders
         /// </summary>

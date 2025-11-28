@@ -91,7 +91,6 @@ namespace SmartStore.Core.Domain.Orders
                 //        }
                 //    }
 
-
                 //    //calculate next payment date
                 //    if (latestPayment != null)
                 //    {
@@ -177,9 +176,6 @@ namespace SmartStore.Core.Domain.Orders
             get => (RecurringProductCyclePeriod)this.CyclePeriodId;
             set => this.CyclePeriodId = (int)value;
         }
-
-
-
 
         /// <summary>
         /// Gets or sets the recurring payment history

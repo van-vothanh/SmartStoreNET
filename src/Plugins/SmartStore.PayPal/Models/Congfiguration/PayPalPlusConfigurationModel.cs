@@ -26,7 +26,6 @@ namespace SmartStore.PayPal.Models
         public bool DisplayPaymentMethodDescription { get; set; }
     }
 
-
     public class PayPalApiConfigValidator : SmartValidatorBase<ApiConfigurationModel>
     {
         public PayPalApiConfigValidator(Localizer T, Func<string, bool> addRule)

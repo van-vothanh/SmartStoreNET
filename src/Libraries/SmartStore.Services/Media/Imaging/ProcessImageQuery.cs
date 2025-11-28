@@ -169,7 +169,6 @@ namespace SmartStore.Services.Media.Imaging
                 Add(name, val.Convert<string>(), true);
         }
 
-
         public bool NeedsProcessing(bool ignoreQualityFlag = false)
         {
             if (this.Count == 0)

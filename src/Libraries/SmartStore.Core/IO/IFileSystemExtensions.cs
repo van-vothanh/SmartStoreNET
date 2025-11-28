@@ -79,7 +79,6 @@ namespace SmartStore.Core.IO
             }
         }
 
-
         public static void WriteAllBytes(this IFileSystem fileSystem, string path, byte[] contents)
         {
             Guard.NotEmpty(path, nameof(path));
@@ -145,7 +144,6 @@ namespace SmartStore.Core.IO
                 return await stream.ToByteArrayAsync();
             }
         }
-
 
         /// <summary>
         /// Tries to save a stream in the storage provider.

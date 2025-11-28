@@ -214,7 +214,6 @@ namespace SmartStore.Utilities
             return elementArray;
         }
 
-
         private static void SetPropFromValue(object value, object item, FastProperty prop, ICollection<ConvertProblem> problems)
         {
             WriteToProperty(item, prop, value, problems);

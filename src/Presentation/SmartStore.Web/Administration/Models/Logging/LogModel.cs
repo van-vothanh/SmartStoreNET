@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -13,15 +13,15 @@ namespace SmartStore.Admin.Models.Logging
         public string LogLevel { get; set; }
 
         [SmartResourceDisplayName("Admin.System.Log.Fields.ShortMessage")]
-        [AllowHtml]
+
         public string ShortMessage { get; set; }
 
         [SmartResourceDisplayName("Admin.System.Log.Fields.FullMessage")]
-        [AllowHtml]
+
         public string FullMessage { get; set; }
 
         [SmartResourceDisplayName("Admin.System.Log.Fields.IPAddress")]
-        [AllowHtml]
+
         public string IpAddress { get; set; }
 
         [SmartResourceDisplayName("Admin.System.Log.Fields.Customer")]
@@ -30,11 +30,11 @@ namespace SmartStore.Admin.Models.Logging
         public string CustomerEmail { get; set; }
 
         [SmartResourceDisplayName("Admin.System.Log.Fields.PageURL")]
-        [AllowHtml]
+
         public string PageUrl { get; set; }
 
         [SmartResourceDisplayName("Admin.System.Log.Fields.ReferrerURL")]
-        [AllowHtml]
+
         public string ReferrerUrl { get; set; }
 
         [SmartResourceDisplayName("Common.CreatedOn")]

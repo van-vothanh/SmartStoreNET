@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -463,3 +464,5 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+
+#endif

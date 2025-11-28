@@ -251,7 +251,6 @@ namespace SmartStore.GoogleMerchantCenter.Services
                     " WHERE " + whereClause.ToString();
             }
 
-
             var data = _gpRepository.Context.SqlQuery<GoogleProductModel>(sql, (command.Page - 1) * command.PageSize, command.PageSize).ToList();
 
             data.ForEach(x =>

@@ -108,7 +108,6 @@ namespace SmartStore
             return result;
         }
 
-
         public static bool TryAdd<TKey, TValue>(this IDictionary<TKey, TValue> source, TKey key, TValue value, bool updateIfExists = false)
         {
             if (source == null || key == null)

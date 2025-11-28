@@ -2,10 +2,10 @@
 using System.Net;
 using System.Web;
 using System.Web.Helpers;
-using System.Web.Hosting;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using WebOptimizer;
+using Microsoft.AspNetCore.Routing;
 using System.Web.WebPages;
 using FluentValidation;
 using FluentValidation.Mvc;

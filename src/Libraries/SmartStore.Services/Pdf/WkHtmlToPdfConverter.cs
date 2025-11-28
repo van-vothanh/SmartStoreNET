@@ -16,7 +16,6 @@ namespace SmartStore.Services.Pdf
 
         public ILogger Logger { get; set; }
 
-
         public byte[] Convert(PdfConvertSettings settings)
         {
             Guard.NotNull(settings, nameof(settings));

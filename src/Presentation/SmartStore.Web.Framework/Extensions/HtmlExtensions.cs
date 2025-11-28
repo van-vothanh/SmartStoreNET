@@ -7,9 +7,9 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Mvc.Html;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using System.Web.WebPages;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Catalog;
@@ -371,7 +371,6 @@ namespace SmartStore.Web.Framework
                 days.AppendFormat("<option value='{0}'{1}>{0}</option>", i,
                     (selectedDay.HasValue && selectedDay.Value == i) ? " selected=\"selected\"" : null);
 
-
             months.AppendFormat("<option value=''>{0}</option>", monthLocale);
             for (int i = 1; i <= 12; i++)
             {
@@ -380,7 +379,6 @@ namespace SmartStore.Web.Framework
                                     (selectedMonth.HasValue && selectedMonth.Value == i) ? " selected=\"selected\"" : null,
                                     CultureInfo.CurrentUICulture.DateTimeFormat.GetMonthName(i));
             }
-
 
             years.AppendFormat("<option value=''>{0}</option>", yearLocale);
 

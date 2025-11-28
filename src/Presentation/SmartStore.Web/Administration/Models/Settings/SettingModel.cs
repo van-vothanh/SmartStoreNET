@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -10,11 +10,11 @@ namespace SmartStore.Admin.Models.Settings
     public class SettingModel : EntityModelBase
     {
         [SmartResourceDisplayName("Admin.Configuration.Settings.AllSettings.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.AllSettings.Fields.Value")]
-        [AllowHtml]
+
         public string Value { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.AllSettings.Fields.StoreName")]

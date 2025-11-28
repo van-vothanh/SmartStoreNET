@@ -96,8 +96,6 @@ namespace SmartStore.Services.Catalog
             return formatted;
         }
 
-
-
         public string FormatShippingPrice(decimal price, bool showCurrency)
         {
             var targetCurrency = _workContext.WorkingCurrency;
@@ -130,8 +128,6 @@ namespace SmartStore.Services.Catalog
             return FormatShippingPrice(price, showCurrency, currency, language, priceIncludesTax);
         }
 
-
-
         public string FormatPaymentMethodAdditionalFee(decimal price, bool showCurrency)
         {
             var targetCurrency = _workContext.WorkingCurrency;
@@ -163,8 +159,6 @@ namespace SmartStore.Services.Catalog
             var currency = _currencyService.GetCurrencyByCode(currencyCode) ?? new Currency { CurrencyCode = currencyCode };
             return FormatPaymentMethodAdditionalFee(price, showCurrency, currency, language, priceIncludesTax);
         }
-
-
 
         public string FormatTaxRate(decimal taxRate)
         {

@@ -121,7 +121,6 @@ namespace SmartStore.Core.Domain
         /// </summary>
         public bool Cleanup { get; set; }
 
-
         /// <summary>
         /// The scheduling task
         /// </summary>

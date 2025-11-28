@@ -44,7 +44,6 @@
         /// </summary>
         public ThemeManifest Manifest { get; internal set; }
 
-
         protected override void OnDispose(bool disposing)
         {
             if (disposing)

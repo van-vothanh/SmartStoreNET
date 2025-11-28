@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using SmartStore.ComponentModel;
@@ -93,7 +93,6 @@ namespace SmartStore.Data
                     commandText += " output";
                 }
             }
-
 
             var isLegacyDb = !this.IsSqlServer2012OrHigher();
             if (isLegacyDb && hasOutputParams)

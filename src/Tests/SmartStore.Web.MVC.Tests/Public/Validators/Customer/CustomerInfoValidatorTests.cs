@@ -102,7 +102,6 @@ namespace SmartStore.Web.MVC.Tests.Public.Validators.Customer
             model.Company = "";
             validator.ShouldHaveValidationErrorFor(x => x.Company, model);
 
-
             //not required
             validator = new CustomerInfoValidator(new CustomerSettings
             {
@@ -226,7 +225,6 @@ namespace SmartStore.Web.MVC.Tests.Public.Validators.Customer
             model.ZipPostalCode = "";
             validator.ShouldHaveValidationErrorFor(x => x.ZipPostalCode, model);
 
-
             //not required
             validator = new CustomerInfoValidator(new CustomerSettings
             {
@@ -267,7 +265,6 @@ namespace SmartStore.Web.MVC.Tests.Public.Validators.Customer
             validator.ShouldHaveValidationErrorFor(x => x.City, model);
             model.City = "";
             validator.ShouldHaveValidationErrorFor(x => x.City, model);
-
 
             //not required
             validator = new CustomerInfoValidator(new CustomerSettings
@@ -348,7 +345,6 @@ namespace SmartStore.Web.MVC.Tests.Public.Validators.Customer
             validator.ShouldHaveValidationErrorFor(x => x.Fax, model);
             model.Fax = "";
             validator.ShouldHaveValidationErrorFor(x => x.Fax, model);
-
 
             //not required
             validator = new CustomerInfoValidator(new CustomerSettings

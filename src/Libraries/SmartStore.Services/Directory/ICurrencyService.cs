@@ -57,8 +57,6 @@ namespace SmartStore.Services.Directory
         /// <param name="currency">Currency</param>
         void UpdateCurrency(Currency currency);
 
-
-
         /// <summary>
         /// Converts currency
         /// </summary>
@@ -112,8 +110,6 @@ namespace SmartStore.Services.Directory
 		/// <param name="store">Store to get the primary store currency from</param>
         /// <returns>Converted value</returns>
 		decimal ConvertFromPrimaryStoreCurrency(decimal amount, Currency targetCurrency, Store store = null);
-
-
 
         /// <summary>
         /// Load active exchange rate provider

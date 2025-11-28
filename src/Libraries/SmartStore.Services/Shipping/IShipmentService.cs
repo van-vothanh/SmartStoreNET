@@ -62,8 +62,6 @@ namespace SmartStore.Services.Shipping
         /// <param name="shipment">Shipment</param>
         void UpdateShipment(Shipment shipment);
 
-
-
         /// <summary>
         /// Deletes a shipment item
         /// </summary>

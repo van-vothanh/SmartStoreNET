@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+#if false // TODO: .NET 8 migration - temporarily disabled
+﻿using Microsoft.AspNetCore.Mvc;
 
 namespace SmartStore.Core.Fakes
 {
@@ -6,3 +7,5 @@ namespace SmartStore.Core.Fakes
     {
     }
 }
+
+#endif

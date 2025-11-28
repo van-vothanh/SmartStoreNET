@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Common;
 using SmartStore.Core.Domain.Customers;
@@ -463,7 +463,6 @@ namespace SmartStore.Web.Controllers
             return RedirectToAction("BillingAddress");
         }
 
-
         public ActionResult BillingAddress()
         {
             var cart = _workContext.CurrentCustomer.GetCartItems(ShoppingCartType.ShoppingCart, _storeContext.CurrentStore.Id);
@@ -516,7 +515,6 @@ namespace SmartStore.Web.Controllers
 
                 return RedirectToAction("ShippingAddress");
             }
-
 
             //If we got this far, something failed, redisplay form
             model = PrepareBillingAddressModel(model.NewAddress.CountryId);
@@ -591,7 +589,6 @@ namespace SmartStore.Web.Controllers
 
                 return RedirectToAction("ShippingMethod");
             }
-
 
             //If we got this far, something failed, redisplay form
             model = PrepareShippingAddressModel(model.NewAddress.CountryId);
@@ -710,7 +707,6 @@ namespace SmartStore.Web.Controllers
 
             return RedirectToAction("PaymentMethod");
         }
-
 
         public ActionResult PaymentMethod()
         {
@@ -946,7 +942,6 @@ namespace SmartStore.Web.Controllers
 
             return RedirectToAction("Completed");
         }
-
 
         public ActionResult Completed()
         {

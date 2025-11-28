@@ -28,7 +28,6 @@ namespace SmartStore.Utilities
             return Enumerable.Range(0, count);
         }
 
-
         /// <summary>
         /// Creates sequence of the integral numbers within the specified range
         /// </summary>
@@ -51,7 +50,6 @@ namespace SmartStore.Utilities
         {
             return Enumerable.Repeat(item, count);
         }
-
 
         /// <summary>
         /// Creates the generator to iterate from 1 to <see cref="int.MaxValue"/>.

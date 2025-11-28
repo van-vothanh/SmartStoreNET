@@ -44,7 +44,6 @@ namespace SmartStore.FacebookAuth.Core
         /// </summary>
         private readonly string[] _requestedScopes;
 
-
         /// <summary>
         /// Creates a new Facebook OAuth2 client, requesting the default "email" scope.
         /// </summary>

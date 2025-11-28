@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -224,7 +225,6 @@ namespace SmartStore.Utilities
         }
     }
 
-
     public class FileDownloadResponse
     {
         public FileDownloadResponse(byte[] data, string fileName, string contentType)
@@ -344,3 +344,4 @@ namespace SmartStore.Utilities
         }
     }
 }
+#endif

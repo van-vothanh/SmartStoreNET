@@ -79,7 +79,6 @@ namespace SmartStore.Services.DataExchange
         void UpdateSyncMapping(SyncMapping mapping);
     }
 
-
     public static class ISyncMappingServiceExtensions
     {
 

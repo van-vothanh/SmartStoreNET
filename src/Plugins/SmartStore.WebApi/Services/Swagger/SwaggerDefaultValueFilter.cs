@@ -37,7 +37,6 @@ namespace SmartStore.WebApi.Services.Swagger
         }
     }
 
-
     public class SwaggerDefaultValueAttribute : Attribute
     {
         public SwaggerDefaultValueAttribute(string parameterName, object value)

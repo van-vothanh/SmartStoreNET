@@ -22,7 +22,6 @@ namespace SmartStore.Services.Orders
             this.Errors.Add(error);
         }
 
-
         /// <summary>
         /// Gets or sets the placed order
         /// </summary>

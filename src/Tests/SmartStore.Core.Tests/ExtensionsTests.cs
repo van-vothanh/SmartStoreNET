@@ -40,5 +40,3 @@ namespace SmartStore.Core.Tests
     }
 }
 
-
-

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Utilities;
 
 namespace SmartStore.Core.IO
@@ -694,8 +694,6 @@ namespace SmartStore.Core.IO
 
                 return fullPath;
             }
-
-
 
             private static long GetDirectorySize(DirectoryInfo directoryInfo)
             {

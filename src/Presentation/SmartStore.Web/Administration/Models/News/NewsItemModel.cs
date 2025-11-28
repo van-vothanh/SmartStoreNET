@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -22,19 +22,19 @@ namespace SmartStore.Admin.Models.News
         }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.NewsItems.Fields.Title")]
-        [AllowHtml]
+
         public string Title { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
+
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.NewsItems.Fields.Short")]
-        [AllowHtml]
+
         public string Short { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.NewsItems.Fields.Full")]
-        [AllowHtml]
+
         public string Full { get; set; }
 
         [UIHint("Media"), AdditionalMetadata("album", "content")]
@@ -55,15 +55,15 @@ namespace SmartStore.Admin.Models.News
         public DateTime? EndDate { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaKeywords")]
-        [AllowHtml]
+
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
+
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
+
         public string MetaTitle { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.NewsItems.Fields.Published")]
@@ -101,34 +101,33 @@ namespace SmartStore.Admin.Models.News
         public int LanguageId { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.NewsItems.Fields.Title")]
-        [AllowHtml]
+
         public string Title { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.SeName")]
-        [AllowHtml]
+
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.NewsItems.Fields.Short")]
-        [AllowHtml]
+
         public string Short { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.News.NewsItems.Fields.Full")]
-        [AllowHtml]
+
         public string Full { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaKeywords")]
-        [AllowHtml]
+
         public string MetaKeywords { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaDescription")]
-        [AllowHtml]
+
         public string MetaDescription { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Seo.MetaTitle")]
-        [AllowHtml]
+
         public string MetaTitle { get; set; }
     }
-
 
     public partial class NewsItemValidator : AbstractValidator<NewsItemModel>
     {

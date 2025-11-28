@@ -49,11 +49,9 @@ namespace SmartStore.Admin.Models.Orders
 
         public bool CanCancelRecurringPayment { get; set; }
 
-
         public IList<RecurringPaymentHistoryModel> History { get; set; }
 
         #region Nested classes
-
 
         public class RecurringPaymentHistoryModel : EntityModelBase
         {

@@ -32,7 +32,6 @@ namespace SmartStore.Services.Shipping
         /// <returns>Shipping rate computation methods</returns>
 		IEnumerable<Provider<IShippingRateComputationMethod>> LoadAllShippingRateComputationMethods(int storeId = 0);
 
-
         /// <summary>
         /// Deletes a shipping method
         /// </summary>
@@ -45,7 +44,6 @@ namespace SmartStore.Services.Shipping
         /// <param name="shippingMethodId">The shipping method identifier</param>
         /// <returns>Shipping method</returns>
         ShippingMethod GetShippingMethodById(int shippingMethodId);
-
 
         /// <summary>
         /// Gets all shipping methods
@@ -66,7 +64,6 @@ namespace SmartStore.Services.Shipping
         /// </summary>
         /// <param name="shippingMethod">Shipping method</param>
         void UpdateShippingMethod(ShippingMethod shippingMethod);
-
 
         /// <summary>
         /// Gets shopping cart item weight (of one item)
@@ -89,7 +86,6 @@ namespace SmartStore.Services.Shipping
 		/// <param name="includeFreeShippingProducts">Whether to include free shipping products</param>
         /// <returns>Shopping cart weight</returns>
 		decimal GetShoppingCartTotalWeight(IList<OrganizedShoppingCartItem> cart, bool includeFreeShippingProducts = true);
-
 
         /// <summary>
         /// Create shipment package from shopping cart

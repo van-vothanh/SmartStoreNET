@@ -94,7 +94,6 @@ namespace SmartStore.Core.Themes
         event EventHandler<BaseThemeChangedEventArgs> BaseThemeChanged;
     }
 
-
     public class ThemeFileChangedEventArgs : EventArgs
     {
         public string FullPath { get; set; }

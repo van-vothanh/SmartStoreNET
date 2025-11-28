@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Web.Http.Filters;
+using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace SmartStore.WebApi
 {

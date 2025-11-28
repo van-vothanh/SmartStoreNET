@@ -1129,7 +1129,6 @@ namespace SmartStore.PayPal.Services
             //foreach (var key in headers.AllKeys)"{0}: {1}".FormatInvariant(key, headers[key]).Dump();
             //string data = JsonConvert.SerializeObject(json, Formatting.Indented);data.Dump();
 
-
             // validating against PayPal SDK failing using sandbox, so better we do not use it:
             //var apiContext = new global::PayPal.Api.APIContext
             //{
@@ -1284,7 +1283,6 @@ namespace SmartStore.PayPal.Services
 
         #endregion
     }
-
 
     public class PayPalResponse
     {

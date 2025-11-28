@@ -1,7 +1,7 @@
 namespace SmartStore.Data.Migrations
 {
     using System.Data.Entity.Migrations;
-    using System.Web.Hosting;
+    using Microsoft.AspNetCore.Hosting;
     using SmartStore.Core.Data;
 
     public partial class ProductVisibility : DbMigration

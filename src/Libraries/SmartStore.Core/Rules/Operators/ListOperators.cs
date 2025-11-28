@@ -56,7 +56,6 @@ namespace SmartStore.Rules.Operators
         //}
     }
 
-
     internal class NotAllInOperator : AllInOperator
     {
         internal NotAllInOperator()

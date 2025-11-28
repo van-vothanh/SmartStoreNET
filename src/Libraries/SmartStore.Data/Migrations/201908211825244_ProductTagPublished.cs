@@ -1,7 +1,7 @@
 namespace SmartStore.Data.Migrations
 {
     using System.Data.Entity.Migrations;
-    using System.Web.Hosting;
+    using Microsoft.AspNetCore.Hosting;
     using SmartStore.Core.Data;
     using SmartStore.Data.Setup;
 
@@ -42,9 +42,9 @@ namespace SmartStore.Data.Migrations
             builder.AddOrUpdate(
                 "Admin.Catalog.ProductTags.Published",
                 "Published",
-                "Veröffentlicht",
+                "Verffentlicht",
                 "Tags that have not been published are not visible in the shop, but are taken into account in the product search.",
-                "Nicht veröffentlichte Tags sind im Shop nicht sichtbar, werden aber bei der Produktsuche berücksichtigt.");
+                "Nicht verffentlichte Tags sind im Shop nicht sichtbar, werden aber bei der Produktsuche bercksichtigt.");
         }
 
         private string GetAlterTagCountProcedureSql(bool newVersion)

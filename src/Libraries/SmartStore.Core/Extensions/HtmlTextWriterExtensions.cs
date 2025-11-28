@@ -1,7 +1,6 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web.UI;
-
 namespace SmartStore
 {
     public static class HtmlTextWriterExtensions
@@ -19,3 +18,5 @@ namespace SmartStore
         }
     }
 }
+
+#endif

@@ -167,7 +167,6 @@ namespace SmartStore.Services.DataExchange.Excel
             Dispose();
         }
 
-
         public int FieldCount
         {
             get

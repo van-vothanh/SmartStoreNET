@@ -4,7 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using System.Web;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using Autofac;
 using Autofac.Builder;
 using Autofac.Core;

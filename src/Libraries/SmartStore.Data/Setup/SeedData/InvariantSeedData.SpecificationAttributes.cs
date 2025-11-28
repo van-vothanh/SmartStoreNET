@@ -934,7 +934,6 @@ namespace SmartStore.Data.Setup
                 DisplayOrder = 6,
             });
 
-
             #endregion sa23 Size
 
             #region sa24 diameter

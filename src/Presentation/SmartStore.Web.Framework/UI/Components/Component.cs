@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Web.Framework.UI
 {
@@ -29,8 +29,6 @@ namespace SmartStore.Web.Framework.UI
             get;
             private set;
         }
-
-
 
         public virtual bool NameIsRequired => false;
     }

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.AmazonPay.Controllers;
 using SmartStore.AmazonPay.Services;
 using SmartStore.Core.Domain.Cms;
@@ -141,7 +141,6 @@ namespace SmartStore.AmazonPay
             var result = _apiService.Void(voidPaymentRequest);
             return result;
         }
-
 
         public override void GetConfigurationRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues)
         {

@@ -58,7 +58,6 @@ namespace SmartStore.Core.Email
             if (original.Headers != null)
                 msg.Headers.AddRange(original.Headers);
 
-
             msg.Priority = original.Priority;
 
             return msg;

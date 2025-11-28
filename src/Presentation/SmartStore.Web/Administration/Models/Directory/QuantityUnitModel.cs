@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -23,7 +23,7 @@ namespace SmartStore.Admin.Models.Directory
         public string NamePlural { get; set; }
 
         [SmartResourceDisplayName("Common.Description")]
-        [AllowHtml]
+
         public string Description { get; set; }
 
         [SmartResourceDisplayName("Common.DisplayOrder")]

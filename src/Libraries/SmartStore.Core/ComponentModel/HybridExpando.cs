@@ -171,7 +171,6 @@ namespace SmartStore.ComponentModel
             }
         }
 
-
         /// <summary>
         /// Try to retrieve a member by name first from instance properties
         /// followed by the collection entries.
@@ -215,7 +214,6 @@ namespace SmartStore.ComponentModel
             // failed to retrieve a property
             return exists;
         }
-
 
         /// <summary>
         /// Property setter implementation tries to retrieve value from instance 
@@ -293,7 +291,6 @@ namespace SmartStore.ComponentModel
             return false;
         }
 
-
         /// <summary>
         /// Reflection Helper method to retrieve a property
         /// </summary>
@@ -353,7 +350,6 @@ namespace SmartStore.ComponentModel
             return false;
         }
 
-
         /// <summary>
         /// Convenience method that provides a string Indexer 
         /// to the Properties collection AND the strongly typed
@@ -386,7 +382,6 @@ namespace SmartStore.ComponentModel
             }
             set => TrySetMemberCore(key, value);
         }
-
 
         /// <summary>
         /// Returns all properties 

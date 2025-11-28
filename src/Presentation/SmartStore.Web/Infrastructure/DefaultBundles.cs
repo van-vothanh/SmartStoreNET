@@ -1,4 +1,4 @@
-﻿using System.Web.Optimization;
+﻿using WebOptimizer;
 using BundleTransformer.Core.Bundles;
 using BundleTransformer.Core.Orderers;
 using SmartStore.Web.Framework.Bundling;

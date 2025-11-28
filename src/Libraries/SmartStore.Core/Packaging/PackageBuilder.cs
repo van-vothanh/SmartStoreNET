@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,7 +35,6 @@ namespace SmartStore.Core.Packaging
                 _ignoredThemePaths.Any(filePath.Contains) ||
                 _ignoredThemeExtensions.Contains(Path.GetExtension(filePath).NullEmpty() ?? "");
         }
-
 
         public Stream BuildPackage(PluginDescriptor pluginDescriptor)
         {
@@ -136,7 +136,6 @@ namespace SmartStore.Core.Packaging
             context.Builder.Files.Add(file);
         }
 
-
         #region Nested type: BuildContext
 
         private class BuildContext
@@ -187,3 +186,5 @@ namespace SmartStore.Core.Packaging
         #endregion
     }
 }
+
+#endif

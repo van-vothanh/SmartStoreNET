@@ -572,7 +572,6 @@ namespace SmartStore.Services.Orders
             return discountAmount;
         }
 
-
         /// <summary>
         /// Gets shopping cart additional shipping charge
         /// </summary>
@@ -909,10 +908,6 @@ namespace SmartStore.Services.Orders
             return shippingDiscountAmount;
         }
 
-
-
-
-
         /// <summary>
         /// Gets tax
         /// </summary>
@@ -1105,10 +1100,6 @@ namespace SmartStore.Services.Orders
             taxTotal = taxTotal.RoundIfEnabledFor(currency);
             return taxTotal;
         }
-
-
-
-
 
         public virtual ShoppingCartTotal GetShoppingCartTotal(
             IList<OrganizedShoppingCartItem> cart,
@@ -1357,10 +1348,6 @@ namespace SmartStore.Services.Orders
             return discountAmount;
         }
 
-
-
-
-
         /// <summary>
         /// Converts reward points to amount primary store currency
         /// </summary>
@@ -1402,7 +1389,6 @@ namespace SmartStore.Services.Orders
 
         #endregion
     }
-
 
     internal class CartTaxingInfo
     {

@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -12,7 +12,7 @@ namespace SmartStore.Admin.Models.Polls
         public int PollId { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Polls.Answers.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.ContentManagement.Polls.Answers.Fields.NumberOfVotes")]

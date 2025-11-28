@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.OData;
 using SmartStore.Core.Domain.DataExchange;
 using SmartStore.Services.DataExchange;

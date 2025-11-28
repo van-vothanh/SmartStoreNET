@@ -141,7 +141,6 @@ namespace SmartStore.Services.Catalog
         #endregion
     }
 
-
     [Serializable]
     public class CombinationAvailabilityInfo
     {

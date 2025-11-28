@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.ModelBinding;
 using System.Web.OData;
 using SmartStore.Core.Domain.Catalog;
@@ -168,7 +168,6 @@ namespace SmartStore.WebApi.Controllers.OData
             return Ok(GetRelatedEntity(key, x => x.SampleDownload));
         }
 
-
         [WebApiQueryable]
         [WebApiAuthenticate(Permission = Permissions.Catalog.Product.Read)]
         public IHttpActionResult GetProductCategories(int key, int relatedKey = 0 /*categoryId*/)
@@ -225,7 +224,6 @@ namespace SmartStore.WebApi.Controllers.OData
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-
 
         [WebApiQueryable]
         [WebApiAuthenticate(Permission = Permissions.Catalog.Product.Read)]
@@ -284,7 +282,6 @@ namespace SmartStore.WebApi.Controllers.OData
             return StatusCode(HttpStatusCode.NoContent);
         }
 
-
         [WebApiQueryable]
         [WebApiAuthenticate(Permission = Permissions.Catalog.Product.Read)]
         public IHttpActionResult GetProductPictures(int key, int relatedKey = 0 /*mediaFileId*/)
@@ -341,7 +338,6 @@ namespace SmartStore.WebApi.Controllers.OData
 
             return StatusCode(HttpStatusCode.NoContent);
         }
-
 
         [WebApiQueryable]
         [WebApiAuthenticate(Permission = Permissions.Catalog.Product.Read)]

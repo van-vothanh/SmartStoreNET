@@ -28,7 +28,6 @@ namespace SmartStore.Admin.Models.Localization
         public decimal? TranslatedPercentageAtLastImport { get; set; }
     }
 
-
     public class LanguageDownloadState
     {
         public int Id { get; set; }

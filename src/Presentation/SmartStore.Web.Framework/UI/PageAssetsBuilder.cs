@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
-using System.Web.Hosting;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+using WebOptimizer;
+using Microsoft.AspNetCore.Routing;
 using System.Web.WebPages;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Seo;
@@ -173,7 +173,6 @@ namespace SmartStore.Web.Framework.UI
             return result;
         }
 
-
         public void AddMetaDescriptionParts(IEnumerable<string> parts, bool append = false)
         {
             AddPartsCore(ref _metaDescriptionParts, parts, append);
@@ -194,7 +193,6 @@ namespace SmartStore.Web.Framework.UI
 
             return result;
         }
-
 
         public void AddMetaKeywordParts(IEnumerable<string> parts, bool append = false)
         {
@@ -361,7 +359,6 @@ namespace SmartStore.Web.Framework.UI
                 }
             });
         }
-
 
         public void AddCssFileParts(ResourceLocation location, IEnumerable<string> parts, bool excludeFromBundling = false, bool append = false)
         {

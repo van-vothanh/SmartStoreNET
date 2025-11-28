@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -11,7 +11,7 @@ namespace SmartStore.Admin.Models.Messages
     public class NewsLetterSubscriptionModel : EntityModelBase
     {
         [SmartResourceDisplayName("Admin.Promotions.NewsLetterSubscriptions.Fields.Email")]
-        [AllowHtml]
+
         public string Email { get; set; }
 
         [SmartResourceDisplayName("Admin.Promotions.NewsLetterSubscriptions.Fields.Active")]

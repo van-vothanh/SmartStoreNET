@@ -149,7 +149,6 @@ namespace SmartStore.Packager
             btnReadDescriptions.Enabled = true;
         }
 
-
         private void ReadPackages(IVirtualPathProvider vpp)
         {
             if (!ValidatePaths())

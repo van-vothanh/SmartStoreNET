@@ -56,7 +56,6 @@ namespace SmartStore.PayPal.Settings
         public string WebhookId { get; set; }
     }
 
-
     public class PayPalDirectPaymentSettings : PayPalApiSettingsBase, ISettings
     {
         public PayPalDirectPaymentSettings()
@@ -152,7 +151,6 @@ namespace SmartStore.PayPal.Settings
         /// </summary>
         public bool IsShippingAddressRequired { get; set; }
     }
-
 
     /// <summary>
     /// Represents payment processor transaction mode

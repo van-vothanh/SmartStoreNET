@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Routing;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Shipping;
 using SmartStore.Core.Domain.Tax;
@@ -245,7 +245,6 @@ namespace SmartStore.ShippingByWeight
         /// Gets a shipping rate computation method type
         /// </summary>
         public ShippingRateComputationMethodType ShippingRateComputationMethodType => ShippingRateComputationMethodType.Offline;
-
 
         /// <summary>
         /// Gets a shipment tracker

@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 using SmartStore;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Domain.Common;
@@ -636,7 +636,6 @@ namespace SmartStore.Web.Controllers
 
         #endregion
 
-
         #region Product tags
 
         [ChildActionOnly]
@@ -674,7 +673,6 @@ namespace SmartStore.Web.Controllers
         }
 
         #endregion
-
 
         #region Product reviews
 
@@ -855,7 +853,6 @@ namespace SmartStore.Web.Controllers
         }
 
         #endregion
-
 
         #region Ask product question
 

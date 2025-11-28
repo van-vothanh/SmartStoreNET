@@ -68,7 +68,6 @@ namespace SmartStore.Services.Media
         [JsonProperty("deep")]
         public bool DeepSearch { get; set; }
 
-
         [DataMember]
         [JsonProperty("page")]
         public int PageIndex { get; set; }

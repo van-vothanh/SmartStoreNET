@@ -441,8 +441,6 @@ namespace SmartStore.Services.Tests.Orders
             taxRates[10].ShouldEqual(8.639);
         }
 
-
-
         [Test]
         public void Can_get_shoppingCartItem_additional_shippingCharge()
         {
@@ -714,7 +712,6 @@ namespace SmartStore.Services.Tests.Orders
             Discount appliedDiscount = null;
             decimal? shipping = null;
 
-
             shipping = _orderTotalCalcService.GetShoppingCartShippingTotal(cart, false, out taxRate, out appliedDiscount);
             shipping.ShouldNotBeNull();
             //10 - default fixed shipping rate, 42.5 - additional shipping change
@@ -951,7 +948,6 @@ namespace SmartStore.Services.Tests.Orders
             _discountService.Expect(ds => ds.IsDiscountValid(discount1, customer)).Return(true);
             _discountService.Expect(ds => ds.GetAllDiscounts(DiscountType.AssignedToShipping)).Return(new List<Discount>() { discount1 });
 
-
             decimal taxRate = decimal.Zero;
             Discount appliedDiscount = null;
             decimal? shipping = null;
@@ -1011,7 +1007,6 @@ namespace SmartStore.Services.Tests.Orders
 
             cart.ForEach(sci => sci.Item.Customer = customer);
             cart.ForEach(sci => sci.Item.CustomerId = customer.Id);
-
 
             //_genericAttributeService.Expect(x => x.GetAttributesForEntity(customer.Id, "Customer"))
             //	.Return(new List<GenericAttribute>()
@@ -1121,8 +1116,6 @@ namespace SmartStore.Services.Tests.Orders
         //	cart.ForEach(sci => sci.Customer = customer);
         //	cart.ForEach(sci => sci.CustomerId = customer.Id);
 
-
-
         //	_genericAttributeService.Expect(x => x.GetAttributesForEntity(customer.Id, "Customer"))
         //		.Return(new List<GenericAttribute>()
         //					{
@@ -1144,7 +1137,6 @@ namespace SmartStore.Services.Tests.Orders
         //	List<AppliedGiftCard> appliedGiftCards;
         //	int redeemedRewardPoints;
         //	decimal redeemedRewardPointsAmount;
-
 
         //	//shipping is taxable, payment fee is taxable
         //	_taxSettings.ShippingIsTaxable = true;
@@ -1221,7 +1213,6 @@ namespace SmartStore.Services.Tests.Orders
         //	int redeemedRewardPoints;
         //	decimal redeemedRewardPointsAmount;
 
-
         //	//shipping is taxable, payment fee is taxable
         //	_taxSettings.ShippingIsTaxable = true;
         //	_taxSettings.PaymentMethodAdditionalFeeIsTaxable = true;
@@ -1275,8 +1266,6 @@ namespace SmartStore.Services.Tests.Orders
         //	cart.ForEach(sci => sci.Customer = customer);
         //	cart.ForEach(sci => sci.CustomerId = customer.Id);
 
-
-
         //	_genericAttributeService.Expect(x => x.GetAttributesForEntity(customer.Id, "Customer"))
         //		.Return(new List<GenericAttribute>()
         //					{
@@ -1299,7 +1288,6 @@ namespace SmartStore.Services.Tests.Orders
         //					});
         //	_paymentService.Expect(ps => ps.GetAdditionalHandlingFee(cart, "test1")).Return(20);
 
-
         //	_discountService.Expect(ds => ds.GetAllDiscounts(DiscountType.AssignedToCategories)).Return(new List<Discount>());
 
         //	decimal discountAmount;
@@ -1307,7 +1295,6 @@ namespace SmartStore.Services.Tests.Orders
         //	List<AppliedGiftCard> appliedGiftCards;
         //	int redeemedRewardPoints;
         //	decimal redeemedRewardPointsAmount;
-
 
         //	//shipping is taxable, payment fee is taxable
         //	_taxSettings.ShippingIsTaxable = true;
@@ -1383,7 +1370,6 @@ namespace SmartStore.Services.Tests.Orders
             _discountService.Expect(ds => ds.GetAllDiscounts(DiscountType.AssignedToOrderTotal)).Return(new List<Discount>() { discount1 });
             _discountService.Expect(ds => ds.GetAllDiscounts(DiscountType.AssignedToCategories)).Return(new List<Discount>());
             _discountService.Expect(ds => ds.GetAllDiscounts(DiscountType.AssignedToManufacturers)).Return(new List<Discount>());
-
 
             //_genericAttributeService.Expect(x => x.GetAttributesForEntity(customer.Id, "Customer"))
             //	.Return(new List<GenericAttribute>

@@ -275,7 +275,6 @@ namespace SmartStore.Services.Tax
             return _providerManager.GetAllProviders<ITaxProvider>();
         }
 
-
         private decimal GetOriginTaxRate(Product product)
         {
             return GetTaxRate(product, 0, null);
@@ -361,7 +360,6 @@ namespace SmartStore.Services.Tax
                 return decimal.Zero;
             }
         }
-
 
         /// <summary>
         /// Gets price
@@ -470,9 +468,6 @@ namespace SmartStore.Services.Tax
             return price;
         }
 
-
-
-
         public virtual decimal GetShippingPrice(decimal price, Customer customer)
         {
             var includingTax = (_workContext.TaxDisplayType == TaxDisplayType.IncludingTax);
@@ -510,8 +505,6 @@ namespace SmartStore.Services.Tax
             return result;
         }
 
-
-
         public virtual decimal GetPaymentMethodAdditionalFee(decimal price, Customer customer)
         {
             var includingTax = (_workContext.TaxDisplayType == TaxDisplayType.IncludingTax);
@@ -548,8 +541,6 @@ namespace SmartStore.Services.Tax
 
             return result;
         }
-
-
 
         /// <summary>
         /// Gets checkout attribute value price
@@ -615,10 +606,6 @@ namespace SmartStore.Services.Tax
 
             return GetProductPrice(null, taxClassId, price, includingTax, customer, _workContext.WorkingCurrency, priceIncludesTax, out taxRate);
         }
-
-
-
-
 
         /// <summary>
         /// Gets VAT Number status
@@ -751,7 +738,6 @@ namespace SmartStore.Services.Tax
                     s.Dispose();
             }
         }
-
 
         /// <summary>
         /// Gets a value indicating whether tax exempt

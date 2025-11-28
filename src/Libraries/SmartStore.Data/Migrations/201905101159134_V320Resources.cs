@@ -48,7 +48,7 @@ namespace SmartStore.Data.Migrations
                  "Maximum refund amount",
                  "Maximaler Erstattungsbetrag",
                  "The maximum amount that can be refunded for this return request.",
-                 "Der maximale Betrag, der für diesen Rücksendewunsch erstattet werden kann.");
+                 "Der maximale Betrag, der fr diesen Rcksendewunsch erstattet werden kann.");
 
             builder.AddOrUpdate("Admin.Customers.Customers.Fields.Title",
                 "Title",
@@ -58,7 +58,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.DataExchange.Export.FolderName.Validate",
                 "Please enter a valid, relative folder path for the export data. The path must be at least 3 characters long and not the application folder.",
-                "Bitte einen gültigen, relativen Ordnerpfad für die zu exportierenden Daten eingeben. Der Pfad muss mindestens 3 Zeichen lang und nicht der Anwendungsordner sein.");
+                "Bitte einen gltigen, relativen Ordnerpfad fr die zu exportierenden Daten eingeben. Der Pfad muss mindestens 3 Zeichen lang und nicht der Anwendungsordner sein.");
 
             builder.AddOrUpdate("Admin.Catalog.Customers.CustomerSearchType", "Search in:", "Suche in:");
 
@@ -72,7 +72,7 @@ namespace SmartStore.Data.Migrations
             builder.AddOrUpdate("Validation.ExactLengthValidator")
                 .Value("de", "'{PropertyName}' muss genau {MaxLength} lang sein. Sie haben {TotalLength} Zeichen eingegeben.");
             builder.AddOrUpdate("Validation.ExclusiveBetweenValidator")
-                .Value("de", "'{PropertyName}' muss größer als {From} und kleiner als {To} sein. Sie haben '{Value}' eingegeben.");
+                .Value("de", "'{PropertyName}' muss grer als {From} und kleiner als {To} sein. Sie haben '{Value}' eingegeben.");
             builder.AddOrUpdate("Validation.InclusiveBetweenValidator")
                 .Value("de", "'{PropertyName}' muss zwischen {From} and {To} liegen. Sie haben '{Value}' eingegeben.");
             builder.AddOrUpdate("Validation.NotNullValidator")
@@ -84,12 +84,12 @@ namespace SmartStore.Data.Migrations
             builder.AddOrUpdate("Validation.RegularExpressionValidator")
                 .Value("de", "'{PropertyName}' entspricht nicht dem erforderlichen Muster.");
             builder.AddOrUpdate("Validation.ScalePrecisionValidator")
-                .Value("de", "'{PropertyName}' darf insgesamt nicht mehr als {expectedPrecision} Ziffern enthalten, unter Berücksichtigung von {expectedScale} Dezimalstellen. {digits} Ziffern und {actualScale} Dezimalstellen wurden gefunden.");
+                .Value("de", "'{PropertyName}' darf insgesamt nicht mehr als {expectedPrecision} Ziffern enthalten, unter Bercksichtigung von {expectedScale} Dezimalstellen. {digits} Ziffern und {actualScale} Dezimalstellen wurden gefunden.");
 
             // Some new resources for custom validators
             builder.AddOrUpdate("Validation.CreditCardCvvNumberValidator",
                 "'{PropertyName}' is invalid.",
-                "'{PropertyName}' ist ungültig.");
+                "'{PropertyName}' ist ungltig.");
 
             // Get rid of duplicate validator resource entries
             builder.Delete(
@@ -328,13 +328,13 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Common.DisplayOrder.Hint",
                 "Specifies display order. 1 represents the top of the list.",
-                "Legt die Anzeige-Priorität fest. 1 steht bspw. für das erste Element in der Liste.");
+                "Legt die Anzeige-Prioritt fest. 1 steht bspw. fr das erste Element in der Liste.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.GeneralCommon.UseInvisibleReCaptcha",
                 "Use invisible reCAPTCHA",
                 "Unsichtbaren reCAPTCHA verwenden",
                 "Does not require the user to click on a checkbox, instead it is invoked directly when the user submits a form. By default only the most suspicious traffic will be prompted to solve a captcha.",
-                "Der Benutzer muss nicht auf ein Kontrollkästchen klicken, sondern die Validierung erfolgt direkt beim Absenden eines Formulars. Nur bei 'verdächtigem' Traffic wird der Benutzer aufgefordert, ein Captcha zu lösen.");
+                "Der Benutzer muss nicht auf ein Kontrollkstchen klicken, sondern die Validierung erfolgt direkt beim Absenden eines Formulars. Nur bei 'verdchtigem' Traffic wird der Benutzer aufgefordert, ein Captcha zu lsen.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Topics.Fields.ShortTitle",
                 "Short title",
@@ -350,7 +350,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Common.Download.Versions", "Versions", "Versionen");
             builder.AddOrUpdate("Common.Download.Version", "Version", "Version");
-            builder.AddOrUpdate("Common.Download.Delete", "Delete download", "Download löschen");
+            builder.AddOrUpdate("Common.Download.Delete", "Delete download", "Download lschen");
             builder.AddOrUpdate("Common.Downloads", "Downloads", "Downloads");
 
             builder.AddOrUpdate("Admin.Catalog.Products.Fields.NewVersionDownloadId",
@@ -359,17 +359,17 @@ namespace SmartStore.Data.Migrations
                 "Upload a new version of the download file here.",
                 "Laden Sie hier eine neue Version der Download-Datei hoch.");
 
-            builder.AddOrUpdate("Admin.Catalog.Products.Download.VersionDelete", "Delete this file version.", "Diese Dateiversion löschen.");
-            builder.AddOrUpdate("Admin.Catalog.Products.Download.AddChangelog", "Edit changelog", "Änderungshistorie bearbeiten");
-            builder.AddOrUpdate("Customer.Downloads.NoChangelogAvailable", "No changelog available.", "Keine Änderungshistorie verfügbar.");
+            builder.AddOrUpdate("Admin.Catalog.Products.Download.VersionDelete", "Delete this file version.", "Diese Dateiversion lschen.");
+            builder.AddOrUpdate("Admin.Catalog.Products.Download.AddChangelog", "Edit changelog", "nderungshistorie bearbeiten");
+            builder.AddOrUpdate("Customer.Downloads.NoChangelogAvailable", "No changelog available.", "Keine nderungshistorie verfgbar.");
 
             builder.AddOrUpdate("Admin.Catalog.Products.Download.SemanticVersion.NotValid",
                 "The specified version information is not valid. Please enter the version number in the correct format (e.g.: 1.0.0.0, 2.0 or 3.1.5).",
-                "Die angegebenen Versionsinformationen sind nicht gültig. Bitte geben Sie die Versionsnummer in korrektem Format an (z.B.: 1.0.0.0, 2.0 oder 3.1.5).");
+                "Die angegebenen Versionsinformationen sind nicht gltig. Bitte geben Sie die Versionsnummer in korrektem Format an (z.B.: 1.0.0.0, 2.0 oder 3.1.5).");
 
             builder.AddOrUpdate("Admin.Catalog.Products.Fields.HasPreviewPicture",
                 "Exclude first image from gallery",
-                "Erstes Bild aus Gallerie ausschließen",
+                "Erstes Bild aus Gallerie ausschlieen",
                 "Activate this option if the first image should be displayed as a preview in product lists but not in the product detail gallery.",
                 "Aktivieren Sie diese Option, wenn das erste Bild als Vorschau in Produktlisten, nicht aber in der Produktdetail-Gallerie angezeigt werden soll.");
 
@@ -377,7 +377,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.Catalog.Products.Fields.ProductTags.Hint",
                 "Product tags are keywords that this product can also be identified by. Enter a list of the tags to be associated with this product. The more products associated with a particular tag, the larger it will show on the tag cloud.",
-                "Eine Liste von Schlüsselwörtern, die das Produkt taxonomisch charakterisieren. Je mehr Produkte einem Schlüsselwort (Tag) zugeordnet sind, desto mehr visuelles Gewicht erhält das Tag.");
+                "Eine Liste von Schlsselwrtern, die das Produkt taxonomisch charakterisieren. Je mehr Produkte einem Schlsselwort (Tag) zugeordnet sind, desto mehr visuelles Gewicht erhlt das Tag.");
 
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.Initial", "Position", "Position");
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.Relevance", "Relevance", "Beste Ergebnisse");
@@ -385,10 +385,10 @@ namespace SmartStore.Data.Migrations
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.SubjectDesc", "Title: Z to A", "Titel: Z bis A");
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.UserNameAsc", "User name: A to Z", "Benutzername: A bis Z");
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.UserNameDesc", "User name: Z to A", "Benutzername: Z bis A");
-            builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.CreatedOnAsc", "Created on: Oldest first", "Erstellt am: ältere zuerst");
+            builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.CreatedOnAsc", "Created on: Oldest first", "Erstellt am: ltere zuerst");
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.CreatedOnDesc", "Created on: Newest first", "Erstellt am: neuere zuerst");
-            builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.PostsAsc", "Post number: ascending", "Anzahl Beiträge: aufsteigend");
-            builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.PostsDesc", "Post number: descending", "Anzahl Beiträge: absteigend");
+            builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.PostsAsc", "Post number: ascending", "Anzahl Beitrge: aufsteigend");
+            builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumTopicSorting.PostsDesc", "Post number: descending", "Anzahl Beitrge: absteigend");
 
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumDateFilter.LastVisit", "Since last visit", "Seit dem letzten Besuch");
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.Forums.ForumDateFilter.Yesterday", "Yesterday", "Gestern");
@@ -403,29 +403,29 @@ namespace SmartStore.Data.Migrations
             builder.AddOrUpdate("Search.Facet.Customer", "User name", "Benutzername");
             builder.AddOrUpdate("Search.Facet.Date", "Period", "Zeitraum");
             builder.AddOrUpdate("Search.Facet.Date.Newer", "and newer", "und neuer");
-            builder.AddOrUpdate("Search.Facet.Date.Older", "and older", "und älter");
+            builder.AddOrUpdate("Search.Facet.Date.Older", "and older", "und lter");
 
             builder.AddOrUpdate("Forum.PostText", "Post text", "Beitragstext");
             builder.AddOrUpdate("Forum.Sticky", "Sticky topic", "Festes Thema");
 
-            builder.AddOrUpdate("Search.HitsFor", "{0} hits for {1}", "{0} Treffer für {1}");
+            builder.AddOrUpdate("Search.HitsFor", "{0} hits for {1}", "{0} Treffer fr {1}");
             builder.AddOrUpdate("Search.NoMoreHitsFound", "There were no more hits found.", "Es wurden keine weiteren Treffer gefunden.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Search.WildcardSearchNote",
                 "The wildcard mode can slow down the search for a large number of objects.",
-                "Der Wildcard-Modus kann bei einer großen Anzahl an Objekten die Suche verlangsamen.");
+                "Der Wildcard-Modus kann bei einer groen Anzahl an Objekten die Suche verlangsamen.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Search.SearchMode",
                 "Search mode",
                 "Suchmodus",
                 "Specifies the search mode. Please keep in mind that the search mode can - depending on number of objects - strongly affect search performance. 'Is equal to' is the fastest, 'Contains' the slowest.",
-                "Legt den Suchmodus fest. Bitte beachten Sie, dass der Suchmodus die Geschwindigkeit der Suche (abhängig von der Objektanzahl) beeinflusst. 'Ist gleich' ist am schnellsten, 'Beinhaltet' am langsamsten.");
+                "Legt den Suchmodus fest. Bitte beachten Sie, dass der Suchmodus die Geschwindigkeit der Suche (abhngig von der Objektanzahl) beeinflusst. 'Ist gleich' ist am schnellsten, 'Beinhaltet' am langsamsten.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Search.Forum.SearchFields",
                 "Search fields",
                 "Suchfelder",
                 "Specifies additional search fields. The topic title is always searched.",
-                "Legt zusätzlich zu durchsuchende Felder fest. Der Thementitel wird grundsätzlich immer durchsucht.");
+                "Legt zustzlich zu durchsuchende Felder fest. Der Thementitel wird grundstzlich immer durchsucht.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Search.DefaultSortOrder",
                 "Default sort order",
@@ -443,20 +443,19 @@ namespace SmartStore.Data.Migrations
                 "Allow sorting",
                 "Sortierung zulassen",
                 "Specifies whether forum posts can be sorted.",
-                "Legt fest, ob Forenbeiträge sortiert werden können.");
+                "Legt fest, ob Forenbeitrge sortiert werden knnen.");
 
             builder.AddOrUpdate("Admin.Common.DefaultPageSizeOptions",
                 "Page size options",
-                "Auswahlmöglichkeiten für Seitengröße",
+                "Auswahlmglichkeiten fr Seitengre",
                 "Comma-separated page size options that a customer can select in lists.",
-                "Kommagetrennte Liste mit Optionen für Seitengröße, die ein Kunde in Listen wählen kann.");
+                "Kommagetrennte Liste mit Optionen fr Seitengre, die ein Kunde in Listen whlen kann.");
 
             builder.AddOrUpdate("Admin.Common.AllowCustomersToSelectPageSize",
                 "Allow customers to select page size",
-                "Kunde kann Listengröße ändern",
+                "Kunde kann Listengre ndern",
                 "Whether customers are allowed to select the page size from a predefined list of options.",
-                "Kunden können die Listengröße mit Hilfe einer vorgegebenen Optionsliste ändern.");
-
+                "Kunden knnen die Listengre mit Hilfe einer vorgegebenen Optionsliste ndern.");
 
             builder.Delete(
                 "Admin.Configuration.Settings.Search.DefaultSortOrderMode",
@@ -504,7 +503,6 @@ namespace SmartStore.Data.Migrations
                 "Filter by language",
                 "Nach Sprache filtern");
 
-
             builder.AddOrUpdate("Admin.Configuration.Settings.GeneralCommon.CaptchaShowOnForumPage",
                 "Show on forum pages",
                 "Auf Forenseiten anzeigen",
@@ -513,7 +511,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.Catalog.Products.BundleItems.NoProductLinkageForBundleItem",
                 "The product \"{0}\" cannot be assigned an attribute of the type \"product\" because it is bundle item of a product bundle.",
-                "Dem Produkt \"{0}\" kann kein Attribut vom Typ \"Produkt\" zugeordnet werden, weil es auf der Stückliste eines Produkt-Bundle steht.");
+                "Dem Produkt \"{0}\" kann kein Attribut vom Typ \"Produkt\" zugeordnet werden, weil es auf der Stckliste eines Produkt-Bundle steht.");
 
             builder.AddOrUpdate("Search.RelatedSearchTerms",
                 "Related search terms",
@@ -525,43 +523,43 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.System.ScheduleTasks.RunPerMachine",
                 "Run per machine",
-                "Pro Maschine ausführen",
+                "Pro Maschine ausfhren",
                 "Indicates whether the task is executed decidedly on each machine of a web farm.",
-                "Gibt an, ob die Aufgabe auf jeder Maschine einer Webfarm dezidiert ausgeführt wird.");
+                "Gibt an, ob die Aufgabe auf jeder Maschine einer Webfarm dezidiert ausgefhrt wird.");
 
             builder.Delete("Address.Fields.Required.Hint");
 
             builder.AddOrUpdate("Common.FormFields.Required.Hint",
                 "* Input elements with asterisk are required and have to be filled out.",
-                "* Eingabefelder mit Sternchen sind Pflichfelder und müssen ausgefüllt werden.");
+                "* Eingabefelder mit Sternchen sind Pflichfelder und mssen ausgefllt werden.");
 
             builder.AddOrUpdate("Forum.Post.Vote.OnlyRegistered",
                 "Only registered users can vote for posts.",
-                "Nur registrierte Benutzer können Beiträge bewerten.");
+                "Nur registrierte Benutzer knnen Beitrge bewerten.");
 
             builder.AddOrUpdate("Forum.Post.Vote.OwnPostNotAllowed",
                 "You cannot vote for your own post.",
-                "Sie können nicht Ihren eigenen Beitrag bewerten.");
+                "Sie knnen nicht Ihren eigenen Beitrag bewerten.");
 
             builder.AddOrUpdate("Forum.Post.Vote.SuccessfullyVoted",
                 "Thank you for your vote.",
-                "Danke für Ihre Bewertung.");
+                "Danke fr Ihre Bewertung.");
 
-            builder.AddOrUpdate("Common.Liked", "Liked", "Gefällt");
-            builder.AddOrUpdate("Common.LikeIt", "I like it", "Gefällt mir");
-            builder.AddOrUpdate("Common.DoNotLikeIt", "I do not like it anymore", "Gefällt mir nicht mehr");
+            builder.AddOrUpdate("Common.Liked", "Liked", "Gefllt");
+            builder.AddOrUpdate("Common.LikeIt", "I like it", "Gefllt mir");
+            builder.AddOrUpdate("Common.DoNotLikeIt", "I do not like it anymore", "Gefllt mir nicht mehr");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Forums.AllowCustomersToVoteOnPosts",
                 "Allow customers to vote on posts",
-                "Benutzer können Beiträge bewerten",
+                "Benutzer knnen Beitrge bewerten",
                 "Specifies whether customers can vote on posts.",
-                "Legt fest, ob Benutzer Beiträge bewerten können.");
+                "Legt fest, ob Benutzer Beitrge bewerten knnen.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Forums.AllowGuestsToVoteOnPosts",
                 "Allow guests to vote on posts",
-                "Gäste können Beiträge bewerten",
+                "Gste knnen Beitrge bewerten",
                 "Specifies whether guests can vote on posts.",
-                "Legt fest, ob Gäste Beiträge bewerten können.");
+                "Legt fest, ob Gste Beitrge bewerten knnen.");
 
             // Typos.
             builder.AddOrUpdate("Admin.Promotions.Discounts.Requirements")
@@ -569,23 +567,23 @@ namespace SmartStore.Data.Migrations
             builder.AddOrUpdate("Admin.Promotions.Discounts.Requirements.DiscountRequirementType")
                 .Value("de", "Typ der Voraussetzung");
             builder.AddOrUpdate("Admin.Promotions.Discounts.Requirements.DiscountRequirementType.Hint")
-                .Value("de", "Voraussetzungen für den Rabatt");
+                .Value("de", "Voraussetzungen fr den Rabatt");
             builder.AddOrUpdate("Admin.Promotions.Discounts.Requirements.Remove")
-                .Value("de", "Voraussetzung für den Rabatt entfernen");
+                .Value("de", "Voraussetzung fr den Rabatt entfernen");
             builder.AddOrUpdate("Admin.Promotions.Discounts.Requirements.SaveBeforeEdit")
-                .Value("de", "Sie müssen den Rabatt zunächst speichern, bevor Sie Voraussetzungen für seine Anwendung festlegen können");
+                .Value("de", "Sie mssen den Rabatt zunchst speichern, bevor Sie Voraussetzungen fr seine Anwendung festlegen knnen");
 
             builder.AddOrUpdate("Common.Voting", "Voting", "Abstimmung");
             builder.AddOrUpdate("Common.Answer", "Answer", "Antwort");
-            builder.AddOrUpdate("Common.Size", "Size", "Größe");
+            builder.AddOrUpdate("Common.Size", "Size", "Gre");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.CustomerUser.CustomerFormFields.Description",
                 "Manage form fields that are displayed during registration.",
-                "Verwalten Sie Formularfelder, die während der Registrierung angezeigt werden.");
+                "Verwalten Sie Formularfelder, die whrend der Registrierung angezeigt werden.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.CustomerUser.AddressFormFields.Description",
                 "Manage form fields that are displayed during checkout and on \"My account\" page.",
-                "Verwalten Sie Formularfelder, die während des Checkout-Prozesses und im \"Mein Konto\" Bereich angezeigt werden.");
+                "Verwalten Sie Formularfelder, die whrend des Checkout-Prozesses und im \"Mein Konto\" Bereich angezeigt werden.");
 
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.DataExchange.RelatedEntityType.TierPrice", "Tier price", "Staffelpreis");
             builder.AddOrUpdate("Enums.SmartStore.Core.Domain.DataExchange.RelatedEntityType.ProductVariantAttributeValue", "Attribute option", "Attribut-Option");
@@ -593,7 +591,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.DataExchange.Export.ExportRelatedData.Validate",
                 "Related data cannot be exported if the option \"Export attribute combinations\" is activated.",
-                "Zugehörige Daten können nicht exportiert werden, wenn die Option \"Attributkombinationen exportieren\" aktiviert ist.");
+                "Zugehrige Daten knnen nicht exportiert werden, wenn die Option \"Attributkombinationen exportieren\" aktiviert ist.");
 
             builder.AddOrUpdate("Admin.Common.ProcessingInfo",
                 "{0}: {1} of {2} processed",
@@ -603,29 +601,29 @@ namespace SmartStore.Data.Migrations
                 "Show subcategories also in subpages",
                 "Unterwarengruppen auch in Unterseiten anzeigen",
                 "Subpage: List index greater than 1 or any active filter.",
-                "Unterseite: Listenindex größer 1 oder mind. ein aktiver Filter.");
+                "Unterseite: Listenindex grer 1 oder mind. ein aktiver Filter.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Catalog.ShowDescriptionInSubPages",
                 "Show page description also in subpages",
                 "Seitenbeschreibungen auch in Unterseiten anzeigen",
                 "Subpage: List index greater than 1 or any active filter.",
-                "Unterseite: Listenindex größer 1 oder mind. ein aktiver Filter.");
+                "Unterseite: Listenindex grer 1 oder mind. ein aktiver Filter.");
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Catalog.IncludeFeaturedProductsInSubPages",
                 "Show featured products also in subpages",
                 "Top-Produkte auch in Unterseiten anzeigen",
                 "Subpage: List index greater than 1 or any active filter.",
-                "Unterseite: Listenindex größer 1 oder mind. ein aktiver Filter.");
+                "Unterseite: Listenindex grer 1 oder mind. ein aktiver Filter.");
 
             builder.AddOrUpdate("Admin.Common.CopyOf", "Copy of {0}", "Kopie von {0}");
 
             builder.AddOrUpdate("Admin.Configuration.Languages.DefaultLanguage.Note",
                 "The default language of the shop is <b class=\"font-weight-medium\">{0}</b>. The default is always the first published language.",
-                "Die Standardsprache des Shops ist <b class=\"font-weight-medium\">{0}</b>. Standard ist stets die erste veröffentlichte Sprache.");
+                "Die Standardsprache des Shops ist <b class=\"font-weight-medium\">{0}</b>. Standard ist stets die erste verffentlichte Sprache.");
 
             builder.AddOrUpdate("Admin.Configuration.Languages.AvailableLanguages.Note",
                 "Click <b class=\"font-weight-medium\">Download</b> to install a new language including all localized resources. On <a class=\"font-weight-medium\" href=\"https://translate.smartstore.com/\" target=\"_blank\">translate.smartstore.com</a> you will find more details about available resources.",
-                "Klicken Sie auf <b class=\"font-weight-medium\">Download</b>, um eine neue Sprache mit allen lokalisierten Ressourcen zu installieren. Auf <a class=\"font-weight-medium\" href=\"https://translate.smartstore.com/\" target=\"_blank\">translate.smartstore.com</a> finden Sie weitere Details zu verfügbaren Ressourcen.");
+                "Klicken Sie auf <b class=\"font-weight-medium\">Download</b>, um eine neue Sprache mit allen lokalisierten Ressourcen zu installieren. Auf <a class=\"font-weight-medium\" href=\"https://translate.smartstore.com/\" target=\"_blank\">translate.smartstore.com</a> finden Sie weitere Details zu verfgbaren Ressourcen.");
 
             builder.AddOrUpdate("Common.BrowseFiles", "Browse", "Durchsuchen");
             builder.AddOrUpdate("Common.Url", "URL", "URL");
@@ -635,10 +633,10 @@ namespace SmartStore.Data.Migrations
             builder.AddOrUpdate("Common.Entity.Manufacturer", "Manufacturer", "Hersteller");
             builder.AddOrUpdate("Common.Entity.Topic", "Topic", "Seite");
 
-            builder.AddOrUpdate("Common.Entity.SelectProduct", "Select product", "Produkt auswählen");
-            builder.AddOrUpdate("Common.Entity.SelectCategory", "Select category", "Warengruppe auswählen");
-            builder.AddOrUpdate("Common.Entity.SelectManufacturer", "Select manufacturer", "Hersteller auswählen");
-            builder.AddOrUpdate("Common.Entity.SelectTopic", "Select topic", "Seite auswählen");
+            builder.AddOrUpdate("Common.Entity.SelectProduct", "Select product", "Produkt auswhlen");
+            builder.AddOrUpdate("Common.Entity.SelectCategory", "Select category", "Warengruppe auswhlen");
+            builder.AddOrUpdate("Common.Entity.SelectManufacturer", "Select manufacturer", "Hersteller auswhlen");
+            builder.AddOrUpdate("Common.Entity.SelectTopic", "Select topic", "Seite auswhlen");
 
             builder.Delete("Admin.Customers.Customers.List.SearchDeletedOnly");
             builder.AddOrUpdate("Admin.Customers.Customers.List.SearchActiveOnly", "Only activated customers", "Nur aktivierte Kunden");
@@ -655,7 +653,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Products.EmailAFriend.LoginNote",
                 "Please log in to use this function. <a href='{0}'>Login now</a>",
-                "Bitte melden Sie sich an, um diese Funktion nutzen zu können. <a href='{0}'>Jetzt anmelden</a>");
+                "Bitte melden Sie sich an, um diese Funktion nutzen zu knnen. <a href='{0}'>Jetzt anmelden</a>");
 
             builder.AddOrUpdate("Account.Login.Fields.UsernameOrEmail",
                 "Username or email",
@@ -689,9 +687,9 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.Configuration.Settings.Tax.VatRequired",
                 "Customers must enter a VAT number",
-                "Kunden müssen eine Steuernummer angeben",
+                "Kunden mssen eine Steuernummer angeben",
                 "Specifies whether customers must enter a VAT identification number.",
-                "Legt fest, ob Kunden bei der Registrierung eine Steuernummer angeben müssen.");
+                "Legt fest, ob Kunden bei der Registrierung eine Steuernummer angeben mssen.");
 
             builder.AddOrUpdate("Common.Top", "Top", "Oben");
             builder.AddOrUpdate("Common.Bottom", "Bottom", "Unten");
@@ -706,29 +704,29 @@ namespace SmartStore.Data.Migrations
             builder.AddOrUpdate("Common.MoveUp", "Move up", "Nach oben");
             builder.AddOrUpdate("Common.MoveDown", "Move down", "Nach unten");
 
-            builder.AddOrUpdate("Common.IncreaseValue", "Increase value", "Wert erhöhen");
+            builder.AddOrUpdate("Common.IncreaseValue", "Increase value", "Wert erhhen");
             builder.AddOrUpdate("Common.DecreaseValue", "Decrease value", "Wert verringern");
             builder.AddOrUpdate("Common.QueryString", "Query string", "Query String");
 
-            builder.AddOrUpdate("Admin.ContentManagement.Menus", "Menus", "Menüs");
-            builder.AddOrUpdate("Admin.ContentManagement.AddMenu", "Add menu", "Menü hinzufügen");
-            builder.AddOrUpdate("Admin.ContentManagement.EditMenu", "Edit menu", "Menü bearbeiten");
+            builder.AddOrUpdate("Admin.ContentManagement.Menus", "Menus", "Mens");
+            builder.AddOrUpdate("Admin.ContentManagement.AddMenu", "Add menu", "Men hinzufgen");
+            builder.AddOrUpdate("Admin.ContentManagement.EditMenu", "Edit menu", "Men bearbeiten");
 
-            builder.AddOrUpdate("Admin.ContentManagement.MenuLinks", "Menu items", "Menü Links");
-            builder.AddOrUpdate("Admin.ContentManagement.AddMenuItem", "Add menu item", "Menü Link hinzufügen");
-            builder.AddOrUpdate("Admin.ContentManagement.EditMenuItem", "Edit menu item", "Menü Link bearbeiten");
+            builder.AddOrUpdate("Admin.ContentManagement.MenuLinks", "Menu items", "Men Links");
+            builder.AddOrUpdate("Admin.ContentManagement.AddMenuItem", "Add menu item", "Men Link hinzufgen");
+            builder.AddOrUpdate("Admin.ContentManagement.EditMenuItem", "Edit menu item", "Men Link bearbeiten");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.NoMenuItemsAvailable",
                 "There are no menu links available.",
-                "Es sind keine Menü Links vorhanden.");
+                "Es sind keine Men Links vorhanden.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.CannotBeDeleted",
                 "This menu is required by your shop and can therefore not be deleted.",
-                "Dieses Menü wird von Ihrem Shop benötigt und kann daher nicht gelöscht werden.");
+                "Dieses Men wird von Ihrem Shop bentigt und kann daher nicht gelscht werden.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.CatalogNote",
                 "The category tree is dynamically integrated into the menu.",
-                "Der Warengruppenbaum wird dynamisch in das Menü eingebunden.");
+                "Der Warengruppenbaum wird dynamisch in das Men eingebunden.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.SpecifyLinkTarget",
                 "Please specify link target",
@@ -745,19 +743,19 @@ namespace SmartStore.Data.Migrations
                 "System name",
                 "Systemname",
                 "The system name of the menu.",
-                "Der Systemname des Menüs.");
+                "Der Systemname des Mens.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Template",
                 "Design template",
                 "Design Vorlage",
                 "The template defines the way how the menu is displayed.",
-                "Über die Vorlage wird die Darstellungsart des Menüs festgelegt.");
+                "ber die Vorlage wird die Darstellungsart des Mens festgelegt.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.WidgetZone",
                 "Widget zone",
                 "Widget Zone",
                 "Specifies widget zones in which the menu should be displayed.",
-                "Legt Widget Zonen fest, in denen das Menü dargestellt werden soll.");
+                "Legt Widget Zonen fest, in denen das Men dargestellt werden soll.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Title",
                 "Title",
@@ -767,9 +765,9 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Published",
                 "Published",
-                "Veröffentlicht",
+                "Verffentlicht",
                 "Specifies whether the menu is visible in the shop.",
-                "Legt fest, ob das Menü im Shop sichtbar ist.");
+                "Legt fest, ob das Men im Shop sichtbar ist.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.DisplayOrder",
                 "Display order",
@@ -779,9 +777,9 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.ParentItem",
                 "Parent menu item",
-                "Übergeordnetes Menüelement",
+                "bergeordnetes Menelement",
                 "Specifies the parent menu item. Leave the field empty to create a first-level menu item.",
-                "Legt das übergeordnete Menüelement fest. Lassen Sie das Feld leer, um ein Menüelement erster Ebene zu erzeugen.");
+                "Legt das bergeordnete Menelement fest. Lassen Sie das Feld leer, um ein Menelement erster Ebene zu erzeugen.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.LinkTarget",
                 "Target",
@@ -793,37 +791,37 @@ namespace SmartStore.Data.Migrations
                 "Short description",
                 "Kurzbeschreibung",
                 "Specifies a short description. Used as the 'title' attribute for the menu link.",
-                "Legt eine Kurzbeschreibung fest. Wird als 'title' Attribut für das Menüelement verwendet.");
+                "Legt eine Kurzbeschreibung fest. Wird als 'title' Attribut fr das Menelement verwendet.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.PermissionNames",
                 "Required permissions",
                 "Erforderliche Rechte",
                 "Specifies access permissions that are required to display the menu item (at least 1 permission must be granted).",
-                "Legt Zugriffsrechte fest, die für die Anzeige des Menüelementes erforderlich sind (mind. 1 Recht muss gewährt sein).");
+                "Legt Zugriffsrechte fest, die fr die Anzeige des Menelementes erforderlich sind (mind. 1 Recht muss gewhrt sein).");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.Published",
                 "Published",
-                "Veröffentlicht",
+                "Verffentlicht",
                 "Specifies whether the menu item is visible in the shop.",
-                "Legt fest, ob das Menüelement im Shop sichtbar ist.");
+                "Legt fest, ob das Menelement im Shop sichtbar ist.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.DisplayOrder",
                 "Display order",
                 "Reihenfolge",
                 "Specifies the order of the menu item within a menu level.",
-                "Legt die Reihenfolge des Menüelements innerhalb einer Menüebene fest.");
+                "Legt die Reihenfolge des Menelements innerhalb einer Menebene fest.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.BeginGroup",
                 "Begin group",
                 "Gruppe beginnen",
                 "Inserts a separator before the link and optionally a heading (short description).",
-                "Fügt vor den Link ein Trennelement sowie optional eine Überschrift ein (Kurzbeschreibung).");
+                "Fgt vor den Link ein Trennelement sowie optional eine berschrift ein (Kurzbeschreibung).");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.ShowExpanded",
                 "Show expanded",
-                "Geöffnet anzeigen",
+                "Geffnet anzeigen",
                 "If selected and this menu item has children, the menu will initially appear expanded.",
-                "Legt fest, ob das Menü anfänglich geöffnet ist, sofern es Kindelemente besitzt.");
+                "Legt fest, ob das Men anfnglich geffnet ist, sofern es Kindelemente besitzt.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.NoFollow",
                 "nofollow",
@@ -833,7 +831,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.NewWindow",
                 "Open in new browser tab",
-                "In neuem Browsertab öffnen");
+                "In neuem Browsertab ffnen");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.Icon",
                 "Icon",
@@ -845,13 +843,13 @@ namespace SmartStore.Data.Migrations
                 "HTML ID",
                 "HTML ID",
                 "Sets the HTML ID attribute for the menu link.",
-                "Legt das HTML ID Attribut für das Menüelement fest.");
+                "Legt das HTML ID Attribut fr das Menelement fest.");
 
             builder.AddOrUpdate("Admin.ContentManagement.Menus.Item.CssClass",
                 "CSS class",
                 "CSS Klasse",
                 "Sets a CSS class for the menu link.",
-                "Legt eine CSS Klasse für das Menüelement fest.");
+                "Legt eine CSS Klasse fr das Menelement fest.");
 
             builder.Delete("Admin.Configuration.Settings.GeneralCommon.SocialSettings.GooglePlusLink");
             builder.Delete("Admin.Configuration.Settings.GeneralCommon.SocialSettings.GooglePlusLink.Hint");
@@ -866,7 +864,7 @@ namespace SmartStore.Data.Migrations
 
             builder.AddOrUpdate("ShoppingCart.DiscountCouponCode.NoMoreDiscount",
                 "Further discounts are not possible.",
-                "Eine weitere Rabattierung ist nicht möglich.");
+                "Eine weitere Rabattierung ist nicht mglich.");
         }
     }
 }

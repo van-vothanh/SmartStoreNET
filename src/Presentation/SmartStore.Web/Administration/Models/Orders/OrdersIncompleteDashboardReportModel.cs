@@ -18,7 +18,6 @@ namespace SmartStore.Admin.Models.Orders
             };
         }
 
-
         public List<OrdersIncompleteDashboardReportData> Data { get; set; }
 
         public decimal Amount { get; set; }

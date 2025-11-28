@@ -41,7 +41,6 @@ namespace SmartStore.Core.Async
                 .OfType<T>();
         }
 
-
         public virtual void Set<T>(T state, string name = null, bool neverExpires = false)
         {
             Guard.NotNull(state, nameof(state));
@@ -131,7 +130,6 @@ namespace SmartStore.Core.Async
             return false;
         }
 
-
         public CancellationTokenSource GetCancelTokenSource<T>(string name = null)
         {
             return OnGetCancelTokenSource(BuildKey<T>(name));
@@ -179,7 +177,6 @@ namespace SmartStore.Core.Async
 
             return false;
         }
-
 
         protected virtual AsyncStateInfo GetStateInfo<T>(string name = null)
         {

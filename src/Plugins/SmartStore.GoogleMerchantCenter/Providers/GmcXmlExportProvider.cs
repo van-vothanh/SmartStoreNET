@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using System.Xml;
 using SmartStore.Collections;
 using SmartStore.Core.Domain.Catalog;
@@ -258,7 +258,6 @@ namespace SmartStore.GoogleMerchantCenter.Providers
             {
                 defaultAvailability = config.Availability;
             }
-
 
             using (var writer = XmlWriter.Create(context.DataStream, ExportXmlHelper.DefaultSettings))
             {

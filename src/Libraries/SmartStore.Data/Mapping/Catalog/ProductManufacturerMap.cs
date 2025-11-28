@@ -1,4 +1,4 @@
-using System.Data.Entity.ModelConfiguration;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SmartStore.Core.Domain.Catalog;
 
 namespace SmartStore.Data.Mapping.Catalog
@@ -13,7 +13,6 @@ namespace SmartStore.Data.Mapping.Catalog
             this.HasRequired(pm => pm.Manufacturer)
                 .WithMany()
                 .HasForeignKey(pm => pm.ManufacturerId);
-
 
             this.HasRequired(pm => pm.Product)
                 .WithMany(p => p.ProductManufacturers)

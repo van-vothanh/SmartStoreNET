@@ -74,7 +74,6 @@ namespace SmartStore.Web.Framework.Validators
         }
     }
 
-
     public class CreditCardCvvNumberValidator : RegularExpressionValidator
     {
         public CreditCardCvvNumberValidator()

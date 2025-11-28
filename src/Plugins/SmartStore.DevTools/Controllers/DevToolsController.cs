@@ -1,4 +1,4 @@
-﻿using System.Web.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SmartStore.ComponentModel;
 using SmartStore.Core.Search.Facets;
 using SmartStore.Core.Security;

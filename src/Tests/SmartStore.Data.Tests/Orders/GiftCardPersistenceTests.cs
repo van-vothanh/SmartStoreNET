@@ -75,7 +75,6 @@ namespace SmartStore.Data.Tests.Orders
             var fromDb = SaveAndLoadEntity(giftCard);
             fromDb.ShouldNotBeNull();
 
-
             fromDb.GiftCardUsageHistory.ShouldNotBeNull();
             (fromDb.GiftCardUsageHistory.Count == 1).ShouldBeTrue();
             fromDb.GiftCardUsageHistory.First().UsedValue.ShouldEqual(1.1M);
@@ -93,7 +92,6 @@ namespace SmartStore.Data.Tests.Orders
 
             var fromDb = SaveAndLoadEntity(giftCard);
             fromDb.ShouldNotBeNull();
-
 
             fromDb.PurchasedWithOrderItem.ShouldNotBeNull();
             fromDb.PurchasedWithOrderItem.Product.ShouldNotBeNull();

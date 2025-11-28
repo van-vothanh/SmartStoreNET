@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using System.Web.Http.Description;
 using System.Web.OData;
 using System.Web.OData.Routing;

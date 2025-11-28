@@ -303,7 +303,6 @@ namespace SmartStore.Data.Setup
 
             entities.Add(attributeLensType);
 
-
             var attributeFramecolor = new ProductVariantAttribute()
             {
                 Product = productCustomFlak,
@@ -750,7 +749,6 @@ namespace SmartStore.Data.Setup
             });
 
             entities.Add(attributeIphone7PlusMemoryCapacity);
-
 
             var attributeIphone7PlusColor = new ProductVariantAttribute()
             {
@@ -2460,7 +2458,6 @@ namespace SmartStore.Data.Setup
             var Iphone7PlusCapacity = _ctx.Set<ProductVariantAttribute>().First(x => x.ProductId == productIphone7Plus.Id && x.ProductAttributeId == attrMemoryCapacity.Id);
             var Iphone7PlusCapacityValues = _ctx.Set<ProductVariantAttributeValue>().Where(x => x.ProductVariantAttributeId == Iphone7PlusCapacity.Id).ToList();
 
-
             entities.Add(new ProductVariantAttributeCombination()
             {
                 Product = productIphone7Plus,
@@ -2529,7 +2526,6 @@ namespace SmartStore.Data.Setup
                 IsActive = true,
                 AssignedMediaFileIds = picturesIphone7Plus.First(x => x.Name.Contains("-silver")).Id.ToString()
             });
-
 
             entities.Add(new ProductVariantAttributeCombination()
             {

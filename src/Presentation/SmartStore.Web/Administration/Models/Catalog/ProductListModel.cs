@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 using Telerik.Web.Mvc;
@@ -19,7 +19,7 @@ namespace SmartStore.Admin.Models.Catalog
         public GridModel<ProductModel> Products { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.List.SearchProductName")]
-        [AllowHtml]
+
         public string SearchProductName { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.List.SearchCategory")]
@@ -48,7 +48,7 @@ namespace SmartStore.Admin.Models.Catalog
         public bool? SearchHomePageProducts { get; set; }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.List.GoDirectlyToSku")]
-        [AllowHtml]
+
         public string GoDirectlyToSku { get; set; }
 
         public bool DisplayProductPictures { get; set; }

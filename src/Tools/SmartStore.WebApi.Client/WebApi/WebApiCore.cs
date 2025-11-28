@@ -32,7 +32,6 @@ namespace SmartStore.WebApi.Client
         }
     }
 
-
     public static class WebApiGlobal
     {
         public static int MaxTop => 120;

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Security;
+using Microsoft.AspNetCore.Identity;
 using SmartStore.Core;
 using SmartStore.Core.Domain.Customers;
 using SmartStore.Services.Customers;
@@ -36,7 +36,6 @@ namespace SmartStore.Services.Authentication
         {
             var now = DateTime.UtcNow.ToLocalTime();
             var name = _customerSettings.CustomerLoginType != CustomerLoginType.Email ? customer.Username : customer.Email;
-
 
             var ticket = new FormsAuthenticationTicket(
                 1 /*version*/,

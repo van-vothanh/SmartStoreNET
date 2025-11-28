@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -10,7 +10,7 @@ namespace SmartStore.Admin.Models.UrlRecord
         public int GridPageSize { get; set; }
 
         [SmartResourceDisplayName("Admin.System.SeNames.Name")]
-        [AllowHtml]
+
         public string SeName { get; set; }
 
         [SmartResourceDisplayName("Admin.System.SeNames.EntityName")]

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using SmartStore.Core.Infrastructure;
 
@@ -126,7 +126,6 @@ namespace SmartStore.Web.Framework.Modelling
         [JsonProperty("id")]
         internal int EntityId => Id;
     }
-
 
     public abstract partial class TabbableModel : EntityModelBase
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using SmartStore.Core.Domain.Catalog;
 using SmartStore.Core.Localization;
@@ -102,7 +102,6 @@ namespace SmartStore.Admin.Models.Settings
         [SmartResourceDisplayName("Admin.Configuration.Settings.Search.CommonFacet.Alias")]
         public string Alias { get; set; }
     }
-
 
     public class SearchSettingValidator : SmartValidatorBase<SearchSettingsModel>
     {

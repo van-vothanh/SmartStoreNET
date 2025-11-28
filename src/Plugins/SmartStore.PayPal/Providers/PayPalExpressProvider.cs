@@ -544,7 +544,6 @@ namespace SmartStore.PayPal
 
             processPaymentRequest.PaypalPayerId = checkoutDetails.PayerInfo.PayerID;
 
-
             return processPaymentRequest;
         }
 
@@ -594,7 +593,6 @@ namespace SmartStore.PayPal
             return result;
         }
     }
-
 
     public class PayPalProcessPaymentRequest : ProcessPaymentRequest
     {

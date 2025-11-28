@@ -130,7 +130,6 @@ namespace SmartStore.Services.DataExchange
             }
         }
 
-
         public void UpdateSyncMapping(SyncMapping mapping)
         {
             Guard.NotNull(mapping, nameof(mapping));

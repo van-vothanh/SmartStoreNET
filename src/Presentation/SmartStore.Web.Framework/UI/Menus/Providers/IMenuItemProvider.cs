@@ -13,7 +13,6 @@ namespace SmartStore.Web.Framework.UI
 		TreeNode<MenuItem> Append(MenuItemProviderRequest request);
     }
 
-
     public class MenuItemProviderRequest
     {
         /// <summary>

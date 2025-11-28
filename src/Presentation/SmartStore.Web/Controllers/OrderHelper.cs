@@ -297,7 +297,6 @@ namespace SmartStore.Web.Controllers
                 model.ShippingAddress.PrepareModel(order.ShippingAddress, false, addressSettings);
                 model.ShippingMethod = order.ShippingMethod;
 
-
                 // Shipments (only already shipped).
                 var shipments = order.Shipments.Where(x => x.ShippedDateUtc.HasValue).OrderBy(x => x.CreatedOnUtc).ToList();
                 foreach (var shipment in shipments)
@@ -457,7 +456,6 @@ namespace SmartStore.Web.Controllers
 
             model.DisplayTaxRates = displayTaxRates;
             model.DisplayTax = displayTax;
-
 
             // Discount (applied to order total).
             var orderDiscountInCustomerCurrency = _currencyService.ConvertCurrency(order.OrderDiscount, order.CurrencyRate);

@@ -90,7 +90,6 @@ namespace SmartStore.Services.Catalog
         /// <returns>Price</returns>
         string FormatPrice(decimal price, bool showCurrency, Currency targetCurrency, Language language, bool priceIncludesTax, bool showTax);
 
-
         /// <summary>
         /// Formats the shipping price
         /// </summary>
@@ -145,8 +144,6 @@ namespace SmartStore.Services.Catalog
         /// <returns>Price</returns>
         string FormatShippingPrice(decimal price, bool showCurrency, string currencyCode, Language language, bool priceIncludesTax);
 
-
-
         /// <summary>
         /// Formats the payment method additional fee
         /// </summary>
@@ -200,8 +197,6 @@ namespace SmartStore.Services.Catalog
         /// <param name="priceIncludesTax">A value indicating whether price includes tax</param>
         /// <returns>Price</returns>
         string FormatPaymentMethodAdditionalFee(decimal price, bool showCurrency, string currencyCode, Language language, bool priceIncludesTax);
-
-
 
         /// <summary>
         /// Formats a tax rate

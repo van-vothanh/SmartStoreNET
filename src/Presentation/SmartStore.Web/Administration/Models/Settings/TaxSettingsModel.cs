@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Admin.Models.Common;
 using SmartStore.Core.Domain.Tax;
 using SmartStore.Web.Framework;
@@ -38,7 +38,6 @@ namespace SmartStore.Admin.Models.Settings
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.HideTaxInOrderSummary")]
         public bool HideTaxInOrderSummary { get; set; }
 
-
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.ShowLegalHintsInProductList")]
         public bool ShowLegalHintsInProductList { get; set; }
 
@@ -48,13 +47,11 @@ namespace SmartStore.Admin.Models.Settings
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.ShowLegalHintsInFooter")]
         public bool ShowLegalHintsInFooter { get; set; }
 
-
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.TaxBasedOn")]
         public TaxBasedOn TaxBasedOn { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.DefaultTaxAddress")]
         public AddressModel DefaultTaxAddress { get; set; }
-
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.ShippingIsTaxable")]
         public bool ShippingIsTaxable { get; set; }
@@ -65,7 +62,6 @@ namespace SmartStore.Admin.Models.Settings
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.ShippingTaxClass")]
         public int? ShippingTaxClassId { get; set; }
         public IList<SelectListItem> ShippingTaxCategories { get; set; }
-
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.PaymentMethodAdditionalFeeIsTaxable")]
         public bool PaymentMethodAdditionalFeeIsTaxable { get; set; }
@@ -79,7 +75,6 @@ namespace SmartStore.Admin.Models.Settings
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.AuxiliaryServicesTaxingType")]
         public AuxiliaryServicesTaxType AuxiliaryServicesTaxingType { get; set; }
-
 
         [SmartResourceDisplayName("Admin.Configuration.Settings.Tax.EuVatEnabled")]
         public bool EuVatEnabled { get; set; }

@@ -161,7 +161,6 @@ namespace SmartStore.Services.DataExchange.Export
 
             _exportProfileRepository.Insert(profile);
 
-
             task.Alias = profile.Id.ToString();
             _scheduleTaskService.UpdateTask(task);
 
@@ -319,7 +318,6 @@ namespace SmartStore.Services.DataExchange.Export
 
             return profiles;
         }
-
 
         public virtual IEnumerable<Provider<IExportProvider>> LoadAllExportProviders(int storeId = 0, bool showHidden = true)
         {

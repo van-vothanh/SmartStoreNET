@@ -28,7 +28,6 @@ namespace SmartStore.Web.Framework.UI
         public bool AppendsMultipleItems { get; set; }
     }
 
-
     /// <summary>
     /// Represents menu item provider registration metadata.
     /// </summary>

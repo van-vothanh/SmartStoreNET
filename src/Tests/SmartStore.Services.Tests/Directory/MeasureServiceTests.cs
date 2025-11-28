@@ -58,8 +58,6 @@ namespace SmartStore.Services.Tests.Directory
                 DisplayOrder = 4,
             };
 
-
-
             measureWeight1 = new MeasureWeight()
             {
                 Id = 1,
@@ -106,7 +104,6 @@ namespace SmartStore.Services.Tests.Directory
             _measureWeightRepository.Expect(x => x.GetById(measureWeight2.Id)).Return(measureWeight2);
             _measureWeightRepository.Expect(x => x.GetById(measureWeight3.Id)).Return(measureWeight3);
             _measureWeightRepository.Expect(x => x.GetById(measureWeight4.Id)).Return(measureWeight4);
-
 
             _measureSettings = new MeasureSettings();
             _measureSettings.BaseDimensionId = measureDimension1.Id; //inch(es)

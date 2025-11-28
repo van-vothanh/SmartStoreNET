@@ -17,7 +17,6 @@ namespace SmartStore.Services.Messages
         string ModelPartName { get; }
     }
 
-
     #region Impl
 
     public class ModelPart : HybridExpando, IModelPart

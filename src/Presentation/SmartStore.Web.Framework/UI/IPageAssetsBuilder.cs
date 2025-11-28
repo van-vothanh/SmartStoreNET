@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
-using System.Web.Routing;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
 
 namespace SmartStore.Web.Framework.UI
 {
@@ -84,7 +84,6 @@ namespace SmartStore.Web.Framework.UI
             builder.AddCustomHeadParts(parts, true);
         }
 
-
         public static void AddScriptParts(this IPageAssetsBuilder builder, ResourceLocation location, params string[] parts)
         {
             builder.AddScriptParts(location, parts, false, false);
@@ -104,7 +103,6 @@ namespace SmartStore.Web.Framework.UI
         {
             builder.AddScriptParts(location, parts, excludeFromBundling, true);
         }
-
 
         public static void AddCssFileParts(this IPageAssetsBuilder builder, ResourceLocation location, params string[] parts)
         {

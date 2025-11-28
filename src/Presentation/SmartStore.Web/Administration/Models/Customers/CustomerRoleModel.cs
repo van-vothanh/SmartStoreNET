@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Collections;
@@ -21,11 +21,11 @@ namespace SmartStore.Admin.Models.Customers
         }
 
         [SmartResourceDisplayName("Admin.Customers.CustomerRoles.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.CustomerRoles.Fields.FreeShipping")]
-        [AllowHtml]
+
         public bool FreeShipping { get; set; }
 
         [SmartResourceDisplayName("Admin.Customers.CustomerRoles.Fields.TaxExempt")]
@@ -64,7 +64,6 @@ namespace SmartStore.Admin.Models.Customers
         public int GridPageSize { get; set; }
         public bool UsernamesEnabled { get; set; }
     }
-
 
     public partial class CustomerRoleValidator : AbstractValidator<CustomerRoleModel>
     {

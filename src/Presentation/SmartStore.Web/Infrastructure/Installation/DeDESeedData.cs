@@ -218,7 +218,6 @@ namespace SmartStore.Web.Infrastructure.Installation
             entity.ZipPostalCode = "12345";
         }
 
-
         protected override string TaxNameBooks => "Ermäßigt";
         protected override string TaxNameDigitalGoods => "Normal";
         protected override string TaxNameJewelry => "Normal";
@@ -2700,7 +2699,6 @@ namespace SmartStore.Web.Infrastructure.Installation
                 x.ProductVariantAttributeValues.Where(y => y.Alias == "leather-aniline").Each(y => y.Name = "Leder Anilin");
                 x.ProductVariantAttributeValues.Where(y => y.Alias == "mixed-linen").Each(y => y.Name = "Leinen gemischt");
             });
-
 
         }
 

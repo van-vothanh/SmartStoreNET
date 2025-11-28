@@ -29,7 +29,6 @@ namespace SmartStore.Services.Authentication.External
         /// <returns>External authentication methods</returns>
 		IEnumerable<Provider<IExternalAuthenticationMethod>> LoadAllExternalAuthenticationMethods(int storeId = 0);
 
-
         bool AccountExists(OpenAuthenticationParameters parameters);
 
         void AssociateExternalAccountWithUser(Customer customer, OpenAuthenticationParameters parameters);

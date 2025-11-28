@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using NUnit.Framework;
 using Rhino.Mocks;
 using SmartStore.Core;

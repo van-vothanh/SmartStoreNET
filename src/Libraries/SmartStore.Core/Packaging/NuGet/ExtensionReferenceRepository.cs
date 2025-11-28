@@ -1,3 +1,4 @@
+#if false // TODO: .NET 8 migration - temporarily disabled
 ﻿using System.Collections.Generic;
 using System.Linq;
 using NuGet;
@@ -34,7 +35,6 @@ namespace SmartStore.Core.Packaging
         public override void AddPackage(IPackage package) { }
 
         public override void RemovePackage(IPackage package) { }
-
 
         public override string Source => Project.Root;
 
@@ -98,3 +98,5 @@ namespace SmartStore.Core.Packaging
     }
 
 }
+
+#endif

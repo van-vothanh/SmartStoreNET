@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -13,7 +13,7 @@ namespace SmartStore.Admin.Models.Catalog
         }
 
         [SmartResourceDisplayName("Admin.Catalog.Products.SpecificationAttributes.Fields.SpecificationAttribute")]
-        [AllowHtml]
+
         public string SpecificationAttributeName { get; set; }
 
         public int SpecificationAttributeId { get; set; }
@@ -22,7 +22,6 @@ namespace SmartStore.Admin.Models.Catalog
         public string SpecificationAttributeOptionsUrl { get; set; }
 
         public List<SpecificationAttributeOption> SpecificationAttributeOptions { get; set; }
-
 
         [SmartResourceDisplayName("Admin.Catalog.Products.SpecificationAttributes.Fields.SpecificationAttributeOption")]
         public string SpecificationAttributeOptionName { get; set; }

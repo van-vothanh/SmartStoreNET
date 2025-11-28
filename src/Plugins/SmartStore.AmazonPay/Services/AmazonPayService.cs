@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Web;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using AmazonPay;
 using AmazonPay.Responses;
 using AmazonPay.StandardPaymentRequests;
@@ -752,7 +752,6 @@ namespace SmartStore.AmazonPay.Services
 
                 return true;
             });
-
 
             PollingLoop(d, () =>
             {

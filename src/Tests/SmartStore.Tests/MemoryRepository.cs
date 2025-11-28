@@ -50,7 +50,6 @@ namespace SmartStore.Tests
             _dbSet.Add(entity);
         }
 
-
         public Task InsertAsync(T entity)
         {
             Insert(entity);

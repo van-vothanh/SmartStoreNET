@@ -152,7 +152,6 @@ namespace SmartStore.Web.Framework.WebApi.Security
         }
     }
 
-
     public enum HmacResult : int
     {
         Success = 0,

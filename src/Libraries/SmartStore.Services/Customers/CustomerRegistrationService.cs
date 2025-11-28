@@ -262,7 +262,6 @@ namespace SmartStore.Services.Customers
             else
                 requestIsValid = true;
 
-
             //at this point request is valid
             if (requestIsValid)
             {

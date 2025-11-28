@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Collections;
@@ -60,7 +60,6 @@ namespace SmartStore.Admin.Models.Menus
         public IList<SelectListItem> AllProviders { get; set; }
         public TreeNode<MenuItem> ItemTree { get; set; }
     }
-
 
     public class MenuRecordLocalizedModel : ILocalizedModelLocal
     {

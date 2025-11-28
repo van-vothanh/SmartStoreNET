@@ -147,7 +147,6 @@ namespace SmartStore.ComponentModel
             return retVal;
         }
 
-
         /// <summary>
         /// Serializes an object into an XML string variable for easy 'manual' serialization
         /// </summary>
@@ -254,8 +253,6 @@ namespace SmartStore.ComponentModel
 
             return byteResult;
         }
-
-
 
         /// <summary>
         /// Deserializes an object from file and returns a reference.
@@ -399,7 +396,6 @@ namespace SmartStore.ComponentModel
             return Instance;
         }
 
-
         /// <summary>
         /// Returns a string of all the field value pairs of a given object.
         /// Works only on non-statics.
@@ -454,7 +450,4 @@ namespace SmartStore.ComponentModel
         Fields
     }
 }
-
-
-
 

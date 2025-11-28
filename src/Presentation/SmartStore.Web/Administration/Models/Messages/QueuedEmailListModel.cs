@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SmartStore.Web.Framework;
 using SmartStore.Web.Framework.Modelling;
 
@@ -20,11 +20,11 @@ namespace SmartStore.Admin.Models.Messages
         public DateTime? SearchEndDate { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.List.FromEmail")]
-        [AllowHtml]
+
         public string SearchFromEmail { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.List.ToEmail")]
-        [AllowHtml]
+
         public string SearchToEmail { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.List.LoadNotSent")]

@@ -63,7 +63,6 @@ namespace SmartStore.WebApi.Client.Models
         }
     }
 
-
     public enum DuplicateFileHandling
     {
         ThrowError,

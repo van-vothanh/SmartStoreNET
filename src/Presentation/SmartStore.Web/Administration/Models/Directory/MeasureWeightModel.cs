@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Web.Framework;
@@ -20,11 +20,11 @@ namespace SmartStore.Admin.Models.Directory
         public IList<MeasureWeightLocalizedModel> Locales { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Measures.Weights.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Measures.Weights.Fields.SystemKeyword")]
-        [AllowHtml]
+
         public string SystemKeyword { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Measures.Weights.Fields.Ratio")]

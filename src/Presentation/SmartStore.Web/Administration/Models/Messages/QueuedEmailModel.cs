@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.ComponentModel;
@@ -27,27 +27,27 @@ namespace SmartStore.Admin.Models.Messages
         public int Priority { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.From")]
-        [AllowHtml]
+
         public string From { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.To")]
-        [AllowHtml]
+
         public string To { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.CC")]
-        [AllowHtml]
+
         public string CC { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.Bcc")]
-        [AllowHtml]
+
         public string Bcc { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.Subject")]
-        [AllowHtml]
+
         public string Subject { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.Body")]
-        [AllowHtml]
+
         public string Body { get; set; }
 
         [SmartResourceDisplayName("Common.CreatedOn")]
@@ -61,7 +61,7 @@ namespace SmartStore.Admin.Models.Messages
         public DateTime? SentOn { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.EmailAccountName")]
-        [AllowHtml]
+
         public string EmailAccountName { get; set; }
 
         [SmartResourceDisplayName("Admin.System.QueuedEmails.Fields.SendManually")]

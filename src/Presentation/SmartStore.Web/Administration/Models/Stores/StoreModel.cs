@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Localization;
@@ -14,25 +14,25 @@ namespace SmartStore.Admin.Models.Stores
     public partial class StoreModel : EntityModelBase
     {
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.Url")]
-        [AllowHtml]
+
         public string Url { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.SslEnabled")]
         public virtual bool SslEnabled { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.SecureUrl")]
-        [AllowHtml]
+
         public virtual string SecureUrl { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.ForceSslForAllPages")]
         public bool ForceSslForAllPages { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.Hosts")]
-        [AllowHtml]
+
         public string Hosts { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.StoreLogo")]
@@ -59,7 +59,6 @@ namespace SmartStore.Admin.Models.Stores
         [UIHint("Color")]
         public string MsTileColor { get; set; }
 
-
         [SmartResourceDisplayName("Common.DisplayOrder")]
         public int DisplayOrder { get; set; }
 
@@ -67,7 +66,7 @@ namespace SmartStore.Admin.Models.Stores
         public string HtmlBodyId { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.ContentDeliveryNetwork")]
-        [AllowHtml]
+
         public string ContentDeliveryNetwork { get; set; }
 
         [SmartResourceDisplayName("Admin.Configuration.Stores.Fields.PrimaryStoreCurrencyId")]

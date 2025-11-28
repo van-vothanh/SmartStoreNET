@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
-using System.Web.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using FluentValidation;
 using FluentValidation.Attributes;
 using SmartStore.Core.Domain.Tasks;
@@ -15,7 +15,7 @@ namespace SmartStore.Admin.Models.Tasks
     public partial class ScheduleTaskModel : EntityModelBase
     {
         [SmartResourceDisplayName("Admin.System.ScheduleTasks.Name")]
-        [AllowHtml]
+
         public string Name { get; set; }
 
         [SmartResourceDisplayName("Admin.System.ScheduleTasks.CronExpression")]

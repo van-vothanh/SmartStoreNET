@@ -843,7 +843,6 @@ namespace SmartStore.Services.Orders
                     orderSubTotalExclTax = initialOrder.OrderSubtotalExclTax;
                 }
 
-
                 // Shipping info.
                 var shoppingCartRequiresShipping = false;
                 if (!processPaymentRequest.IsRecurringPayment)
@@ -1614,7 +1613,6 @@ namespace SmartStore.Services.Orders
             _orderService.DeleteOrder(order);
         }
 
-
         /// <summary>
         /// Process next recurring psayment
         /// </summary>
@@ -1769,8 +1767,6 @@ namespace SmartStore.Services.Orders
             return true;
         }
 
-
-
         /// <summary>
         /// Send a shipment
         /// </summary>
@@ -1857,8 +1853,6 @@ namespace SmartStore.Services.Orders
             //check order status
             CheckOrderStatus(order);
         }
-
-
 
         /// <summary>
         /// Gets a value indicating whether cancel is allowed
@@ -1991,7 +1985,6 @@ namespace SmartStore.Services.Orders
             }
         }
 
-
         /// <summary>
         /// Gets a value indicating whether order can be marked as authorized
         /// </summary>
@@ -2029,7 +2022,6 @@ namespace SmartStore.Services.Orders
             CheckOrderStatus(order);
         }
 
-
         /// <summary>
         /// Gets a value indicating whether the order can be marked as completed
         /// </summary>
@@ -2066,7 +2058,6 @@ namespace SmartStore.Services.Orders
 
             CheckOrderStatus(order);
         }
-
 
         /// <summary>
         /// Gets a value indicating whether capture from admin panel is allowed
@@ -2197,8 +2188,6 @@ namespace SmartStore.Services.Orders
                 _eventPublisher.PublishOrderPaid(order);
             }
         }
-
-
 
         /// <summary>
         /// Gets a value indicating whether refund from admin panel is allowed
@@ -2489,8 +2478,6 @@ namespace SmartStore.Services.Orders
             CheckOrderStatus(order);
         }
 
-
-
         /// <summary>
         /// Gets a value indicating whether void from admin panel is allowed
         /// </summary>
@@ -2608,8 +2595,6 @@ namespace SmartStore.Services.Orders
             //check orer status
             CheckOrderStatus(order);
         }
-
-
 
         /// <summary>
         /// Place order items in current user shopping cart.

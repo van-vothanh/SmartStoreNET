@@ -157,7 +157,6 @@ namespace SmartStore.Services.Payments
         #endregion
     }
 
-
     [Serializable]
     public partial class CustomPaymentRequestValue
     {

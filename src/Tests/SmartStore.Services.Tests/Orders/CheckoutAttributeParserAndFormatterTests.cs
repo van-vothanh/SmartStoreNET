@@ -108,7 +108,6 @@ namespace SmartStore.Services.Tests.Orders
                 DisplayOrder = 3,
             };
 
-
             #endregion
 
             _checkoutAttributeRepo = MockRepository.GenerateMock<IRepository<CheckoutAttribute>>();
@@ -138,8 +137,6 @@ namespace SmartStore.Services.Tests.Orders
                 _eventPublisher);
 
             _checkoutAttributeParser = new CheckoutAttributeParser(_checkoutAttributeService);
-
-
 
             //var workingLanguage = new Language();
             //_workContext = MockRepository.GenerateMock<IWorkContext>();
@@ -196,7 +193,6 @@ namespace SmartStore.Services.Tests.Orders
         //    attributes = _checkoutAttributeParser.AddCheckoutAttribute(attributes, ca2, cav2_2.Id.ToString());
         //    //custom text
         //    attributes = _checkoutAttributeParser.AddCheckoutAttribute(attributes, ca3, "Some custom text goes here");
-
 
         //    var customer = new Customer();
         //    string formattedAttributes = _checkoutAttributeFormatter.FormatAttributes(attributes, customer, "<br />", false, false);

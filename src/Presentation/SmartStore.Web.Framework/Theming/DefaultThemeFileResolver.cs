@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Web;
-using System.Web.Hosting;
+using Microsoft.AspNetCore.Hosting;
 using SmartStore.Core;
 using SmartStore.Core.Infrastructure;
 using SmartStore.Core.Themes;
@@ -279,7 +279,6 @@ namespace SmartStore.Web.Framework.Theming
             physicalPath = null;
             return null;
         }
-
 
         private class FileKey : Tuple<string, string, string>
         {

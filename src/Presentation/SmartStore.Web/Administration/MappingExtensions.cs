@@ -823,7 +823,6 @@ namespace SmartStore.Admin
             return entity;
         }
 
-
         public static ShippingSettingsModel ToModel(this ShippingSettings entity)
         {
             return MapperFactory.Map<ShippingSettings, ShippingSettingsModel>(entity);
@@ -837,7 +836,6 @@ namespace SmartStore.Admin
             MapperFactory.Map(model, entity);
             return entity;
         }
-
 
         public static ForumSettingsModel ToModel(this ForumSettings entity)
         {
@@ -853,7 +851,6 @@ namespace SmartStore.Admin
             return entity;
         }
 
-
         public static BlogSettingsModel ToModel(this BlogSettings entity)
         {
             return MapperFactory.Map<BlogSettings, BlogSettingsModel>(entity);
@@ -867,7 +864,6 @@ namespace SmartStore.Admin
             MapperFactory.Map(model, entity);
             return entity;
         }
-
 
         public static NewsSettingsModel ToModel(this NewsSettings entity)
         {
@@ -883,7 +879,6 @@ namespace SmartStore.Admin
             return entity;
         }
 
-
         public static CatalogSettingsModel ToModel(this CatalogSettings entity)
         {
             return MapperFactory.Map<CatalogSettings, CatalogSettingsModel>(entity);
@@ -897,7 +892,6 @@ namespace SmartStore.Admin
             MapperFactory.Map(model, entity);
             return entity;
         }
-
 
         public static RewardPointsSettingsModel ToModel(this RewardPointsSettings entity)
         {
@@ -913,7 +907,6 @@ namespace SmartStore.Admin
             return entity;
         }
 
-
         public static OrderSettingsModel ToModel(this OrderSettings entity)
         {
             return MapperFactory.Map<OrderSettings, OrderSettingsModel>(entity);
@@ -928,7 +921,6 @@ namespace SmartStore.Admin
             return entity;
         }
 
-
         public static ShoppingCartSettingsModel ToModel(this ShoppingCartSettings entity)
         {
             return MapperFactory.Map<ShoppingCartSettings, ShoppingCartSettingsModel>(entity);
@@ -942,7 +934,6 @@ namespace SmartStore.Admin
             MapperFactory.Map(model, entity);
             return entity;
         }
-
 
         public static MediaSettingsModel ToModel(this MediaSettings entity)
         {
@@ -1016,7 +1007,6 @@ namespace SmartStore.Admin
 
         #endregion
 
-
         #region Plugins
 
         public static PluginModel ToModel(this PluginDescriptor entity)
@@ -1025,7 +1015,6 @@ namespace SmartStore.Admin
         }
 
         #endregion
-
 
         #region Stores
 

@@ -60,10 +60,6 @@ namespace SmartStore.Services.Orders
         decimal GetOrderSubtotalDiscount(Customer customer,
             decimal orderSubTotal, out Discount appliedDiscount);
 
-
-
-
-
         /// <summary>
         /// Adjust shipping rate (free shipping, additional charges, discounts)
         /// </summary>
@@ -123,11 +119,6 @@ namespace SmartStore.Services.Orders
         /// <returns>Shipping discount</returns>
         decimal GetShippingDiscount(Customer customer, decimal shippingTotal, out Discount appliedDiscount);
 
-
-
-
-
-
         /// <summary>
         /// Gets tax
         /// </summary>
@@ -146,9 +137,6 @@ namespace SmartStore.Services.Orders
 		decimal GetTaxTotal(IList<OrganizedShoppingCartItem> cart, out SortedDictionary<decimal, decimal> taxRates,
             bool usePaymentMethodAdditionalFee = true);
 
-
-
-
         /// <summary>
         /// Gets the shopping cart total
         /// </summary>
@@ -163,7 +151,6 @@ namespace SmartStore.Services.Orders
             bool usePaymentMethodAdditionalFee = true,
             bool ignoreCreditBalance = false);
 
-
         /// <summary>
         /// Gets an order discount (applied to order total)
         /// </summary>
@@ -172,10 +159,6 @@ namespace SmartStore.Services.Orders
         /// <param name="appliedDiscount">Applied discount</param>
         /// <returns>Order discount</returns>
         decimal GetOrderTotalDiscount(Customer customer, decimal orderTotal, out Discount appliedDiscount);
-
-
-
-
 
         /// <summary>
         /// Converts reward points to amount primary store currency

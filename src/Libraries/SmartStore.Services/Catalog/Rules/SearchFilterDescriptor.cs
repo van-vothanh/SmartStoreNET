@@ -10,7 +10,6 @@ namespace SmartStore.Services.Catalog.Rules
         public SearchFilterExpression Expression { get; set; }
     }
 
-
     public abstract class SearchFilterDescriptor : RuleDescriptor
     {
         public SearchFilterDescriptor()

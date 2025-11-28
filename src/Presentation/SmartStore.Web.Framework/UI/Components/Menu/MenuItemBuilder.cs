@@ -41,7 +41,6 @@ namespace SmartStore.Web.Framework.UI
             return builder.ToItem();
         }
 
-
     }
 
 }
